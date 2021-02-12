@@ -43,4 +43,8 @@ jobs:
       - name: Execute tests (Unit and Feature tests) via PHPUnit
         run: vendor/bin/phpunit
       - name: Execute tests (Browser tests) via Dusk
-        run: php artisan dusk
+        run: |
+          php artisan dusk:chrome-driver
+          nohup bash -c './vendor/laravel/dusk/bin/chromedriver-linux > /dev/null 2>&1 &'
+          nohup bash -c 'php artisan serve > /dev/null 2>&1 &'
+          php artisan dusk
