@@ -11,9 +11,9 @@ defaults:
     working-directory: ./
 
 jobs:
-  laravel-tests:
+  tests:
     timeout-minutes: 10
-    name: Laravel Tests
+    name: Tests
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
