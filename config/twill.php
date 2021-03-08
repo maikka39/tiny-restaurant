@@ -19,7 +19,7 @@ return [
     'locale' => 'nl',
     'fallback_locale' => 'en',
     'block_editor' => [
-        'block' => [
+        'blocks' => [
             'social_media_links' => [
                 'title' => 'Social Media Links',
                 'icon' => 'text',
