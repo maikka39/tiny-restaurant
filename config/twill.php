@@ -18,4 +18,13 @@ return [
     ],
     'locale' => 'nl',
     'fallback_locale' => 'en',
+    'block_editor' => [
+        'block' => [
+            'social_media_links' => [
+                'title' => 'Social Media Links',
+                'icon' => 'text',
+                'component' => 'a17-block-social_media_links'
+            ]
+        ]
+    ]
 ];
