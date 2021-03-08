@@ -28,6 +28,9 @@ php artisan twill:superadmin
 # Setup the dusk chrome driver
 php artisan dusk:chrome-driver
 
+# Refresh route cache
+php artisan route:cache
+
 # Run the applicaten
 php artisan serve
 ```
