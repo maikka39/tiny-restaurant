@@ -13,7 +13,7 @@ return [
         'search' => true,
         'users-description' => false,
         'activitylog' => true,
-        'users-2fa' => true,
+        'users-2fa' => false,
         'users-oauth' => false,
     ],
     'locale' => 'nl',
