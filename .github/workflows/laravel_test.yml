@@ -44,7 +44,20 @@ jobs:
         run: vendor/bin/phpunit
       - name: Execute tests (Browser tests) via Dusk
         run: |
-          php artisan dusk:chrome-driver
+          php artisan dusk:chrome-driver `/opt/google/chrome/chrome --version | cut -d " " -f3 | cut -d "." -f1`
           nohup bash -c './vendor/laravel/dusk/bin/chromedriver-linux > /dev/null 2>&1 &'
           nohup bash -c 'php artisan serve > /dev/null 2>&1 &'
-          php artisan dusk
+      - name: Run Dusk Tests
+        run: php artisan dusk
+      - name: Upload Screenshots
+        if: failure()
+        uses: actions/upload-artifact@v2
+        with:
+          name: screenshots
+          path: tests/Browser/screenshots
+      - name: Upload Console Logs
+        if: failure()
+        uses: actions/upload-artifact@v2
+        with:
+          name: console
+          path: tests/Browser/console
