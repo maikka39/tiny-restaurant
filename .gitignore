@@ -76,6 +76,6 @@ fabric.properties
 # .idea/misc.xml
 # *.ipr
 
-./public/js
-./public/css
-./public/fonts
+public/js
+public/css
+public/fonts
