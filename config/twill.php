@@ -19,17 +19,22 @@ return [
     
     'locale' => 'nl',
     'fallback_locale' => 'en',
-
     'block_editor' => [
-        'block_single_layout' => 'layouts.block', // layout to use when rendering a single block in the editor
-        'block_views_path' => 'site.blocks', // path where a view file per block type is stored
-        'block_views_mappings' => [], // custom mapping of block types and views
-        'block_preview_render_childs' => true, // indicates if childs should be rendered when using repeater in blocks
-        'block_presenter_path' => null, // allow to set a custom presenter to a block model
-        // Indicates if blocks templates should be inlined in HTML.
-        // When setting to false, make sure to build Twill with your all your custom blocks using php artisan twill:build.
-        'inline_blocks_templates' => true,
-        'custom_vue_blocks_resource_path' => 'assets/js/blocks', // path to custom vue blocks in your resources directory
+        'block_preview_render_childs' => false, // indicates if childs should be rendered when using repeater in blocks
+        'blocks' => [
+            'social_media_links' => [
+                'title' => 'Social Media Links',
+                'icon' => 'text',
+                'component' => 'a17-block-social_media_links'
+            ]
+        ],
+        'repeaters' => [
+            'social_media_links_item' => [
+                'title' => 'Social Media link',
+                'trigger' => 'Nieuwe link toevoegen',
+                'component' => 'a17-block-social_media_links_item'
+            ]
+        ],
         'crops' => [
             'image' => [
                 'desktop' => [
@@ -64,6 +69,6 @@ return [
                 ],
             ],
         ],
-        'repeaters' => [],
     ]
 ];
+
