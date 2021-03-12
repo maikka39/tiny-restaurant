@@ -6,4 +6,6 @@
         'label' => 'Description',
         'maxlength' => 100
     ])
+
+    @formField('block_editor')
 @stop

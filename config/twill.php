@@ -25,6 +25,11 @@ return [
                 'title' => 'Social Media Links',
                 'icon' => 'text',
                 'component' => 'a17-block-social_media_links'
+            ],
+            'contact_link' => [
+                'title' => 'Contact Link',
+                'icon' => 'text',
+                'component' => 'a17-block-contact_link'
             ]
         ],
         'repeaters' => [
