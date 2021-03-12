@@ -7,6 +7,6 @@
     ])
 
     @formField('block_editor', [
-        'blocks' => ['text']
+        'blocks' => ['text', 'image']
     ])
 @stop

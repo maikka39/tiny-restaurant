@@ -8,6 +8,8 @@
     <title>{{ env('APP_NAME') }}</title>
 </head>
 <body>
-    @yield('content')
+    <div>
+        @yield('content')
+    </div>
 </body>
 </html>

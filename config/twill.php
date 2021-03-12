@@ -30,18 +30,6 @@ return [
         // When setting to false, make sure to build Twill with your all your custom blocks using php artisan twill:build.
         'inline_blocks_templates' => true,
         'custom_vue_blocks_resource_path' => 'assets/js/blocks', // path to custom vue blocks in your resources directory
-        'blocks' => [
-            'text' => [
-                'title' => 'Body text',
-                'icon' => 'text',
-                'component' => 'a17-block-wysiwyg',
-            ],
-            'image' => [
-                'title' => 'Image',
-                'icon' => 'image',
-                'component' => 'a17-block-image',
-            ],
-        ],
         'crops' => [
             'image' => [
                 'desktop' => [
