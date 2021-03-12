@@ -6,7 +6,7 @@
 @formField('input', [
     'type' => 'text',
     'name' => 'link',
-    'note' => 'Voorbeeld: "https://nl-nl.facebook.com/"',
+    'note' => 'Voorbeeld: "https://www.facebook.com/TinyRestaurant.nl/"',
     'label' => 'Volledige link',
 ])
 
@@ -45,7 +45,7 @@
         ],
         [
             'value' => 'fab fa-youtube',
-            'label' => 'Youtube logo'
+            'label' => 'YouTube logo'
         ],
         [
             'value' => 'fab fa-facebook-messenger',
@@ -53,7 +53,7 @@
         ],
         [
             'value' => 'fab fa-whatsapp',
-            'label' => 'Whatsapp logo'
+            'label' => 'WhatsApp logo'
         ]
     ]
 ])
