@@ -1,4 +1,1 @@
-@formField('color', [
-    'name' => 'default_logo_color',
-    'label' => 'Default logo color'
-])
+@formField('repeater', ['type' => 'social_media_links_item'])
