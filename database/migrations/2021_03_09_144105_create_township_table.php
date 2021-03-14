@@ -17,6 +17,7 @@ class CreateTownshipTable extends Migration
             $table->id();
             $table->text('name');
             $table->mediumText('body');
+            $table->string('picture');
             $table->timestamps();
         });
     }

@@ -20,7 +20,10 @@
             <p> {{ $township->body }} </p>
         </div>
         <div>
-            <img class="shadow-lg" style="height: 250px;" src="https://media-exp1.licdn.com/dms/image/C561BAQG60zqtu7EsOA/company-background_10000/0?e=2159024400&v=beta&t=gl_IsvE39MBK8vOFmopCMLB8HjMRorE0PIcIyiplqj4" class="rounded" alt="maps">
+            <?php
+            $filename = "/images/" . $township->picture;
+            ?>
+            <img class="shadow-lg" style="height: 250px;" src="<?php echo url($filename) ?>" class="rounded" alt="maps">
         </div>
         </div>
     </div>
@@ -45,16 +48,18 @@
             Print"<h3 class='text-center'> Partners: </h3>
             <div class='d-flex flex-wrap justify-content-around'>";
             foreach ($partners as $partner) {
+                $filename = "/images/" . $partner->picture;
+                $url = url($filename);
                 Print "
                 <div class='card mt-3 shadow-lg' style='width: 18rem;'>
                     <img class='card-img-top' 
-                    src='https://downtoearthmagazine.nl/wp-content/uploads/2020/08/20200615-Down-to-Earth-Magazine-Boer_Burger-JPG-WEB_IMG_9520.jpg'
+                    src='" . $url . "'
                     alt='Afbeelding Boer'>
                     <div class='card-body'>
                         <h5 class='card-title'>" . $partner->name . "</h5>
                         <p>" . $partner->description . "</p> 
                         <a href='#' class='btn btn-primary float-right'> Lees meer </a>
-                    </div>
+                    </div> 
                 </div>";
             }
             Print"</div>";
