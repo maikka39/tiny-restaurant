@@ -4,8 +4,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Gemeente</title>
-    <!-- <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet"> -->
-    <!-- <link rel="stylesheet" href="{{ asset('css/app.css')  }}"> -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
@@ -31,7 +29,6 @@
 
         <div class="row">
             <div class="col">
-                <!-- <img src="https://map.viamichelin.com/map/carte?map=viamichelin&z=10&lat=51.84169&lon=5.85865&width=550&height=382&format=png&version=latest&layer=background&debug_pattern=.*" class="rounded" alt="maps"> -->
                 <div id="googleMap" class="mt-2 mb-2" style="width:100%; height:300px;"></div>
             </div>
             <div class="col d-flex flex-column justify-content-center">
@@ -42,87 +39,31 @@
         </div>
     </div>
     <br>
+    <?php
+        $partners = $gemeente->partners;
+        if (count($partners) > 0) {
+            Print"<h3 class='text-center'> Partners: </h3>
+            <div class='d-flex flex-wrap justify-content-around'>";
+            foreach ($partners as $partner) {
+                Print "
+                <div class='card mt-3 shadow-lg' style='width: 18rem;'>
+                    <img class='card-img-top' 
+                    src='https://downtoearthmagazine.nl/wp-content/uploads/2020/08/20200615-Down-to-Earth-Magazine-Boer_Burger-JPG-WEB_IMG_9520.jpg'
+                    alt='Afbeelding Boer'>
+                    <div class='card-body'>
+                        <h5 class='card-title'>" . $partner->name . "</h5>
+                        <p>" . $partner->description . "</p> 
+                        <a href='#' class='btn btn-primary float-right'> Lees meer </a>
+                    </div>
+                </div>";
+            }
+            Print"</div>";
+        }
+    ?>
     <div class="container mb-4">
-        <h3 class="text-center"> Partners: </h3>
-        <div class="d-flex flex-wrap justify-content-around">
-        <div class="card mt-3 shadow-lg" style="width: 18rem;">
-            <img class="card-img-top" 
-            src="https://downtoearthmagazine.nl/wp-content/uploads/2020/08/20200615-Down-to-Earth-Magazine-Boer_Burger-JPG-WEB_IMG_9520.jpg"
-            alt="Afbeelding Boer">
-            <div class="card-body">
-                <h5 class="card-title"> Card Title </h5>
-                <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sollicitudin, neque et ultrices pulvinar, ipsum libero mattis massa, in pharetra dui lacus vitae urna.</p> 
-                <a href="#" class="btn btn-primary float-right"> Lees meer </a>
-            </div>
-        </div>
-        <div class="card mt-3 shadow-lg" style="width: 18rem;">
-            <img class="card-img-top" 
-            src="https://downtoearthmagazine.nl/wp-content/uploads/2020/08/20200615-Down-to-Earth-Magazine-Boer_Burger-JPG-WEB_IMG_9520.jpg"
-            alt="Afbeelding Boer">
-            <div class="card-body">
-                <h5 class="card-title"> Card Title </h5>
-                <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sollicitudin, neque et ultrices pulvinar, ipsum libero mattis massa, in pharetra dui lacus vitae urna.</p> 
-                <a href="#" class="btn btn-primary float-right"> Lees meer </a>
-            </div>
-        </div> 
-        <div class="card mt-3 shadow-lg" style="width: 18rem;">
-            <img class="card-img-top" 
-            src="https://downtoearthmagazine.nl/wp-content/uploads/2020/08/20200615-Down-to-Earth-Magazine-Boer_Burger-JPG-WEB_IMG_9520.jpg"
-            alt="Afbeelding Boer">
-            <div class="card-body">
-                <h5 class="card-title"> Card Title </h5>
-                <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sollicitudin, neque et ultrices pulvinar, ipsum libero mattis massa, in pharetra dui lacus vitae urna.</p> 
-                <a href="#" class="btn btn-primary float-right"> Lees meer </a>
-            </div>
-        </div> 
-        <div class="card mt-3 shadow-lg" style="width: 18rem;">
-            <img class="card-img-top" 
-            src="https://downtoearthmagazine.nl/wp-content/uploads/2020/08/20200615-Down-to-Earth-Magazine-Boer_Burger-JPG-WEB_IMG_9520.jpg"
-            alt="Afbeelding Boer">
-            <div class="card-body">
-                <h5 class="card-title"> Card Title </h5>
-                <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sollicitudin, neque et ultrices pulvinar, ipsum libero mattis massa, in pharetra dui lacus vitae urna.</p> 
-                <a href="#" class="btn btn-primary float-right"> Lees meer </a>
-            </div>
-        </div> 
-        <div class="card mt-3 shadow-lg" style="width: 18rem;">
-            <img class="card-img-top" 
-            src="https://downtoearthmagazine.nl/wp-content/uploads/2020/08/20200615-Down-to-Earth-Magazine-Boer_Burger-JPG-WEB_IMG_9520.jpg"
-            alt="Afbeelding Boer">
-            <div class="card-body">
-                <h5 class="card-title"> Card Title </h5>
-                <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sollicitudin, neque et ultrices pulvinar, ipsum libero mattis massa, in pharetra dui lacus vitae urna.</p> 
-                <a href="#" class="btn btn-primary float-right"> Lees meer </a>
-            </div>
-        </div> 
-        <div class="card mt-3 shadow-lg" style="width: 18rem;">
-            <img class="card-img-top" 
-            src="https://downtoearthmagazine.nl/wp-content/uploads/2020/08/20200615-Down-to-Earth-Magazine-Boer_Burger-JPG-WEB_IMG_9520.jpg"
-            alt="Afbeelding Boer">
-            <div class="card-body">
-                <h5 class="card-title"> Card Title </h5>
-                <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sollicitudin, neque et ultrices pulvinar, ipsum libero mattis massa, in pharetra dui lacus vitae urna.</p> 
-                <a href="#" class="btn btn-primary float-right"> Lees meer </a>
-            </div>
-        </div> 
-        <div class="card mt-3 shadow-lg" style="width: 18rem;">
-            <img class="card-img-top" 
-            src="https://downtoearthmagazine.nl/wp-content/uploads/2020/08/20200615-Down-to-Earth-Magazine-Boer_Burger-JPG-WEB_IMG_9520.jpg"
-            alt="Afbeelding Boer">
-            <div class="card-body">
-                <h5 class="card-title"> Card Title </h5>
-                <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sollicitudin, neque et ultrices pulvinar, ipsum libero mattis massa, in pharetra dui lacus vitae urna.</p> 
-                <a href="#" class="btn btn-primary float-right"> Lees meer </a>
-            </div>
-        </div>
-        </div>
     </div>
     <script>
         function myMap() {
-        // var mapProp= {
-        // center:new google.maps.LatLng(51.508742,-0.120850),
-        // zoom:5,
-        // };
         var map = new google.maps.Map(document.getElementById("googleMap"));
         };
     </script>

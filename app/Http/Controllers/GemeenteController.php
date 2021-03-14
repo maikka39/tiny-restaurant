@@ -8,11 +8,10 @@ use App\Gemeente;
 class GemeenteController extends Controller
 {
     public function show ($gemeente) {
-        // dd($gemeente);
-
+        $gemeente = Gemeente::where('name', $gemeente)->firstOrFail();
 
         return view('gemeente', [
-            'gemeente' => Gemeente::where('name', $gemeente)->firstOrFail() 
+            'gemeente' => $gemeente 
         ]);
     }
 }
