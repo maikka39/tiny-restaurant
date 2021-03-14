@@ -16,8 +16,8 @@
     <div class="text-center container mt-4 mb-4">
         <div class="row">
         <div class="col"> 
-            <h1> {{ $gemeente->name }} </h1>
-            <p> {{ $gemeente->body }} </p>
+            <h1> {{ $township->name }} </h1>
+            <p> {{ $township->body }} </p>
         </div>
         <div>
             <img class="shadow-lg" style="height: 250px;" src="https://media-exp1.licdn.com/dms/image/C561BAQG60zqtu7EsOA/company-background_10000/0?e=2159024400&v=beta&t=gl_IsvE39MBK8vOFmopCMLB8HjMRorE0PIcIyiplqj4" class="rounded" alt="maps">
@@ -40,7 +40,7 @@
     </div>
     <br>
     <?php
-        $partners = $gemeente->partners;
+        $partners = $township->partners;
         if (count($partners) > 0) {
             Print"<h3 class='text-center'> Partners: </h3>
             <div class='d-flex flex-wrap justify-content-around'>";

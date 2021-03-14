@@ -9,7 +9,7 @@ class Partner extends Model
 {
     use HasFactory;
 
-    public function gemeente () {
-        return $this->belongsTo(Gemeente::class);
+    public function township () {
+        return $this->belongsTo(Township::class);
     }
 }
