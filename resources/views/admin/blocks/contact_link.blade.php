@@ -1,6 +1,6 @@
 @formField('color', [
-    'name' => 'logo_color',
-    'label' => 'Link kleur'
+    'name' => 'link_color',
+    'label' => 'Kleur van link'
 ])  
 
 @formField('input', [
