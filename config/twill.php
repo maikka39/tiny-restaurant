@@ -30,7 +30,8 @@ return [
                 'title' => 'Contact Link',
                 'icon' => 'text',
                 'component' => 'a17-block-contact_link'
-            ]
+            ],
+            'contact_form' => 'a17-block-contact_form',
         ],
         'repeaters' => [
             'social_media_links_item' => [
@@ -39,5 +40,5 @@ return [
                 'component' => 'a17-block-social_media_links_item'
             ]
         ]
-    ]
+    ],
 ];
