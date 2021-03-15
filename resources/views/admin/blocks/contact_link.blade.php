@@ -1,7 +1,7 @@
 @formField('input', [
     'type' => 'text',
     'name' => 'link_text',
-    'label' => 'Text van link'
+    'label' => 'Tekst van link'
 ]) 
 
 @formField('color', [
