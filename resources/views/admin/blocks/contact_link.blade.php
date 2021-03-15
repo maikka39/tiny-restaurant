@@ -1,11 +1,11 @@
 @formField('color', [
     'name' => 'logo_color',
-    'label' => 'Iccon kleur'
+    'label' => 'Link kleur'
 ])  
 
 @formField('input', [
     'type' => 'text',
     'name' => 'link_to_page',
-    'note' => 'Voorbeeld: "https://tiny-restaurant.tk/contact"',
+    'note' => 'Voorbeeld: "https://tiny-restaurant.nl/contact"',
     'label' => 'Link naar pagina'
 ]) 

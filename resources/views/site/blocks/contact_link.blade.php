@@ -1,6 +1,6 @@
-<div class="flex justify-between items-center text-lg">
-    <a class="px-4 flex-col justify-center" href="{{ $block->input('link_to_page')}}">
+<div class="flex justify-between items-center">
+    <a class="px-4 flex-col justify-center" href="{{ $block->input('link_to_page')}}" style="color: {{$block->input('logo_color')}}">
         <i class="far fa-comments"></i>
-        <span class="sr-only">Contact</span> {{-- TODO future translation --}}
+        <span>Contact</span> {{-- TODO future translation (if more then english and dutch) --}}
     </a>
 </div>
