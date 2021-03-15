@@ -1,5 +1,5 @@
 @twillBlockIcon('website')
-@twillBlockTitle('Contact Formulier')
+@twillBlockTitle('Contactformulier')
 
 @formField('input', [
     'name' => 'title',

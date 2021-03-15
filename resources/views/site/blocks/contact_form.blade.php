@@ -23,7 +23,7 @@
         </div>
         <div class="py-3">
             <button class="px-2 rounded text-lg text-white border border-green-900 bg-green-700" type="button">
-                Vestuur
+                Verstuur
             </button>
         </div>
     </form>
