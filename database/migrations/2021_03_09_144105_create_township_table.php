@@ -15,7 +15,7 @@ class CreateTownshipTable extends Migration
     {
         Schema::create('townships', function (Blueprint $table) {
             $table->id();
-            $table->text('name');
+            $table->string('name');
             $table->mediumText('body');
             $table->string('picture');
             $table->timestamps();
@@ -29,6 +29,6 @@ class CreateTownshipTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('township');
+        Schema::dropIfExists('townships');
     }
 }

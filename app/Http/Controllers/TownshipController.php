@@ -3,15 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Township;
+use App\Models\Township;
 
 class TownshipController extends Controller
 {
-    public function show ($gemeente) {
-        $gemeente = Township::where('name', $gemeente)->firstOrFail();
-
+    public function show (Township $township) {
         return view('township', [
-            'township' => $gemeente 
+            'township' => $township,
+            'townshipImageURL' => url("/images/" . $township->picture)
         ]);
     }
 }
