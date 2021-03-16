@@ -7,24 +7,42 @@
             <label class="text-xl block" for="name">
                 Naam
             </label>
-            <input class="p-1 rounded w-full block border border-gray-500" id="name" type="text" placeholder="Uw naam">
+            <input class="p-1 rounded w-full block border border-gray-500" id="name" type="text" value="{{ old("name") }}" placeholder="Uw naam">
+
+            @error('name')
+                <div class="text-red-500 text-xs"> {{ $message }}</div>
+            @enderror
         </div>
         <div class="py-2 block">
             <label class="text-xl block" for="email">
                 E-mail
             </label>
-            <input class="p-1 rounded block w-full border  border-gray-500" id="email" type="email" placeholder="voorbeeld@email.com">
+            <input class="p-1 rounded block w-full border  border-gray-500" id="email" type="email" value="{{ old("email") }}" placeholder="voorbeeld@email.com">
+
+            @error('email')
+            <div class="text-red-500 text-xs"> {{ $message }}</div>
+            @enderror
         </div>
         <div class="py-2">
             <label class="text-xl block" for="message">
                 Bericht
             </label>
-            <textarea class="p-1 rounded w-full block border  border-gray-500" id="message"></textarea>
+            <textarea class="p-1 rounded w-full block border  border-gray-500" id="message" value="{{ old("message") }}"></textarea>
+
+            @error('message')
+            <div class="text-red-500 text-xs"> {{ $message }}</div>
+            @enderror
         </div>
         <div class="py-3">
             <button class="px-2 rounded text-lg text-white border border-green-900 bg-green-700" type="button">
                 Verstuur
             </button>
+
+            @if (session('success_message'))
+                <p class="text-green-500 text-xs mt-2">
+                    {{ session('message') }}
+                </p>
+            @endif
         </div>
     </form>
 </div>
