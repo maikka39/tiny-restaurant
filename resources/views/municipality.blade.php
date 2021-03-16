@@ -1,4 +1,4 @@
-@extends('site.layouts.municipalityLayout', [
+@extends('layouts.app', [
     'title' => 'Gemeente'
 ])
 @section('content')
