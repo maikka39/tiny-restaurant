@@ -1,33 +1,20 @@
 <?php
 
-namespace App\Listeners;
+namespace App\Http\Controllers;
 
-use App\Events\MailSent;
 use App\Mail\EmailFromUser;
-use Illuminate\Contracts\Queue\ShouldQueue;
-use Illuminate\Queue\InteractsWithQueue;
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
+use Illuminate\Foundation\Bus\DispatchesJobs;
+use Illuminate\Foundation\Validation\ValidatesRequests;
+use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Redirect;
 
-class SendMailConfirmation
+class MailController extends BaseController
 {
-    /**
-     * Create the event listener.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        //
-    }
+    use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
-    /**
-     * Handle the event.
-     *
-     * @param  MailSent  $event
-     * @return void
-     */
-    public function handle(MailSent $event)
+    public function store(): \Illuminate\Http\RedirectResponse
     {
         // validate the mail address and content
         request()->validate(['name' => 'required']);
