@@ -1,4 +1,4 @@
-@extends('site.layouts.townshipLayout', [
+@extends('site.layouts.municipalityLayout', [
     'title' => 'Gemeente'
 ])
 @section('content')
@@ -6,11 +6,11 @@
     <div class="w-5/6 mt-4 mb-4">
         <div class="flex flex-row place-content-around">
             <div class="flex flex-col w-3/6">
-                <h1 class="font-bold text-gray-600 text-5xl"> {{ $township->name }} </h1>
-                <p class="text-justify"> {{ $township->body }} </p>
+                <h1 class="font-bold text-gray-600 text-5xl"> {{ $municipality->name }} </h1>
+                <p class="text-justify"> {{ $municipality->body }} </p>
             </div>
             <div>
-                <img class="townshipImage shadow-lg" src="{{ $townshipImageURL }}" class="rounded" alt="maps">
+                <img class="municipalityImage shadow-lg" src="{{ $municipalityImageURL }}" class="rounded" alt="maps">
             </div>
         </div>
     </div>
@@ -29,10 +29,10 @@
     </div>
 </div>
 <br>
-@if (count($township->partners) > 0)
+@if (count($municipality->partners) > 0)
 <h3 class='text-xl font-bold text-center'> Partners: </h3>
 <div class='flex flex-wrap justify-around'>
-    @foreach ($township->partners as $partner)
+    @foreach ($municipality->partners as $partner)
         <div class='card border-2 border-gray-300 mb-3 mt-3 shadow-lg'>
             <img src='{{ url("/images/" . $partner->picture) }} ';
             alt='Afbeelding Boer'>

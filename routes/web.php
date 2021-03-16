@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\TownshipController;
+use App\Http\Controllers\MunicipalityController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,4 +18,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('gemeente/{township:name}', [TownshipController::class, 'show'])->name('township.show');
+Route::get('gemeente/{municipality:name}', [MunicipalityController::class, 'show'])->name('municipality.show');

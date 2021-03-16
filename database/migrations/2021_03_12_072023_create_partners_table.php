@@ -15,7 +15,7 @@ class CreatePartnersTable extends Migration
     {
         Schema::create('partners', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('township_id')->constrained();
+            $table->foreignId('municipality_id')->constrained();
             $table->string('name');
             $table->string('description');
             $table->string('picture');
