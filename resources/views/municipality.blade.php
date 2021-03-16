@@ -19,7 +19,7 @@
     <div class="w-5/6">
         <div class="flex flex-row place-content-around">
             <div class="flex flex-col w-3/6">
-                <div id="googleMap" class="mt-3 mb-3"></div>
+                <!-- Google Maps -->
             </div>
             <div class="flex flex-col justify-content-center w-2/6 mt-3 mb-3">
                 <h3 class="font-bold text-white text-4xl"> Aankomende evenement: </h3>
