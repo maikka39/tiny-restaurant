@@ -1,6 +1,6 @@
 @component('mail::message')
 
-    # Email van {{ $name }}
+    # Beste Tiny Restaurant,
 
     {{ $topic }}
 
