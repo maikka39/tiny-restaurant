@@ -24,6 +24,6 @@ class MailController extends BaseController
 
         $request->session()->flash('success_message', 'Email verzonden!');
 
-        return redirect::back();
+        return back();
     }
 }

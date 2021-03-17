@@ -1,9 +1,5 @@
 @component('mail::message')
-
-    # Beste Tiny Restaurant,
-
+    Naam: {{ $name }}
+    Bericht:
     {{ $message }}
-
-    Met vriendelijke groet,
-    {{ $name }}
 @endcomponent
