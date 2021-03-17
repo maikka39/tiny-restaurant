@@ -9,8 +9,7 @@ class CreateFarmersTables extends Migration
     {
         Schema::create('farmers', function (Blueprint $table) {
             createDefaultTableFields($table);
-            //TODO uncomment when municipalities is merged
-            //$table->foreignId('municipality_id')->constrained();
+            $table->foreignId('municipality_id')->constrained();
             $table->string('name', 200)->nullable();
             $table->text('description')->nullable();
             $table->string('address')->nullable();
