@@ -6,9 +6,13 @@
         <hr class="my-2">
 
         <div>
-            <h3 class="text-xl text-center">Wie is {{ $item->name }}?</h3>
-            <p class="text-center">{!! $item->description !!}</p>
-            <p class="text-center">Huidig address:  {!! $item->address !!}</p>
+            <h3 class="text-xl text-center font-semibold">Wie is {{ $item->name }}?</h3>
+            <div class="flex justify-center text-center">
+                {!! $item->description !!}
+            </div>
+            <br/>
+            <p class="text-center">Boer {{ $item->name }} woont momenteel op {!! $item->address !!}</p>
+            <p class="text-center">Deze boer is onderdeel van de boerenvereneging in {{ $item->municipality->name }}</p>
         </div>
         <hr class="my-2">
 

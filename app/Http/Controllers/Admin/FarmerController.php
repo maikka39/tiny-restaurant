@@ -15,7 +15,7 @@ class FarmerController extends ModuleController
 
     public function view($slug)
     {
-        $page = Farmer::forSlug($slug)->first() ?? abort(404);
+        $page = Farmer::with('municipality')->forSlug($slug)->first() ?? abort(404);
 
         return view('site.farmer', [
             'item' => $page

@@ -1,10 +1,11 @@
 @extends('twill::layouts.form')
 
 @section('contentFields')
-    @formField('input', [
+    @formField('wysiwyg', [
         'name' => 'description',
         'label' => 'Beschrijving',
-        'maxlength' => 100
+        'placeholder' => 'Vul een beschrijving in voor de boer',
+        'maxlength' => 500
     ])
 
     @formField('input', [
