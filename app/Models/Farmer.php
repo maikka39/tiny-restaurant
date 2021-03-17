@@ -15,12 +15,13 @@ class Farmer extends Model
 
     protected $fillable = [
         'published',
-        'title',
+        'name',
+        'address',
         'description',
     ];
     
     public $slugAttributes = [
-        'title',
+        'name',
     ];
     
     public $mediasParams = [

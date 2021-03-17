@@ -3,7 +3,17 @@
 @section('contentFields')
     @formField('input', [
         'name' => 'description',
-        'label' => 'Description',
+        'label' => 'Beschrijving',
         'maxlength' => 100
+    ])
+
+    @formField('input', [
+        'name' => 'address',
+        'label' => 'Adres',
+    ])
+
+    @formField('medias', [
+        'name' => 'farmer_profile',
+        'label' => 'Profiel foto',
     ])
 @stop

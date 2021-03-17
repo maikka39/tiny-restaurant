@@ -6,7 +6,7 @@ return [
         'module' => true
     ],
     'farmers' => [
-        'title' => 'Farmers',
+        'title' => 'Boeren',
         'module' => true
     ]
 ];
