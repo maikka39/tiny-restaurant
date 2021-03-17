@@ -2,7 +2,7 @@
 
     # Beste Tiny Restaurant,
 
-    {{ $topic }}
+    {{ $message }}
 
     Met vriendelijke groet,
     {{ $name }}
