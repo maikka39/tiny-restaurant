@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MunicipalityController;
+use App\Http\Controllers\Admin\PageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,3 +20,4 @@ Route::get('/', function () {
 });
 
 Route::get('gemeente/{municipality:name}', [MunicipalityController::class, 'show'])->name('municipality.show');
+Route::get('/{slug}', [PageController::class, 'view'])->name('pages.show');
