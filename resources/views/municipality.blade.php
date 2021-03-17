@@ -10,7 +10,7 @@
                 <p class="text-justify"> {{ $municipality->body }} </p>
             </div>
             <div>
-                <img class="municipalityImage shadow-lg" src="{{ $municipalityImageURL }}" class="rounded" alt="maps">
+                <img class="municipalityImage shadow-lg rounded" src="https://www.holland.com/upload_mm/7/a/0/68599_fullimage_de%20blob%281%29.jpg" alt="maps">
             </div>
         </div>
     </div>
@@ -34,12 +34,12 @@
 <div class='flex flex-wrap justify-around'>
     @foreach ($municipality->partners as $partner)
         <div class='card border-2 border-gray-300 mb-3 mt-3 shadow-lg'>
-            <img src='{{ url("/images/" . $partner->picture) }} ';
+            <img src='https://www.rtlnieuws.nl/sites/default/files/content/images/2020/06/01/boer%20willem.jpeg?itok=J2usiV5-&offsetX=0&offsetY=262&cropWidth=2000&cropHeight=1125&width=1024&height=576&impolicy=dynamic'>
             alt='Afbeelding Boer'>
             <div class='p-2 h-auto'>
                 <h5 class='text-xl font-bold'> {{ $partner->name }} </h5>
                 <p> {{ $partner->description }} </p>
-                <button href='#' class='m-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded float-right'> Lees meer </button>
+                <a href='#' class='m-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded float-right'> Lees meer </a>
             </div>
         </div>
     @endforeach
