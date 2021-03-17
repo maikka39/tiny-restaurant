@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use A17\Twill\Http\Controllers\Admin\ModuleController;
 use App\Models\Farmer;
+use App\Models\Municipality;
+use App\Repositories\FarmerRepository;
 
 class FarmerController extends ModuleController
 {
@@ -18,5 +20,12 @@ class FarmerController extends ModuleController
         return view('site.farmer', [
             'item' => $page
         ]);
+    }
+
+    public function formData($request)
+    {
+        return [
+            'municipalities' => Municipality::all()->pluck('name','id'),
+        ];
     }
 }

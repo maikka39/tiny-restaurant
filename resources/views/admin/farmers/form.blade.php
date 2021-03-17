@@ -12,6 +12,14 @@
         'label' => 'Adres',
     ])
 
+    @formField('select', [
+        'name' => 'municipality_id',
+        'label' => 'Gemeente',
+        'placeholder' => 'Selecteer een gemeente',
+        'options' => $municipalities
+    ])
+
+
     @formField('medias', [
         'name' => 'farmer_profile',
         'label' => 'Profiel foto',

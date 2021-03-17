@@ -8,6 +8,7 @@ use A17\Twill\Models\Behaviors\HasMedias;
 use A17\Twill\Models\Behaviors\HasFiles;
 use A17\Twill\Models\Behaviors\HasRevisions;
 use A17\Twill\Models\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Farmer extends Model 
 {
@@ -18,8 +19,9 @@ class Farmer extends Model
         'name',
         'address',
         'description',
+        'municipality_id'
     ];
-    
+
     public $slugAttributes = [
         'name',
     ];
@@ -54,4 +56,10 @@ class Farmer extends Model
             ],
         ],
     ];
+
+    public function municipality(): BelongsTo
+    {
+        return $this->belongsTo(Municipality::class);
+    }
+
 }
