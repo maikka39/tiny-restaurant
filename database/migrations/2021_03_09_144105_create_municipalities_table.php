@@ -13,13 +13,13 @@ class CreateMunicipalitiesTable extends Migration
      */
     public function up()
     {
-        Schema::create('municipalities', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->mediumText('body');
-            $table->string('picture');
-            $table->timestamps();
-        });
+        // Schema::create('municipalities', function (Blueprint $table) {
+        //     $table->id();
+        //     $table->string('name');
+        //     $table->mediumText('body');
+        //     $table->string('picture');
+        //     $table->timestamps();
+        // });
     }
 
     /**
@@ -29,6 +29,6 @@ class CreateMunicipalitiesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('municipalities');
+        // Schema::dropIfExists('municipalities');
     }
 }

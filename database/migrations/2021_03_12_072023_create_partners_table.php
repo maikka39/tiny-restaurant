@@ -13,14 +13,14 @@ class CreatePartnersTable extends Migration
      */
     public function up()
     {
-        Schema::create('partners', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('municipality_id')->constrained();
-            $table->string('name');
-            $table->string('description');
-            $table->string('picture');
-            $table->timestamps();
-        });
+        // Schema::create('partners', function (Blueprint $table) {
+        //     $table->id();
+        //     $table->foreignId('municipality_id')->constrained();
+        //     $table->string('name');
+        //     $table->string('description');
+        //     $table->string('picture');
+        //     $table->timestamps();
+        // });
     }
 
     /**
@@ -30,6 +30,6 @@ class CreatePartnersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('partners');
+        // Schema::dropIfExists('partners');
     }
 }

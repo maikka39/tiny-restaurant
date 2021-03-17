@@ -12,6 +12,10 @@ class Municipality extends Model
 {
     use HasBlocks, HasSlug, HasMedias, HasRevisions;
 
+    public function partners () {
+        return $this->hasMany(Partner::class);
+    }
+
     protected $fillable = [
         'published',
         'title',
