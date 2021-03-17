@@ -9,22 +9,21 @@ use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Redirect;
+use App\Http\Requests\SendEmailRequest;
 
 class MailController extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
-    public function store(): \Illuminate\Http\RedirectResponse
+    public function sendMail(SendEmailRequest $request): \Illuminate\Http\RedirectResponse
     {
-        // validate the mail address and content
-        request()->validate(['name' => 'required']);
-        request()->validate(['email' => 'required|email']);
-        request()->validate(['content' => 'required']);
+        $validated = $request->validated();
 
-        Mail::to(request('email'))
-            ->queue(new EmailFromUser(request('content'), request('name')));
+        Mail::to($validated['email'])
+            ->queue(new EmailFromUser($validated['message'], $validated['name']));
 
-        return redirect::back()
-            ->with('success_message','Email verzonden!');
+        $request->session()->flash('success_message', 'Email verzonden!');
+
+        return redirect::back();
     }
 }
