@@ -25,7 +25,7 @@ class Farmer extends Model
     ];
     
     public $mediasParams = [
-        'cover' => [
+        'farmer_profile' => [
             'desktop' => [
                 [
                     'name' => 'desktop',

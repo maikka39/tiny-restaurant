@@ -15,5 +15,6 @@
     @formField('medias', [
         'name' => 'farmer_profile',
         'label' => 'Profiel foto',
+        'fieldNote' => 'Een mooie afbeelding van de boer of de boerderij',
     ])
 @stop

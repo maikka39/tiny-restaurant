@@ -8,6 +8,5 @@ class FarmerController extends ModuleController
 {
     protected $moduleName = 'farmers';
     protected $permalinkBase = 'boeren';
-    protected $previewView = 'site.farmers.show';
     protected $titleColumnKey = 'name';
 }
