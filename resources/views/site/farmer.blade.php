@@ -1,10 +1,29 @@
 @extends('layouts.base')
 
 @section('content')
-    <h1>{{ $item->name }}</h1>
-    {!! $item->description !!}<br/>
-    {!! $item->address !!}<br/>
-    <img src="{{ $item->image("farmer_profile", 'desktop') }}" alt="{{ $item->imageAltText("farmer_profile") }}"/><br/>
+    <div class="flex justify-center flex-col">
+        <h1 class="text-3xl text-center font-bold">{{ $item->name }}</h1>
+        <hr class="my-2">
 
-    {!! $item->renderBlocks(false) !!}
+        <div>
+            <h3 class="text-xl text-center">Wie is {{ $item->name }}?</h3>
+            <p class="text-center">{!! $item->description !!}</p>
+            <p class="text-center">Huidig address:  {!! $item->address !!}</p>
+        </div>
+        <hr class="my-2">
+
+        @if(!empty($item->blocks))
+            <div class="self-center flex flex-col justify-center">
+                <h2 class="text-xl font-semibold">
+                    <i class="fas fa-arrow-down"></i>
+                    Check de boer op social media!
+                    <i class="fas fa-arrow-down"></i>
+                </h2>
+                <div class="self-center">{!! $item->renderBlocks(false) !!}</div>
+            </div>
+            <hr class="my-2">
+        @endif
+
+        <img src="{{ $item->image("farmer_profile", 'desktop') }}" alt="{{ $item->imageAltText("farmer_profile") }}"/><br/>
+    </div>
 @endsection

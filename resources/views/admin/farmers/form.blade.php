@@ -17,4 +17,8 @@
         'label' => 'Profiel foto',
         'fieldNote' => 'Een mooie afbeelding van de boer of de boerderij',
     ])
+
+    @formField('block_editor', [
+        'blocks' => ['social_media_links']
+    ])
 @stop
