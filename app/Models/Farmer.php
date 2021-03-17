@@ -5,39 +5,29 @@ namespace App\Models;
 use A17\Twill\Models\Behaviors\HasBlocks;
 use A17\Twill\Models\Behaviors\HasSlug;
 use A17\Twill\Models\Behaviors\HasMedias;
+use A17\Twill\Models\Behaviors\HasFiles;
 use A17\Twill\Models\Behaviors\HasRevisions;
 use A17\Twill\Models\Model;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class Municipality extends Model 
+class Farmer extends Model 
 {
-    use HasBlocks, HasSlug, HasMedias, HasRevisions;
-
-    protected $fillable = [
-        'name',
-        'body',
-        'picture'
-    ];
-
-    public function farmers (): HasMany
-    {
-        return $this->hasMany(Farmer::class);
-    }
+    use HasBlocks, HasSlug, HasMedias, HasFiles, HasRevisions;
 
     protected $fillable = [
         'published',
-        'title',
+        'name',
+        'address',
         'description',
+        'municipality_id'
     ];
-    
+
     public $slugAttributes = [
-        'title',
+        'name',
     ];
     
     public $mediasParams = [
-        'municipality_picture' => [
+        'farmer_profile' => [
             'desktop' => [
                 [
                     'name' => 'desktop',
@@ -66,4 +56,10 @@ class Municipality extends Model
             ],
         ],
     ];
+
+    public function municipality(): BelongsTo
+    {
+        return $this->belongsTo(Municipality::class);
+    }
+
 }

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\FarmerController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MunicipalityController;
 use App\Http\Controllers\Admin\PageController;
@@ -21,3 +22,4 @@ Route::get('/', function () {
 
 Route::get('gemeente/{municipality:title}', [MunicipalityController::class, 'show'])->name('municipality.show');
 Route::get('/{slug}', [PageController::class, 'view'])->name('pages.show');
+Route::get('/boeren/{slug}', [FarmerController::class, 'view'])->name('farmer.show');
