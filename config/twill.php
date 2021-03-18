@@ -16,7 +16,7 @@ return [
         'users-2fa' => false, // requires imagick
         'users-oauth' => false,
     ],
-    
+
     'locale' => 'nl',
     'fallback_locale' => 'en',
     'block_editor' => [
@@ -33,6 +33,7 @@ return [
                 'component' => 'a17-block-contact_link'
             ],
             'contact_form' => 'a17-block-contact_form',
+            'location_map' => 'a17-block-location_map',
         ],
         'repeaters' => [
             'social_media_links_item' => [
@@ -77,4 +78,3 @@ return [
         ],
     ],
 ];
-
