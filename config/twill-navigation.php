@@ -6,7 +6,8 @@ return [
         'module' => true
     ],
     'municipalities' => [
-        'title' => 'Municipalities',
+        'title' => 'Gemeentes',
+        'module' => true
     ],
     'farmers' => [
         'title' => 'Boeren',
