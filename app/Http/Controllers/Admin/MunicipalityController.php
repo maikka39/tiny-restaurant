@@ -14,7 +14,7 @@ class MunicipalityController extends ModuleController
     protected $permalinkBase = 'gemeente';
 
     public function view ($slug) {
-        $municipality = app(MunicipalityRepository::class)->forSlug($slug);
+        $municipality = Municipality::forSlug($slug)->firstOrFail();
         return view('municipality', [
             'municipality' => $municipality
         ]);
