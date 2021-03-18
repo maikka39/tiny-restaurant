@@ -7,6 +7,7 @@ use A17\Twill\Models\Behaviors\HasSlug;
 use A17\Twill\Models\Behaviors\HasMedias;
 use A17\Twill\Models\Behaviors\HasRevisions;
 use A17\Twill\Models\Model;
+
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Municipality extends Model 
