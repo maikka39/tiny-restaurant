@@ -12,7 +12,7 @@
             </div>
             <br/>
             <p class="text-center">Boer {{ $item->name }} woont momenteel op {!! $item->address !!}</p>
-            <p class="text-center">Deze boer is onderdeel van de boerenvereneging in {{ $item->municipality->name }}</p>
+            <p class="text-center">Deze boer is onderdeel van de boerenvereniging in {{ $item->municipality->name }}</p>
         </div>
         <hr class="my-2">
 
