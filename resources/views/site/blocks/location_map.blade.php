@@ -1,4 +1,4 @@
-<div class="p-2 mx-2">
+<div class="p-2 mx-2 lg:w-3/4 max-w-4xl lg:mx-auto">
     <h1 class="text-2xl">{{ $block->input('title') }}</h1>
     <div class="relative w-full h-80">
         <div class="overflow-hidden bg-none w-full h-full">
