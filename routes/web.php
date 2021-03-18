@@ -22,4 +22,4 @@ Route::get('/', function () {
 
 Route::get('gemeente/{slug}', [MunicipalityController::class, 'view'])->name('municipality.show');
 Route::get('/{slug}', [PageController::class, 'view'])->name('pages.show');
-Route::get('/boeren/{slug}', [FarmerController::class, 'view'])->name('farmer.show');
+Route::get('boer/{slug}', [FarmerController::class, 'view'])->name('farmer.show');
