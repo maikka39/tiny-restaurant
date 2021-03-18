@@ -4,12 +4,20 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Municipality extends Model
 {
     use HasFactory;
 
-    public function partners () {
-        return $this->hasMany(Partner::class);
+    protected $fillable = [
+        'name',
+        'body',
+        'picture'
+    ];
+
+    public function farmers (): HasMany
+    {
+        return $this->hasMany(Farmer::class);
     }
 }
