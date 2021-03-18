@@ -6,7 +6,5 @@
         'label' => 'Description'
     ])
 
-    @formField('block_editor', [
-        'blocks' => ['text', 'image']
-    ])
+    @formField('block_editor')
 @stop
