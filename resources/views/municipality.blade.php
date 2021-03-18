@@ -39,7 +39,7 @@
                 <div class='p-2 h-auto'>
                     <h5 class='text-xl font-bold'> {{ $farmer->name }} </h5>
                     <p> {{ strip_tags($farmer->description, null)  }} <p>
-                    <a href='{{ route('farmer.show', $farmer->name) }}' class='m-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded float-right'> Lees meer </a>
+                    <a href='{{ route('farmer.show', $farmer->slug) }}' class='m-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded float-right'> Lees meer </a>
                 </div>
             </div>
         @endforeach
