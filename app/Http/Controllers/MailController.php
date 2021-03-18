@@ -19,8 +19,8 @@ class MailController extends BaseController
     {
         $validated = $request->validated();
 
-        Mail::to($validated['email'])
-            ->queue(new EmailFromUser($validated['message'], $validated['name']));
+
+        Mail::queue(new EmailFromUser($validated['message'], $validated['name'], $validated['email']));
 
         $request->session()->flash('success_message', 'Email verzonden!');
 

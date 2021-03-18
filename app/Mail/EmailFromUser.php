@@ -12,17 +12,20 @@ class EmailFromUser extends Mailable
 
     public $message;
     public $name;
+    public $sender;
 
     /**
      * Create a new message instance.
      *
-     * @param $message
+     * @param string $message
      * @param string $name
+     * @param string $sender
      */
-    public function __construct(string $message, string $name)
+    public function __construct(string $message, string $name, string $sender)
     {
         $this->message = $message;
         $this->name = $name;
+        $this->sender = $sender;
     }
 
     /**
@@ -33,6 +36,8 @@ class EmailFromUser extends Mailable
     public function build(): EmailFromUser
     {
         return $this->markdown('emails.EmailFromUser')
+            ->to('info@stichtingmiep.nl')
+            ->from($this->sender)
             ->subject('Email voor Tiny Restaurant (via website)');
     }
 }
