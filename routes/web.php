@@ -17,10 +17,6 @@ use App\Http\Controllers\Admin\PageController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Route::post('/contact', [MailController::class, 'sendMail'])->name('contact.sendMail');
 Route::get('gemeente/{slug}', [MunicipalityController::class, 'view'])->name('municipality.show');
 Route::get('/{slug}', [PageController::class, 'view'])->name('pages.show');
