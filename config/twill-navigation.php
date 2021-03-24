@@ -12,6 +12,10 @@ return [
     'farmers' => [
         'title' => 'Boeren',
         'module' => true
+    ],
+    'projects' => [
+        'title' => 'Projects',
+        'module' => true
     ]
 ];
 
