@@ -14,7 +14,7 @@ return [
         'module' => true
     ],
     'projects' => [
-        'title' => 'Projects',
+        'title' => 'Projecten',
         'module' => true
     ]
 ];

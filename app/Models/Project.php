@@ -6,19 +6,18 @@ use A17\Twill\Models\Behaviors\HasBlocks;
 use A17\Twill\Models\Behaviors\HasSlug;
 use A17\Twill\Models\Behaviors\HasMedias;
 use A17\Twill\Models\Behaviors\HasRevisions;
-use A17\Twill\Models\Behaviors\HasPosition;
 use A17\Twill\Models\Behaviors\Sortable;
 use A17\Twill\Models\Model;
 
-class Project extends Model implements Sortable
+class Project extends Model 
 {
-    use HasBlocks, HasSlug, HasMedias, HasRevisions, HasPosition;
+    use HasBlocks, HasSlug, HasMedias, HasRevisions;
 
     protected $fillable = [
         'published',
         'title',
         'description',
-        'position',
+        'date'
     ];
     
     public $slugAttributes = [
