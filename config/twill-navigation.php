@@ -12,6 +12,10 @@ return [
     'farmers' => [
         'title' => 'Boeren',
         'module' => true
+    ],
+    'newsItems' => [
+        'title' => 'NewsItems',
+        'module' => true
     ]
 ];
 
