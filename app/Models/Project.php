@@ -57,10 +57,10 @@ class Project extends Model
     ];
 
     public function farmers() {
-        return $this->morphedByMany(Farmer::class, 'project_involved');
+        return $this->morphedByMany(Farmer::class, 'involved', 'project_involved');
     }
 
     public function municipalities() {
-        return $this->morphedByMany(Municipality::class, 'project_involved');
+        return $this->morphedByMany(Municipality::class, 'involved', 'project_involved');
     }
 }

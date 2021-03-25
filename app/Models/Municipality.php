@@ -62,6 +62,6 @@ class Municipality extends Model
 
     public function projects() 
     {
-        return $this->morphToMany(Project::class, 'project_involved');
+        return $this->morphToMany(Project::class, 'involved', 'project_involved');
     }
 }
