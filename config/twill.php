@@ -41,6 +41,12 @@ return [
                 'trigger' => 'Nieuwe link toevoegen',
                 'component' => 'a17-block-social_media_links_item'
             ]
+            ,
+            'farmers_item' => [
+                'title' => 'Boer',
+                'trigger' => 'Nieuwe boer toevoegen',
+                'component' => 'a17-block-boer_item'
+            ]
         ],
         'crops' => [
             'image' => [

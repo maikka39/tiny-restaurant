@@ -4,7 +4,7 @@
     @formField('wysiwyg', [
         'name' => 'description',
         'label' => 'Description',
-        'placeholder' => 'Vul hier een beschrijving in voor het project.'
+        'placeholder' => 'Vul hier een beschrijving in voor het project.',
         'maxlength' => 500
     ])
 

@@ -15,13 +15,14 @@ class Project extends Model
 
     protected $fillable = [
         'published',
-        'title',
+        'name',
         'description',
-        'date'
+        'date',
+        'address'
     ];
     
     public $slugAttributes = [
-        'title',
+        'name',
     ];
     
     public $mediasParams = [
@@ -56,10 +57,10 @@ class Project extends Model
     ];
 
     public function farmers() {
-        return $this->morphedByMany(Farmer::class, 'involved');
+        return $this->morphedByMany(Farmer::class, 'project_involved');
     }
 
     public function municipalities() {
-        return $this->morphedByMany(Municipality::class, 'involved');
+        return $this->morphedByMany(Municipality::class, 'project_involved');
     }
 }

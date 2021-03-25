@@ -64,7 +64,7 @@ class Farmer extends Model
 
     public function projects() 
     {
-        return $this->morphToMany(Project::class, 'involved');
+        return $this->morphToMany(Project::class, 'project_involved');
     }
 
 }
