@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use A17\Twill\Http\Controllers\Admin\ModuleController;
 use App\Repositories\FarmerRepository;
+use App\Models\Project;
 use App\Repositories\MunicipalityRepository;
 
 class ProjectController extends ModuleController
@@ -14,8 +15,8 @@ class ProjectController extends ModuleController
 
     public function view($slug) {
         $project = Project::forSlug($slug)->firstOrFail();
-        return view('project', [
-            'project' => $project
+        return view('site.project', [
+            'item' => $project
         ]);
 
     }

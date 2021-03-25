@@ -13,6 +13,20 @@
         'label' => 'Adres'
     ])
 
+    @formField('browser', [
+        'name' => 'municipalities',
+        'label' => 'Gemeentes',
+        'max' => 5,
+        'moduleName' => 'municipalities',
+    ])
+
+    @formField('browser', [
+        'name' => 'farmers',
+        'label' => 'Boeren',
+        'max' => 5,
+        'moduleName' => 'farmers',
+    ])
+
     @formField('medias', [
         'name' => 'project_image',
         'label' => 'Afbeelding',

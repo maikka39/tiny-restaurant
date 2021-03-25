@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\FarmerController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\MunicipalityController;
 use App\Http\Controllers\Admin\PageController;
+use App\Http\Controllers\Admin\ProjectController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,4 +22,4 @@ Route::post('/contact', [MailController::class, 'sendMail'])->name('contact.send
 Route::get('gemeente/{slug}', [MunicipalityController::class, 'view'])->name('municipality.show');
 Route::get('/{slug}', [PageController::class, 'view'])->name('pages.show');
 Route::get('boer/{slug}', [FarmerController::class, 'view'])->name('farmer.show');
-Route::get('project/{slug}', [FarmerController::class, 'view'])->name('project.show');
+Route::get('project/{slug}', [ProjectController::class, 'view'])->name('project.show');

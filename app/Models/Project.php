@@ -24,9 +24,14 @@ class Project extends Model
     public $slugAttributes = [
         'name',
     ];
+
+    public $browsers = [
+        'municipalities',
+        'farmers'
+    ];
     
     public $mediasParams = [
-        'cover' => [
+        'project_image' => [
             'desktop' => [
                 [
                     'name' => 'desktop',
@@ -56,11 +61,13 @@ class Project extends Model
         ],
     ];
 
-    public function farmers() {
+    public function farmers() 
+    {
         return $this->morphedByMany(Farmer::class, 'involved', 'project_involved');
     }
 
-    public function municipalities() {
-        return $this->morphedByMany(Municipality::class, 'involved', 'project_involved');
+    public function municipalities() 
+    {
+        return $this->morphedByMany(Municipality::class, 'involved', 'project_involved', 'project_id', 'involved_id', null, null );
     }
 }

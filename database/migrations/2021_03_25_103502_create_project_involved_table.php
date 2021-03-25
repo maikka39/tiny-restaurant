@@ -17,6 +17,7 @@ class CreateProjectInvolvedTable extends Migration
             $table->integer('project_id');
             $table->integer('involved_id');
             $table->string('involved_type');
+            $table->integer('position')->unsigned();
         });
     }
 
