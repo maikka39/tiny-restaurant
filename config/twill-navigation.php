@@ -14,8 +14,8 @@ return [
         'module' => true
     ],
     'newsItems' => [
-        'title' => 'NewsItems',
-        'module' => true
+        'title' => 'Nieuws',
+        'module' => true,
     ]
 ];
 
