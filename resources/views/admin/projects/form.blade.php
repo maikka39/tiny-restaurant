@@ -3,7 +3,7 @@
 @section('contentFields')
     @formField('wysiwyg', [
         'name' => 'description',
-        'label' => 'Description',
+        'label' => 'Beschrijving',
         'placeholder' => 'Vul hier een beschrijving in voor het project.',
         'maxlength' => 500
     ])
@@ -13,17 +13,22 @@
         'label' => 'Adres'
     ])
 
+    @formField('date_picker', [
+        'name' => 'date',
+        'label' => 'Datum en Tijd'
+    ])
+
     @formField('browser', [
         'name' => 'municipalities',
         'label' => 'Gemeentes',
-        'max' => 5,
+        'max' => 20,
         'moduleName' => 'municipalities',
     ])
 
     @formField('browser', [
         'name' => 'farmers',
         'label' => 'Boeren',
-        'max' => 5,
+        'max' => 300,
         'moduleName' => 'farmers',
     ])
 
