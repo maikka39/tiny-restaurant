@@ -15,6 +15,9 @@ class DatabaseSeeder extends Seeder
     {
         $this->call([
             SuperAdminSeeder::class,
+            MunicipalitySeeder::class,
+            PageSeeder::class,
+            FarmerSeeder::class
         ]);
         // \App\Models\User::factory(10)->create();
     }
