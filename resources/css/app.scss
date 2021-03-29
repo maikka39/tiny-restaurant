@@ -1,13 +1,76 @@
-// Fonts
+// Google Fonts
+@import url("https://fonts.googleapis.com/css2?family=Indie+Flower&family=New+Tegomin&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Staatliches&display=swap");
+
+// fontawesome
 @import "~@fortawesome/fontawesome-free/scss/fontawesome";
 @import "~@fortawesome/fontawesome-free/scss/solid";
 @import "~@fortawesome/fontawesome-free/scss/brands";
 @import "~@fortawesome/fontawesome-free/scss/regular";
 
+// tailwind
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-* {
-  font-family: "Roboto", sans-serif;
+// typography
+p {
+    @apply font-sans;
+}
+
+h1 {
+    @apply font-display;
+}
+
+.title {
+    @apply text-5xl font-display text-center;
+}
+
+// layout
+.container {
+    @apply mx-auto px-4;
+}
+
+.columns {
+    @apply grid grid-cols-1 w-full;
+
+    @screen md {
+        @apply grid-cols-3 gap-4;
+    }
+}
+
+// elements
+.button {
+    @apply inline-block bg-blue-500 text-white font-bold px-4 py-2 rounded;
+
+    &:hover {
+        @apply bg-blue-700;
+    }
+}
+
+.card {
+    @apply rounded shadow-lg my-4;
+    
+    img {
+        @apply object-cover w-full h-80;
+
+        @screen md {
+            @apply h-56;
+        }
+    }
+    
+    .body {
+        @apply p-4;
+        
+        h3 {
+            @apply font-bold text-xl mb-2;
+        }
+        
+        .description {
+            @apply text-base;
+        }
+
+        .footer {
+            @apply mt-4;
+        }
+    }
 }
