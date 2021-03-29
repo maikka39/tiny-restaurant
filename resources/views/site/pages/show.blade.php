@@ -1,10 +1,10 @@
 @extends('site.layouts.base', [
-    'title' => $item->title
+    'title' => $item->title,
+    'header' => true,
+    'featured' => $item->image('featured', 'desktop')
 ])
 
 @section('content')
-    <h1>{{ $item->title }}</h1>
     {!! $item->description !!}
-
     {!! $item->renderBlocks(false) !!}
 @endsection

@@ -1,4 +1,4 @@
-<div class="p-2 mx-2">
+<div class="my-4">
     <h1 class="text-4xl">{{ $block->input('title') }}</h1>
     <p class="my-2">{{ $block->input('description') }}</p>
     <form class="p-2 pl-4 bg-gray-200" method="POST" action="{{ route('contact.sendMail') }}">
