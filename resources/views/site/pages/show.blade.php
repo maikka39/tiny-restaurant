@@ -1,4 +1,6 @@
-@extends('layouts.base')
+@extends('site.layouts.base', [
+    'title' => $item->title
+])
 
 @section('content')
     <h1>{{ $item->title }}</h1>
