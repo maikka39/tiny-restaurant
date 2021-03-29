@@ -34,6 +34,7 @@ return [
             ],
             'contact_form' => 'a17-block-contact_form',
             'location_map' => 'a17-block-location_map',
+            'banner' => 'a17-block-banner'
         ],
         'repeaters' => [
             'social_media_links_item' => [
