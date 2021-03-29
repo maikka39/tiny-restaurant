@@ -9,6 +9,7 @@
     <title>{{ env('APP_NAME') }}</title>
 </head>
 <body>
+    <x-navbar />
     <div>
         @yield('content')
     </div>
