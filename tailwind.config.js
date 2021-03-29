@@ -1,3 +1,5 @@
+const { reduce } = require("lodash");
+
 module.exports = {
   purge: [
     './resources/**/*.blade.php',
@@ -14,6 +16,11 @@ module.exports = {
     },
     container: {
       center: true,
+    },
+    extend: {
+      colors: {
+        'primary': 'green', // TODO: pick a nice color
+      },
     },
   },
   variants: {

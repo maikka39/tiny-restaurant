@@ -18,7 +18,15 @@ p {
 }
 
 h1 {
-    @apply font-display;
+    @apply text-4xl font-display;
+}
+
+h2 {
+    @apply text-2xl;
+}
+
+h3, h4, h5, h6 {
+    @apply text-xl font-bold;
 }
 
 .title {
@@ -38,12 +46,32 @@ h1 {
     }
 }
 
+// forms
+input[type=text],
+input[type=email],
+input[type=password],
+textarea {
+    @apply p-2 rounded w-full border /*border-gray-300*/ px-2 transition-all outline-none;
+
+    &:focus {
+        @apply border-primary;
+    }
+}
+
 // elements
+.error {
+    @apply text-red-500 text-sm my-2;
+}
+
+.success {
+    @apply text-green-500 text-sm my-2;
+}
+
 .button {
-    @apply inline-block bg-blue-500 text-white font-bold px-4 py-2 rounded;
+    @apply inline-block bg-primary text-white font-bold px-4 py-2 rounded;
 
     &:hover {
-        @apply bg-blue-700;
+        @apply bg-primary;
     }
 }
 
