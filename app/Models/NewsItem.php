@@ -7,6 +7,7 @@ use A17\Twill\Models\Behaviors\HasSlug;
 use A17\Twill\Models\Behaviors\HasMedias;
 use A17\Twill\Models\Behaviors\HasRevisions;
 use A17\Twill\Models\Model;
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Relations\MorphToMany;
 
 class NewsItem extends Model 
@@ -67,5 +68,20 @@ class NewsItem extends Model
     public function farmers(): MorphToMany
     {
         return $this->morphedByMany(Farmer::class, 'link', 'news_item_links', 'id');
+    }
+
+    public function getUpdatedAtAttribute($value)
+    {
+        return Carbon::parse($value)->format('d-m-y H:i');
+    }
+
+    public function getDescriptionAttribute($value)
+    {
+        //check for admin overview page
+        if(url()->current() === config('app.url') . '/admin/newsItems') {
+            return mb_strimwidth($value, 0, 50, "...");
+        } else {
+            return $value;
+        }
     }
 }

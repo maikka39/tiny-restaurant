@@ -24,6 +24,7 @@
     @formField('browser', [
         'name' => 'links',
         'label' => 'linkable object',
+        'max' => 10,
         'modules' => [
             [ 'label' => 'Pages', 'name' => 'pages' ],
             [ 'label' => 'Farmers', 'name' => 'farmers' ],

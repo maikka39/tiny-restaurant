@@ -14,6 +14,8 @@ class NewsItemRepository extends ModuleRepository
 {
     use HandleBlocks, HandleSlugs, HandleMedias, HandleRevisions, HandleBrowsers;
 
+    private $supportedLinks = ['municipalities', 'pages', 'farmers'];
+
     public function __construct(NewsItem $model)
     {
         $this->model = $model;
@@ -23,9 +25,9 @@ class NewsItemRepository extends ModuleRepository
     {
         $fields = parent::getFormFields($object);
 
-        $fields['browsers']['municipalities'] = $this->getFormFieldsForBrowser($object, 'municipalities');
-        $fields['browsers']['pages'] = $this->getFormFieldsForBrowser($object, 'pages');
-        $fields['browsers']['farmers'] = $this->getFormFieldsForBrowser($object, 'farmers');
+        foreach ($this->supportedLinks as $link) {
+            $fields['browsers'][$link] = $this->getFormFieldsForBrowser($object, $link);
+        }
 
         return $fields;
     }
