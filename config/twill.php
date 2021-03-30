@@ -34,13 +34,15 @@ return [
             ],
             'contact_form' => 'a17-block-contact_form',
             'location_map' => 'a17-block-location_map',
+            'partners' => 'a17-block-partners',
         ],
         'repeaters' => [
             'social_media_links_item' => [
                 'title' => 'Social Media link',
                 'trigger' => 'Nieuwe link toevoegen',
                 'component' => 'a17-block-social_media_links_item'
-            ]
+            ],
+            'partner_item' => 'a17-block-partner_item',
         ],
         'crops' => [
             'image' => [
