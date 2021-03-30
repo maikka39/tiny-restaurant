@@ -1,5 +1,12 @@
 @extends('layouts.base')
 
+@push('css')
+    <link href="{{ asset('css/slideshow.css') }}" rel="stylesheet">
+@endpush
+@push('scripts') 
+    <script type="text/javascript" src="{{asset('js/slideshow.js')}}" defer></script>
+@endpush
+
 @section('content')
     <div class="mx-4">
         <div>
@@ -19,9 +26,38 @@
             </div>
         </div>
 
+        @if (count($item->municipalities) > 0)
+            <!-- Slideshow container -->
+            <div class="flex-container">
+                <div class="slideshow-container">
+                    @foreach ($item->municipalities as $municipality)
+                        <div class='mySlides fade border-2 border-gray-300 mb-3 mt-3 shadow-lg'>
+                            <img src=' {{ $municipality->image('municipality_picture', 'desktop') }} '
+                            alt='Afbeelding Gemeente'>
+                            <div class='p-2 h-auto flex justify-between items-center'>
+                                <h5 class='text-xl font-bold'> Gemeente {{ $municipality->title }} </h5>
+                                <a href='{{ route('municipality.show', $municipality->slug) }}' class='m-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'> Lees meer </a>
+                            </div>
+                        </div>
+                    @endforeach
+                
+                    <!-- Next and previous buttons -->
+                    <a class="prev">&#10094;</a>
+                    <a class="next">&#10095;</a>
+                </div>
+                <br>
+                
+                <!-- The dots/circles -->
+                <div id='slideshowdots'>
+                </div>
+            </div>
+        @endif
+
         <div class="self-center flex flex-col justify-center">
             <div class="self-center">{!! $item->renderBlocks(false) !!}</div>
         </div>
         <hr class="my-2">
     </div>
 @endsection
+
+
