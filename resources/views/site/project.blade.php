@@ -26,7 +26,7 @@
             </div>
         </div>
 
-        @if (count($item->municipalities) > 0)
+        @if (count($item->municipalities) > 0 || count($item->farmers) > 0)
             <!-- Slideshow container -->
             <div class="flex-container">
                 <div class="slideshow-container">
@@ -35,8 +35,19 @@
                             <img src=' {{ $municipality->image('municipality_picture', 'desktop') }} '
                             alt='Afbeelding Gemeente'>
                             <div class='p-2 h-auto flex justify-between items-center'>
-                                <h5 class='text-xl font-bold'> Gemeente {{ $municipality->title }} </h5>
+                                <h5 class='text-xl font-bold'>Onze boeren uit gemeente {{ $municipality->title }}</h5>
                                 <a href='{{ route('municipality.show', $municipality->slug) }}' class='m-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'> Lees meer </a>
+                            </div>
+                        </div>
+                    @endforeach
+
+                    @foreach ($item->farmers as $farmer)
+                        <div class='mySlides fade border-2 border-gray-300 mb-3 mt-3 shadow-lg'>
+                            <img src=' {{ $farmer->image('farmer_profile', 'desktop') }} '
+                            alt='Afbeelding Boer'>
+                            <div class='p-2 h-auto flex justify-between items-center'>
+                                <h5 class='text-xl font-bold'> {{ $farmer->name }} </h5>
+                                <a href='{{ route('farmer.show', $farmer->slug) }}' class='m-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'> Lees meer </a>
                             </div>
                         </div>
                     @endforeach
