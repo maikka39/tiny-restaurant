@@ -13,6 +13,8 @@ class NewsItemRequest extends Request
 
     public function rulesForUpdate()
     {
-        return [];
+        return [
+            'description' => 'required|string'
+        ];
     }
 }

@@ -14,21 +14,27 @@ class NewsItemRepository extends ModuleRepository
 {
     use HandleBlocks, HandleSlugs, HandleMedias, HandleRevisions, HandleBrowsers;
 
-    private $supportedLinks = ['municipalities', 'pages', 'farmers'];
-
     public function __construct(NewsItem $model)
     {
         $this->model = $model;
     }
 
-    public function getFormFields($object): array
+    public function afterSave($object, $fields)
     {
-        $fields = parent::getFormFields($object);
-
-        foreach ($this->supportedLinks as $link) {
-            $fields['browsers'][$link] = $this->getFormFieldsForBrowser($object, $link);
+        if(array_key_exists('browsers', $fields) && isset($fields['browsers']['links'])) {
+            $position = 1;
+            foreach ($fields['browsers']['links'] as $link) {
+                if($link["endpointType"] == 'App\\Models\\Municipality') {
+                    $object->municipalities()->attach($link["id"], ["position" => $position++]);
+                }
+                else if($link["endpointType"] == 'App\\Models\\Farmer') {
+                    $object->farmers()->attach($link["id"], ["position" => $position++]);
+                }
+                else if($link["endpointType"] == 'App\\Models\\Page') {
+                    $object->pages()->attach($link["id"], ["position" => $position++]);
+                }
+            }
         }
-
-        return $fields;
+        parent::afterSave($object, $fields);
     }
 }

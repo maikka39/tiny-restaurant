@@ -14,9 +14,10 @@ class CreateNewsItemLinksTable extends Migration
     public function up()
     {
         Schema::create('news_item_links', function (Blueprint $table) {
-            $table->id();
+            $table->integer('id');
             $table->integer('link_id');
             $table->string('link_type');
+            $table->integer('position')->unsigned()->index();
             $table->timestamps();
         });
     }

@@ -57,17 +57,23 @@ class NewsItem extends Model
 
     public function municipalities(): MorphToMany
     {
-        return $this->morphedByMany(Municipality::class, 'link', 'news_item_links', 'id');
+        return $this->morphedByMany(Municipality::class, 'link', 'news_item_links', 'id')
+            ->withPivot('position')
+            ->withTimestamps();
     }
 
     public function pages(): MorphToMany
     {
-        return $this->morphedByMany(Page::class, 'link', 'news_item_links', 'id');
+        return $this->morphedByMany(Page::class, 'link', 'news_item_links', 'id')
+            ->withPivot('position')
+            ->withTimestamps();;
     }
 
     public function farmers(): MorphToMany
     {
-        return $this->morphedByMany(Farmer::class, 'link', 'news_item_links', 'id');
+        return $this->morphedByMany(Farmer::class, 'link', 'news_item_links', 'id')
+            ->withPivot('position')
+            ->withTimestamps();;
     }
 
     public function getUpdatedAtAttribute($value)
