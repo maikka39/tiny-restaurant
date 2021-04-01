@@ -13,5 +13,6 @@
     <div>
         @yield('content')
     </div>
+    <x-footer />
 </body>
 </html>

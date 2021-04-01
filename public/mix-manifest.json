@@ -1,5 +1,7 @@
 {
     "/js/app.js": "/js/app.js",
     "/css/municipality.css": "/css/municipality.css",
-    "/css/app.css": "/css/app.css"
+    "/css/app.css": "/css/app.css",
+    "/img/logo_large.png": "/img/logo_large.png",
+    "/img/logo_small_icon_only.png": "/img/logo_small_icon_only.png"
 }
