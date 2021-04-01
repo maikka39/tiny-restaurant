@@ -19,8 +19,8 @@
             <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
                 {{--Logos--}}
                 <div class="flex-shrink-0 flex items-center">
-                    <img class="block lg:hidden h-8 w-auto" src="resources/img/logo_large.png" alt="Tiny Restaurant">
-                    <img class="hidden lg:block h-8 w-auto" src="resources/img/logo_small_icon_only.png" alt="Tiny Restaurant">
+                    <img class="block lg:hidden h-8 w-auto" src="/img/logo_large.png" alt="Tiny Restaurant">
+                    <img class="hidden lg:block h-8 w-auto" src="/img/logo_small_icon_only.png" alt="Tiny Restaurant">
                 </div>
                 {{--Navbar links--}}
                 <div class="hidden sm:block sm:ml-6">
