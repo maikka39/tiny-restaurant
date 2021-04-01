@@ -11,6 +11,7 @@ module.exports = {
       'trgreen': '#6baa75',
       'trgreen-dark': '#55885d',
     },
+    extend: {},
   },
   variants: {
     extend: {},
