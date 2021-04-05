@@ -46,4 +46,31 @@ class NewsItemController extends ModuleController
             'sort' => true,
         ],
     ];
+
+    protected function previewData($item): array
+    {
+        $newsItems = $this->repository
+            ->get()
+            ->sortByDesc(function ($newItem) {
+                return $newItem->updated_at;
+            });
+        
+        return [
+            'preview' => true,
+            'newsItems' => $newsItems,
+        ];
+    }
+
+    public function view()
+    {
+        $publishedNewItems = $this->repository
+            ->get()
+            ->where('published', true)
+            ->sortByDesc(function ($newItem) {
+                return $newItem->updated_at;
+            });
+
+        return view('site.news')
+            ->with('newsItems', $publishedNewItems);
+    }
 }

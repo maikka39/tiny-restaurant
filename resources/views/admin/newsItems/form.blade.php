@@ -16,7 +16,8 @@
             'italic',
             'underline',
             'clean',
-            'blockquote'
+            'blockquote',
+            'link'
         ],
         'editSource' => $enableSourceCode
     ])

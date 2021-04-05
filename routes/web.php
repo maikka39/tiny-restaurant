@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\NewsItemController;
 use App\Http\Controllers\MailController;
 use App\Http\Controllers\Admin\FarmerController;
 use Illuminate\Support\Facades\Route;
@@ -19,5 +20,6 @@ use App\Http\Controllers\Admin\PageController;
 
 Route::post('/contact', [MailController::class, 'sendMail'])->name('contact.sendMail');
 Route::get('gemeente/{slug}', [MunicipalityController::class, 'view'])->name('municipality.show');
+Route::get('/nieuws', [NewsItemController::class, 'view'])->name('newsItems.show');
 Route::get('/{slug}', [PageController::class, 'view'])->name('pages.show');
 Route::get('boer/{slug}', [FarmerController::class, 'view'])->name('farmer.show');

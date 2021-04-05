@@ -89,4 +89,10 @@ class NewsItem extends Model
             return $value;
         }
     }
+
+    public function getTimeSincePosted()
+    {
+        Carbon::setLocale('nl');
+        return $this->created_at->longAbsoluteDiffForHumans(now(), 1);
+    }
 }
