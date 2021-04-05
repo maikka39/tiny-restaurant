@@ -6,14 +6,19 @@ use Illuminate\View\Component;
 
 class TimeLine extends Component
 {
+    public $direction;
+
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($bool)
     {
-        //
+        if($bool)
+            $this->direction = 'left';
+        else
+            $this->direction = 'right';
     }
 
     /**

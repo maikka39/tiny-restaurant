@@ -67,7 +67,7 @@ class NewsItemController extends ModuleController
             ->get()
             ->where('published', true)
             ->sortByDesc(function ($newItem) {
-                return $newItem->updated_at;
+                return $newItem->created_at;
             });
 
         return view('site.news')

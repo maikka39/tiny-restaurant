@@ -1,9 +1,5 @@
 @tailwind utilities;
 
-li {
-  @apply text-purple-500;
-}
-
 .timeline {
   @apply h-full w-9 flex items-center justify-center;
 }
@@ -29,9 +25,38 @@ li {
 }
 
 .card {
-  @apply rounded-xl my-4 mr-auto shadow-md bg-gray-300;
+  @apply rounded-xl my-4 shadow-md bg-gray-300 w-10/12 transition;
+  &:hover {
+    @apply ring-2 ring-purple-500
+  }
 }
 
 .card-title {
   @apply font-semibold text-lg mb-1 text-gray-800 bg-purple-400 rounded-t-xl py-2 px-4;
+}
+
+.card-images {
+  @apply max-h-32 overflow-hidden flex flex-row justify-center items-center bg-gray-200 border-t border-b border-purple-200;
+}
+
+
+//Applying default text decoration for news items
+a {
+  @apply underline hover:text-purple-500;
+}
+
+ul {
+  @apply list-disc pl-4;
+}
+
+h2 {
+  @apply text-3xl font-semibold;
+}
+
+h3 {
+  @apply text-2xl font-semibold;
+}
+
+h4 {
+  @apply text-xl font-semibold;
 }

@@ -3,6 +3,6 @@
         <div class="timeline-inner"></div>
     </div>
     <div class="timeline-circle">
-        <i class="fa fa-arrow-right timeline-circle-logo"></i>
+        <i class="fa fa-arrow-{{ $direction }} timeline-circle-logo"></i>
     </div>
 </div>
