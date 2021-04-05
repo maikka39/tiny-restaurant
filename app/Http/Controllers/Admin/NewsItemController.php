@@ -6,10 +6,29 @@ use A17\Twill\Http\Controllers\Admin\ModuleController;
 
 class NewsItemController extends ModuleController
 {
-    protected $permalinkBase = 'nieuws';
     protected $titleColumnKey = 'title';
     protected $moduleName = 'newsItems';
-    protected $previewView = 'site.blocks.news_item';
+    protected $previewView = 'site.news';
+    protected $defaultIndexOptions = [
+        'create' => true,
+        'edit' => true,
+        'publish' => true,
+        'bulkPublish' => true,
+        'feature' => false,
+        'bulkFeature' => false,
+        'restore' => true,
+        'bulkRestore' => true,
+        'forceDelete' => true,
+        'bulkForceDelete' => true,
+        'delete' => true,
+        'duplicate' => false,
+        'bulkDelete' => true,
+        'reorder' => false,
+        'permalink' => false,
+        'bulkEdit' => true,
+        'editInModal' => false,
+        'skipCreateModal' => false,
+    ];
     protected $indexColumns = [
         'description' => [
             'title' => 'Beschrijving',
@@ -25,23 +44,6 @@ class NewsItemController extends ModuleController
             'title' => 'Titel',
             'field' => 'title',
             'sort' => true,
-        ],
-    ];
-    protected $browserColumns = [
-        'pages' => [
-            'title' => 'Pagina\'s',
-            'relationship' => 'pages',
-            'field' => 'title'
-        ],
-        'farmers' => [ // relation column
-            'title' => 'Boeren',
-            'relationship' => 'farmers',
-            'field' => 'name'
-        ],
-        'municipalities' => [ // relation column
-            'title' => 'Gemeentes',
-            'relationship' => 'municipalities',
-            'field' => 'title'
         ],
     ];
 }

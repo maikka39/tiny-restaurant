@@ -22,10 +22,6 @@ class CreateNewsItemsTables extends Migration
             // $table->timestamp('publish_end_date')->nullable();
         });
 
-        Schema::create('news_item_slugs', function (Blueprint $table) {
-            createDefaultSlugsTableFields($table, 'news_item');
-        });
-
         Schema::create('news_item_revisions', function (Blueprint $table) {
             createDefaultRevisionsTableFields($table, 'news_item');
         });
@@ -34,7 +30,6 @@ class CreateNewsItemsTables extends Migration
     public function down()
     {
         Schema::dropIfExists('news_item_revisions');
-        Schema::dropIfExists('news_item_slugs');
         Schema::dropIfExists('news_items');
     }
 }
