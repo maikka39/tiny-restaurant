@@ -1,0 +1,37 @@
+@tailwind utilities;
+
+li {
+  @apply text-purple-500;
+}
+
+.timeline {
+  @apply h-full w-9 flex items-center justify-center;
+}
+
+.timeline-inner {
+  @apply h-full w-1 bg-gray-800 pointer-events-none;
+}
+
+.timeline-circle {
+  @apply w-9 h-9 absolute top-1/2 -mt-3 rounded-full bg-gray-400 shadow text-center;
+}
+
+.timeline-circle-logo {
+  @apply align-middle pt-2;
+}
+
+.timeline-wrapper {
+  @apply col-start-5 col-end-6 md:mx-auto relative mr-10;
+}
+
+.timeline-component-wrapper {
+  @apply flex flex-col md:grid grid-cols-9 mx-auto p-2;
+}
+
+.card {
+  @apply rounded-xl my-4 mr-auto shadow-md bg-gray-300;
+}
+
+.card-title {
+  @apply font-semibold text-lg mb-1 text-gray-800 bg-purple-400 rounded-t-xl py-2 px-4;
+}

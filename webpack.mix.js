@@ -15,6 +15,7 @@ const tailwindcss = require('tailwindcss');
 mix.js('resources/js/app.js', 'public/js')
     .sass('resources/css/app.scss', 'public/css')
     .sass('resources/css/municipality.scss', 'public/css')
+    .sass('resources/css/newsItem.scss', 'public/css')
     .options({
         processCssUrls: true,
         postCss: [ tailwindcss('./tailwind.config.js')],
