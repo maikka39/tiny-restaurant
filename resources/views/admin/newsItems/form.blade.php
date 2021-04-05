@@ -22,15 +22,17 @@
         'editSource' => $enableSourceCode
     ])
 
-    @formField('browser', [
-        'name' => 'links',
-        'label' => 'linkable object',
-        'max' => 10,
-        'modules' => [
-            [ 'label' => 'Pages', 'name' => 'pages' ],
-            [ 'label' => 'Farmers', 'name' => 'farmers' ],
-            [ 'label' => 'Municipalities', 'name' => 'municipalities' ],
-        ]
+    @formField('medias', [
+        'label' => 'Afbeeldingen',
+        'name' => 'cover',
+        'note' => 'Voeg afbeeldingen aan je bericht toe'
+    ])
+
+    @formField('files', [
+        'label' => 'Bestanden',
+        'name' => 'fakjls',
+        'note' => 'Voeg bestanden aan je bericht toe',
+        'fieldNote' => 'Voeg hier mp3/mp4/pdf bestanden toe',
     ])
 
     @formField('block_editor')
