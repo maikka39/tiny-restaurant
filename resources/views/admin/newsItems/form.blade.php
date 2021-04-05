@@ -25,7 +25,9 @@
     @formField('medias', [
         'label' => 'Afbeeldingen',
         'name' => 'cover',
-        'note' => 'Voeg afbeeldingen aan je bericht toe'
+        'note' => 'Voeg afbeeldingen aan je bericht toe',
+        'max' => 10,
+        'with_multiple' => true
     ])
 
     @formField('files', [

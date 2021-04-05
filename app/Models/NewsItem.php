@@ -18,24 +18,8 @@ class NewsItem extends Model
         'description',
     ];
     
-    public $slugAttributes = [
-        'title',
-    ];
-    
     public $mediasParams = [
         'cover' => [
-            'desktop' => [
-                [
-                    'name' => 'desktop',
-                    'ratio' => 16 / 9,
-                ],
-            ],
-            'mobile' => [
-                [
-                    'name' => 'mobile',
-                    'ratio' => 1,
-                ],
-            ],
             'flexible' => [
                 [
                     'name' => 'free',
