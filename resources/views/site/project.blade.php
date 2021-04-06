@@ -34,9 +34,9 @@
                         <div class='mySlides fade border-2 border-gray-300 mb-3 mt-3 shadow-lg'>
                             <img src=' {{ $municipality->image('municipality_picture', 'desktop') }} '
                             alt='Afbeelding Gemeente'>
-                            <div class='p-2 h-auto flex justify-between items-center'>
-                                <h5 class='text-xl font-bold'>Onze boeren uit gemeente {{ $municipality->title }}</h5>
-                                <a href='{{ route('municipality.show', $municipality->slug) }}' class='m-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'> Lees meer </a>
+                            <div class='p-2 h-auto flex justify-between items-center border-t-2 border-gray-700'>
+                                <h5 class='text-sm font-bold mb-1 md:text-xl lg:text-xl'>Onze boeren uit gemeente {{ $municipality->title }}</h5>
+                                <a href='{{ route('municipality.show', $municipality->slug) }}' class='text-xs whitespace-nowrap m-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded md:text-lg'> Lees meer </a>
                             </div>
                         </div>
                     @endforeach
@@ -45,9 +45,9 @@
                         <div class='mySlides fade border-2 border-gray-300 mb-3 mt-3 shadow-lg'>
                             <img src=' {{ $farmer->image('farmer_profile', 'desktop') }} '
                             alt='Afbeelding Boer'>
-                            <div class='p-2 h-auto flex justify-between items-center'>
-                                <h5 class='text-xl font-bold'> {{ $farmer->name }} </h5>
-                                <a href='{{ route('farmer.show', $farmer->slug) }}' class='m-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'> Lees meer </a>
+                            <div class='p-2 h-auto flex justify-between items-center border-t-2 border-gray-700'>
+                                <h5 class='text-l font-bold mb-1 md:text-xl lg:text-xl'> {{ $farmer->name }} </h5>
+                                <a href='{{ route('farmer.show', $farmer->slug) }}' class='text-xs whitespace-nowrap m-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded md:text-lg'> Lees meer </a>
                             </div>
                         </div>
                     @endforeach
