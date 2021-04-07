@@ -18,20 +18,18 @@ return [
     ],
     'dashboard' => [
         'modules' => [
-            'farmers' => [
+            'App\Models\Farmer' => [
                 'name' => 'farmers',
                 'label' => 'Boeren',
-                'label_singular' => 'Boer',
                 'activity' => true,
                 'search' => true,
                 'create' => true,
                 'count' => true,
                 'search_fields' => ['name', 'description']
             ],
-            'pages' => [
+            'App\Models\Page' => [
                 'name' => 'pages',
                 'label' => 'Pagina\'s',
-                'label_singular' => 'Pagina',
                 'activity' => true,
                 'search' => true,
                 'create' => true,
@@ -39,10 +37,18 @@ return [
                 'draft' => true,
                 'search_fields' => ['title', 'description']
             ],
-            'municipalities' => [
+            'App\Models\Municipality' => [
                 'name' => 'municipalities',
                 'label' => 'Gemeentes',
-                'label_singular' => 'Gemeente',
+                'activity' => true,
+                'search' => true,
+                'create' => true,
+                'count' => true,
+                'search_fields' => ['title', 'description']
+            ],
+            'App\Models\NewsItem' => [
+                'name' => 'newsItems',
+                'label' => 'Nieuws',
                 'activity' => true,
                 'search' => true,
                 'create' => true,

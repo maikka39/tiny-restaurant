@@ -25,10 +25,18 @@
 }
 
 .card {
-  @apply rounded-xl my-4 shadow-md bg-gray-300 w-10/12 transition;
+  @apply rounded-xl my-4 shadow-md bg-gray-300 w-10/12 transition m-auto mb-2 sm:mb-0;
   &:hover {
     @apply ring-2 ring-purple-500
   }
+}
+
+.card-left {
+  @apply sm:col-start-1 sm:col-end-5 sm:ml-auto;
+}
+
+.card-right {
+  @apply sm:col-start-6 sm:col-end-10 sm:mr-auto;
 }
 
 .card-title {
@@ -37,4 +45,12 @@
 
 .card-images {
   @apply max-h-32 overflow-hidden flex flex-row justify-center items-center bg-gray-200 border-t border-b border-purple-200;
+}
+
+.card-attachments {
+  @apply flex flex-row justify-center items-center bg-gray-200 border-t border-b border-purple-200 mt-2;
+}
+
+.publish-date {
+  @apply hidden sm:flex justify-center items-center uppercase text-xl;
 }

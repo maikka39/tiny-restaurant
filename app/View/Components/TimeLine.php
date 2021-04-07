@@ -7,22 +7,18 @@ use Illuminate\View\Component;
 class TimeLine extends Component
 {
     public $direction;
-    public $datetime;
 
     /**
      * Create a new component instance.
      *
      * @param $isEven
-     * @param $datetime
      */
-    public function __construct($isEven, $datetime)
+    public function __construct($isEven)
     {
         if($isEven)
             $this->direction = 'left';
         else
             $this->direction = 'right';
-
-        $this->datetime = $datetime;
     }
 
     /**
