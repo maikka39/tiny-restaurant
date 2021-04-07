@@ -6,11 +6,6 @@ module.exports = {
   ],
   darkMode: false, // or 'media' or 'class'
   theme: {
-    colors: {
-      'trgreen-light': '#88bb90',
-      'trgreen': '#6baa75',
-      'trgreen-dark': '#55885d',
-    },
     extend: {},
   },
   variants: {
