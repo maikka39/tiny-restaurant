@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\MunicipalityController;
 use App\Http\Controllers\Admin\PageController;
 use App\Http\Controllers\Admin\ProjectController;
+use App\Models\Project;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,6 +21,7 @@ use App\Http\Controllers\Admin\ProjectController;
 
 Route::post('/contact', [MailController::class, 'sendMail'])->name('contact.sendMail');
 Route::get('gemeente/{slug}', [MunicipalityController::class, 'view'])->name('municipality.show');
-Route::get('/{slug}', [PageController::class, 'view'])->name('pages.show');
 Route::get('boer/{slug}', [FarmerController::class, 'view'])->name('farmer.show');
+Route::get('/projecten', [ProjectController::class, 'showAll'])->name('project.showAll');
 Route::get('project/{slug}', [ProjectController::class, 'view'])->name('project.show');
+Route::get('/{slug}', [PageController::class, 'view'])->name('pages.show');

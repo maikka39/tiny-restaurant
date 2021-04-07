@@ -13,6 +13,13 @@ class ProjectController extends ModuleController
     protected $permalinkBase = 'project';
     protected $titleColumnKey = 'name';
 
+    public function showAll() {
+        $projects = Project::orderBy('date')->paginate(15);
+        return view('site.projects-overview', [
+            'projects' => $projects
+        ]);
+    }
+
     public function view($slug) {
         $project = Project::forSlug($slug)->firstOrFail();
         return view('site.project', [

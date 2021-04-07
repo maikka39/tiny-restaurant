@@ -100,14 +100,6 @@ $platinum: rgba(238, 235, 231, 1);
   animation-duration: 1.5s;
 }
 
-.readmore {
-  background-color: $fern-green;
-  @apply text-xs whitespace-nowrap m-2 text-white font-bold py-2 px-4 rounded md:text-lg;
-}
-.readmore:hover {
-  background-color: lighten($color: $fern-green, $amount: 4);
-}
-
 @-webkit-keyframes fade {
   from {opacity: .4}
   to {opacity: 1}

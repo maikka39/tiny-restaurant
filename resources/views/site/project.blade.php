@@ -13,7 +13,7 @@
 
 
             <div class="imgholder">
-                <img src="{{ $item->image("project_image", 'desktop') }}" alt="{{ $item->imageAltText("project_image") }}"/><br/>
+                <img class="w-full" src="{{ $item->image("project_image", 'desktop') }}" alt="{{ $item->imageAltText("project_image") }}"/><br/>
             </div>
 
             <div class="m-4 lg:mx-0">
@@ -36,7 +36,7 @@
                     <div class="slideshow-container">
                         @foreach ($item->municipalities as $municipality)
                             <div class='mySlides'>
-                                <img src=' {{ $municipality->image('municipality_picture', 'desktop') }} '
+                                <img class="w-full" src=' {{ $municipality->image('municipality_picture', 'desktop') }} '
                                 alt='Afbeelding Gemeente'>
                                 <div class='slidetextbox'>
                                     <h5>Onze boeren uit gemeente {{ $municipality->title }}</h5>

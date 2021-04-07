@@ -5,7 +5,7 @@
         'name' => 'description',
         'label' => 'Beschrijving',
         'placeholder' => 'Vul hier een beschrijving in voor het project.',
-        'maxlength' => 500
+        'maxlength' => 2500
     ])
 
     @formField('input', [
