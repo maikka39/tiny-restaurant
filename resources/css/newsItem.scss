@@ -38,25 +38,3 @@
 .card-images {
   @apply max-h-32 overflow-hidden flex flex-row justify-center items-center bg-gray-200 border-t border-b border-purple-200;
 }
-
-
-//Applying default text decoration for news items
-a {
-  @apply underline hover:text-purple-500;
-}
-
-ul {
-  @apply list-disc pl-4;
-}
-
-h2 {
-  @apply text-3xl font-semibold;
-}
-
-h3 {
-  @apply text-2xl font-semibold;
-}
-
-h4 {
-  @apply text-xl font-semibold;
-}

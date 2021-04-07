@@ -2,6 +2,7 @@
 
 @push('css')
     <link rel="stylesheet" href="{{ asset('css/newsItem.css') }}"></style>
+    <link rel="stylesheet" href="{{ asset('css/wysiwyg.css') }}"></style>
 @endpush
 
 @section('content')
@@ -10,7 +11,7 @@
         @foreach($newsItems as $newsItem)
             <div class="flex @if($loop->even) flex-row-reverse @endif md:contents">
                 @if(!$loop->even)
-                    <x-time-line :bool="$loop->even"></x-time-line>
+                    <x-time-line :isEven="$loop->even" :datetime="$newsItem->created_at"></x-time-line>
                 @endif
                 <div class="card @if($loop->even) col-start-1 col-end-5 ml-auto @else col-start-6 col-end-10 mr-auto @endif">
                     <h3 class="card-title" id="{{ $newsItem->title }}">
@@ -26,7 +27,7 @@
                     <small class="pl-4">{{ $newsItem->getTimeSincePosted() }} geleden</small>
                 </div>
                 @if($loop->even)
-                    <x-time-line :bool="$loop->even"></x-time-line>
+                    <x-time-line :isEven="$loop->even" :datetime="$newsItem->created_at"></x-time-line>
                 @endif
             </div>
         @endforeach
