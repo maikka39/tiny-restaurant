@@ -10,6 +10,10 @@ window.addEventListener('load', function () {
     var slides = document.getElementsByClassName("mySlides");
     var dots = document.getElementById('slideshowdots');
     for (let i = 0; i < slides.length; i++) {
+
+        if (i >= 10)
+          break;
+
         let dot = document.createElement('span');
         dot.className = 'dot';
         dot.onclick = function () {

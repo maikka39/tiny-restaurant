@@ -8,10 +8,25 @@
 @tailwind components;
 @tailwind utilities;
 
+/* SCSS HEX */
+// $fern-green: #327231ff;
+// $black-chocolate: #221a06ff;
+// $chocolate-web: #ce6727ff;
+// $platinum: #eeebe7ff;
+
+/* SCSS RGB */
+$fern-green: rgba(50, 114, 49, 1);
+$black-chocolate: rgba(34, 26, 6, 1);
+$chocolate-web: rgba(206, 103, 39, 1);
+$platinum: rgba(238, 235, 231, 1);
+
 * {
   font-family: "Roboto", sans-serif;
 }
 
-.imgholder {
-  min-width: 40%;
+// layout
+.container {
+  @apply mx-auto px-4;
 }
+
+@import "project";

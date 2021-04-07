@@ -1,0 +1,20 @@
+.imgholder {
+    min-width: 40%; 
+    @apply max-w-full flex justify-center;
+}
+
+.projectTitle {
+   @apply text-2xl mb-1 md:text-3xl lg:text-4xl; 
+}
+
+.highlight {
+    @apply italic font-bold;
+}
+
+.highlight span {
+    @apply font-normal;
+}
+
+.descriptionbox {
+    @apply max-w-full mt-3 text-justify
+}
