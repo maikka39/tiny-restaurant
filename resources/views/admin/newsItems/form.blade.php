@@ -27,14 +27,17 @@
         'name' => 'cover',
         'note' => 'Voeg afbeeldingen aan je bericht toe',
         'max' => 10,
-        'with_multiple' => true
+        'with_multiple' => true,
+        'buttonOnTop' => true,
     ])
 
     @formField('files', [
         'label' => 'Bestanden',
-        'name' => 'fakjls',
+        'name' => 'attachments',
         'note' => 'Voeg bestanden aan je bericht toe',
         'fieldNote' => 'Voeg hier mp3/mp4/pdf bestanden toe',
+        'max' => 4,
+        'buttonOnTop' => true,
     ])
 
     @formField('block_editor')

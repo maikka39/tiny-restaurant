@@ -3,14 +3,16 @@
 namespace App\Models;
 
 use A17\Twill\Models\Behaviors\HasBlocks;
+use A17\Twill\Models\Behaviors\HasFiles;
 use A17\Twill\Models\Behaviors\HasMedias;
 use A17\Twill\Models\Behaviors\HasRevisions;
 use A17\Twill\Models\Model;
+use A17\Twill\Services\FileLibrary\FileService;
 use Carbon\Carbon;
 
 class NewsItem extends Model 
 {
-    use HasBlocks, HasMedias, HasRevisions;
+    use HasBlocks, HasMedias, HasRevisions, HasFiles;
 
     protected $fillable = [
         'published',
@@ -37,6 +39,10 @@ class NewsItem extends Model
         ],
     ];
 
+    public $filesParams = [
+        'attachments'
+    ];
+
     public function getUpdatedAtAttribute($value)
     {
         return Carbon::parse($value)->format('d-m-y H:i');
@@ -56,5 +62,23 @@ class NewsItem extends Model
     {
         Carbon::setLocale('nl');
         return $this->created_at->longAbsoluteDiffForHumans(now(), 1);
+    }
+
+    public function getCreatedTimeForView()
+    {
+        Carbon::setLocale('nl');
+        return $this->created_at->isoFormat('dddd, D MMMM YYYY, h:mm');
+    }
+
+    public function getTwillFilesWithName(): array
+    {
+        $returnableObjects = [];
+        $files = $this->files;
+        foreach ($files as $file) {
+            $fileObject["url"] = FileService::getUrl($file->uuid);
+            $fileObject["filename"] = $file->filename;
+            array_push($returnableObjects, $fileObject);
+        }
+        return $returnableObjects;
     }
 }

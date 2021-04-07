@@ -14,7 +14,9 @@ class NewsItemRequest extends Request
     public function rulesForUpdate()
     {
         return [
-            'description' => 'required|string'
+            'description' => 'required|string',
+            'attachments' => 'nullable|file',
+            'cover' => 'nullable|image',
         ];
     }
 }
