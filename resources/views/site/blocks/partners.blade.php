@@ -1,7 +1,7 @@
-<div class="flex justify-between items-center text-lg">
+<div class="flex justify-between items-center text-lg flex-col">
     @foreach($block->children as $child)
         <h1>{{$child->input('name')}}</h1>
         <img src="{{$child->image('image', 'desktop')}}" alt="{{$child->imageAltText('image')}}">
-        <p>{{$child->input('description')}}</p>
+        <p>{!!$child->input('description')!!}</p>
     @endforeach
 </div>
