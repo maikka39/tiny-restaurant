@@ -40,7 +40,7 @@
                                 alt='Afbeelding Gemeente'>
                                 <div class='slidetextbox'>
                                     <h5>Onze boeren uit gemeente {{ $municipality->title }}</h5>
-                                    <a href='{{ route('municipality.show', $municipality->slug) }}' class='readmore'> Lees meer </a>
+                                    <a href='{{ route('municipality.show', $municipality->slug) }}' class='button readmore'> Lees meer </a>
                                 </div>
                             </div>
                         @endforeach
@@ -51,7 +51,7 @@
                                 alt='Afbeelding Boer'>
                                 <div class='slidetextbox'>
                                     <h5> {{ $farmer->name }} </h5>
-                                    <a href='{{ route('farmer.show', $farmer->slug) }}' class='readmore'> Lees meer </a>
+                                    <a href='{{ route('farmer.show', $farmer->slug) }}' class='button readmore'> Lees meer </a>
                                 </div>
                             </div>
                         @endforeach

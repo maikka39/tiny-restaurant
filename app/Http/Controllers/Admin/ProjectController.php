@@ -6,6 +6,7 @@ use A17\Twill\Http\Controllers\Admin\ModuleController;
 use App\Repositories\FarmerRepository;
 use App\Models\Project;
 use App\Repositories\MunicipalityRepository;
+use Illuminate\Http\Request;
 
 class ProjectController extends ModuleController
 {
@@ -15,6 +16,26 @@ class ProjectController extends ModuleController
 
     public function showAll() {
         $projects = Project::orderBy('date')->paginate(15);
+        return view('site.projects-overview', [
+            'projects' => $projects
+        ]);
+    }
+
+    public function filter(Request $request) {
+        $keyword = $request->keyword;
+        
+        $projects = Project::orderBy('date')->where(function ($p) use ($keyword){
+
+            if($keyword) {
+
+                $p->where('name', 'like', "%".$keyword."%")
+                    ->orWhere('name', 'like', "%".$keyword."%")
+                    ->orWhere('description', 'like', "%".$keyword."%")
+                    ->orWhere('address', 'like', "%".$keyword."%");
+                
+            }
+        })->latest()->paginate(15);
+
         return view('site.projects-overview', [
             'projects' => $projects
         ]);

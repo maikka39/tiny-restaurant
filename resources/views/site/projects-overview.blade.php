@@ -3,7 +3,26 @@
 @section('content') 
     <div class="w-full flex justify-center px-2">
         <div class="max-w-full lg:max-w-4xl">
-            <h1 class="text-2xl font-bold">Onze projecten</h1>
+            <h1 class="text-2xl font-bold">Onze projecten</h1><br>
+
+            <form method="POST" action="/projecten">
+                @csrf
+
+                <label class="label" for="keyword">Zoekwoord</label>
+                <div class="flex flex-wrap md:flex-nowrap">
+                    
+                
+                    <input class="input mr-2 mb-2" type="text" name="keyword" id="keyword" value="{{old('keyword')}}">
+                
+                    @error('keyword')
+                        <p class="">{{$message}}</p>
+                    @enderror
+                
+                    <div>
+                        <button type="submit" class="button">Plaats reservering</button>  
+                    </div>
+                </div>
+            </form>
 
             @foreach ($projects as $project)
                 <div class="projectcard">
@@ -19,7 +38,7 @@
                                 <p class="highlight">Adres: <span>{{$project->address}}</span></p>
                             </div>
                             <div class="linkholder">
-                                <a href='{{ route('project.show', $project->slug) }}' class='readmore'> Lees meer </a>
+                                <a href='{{ route('project.show', $project->slug) }}' class='button readmore'> Lees meer </a>
                             </div>
                         </div>
                     </div>
