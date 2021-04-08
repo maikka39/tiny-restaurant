@@ -1,5 +1,5 @@
 <footer class="footer relative pt-1 bg-yellow-500">
-    <div class="container sm:w-100 mx-auto px-6">
+    <div class="container mx-auto px-6">
         <div class="sm:flex sm:mt-8">
             <div class="mt-8 sm:mt-0 sm:w-full sm:px-8 flex flex-col md:flex-row justify-between">
                 <div class="flex flex-col">

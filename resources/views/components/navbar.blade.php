@@ -12,17 +12,34 @@
                     </div>
                 </div>
             </div>
+
+
+
+            <button class="navbar-toggler toggler-example sm:invisible" id="hamburgerbtn">
+                <span class="dark-blue-text">
+                    <i class="fas fa-bars fa-1x"></i>
+                </span>
+            </button>
         </div>
+
     </div>
 
     <div class="sm:hidden" id="mobile-menu">
         <div class="px-2 pt-2 pb-3 space-y-1">
-            <a href="{{url('#')}}" class="navbar-text navbar-text-small" aria-current="page">Home</a>
-            <a href="{{url('#')}}" class="navbar-text navbar-text-small">Nieuws</a>
-            <a href="{{url('#')}}" class="navbar-text navbar-text-small">Agenda</a>
-            <a href="{{url('#')}}" class="navbar-text navbar-text-small">Gemeentes</a>
-            <a href="{{url('#')}}" class="navbar-text navbar-text-small">Contact</a>
+            <ul class="hidden md:flex md:flex-row" id="mobileMenu">
+                <li><a href="{{url('#')}}" class="navbar-text navbar-text-small" aria-current="page">Home</a></li>
+                <li><a href="{{url('#')}}" class="navbar-text navbar-text-small">Nieuws</a></li>
+                <li><a href="{{url('#')}}" class="navbar-text navbar-text-small">Agenda</a></li>
+                <li><a href="{{url('#')}}" class="navbar-text navbar-text-small">Gemeentes</a></li>
+                <li><a href="{{url('#')}}" class="navbar-text navbar-text-small">Contact</a></li>
+            </ul>
         </div>
     </div>
 </nav>
 
+<style>
+    .active{
+        display: block;
+    }
+</style>
+<script src="../../js/navbar.js"></script>
