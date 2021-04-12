@@ -1,11 +1,13 @@
 // Colors
-$primary: config('theme.colors.primary');
-$secondary: config('theme.colors.secondary');
-$dark: config('theme.colors.dark');
-$light: config('theme.colors.light');
+$primary: rgba(50, 114, 49, 1);
+$secondary: rgba(206, 103, 39, 1);
+$dark: rgba(34, 26, 6, 1);
+$light: rgba(238, 235, 231, 1);
 
 // Fonts
-$sans: config('theme.fontFamily.sans');
-$serif: config('theme.fontFamily.serif');
-$handwriting: config('theme.fontFamily.handwriting');
-$display: config('theme.fontFamily.display');
+$sans: 'Roboto', 'sans-serif';
+$serif: 'New Tegomin', 'serif';
+$handwriting: 'Indie Flower', 'cursive';
+$display: 'Staatliches', 'cursive';
+
+$bold: 700;

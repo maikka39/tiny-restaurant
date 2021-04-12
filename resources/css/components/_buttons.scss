@@ -1,11 +1,28 @@
 .button {
-    @apply inline-block font-bold px-4 py-2;
+    display: inline-block;
+    font-family: $sans;
+    font-weight: $bold;
+    padding: 1rem 2rem;
+
+    &:hover {
+        cursor: pointer;
+    }
 
     &.primary {
-        @apply bg-primary text-white;
+        background: $primary;
+        color: $light;
 
         &:hover {
             background: darken($primary, 10%);
+        }
+    }
+
+    &.secondary {
+        background: $secondary;
+        color: $light;
+
+        &:hover {
+            background: darken($secondary, 10%);
         }
     }
 }
