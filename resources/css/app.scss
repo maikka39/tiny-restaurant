@@ -12,10 +12,12 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
-body {
-    padding: 1em;
-}
-
+// Theme
 @import 'vars';
 @import 'typography';
+@import 'layout';
+
+// Components
 @import 'components/buttons';
+@import 'components/lists';
+@import 'components/box';

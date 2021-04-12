@@ -1,0 +1,13 @@
+.box {
+    padding: $base;
+    margin: $base 0;
+    color: $light;
+
+    &.primary {
+        background: $primary;
+    }
+    
+    &.secondary {
+        background: $secondary;
+    }
+}
