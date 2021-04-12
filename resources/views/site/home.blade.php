@@ -1,6 +1,18 @@
 @extends('site.layouts.base')
 
 @section('content')
+    <div class="hero">
+        <img src="https://tinyrestaurant.nl/assets/imgs/cover/bg.jpg" alt="Tiny Restaurant">
+
+        <div class="container">
+            <div class="content">
+                <h1>Het Tiny Restaurant</h1>
+                <p>Wilt u als bedrijf ook het verschil maken en waardevol ondernemen door naar uw doelgroep toe te gaan?</p>
+                <a href="#" class="button primary">Neem contact op!</a>
+            </div>
+        </div>
+    </div>
+
     <div class="container">
         <div class="section">
             <a href="#" class="button primary">Primaire knop</a>
@@ -125,5 +137,23 @@
                 <li>Eieren</li>
             </ol>
         </div>
+
+        <div class="sidecard">
+            <h4>Agenda</h4>
+            <p>11/2 Proeverij Eindhoven</p>
+            <p>17/2 Proeverij Laarbeek</p>
+            <p>10/3 Proeverij Helmond</p>
+        </div>
+
+        <div class="sidecard">
+            <h4>Agenda</h4>
+            <a>https://www.groentjessoep.nl/</a>
+            <a>https://www.smaakcentrum.nl/</a>
+            <a>https://www.jonglereneten.nl/</a>
+        </div>
+    </div>
+
+    <div class="footer">
+        <h4>Footer</h4>
     </div>
 @endsection

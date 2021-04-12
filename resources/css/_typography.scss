@@ -1,3 +1,13 @@
+html {
+    font-size: 62.5%; // 10 px, becomes 1 rem
+    font-family: $sans;
+    font-weight: $normal;
+}
+
+body {
+    font-size: $base;
+}
+
 h1 {
     font-family: $display;
     font-size: $extra-large;
@@ -19,12 +29,13 @@ h4, h5, h6 {
     font-size: $base;
 }
 
-html {
-    font-size: 62.5%; // 10 px, becomes 1 rem
-    font-family: $sans;
-    font-weight: $normal;
-}
+a {
+    font-style: italic;
+    text-decoration: underline;
+    color: $primary;
 
-body {
-    font-size: $base;
+    &:hover {
+        color: darken($primary, 10%);
+        cursor: pointer;
+    }
 }

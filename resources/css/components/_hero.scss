@@ -1,0 +1,17 @@
+.hero {
+    img {
+        filter: brightness(50%);
+    }
+
+    .content {
+        h1 {
+            color: $light;
+            text-shadow: 4px 0px $dark;
+        }
+        
+        p {
+            color: $light;
+            text-shadow: 2px 0px $dark;
+        }
+    }
+}
