@@ -15,12 +15,6 @@
     @stack('scripts')
 </head>
 <body>
-    @if ($header)
-        <x-header :title="$title" :featured="$featured" />
-    @endif
-
-    <div class="container">
-        @yield('content')
-    </div>
+    @yield('content')
 </body>
 </html>

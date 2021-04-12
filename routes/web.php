@@ -17,6 +17,10 @@ use App\Http\Controllers\Admin\PageController;
 |
 */
 
+Route::get('/', function() {
+    return view('site.home');
+});
+
 Route::post('/contact', [MailController::class, 'sendMail'])->name('contact.sendMail');
 Route::get('/{slug}', [PageController::class, 'view'])->name('pages.show');
 Route::get('/gemeente/{slug}', [MunicipalityController::class, 'view'])->name('municipality.show');
