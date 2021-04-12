@@ -1,8 +1,12 @@
 .box {
     padding: $base * 2;
     margin: $base 0;
-    color: $light;
 
+    &.primary,
+    &.secondary {
+        color: $light;
+    }
+    
     &.primary {
         background: $primary;
     }

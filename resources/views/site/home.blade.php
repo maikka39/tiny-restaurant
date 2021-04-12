@@ -17,6 +17,73 @@
             <h5>Heading 5</h5>
             <h6>Heading 6</h6>
         </div>
+
+        <div class="box">
+            <h2>Neem contact met ons op!</h2>
+
+            <form>
+                <div class="field input">
+                    <input type="text" placeholder="Naam">
+                    <label>Naam</label>
+                </div>
+
+                <div class="field input">
+                    <input type="email" placeholder="E-mailadres">
+                    <label>E-mailadres</label>
+                </div>
+
+                <div class="field input">
+                    <input type="date" placeholder="Datum">
+                    <label>Datum</label>
+                </div>
+
+                <div class="field">
+                    <label>Foto</label>
+                    <input type="file">
+                </div>
+
+                <div class="field">
+                    <label>Geslacht</label>
+
+                    <label>
+                        <input type="checkbox">Man
+                    </label>
+
+                    <label>
+                        <input type="checkbox">Vrouw
+                    </label>
+
+                    <label>
+                        <input type="checkbox">Anders
+                    </label>
+                </div>
+
+                <div class="field">
+                    <label>Kleur</label>
+
+                    <label>
+                        <input type="radio">Rood
+                    </label>
+
+                    <label>
+                        <input type="radio">Groen
+                    </label>
+
+                    <label>
+                        <input type="radio">Blauw
+                    </label>
+                </div>
+
+                <div class="field input">
+                    <textarea cols="30" rows="10" placeholder="Bericht"></textarea>
+                    <label>Bericht</label>
+                </div>
+
+                <div class="field">
+                    <button class="button primary" type="submit">Verzenden</button>
+                </div>
+            </form>
+        </div>
     
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore tempore ipsam saepe doloribus minus quod asperiores eligendi? Praesentium, in mollitia!</p>
     
