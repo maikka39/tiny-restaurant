@@ -11,6 +11,7 @@ class CreateProjectsTables extends Migration
             createDefaultTableFields($table);
             $table->string('name', 200)->nullable();
             $table->text('description')->nullable();
+            $table->boolean('active')->nullable();
             $table->dateTime('date')->nullable();
             $table->string('address')->nullable();
             

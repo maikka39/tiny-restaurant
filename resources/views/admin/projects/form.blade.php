@@ -8,6 +8,11 @@
         'maxlength' => 2500
     ])
 
+    @formField('checkbox', [
+        'name' => 'active',
+        'label' => 'Actief project'
+    ])
+
     @formField('input', [
         'name' => 'address',
         'label' => 'Adres'

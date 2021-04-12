@@ -3,7 +3,7 @@ let slideIndex = 1;
 window.addEventListener('load', function () {
     var prev = document.getElementsByClassName('prev')[0];
     var next = document.getElementsByClassName('next')[0];
-
+  if(!(prev == null || next == null)) {
     prev.addEventListener('click', function() {plusSlides(-1)});
     next.addEventListener('click', function () { plusSlides(1) });
     
@@ -23,6 +23,7 @@ window.addEventListener('load', function () {
     }
 
     showSlides(slideIndex);
+  }
 })
 
 

@@ -22,6 +22,13 @@
                     <p class="highlight">Datum: <span>{{date('d-m-Y', strtotime($item->date))}}</span></p>
                     <p class="highlight">Tijd:  <span>{{date('H:i', strtotime($item->date))}}</span></p>
                     <p class="highlight">Adres: <span>{{$item->address}}</span></p>
+                    <div class="mr-1 mt-1 flex">
+                        @if($item->active) 
+                            <p class="mr-2">Actief</p><i class="mt-1 mr-1 fas fa-calendar-check fa-lg"></i>
+                        @else 
+                            <p class="mr-2">Afgerond</p><i class="mt-1 mr-1 fas fa-calendar-times fa-lg"></i>
+                        @endif
+                    </div>
                 </div>
 
                 <div class="descriptionbox">

@@ -57,7 +57,6 @@ $platinum: rgba(238, 235, 231, 1);
 .prev, .next {
   cursor: pointer;
   position: absolute;
-  top: 15rem;
   width: auto;
   margin-top: -22px;
   padding: 16px;
@@ -68,6 +67,8 @@ $platinum: rgba(238, 235, 231, 1);
   border-radius: 0 3px 3px 0;
   user-select: none;
   background-color: rgba(0,0,0,0.8);
+
+  @apply top-28 md:top-60
 }
 
 /* Position the "next button" to the right */
