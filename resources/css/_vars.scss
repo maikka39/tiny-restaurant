@@ -1,0 +1,11 @@
+// Colors
+$primary: config('theme.colors.primary');
+$secondary: config('theme.colors.secondary');
+$dark: config('theme.colors.dark');
+$light: config('theme.colors.light');
+
+// Fonts
+$sans: config('theme.fontFamily.sans');
+$serif: config('theme.fontFamily.serif');
+$handwriting: config('theme.fontFamily.handwriting');
+$display: config('theme.fontFamily.display');

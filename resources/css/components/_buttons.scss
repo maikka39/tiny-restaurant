@@ -1,0 +1,11 @@
+.button {
+    @apply inline-block font-bold px-4 py-2;
+
+    &.primary {
+        @apply bg-primary text-white;
+
+        &:hover {
+            background: darken($primary, 10%);
+        }
+    }
+}

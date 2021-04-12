@@ -19,7 +19,10 @@ module.exports = {
     },
     extend: {
       colors: {
-        'primary': 'green', // TODO: pick a nice color
+        'primary': '#327231',
+        'secondary': '#CE6727',
+        'dark': '#CE6727',
+        'light': '#EEEBE7',
       },
     },
   },
