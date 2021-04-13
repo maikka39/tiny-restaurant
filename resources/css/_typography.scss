@@ -1,0 +1,41 @@
+html {
+    font-size: 62.5%; // 10 px, becomes 1 rem
+    font-family: $sans;
+    font-weight: $normal;
+}
+
+body {
+    font-size: $base;
+}
+
+h1 {
+    font-family: $display;
+    font-size: $extra-large;
+}
+
+h2 {
+    font-family: $handwriting;
+    font-weight: $bold;
+    font-size: $large;
+}
+
+h3 {
+    font-weight: $bold;
+    font-size: $medium;
+}
+
+h4, h5, h6 {
+    font-weight: $bold;
+    font-size: $base;
+}
+
+a {
+    font-style: italic;
+    text-decoration: underline;
+    color: $primary;
+
+    &:hover {
+        color: darken($primary, 10%);
+        cursor: pointer;
+    }
+}
