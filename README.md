@@ -35,7 +35,7 @@ php artisan route:cache
 php artisan serve
 ```
 
-## Run tests
+### Run tests
 
 To run unit-tests use the following command:
 
@@ -51,15 +51,17 @@ php artisan dusk
 
 _Note: Make sure your php server is running before running this command._
 
-# Style guide Tiny Restaurant
+## Style guide Tiny Restaurant
+
 In this document, we describe the general styling rules to be applied when designing web pages for the Tiny Restaurant website.
 
 It consists of: colors, typography, general layout rules and more.
 
-## Colors
+### Colors
+
 We created a color palette. Use these colors in all designs:
 
-```
+```scss
 $primary: #327231;
 $text: #ce6727;
 $secondary: #221a06;
@@ -68,20 +70,21 @@ $background: #eeebe7;
 
 ![Color palette](https://i.imgur.com/Lwx88b0.png)
 
-## Typography
+### Typography
+
 We have selected a few fonts. Each font has it's own purpose on the site. To ensure compatibility across all browsers, Google Fonts are being used in all cases.
 
 | Type          | Tag     | Name           | Style       |
-|---------------|---------|----------------|-------------|
-| Heading 1     | h1      | *Staatliches*  | Display     |
-| Heading 2     | h2      | *Indie Flower* | Handwriting |
-| Heading 3 - 6 | h3 - h6 | *Roboto*       | Sans        |
-| Paragraphs    | p       | *Roboto*       | Sans        |
+| ------------- | ------- | -------------- | ----------- |
+| Heading 1     | h1      | _Staatliches_  | Display     |
+| Heading 2     | h2      | _Indie Flower_ | Handwriting |
+| Heading 3 - 6 | h3 - h6 | _Roboto_       | Sans        |
+| Paragraphs    | p       | _Roboto_       | Sans        |
 
-## Layout and spacing
+### Layout and spacing
+
 As a general rule of thumb, all elements and sections should be spaced 1 unit.
 
 This 1 unit is written as 1rem. This is translated to 16px by default. This size is adjustable in the theme.
 
 When necessary, you can apply more or less space by using a value bigger or smaller then 1.
-
