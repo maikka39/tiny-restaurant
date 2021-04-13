@@ -15,9 +15,12 @@ const tailwindcss = require('tailwindcss');
 mix.js('resources/js/app.js', 'public/js')
     .js('resources/js/slideshow.js', 'public/js')
     .sass('resources/css/app.scss', 'public/css')
+<<<<<<< HEAD
     .sass('resources/css/municipality.scss', 'public/css')
     .sass('resources/css/slideshow.scss', 'public/css')
+=======
+>>>>>>> dev
     .options({
-        processCssUrls: true,
-        postCss: [ tailwindcss('./tailwind.config.js')],
-    })
+        processCssUrls: false,
+        postCss: [tailwindcss('./tailwind.config.js')],
+    });

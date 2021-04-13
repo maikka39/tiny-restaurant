@@ -1,0 +1,17 @@
+.box {
+    padding: $base * 2;
+    margin: $base 0;
+
+    &.primary,
+    &.secondary {
+        color: $light;
+    }
+    
+    &.primary {
+        background: $primary;
+    }
+    
+    &.secondary {
+        background: $secondary;
+    }
+}

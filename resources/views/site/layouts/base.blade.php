@@ -8,12 +8,15 @@
     @stack('css')
     @stack('scripts')
 
-    <title>{{ env('APP_NAME') }}</title>
+    <title>@isset($title){{ $title }} | @endisset{{ env('APP_NAME') }}</title>
+
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    @stack('styles')
+
+    <script src="{{ asset('js/app.js') }}" defer></script>
+    @stack('scripts')
 </head>
 <body>
-    <div>
-        @yield('content')
-    </div>
-    
+    @yield('content')
 </body>
 </html>
