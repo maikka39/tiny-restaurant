@@ -1,4 +1,6 @@
-@extends('site.layouts.base')
+@extends('site.layouts.base', [
+    "title" => "Nieuws berichten"
+])
 
 @push('css')
     <link rel="stylesheet" href="{{ asset('css/newsItem.css') }}"></style>
