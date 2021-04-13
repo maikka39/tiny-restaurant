@@ -15,16 +15,32 @@ class ProjectController extends ModuleController
     protected $titleColumnKey = 'name';
 
     public function showAll() {
-        $projects = Project::orderBy('date')->paginate(15);
+        $projects = Project::orderBy('date', 'desc')->paginate(15);
         return view('site.projects-overview', [
-            'projects' => $projects
+            'projects' => $projects,
+            'keyword' => "",
+            'sort' => "date_descending",
         ]);
     }
 
     public function filter(Request $request) {
         $keyword = $request->keyword;
+        $sort = $request->sort;
+
+        $projects = null;
+        switch($sort) {
+            case 'date_descending':
+                $projects = Project::orderBy('date', 'desc');
+                break;
+            case 'date_ascending':
+                $projects = Project::orderBy('date', 'asc');
+                break;
+            default:
+                $sort = ""; 
+                $projects = Project::orderBy('date', 'desc');
+        }
         
-        $projects = Project::orderBy('date')->where(function ($p) use ($keyword){
+        $projects = $projects->where(function ($p) use ($keyword){
 
             if($keyword) {
 
@@ -36,8 +52,12 @@ class ProjectController extends ModuleController
             }
         })->latest()->paginate(15);
 
+
+
         return view('site.projects-overview', [
-            'projects' => $projects
+            'projects' => $projects,
+            'keyword' => $keyword,
+            'sort' => $sort,
         ]);
     }
 

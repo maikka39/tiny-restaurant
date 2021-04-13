@@ -8,18 +8,37 @@
             <form method="POST" action="/projecten">
                 @csrf
 
-                <label class="label" for="keyword">Zoekwoord</label>
-                <div class="flex flex-wrap md:flex-nowrap">
-                    
-                
-                    <input class="input mr-2 mb-2" type="text" name="keyword" id="keyword" value="{{old('keyword')}}">
-                
-                    @error('keyword')
-                        <p class="">{{$message}}</p>
-                    @enderror
-                
+                <div class="flex justify-between">
                     <div>
-                        <button type="submit" class="button">Plaats reservering</button>  
+                        <label class="label" for="keyword">Zoekwoord</label>
+                        <div class="flex flex-wrap md:flex-nowrap">
+                            
+                        
+                            <input class="input mr-2 mb-2" type="text" name="keyword" id="keyword" value="{{$keyword}}">
+                        
+                            @error('keyword')
+                                <p class="">{{$message}}</p>
+                            @enderror
+                        
+                            <button type="submit" class="button">Filter</button>  
+                            <a href="{{route('project.showAll')}}" class="button">Verwijder filters</a>    
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="label" for="sort">Sorteren op</label>
+                        <div class="flex flex-wrap md:flex-nowrap">
+                            
+                        
+                            <select class="h-12" name="sort" id="sort" onchange="this.form.submit()">
+                                <option value="date_descending" @if($sort == 'date_descending' || $sort == "") selected @endif>Datum aflopend</option>
+                                <option value="date_ascending" @if($sort == 'date_ascending') selected @endif>Datum oplopend</option>
+                            </select>
+                        
+                            @error('sort')
+                                <p class="">{{$message}}</p>
+                            @enderror
+                        </div>
                     </div>
                 </div>
             </form>
