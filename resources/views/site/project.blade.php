@@ -1,4 +1,4 @@
-@extends('layouts.base')
+@extends('site.layouts.base')
 
 @push('css')
     <link href="{{ asset('css/slideshow.css') }}" rel="stylesheet">
@@ -9,7 +9,7 @@
 
 @section('content')
     <div class="w-full flex justify-center">
-        <div class="max-w-full lg:max-w-4xl">
+        <div class="max-w-full lg:max-w-6xl">
 
 
             <div class="imgholder">
@@ -19,18 +19,22 @@
             <div class="m-4 lg:mx-0">
                 <div>
                     <h1 class="projectTitle">{{$item->name}}</h1>
-                    <p class="highlight">Datum: <span>{{date('d-m-Y', strtotime($item->date))}}</span></p>
-                    <p class="highlight">Tijd:  <span>{{date('H:i', strtotime($item->date))}}</span></p>
-                    <p class="highlight">Adres: <span>{{$item->address}}</span></p>
+                    <h2>Waar/Waneer?</h2>
+                    <div class="sidecard">
+                    <p>Datum: <span>{{date('d-m-Y', strtotime($item->date))}}</span></p>
+                    <p>Tijd:  <span>{{date('H:i', strtotime($item->date))}}</span></p>
+                    <p>Adres: <span>{{$item->address}}</span></p>
                     <div class="mr-1 mt-1 flex">
                         @if($item->active) 
-                            <p class="mr-2">Actief</p><i class="mt-1 mr-1 fas fa-calendar-check fa-lg"></i>
+                            <p class="mr-2">Actief project</p><i class="mt-1 mr-1 fas fa-calendar-check fa-lg"></i>
                         @else 
-                            <p class="mr-2">Afgerond</p><i class="mt-1 mr-1 fas fa-calendar-times fa-lg"></i>
+                            <p class="mr-2">Afgerond project</p><i class="mt-1 mr-1 fas fa-calendar-times fa-lg"></i>
                         @endif
+                    </div>
                     </div>
                 </div>
 
+                <h2 class="mt-3">Wat gaan we doen?</h2>
                 <div class="descriptionbox">
                     {!! $item->description !!}
                 </div>
@@ -38,6 +42,7 @@
 
 
             @if (count($item->municipalities) > 0 || count($item->farmers) > 0)
+                <h2>Wie doen er mee?</h2>
                 <!-- Slideshow container -->
                 <div class="flex-container">
                     <div class="slideshow-container">
@@ -47,7 +52,7 @@
                                 alt='Afbeelding Gemeente'>
                                 <div class='slidetextbox'>
                                     <h5>Onze boeren uit gemeente {{ $municipality->title }}</h5>
-                                    <a href='{{ route('municipality.show', $municipality->slug) }}' class='button readmore'> Lees meer </a>
+                                    <a href='{{ route('municipality.show', $municipality->slug) }}' class='button primary'> Lees meer </a>
                                 </div>
                             </div>
                         @endforeach
@@ -58,7 +63,7 @@
                                 alt='Afbeelding Boer'>
                                 <div class='slidetextbox'>
                                     <h5> {{ $farmer->name }} </h5>
-                                    <a href='{{ route('farmer.show', $farmer->slug) }}' class='button readmore'> Lees meer </a>
+                                    <a href='{{ route('farmer.show', $farmer->slug) }}' class='button primary'> Lees meer </a>
                                 </div>
                             </div>
                         @endforeach

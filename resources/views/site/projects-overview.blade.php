@@ -1,9 +1,13 @@
-@extends('layouts.base')
+@extends('site.layouts.base')
+
+@push('css')
+    <link href="{{ asset('css/_project.css') }}" rel="stylesheet">
+@endpush
 
 @section('content') 
     <div class="w-full flex justify-center px-2">
-        <div class="w-full lg:max-w-4xl">
-            <h1 class="text-2xl font-bold">Onze projecten</h1><br>
+        <div class="w-full lg:max-w-6xl">
+            <h1>Onze projecten</h1><br>
 
             <form method="POST" action="/projecten">
                 @csrf
@@ -14,14 +18,14 @@
                         <div class="flex flex-wrap md:flex-nowrap">
                             
                         
-                            <input class="input mr-2 mb-2" type="text" name="keyword" id="keyword" value="{{$keyword}}">
+                            <input class="mr-3" type="text" name="keyword" id="keyword" value="{{$keyword}}">
                         
                             @error('keyword')
                                 <p class="">{{$message}}</p>
                             @enderror
                         
-                            <button type="submit" class="button">Filter</button>  
-                            <a href="{{route('project.showAll')}}" class="button">Verwijder filters</a>    
+                            <button class="button primary mr-2" type="submit">Filter</button>  
+                            <a href="{{route('project.showAll')}}" class="button primary">Verwijder filters</a>    
                         </div>
                     </div>
 
@@ -44,7 +48,7 @@
             </form>
 
             @forelse ($projects as $project)
-                <div class="projectcard">
+                <div class="box primary projectcard ">
                     <div class="w-full md:w-1/3 ">
                         <img src="{{ $project->image("project_image", 'desktop') }}" alt="{{ $project->imageAltText("project_image") }}">
                     </div>

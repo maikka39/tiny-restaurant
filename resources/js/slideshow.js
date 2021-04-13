@@ -9,6 +9,7 @@ window.addEventListener('load', function () {
     
     var slides = document.getElementsByClassName("mySlides");
     var dots = document.getElementById('slideshowdots');
+    dots.innerHTML = ""
     for (let i = 0; i < slides.length; i++) {
 
         if (i >= 10)
