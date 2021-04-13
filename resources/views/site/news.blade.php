@@ -2,7 +2,7 @@
     "title" => "Nieuws berichten"
 ])
 
-@push('css')
+@push('styles')
     <link rel="stylesheet" href="{{ asset('css/newsItem.css') }}"></style>
 @endpush
 
