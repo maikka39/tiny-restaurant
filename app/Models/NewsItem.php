@@ -70,13 +70,15 @@ class NewsItem extends Model
         return $this->created_at->isoFormat('dddd, D MMMM YYYY, h:mm');
     }
 
+    private $previewTypes = ['mp3', 'mp4', 'pdf'];
     public function getTwillFilesWithName(): array
     {
         $returnableObjects = [];
-        $files = $this->files;
-        foreach ($files as $file) {
+        foreach ($this->files as $file) {
             $fileObject["url"] = FileService::getUrl($file->uuid);
             $fileObject["filename"] = $file->filename;
+            $fileType = explode('.', $file->filename);
+            $fileObject["hasPreview"] = in_array(end($fileType), $this->previewTypes);
             array_push($returnableObjects, $fileObject);
         }
         return $returnableObjects;

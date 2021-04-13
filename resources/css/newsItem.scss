@@ -1,19 +1,22 @@
 @tailwind utilities;
+@import 'vars';
 
 .timeline {
-  @apply h-full w-9 flex items-center justify-center;
+  @apply h-full w-12 flex items-center justify-center;
 }
 
 .timeline-inner {
-  @apply h-full w-1 bg-gray-800 pointer-events-none;
+  background-color: darken($secondary, 10%);
+  @apply h-full w-1 pointer-events-none;
 }
 
 .timeline-circle {
-  @apply w-9 h-9 absolute top-1/2 -mt-3 rounded-full bg-gray-400 shadow text-center;
+  background-color: $secondary;
+  @apply w-12 h-12 absolute top-1/2 rounded-full shadow text-center;
 }
 
 .timeline-circle-logo {
-  @apply align-middle pt-2;
+  @apply relative align-middle;
 }
 
 .timeline-wrapper {
@@ -25,10 +28,8 @@
 }
 
 .card {
-  @apply rounded-xl my-4 shadow-md bg-gray-300 w-10/12 transition m-auto mb-2 sm:mb-0;
-  &:hover {
-    @apply ring-2 ring-purple-500
-  }
+  color: $dark;
+  @apply my-4 shadow-md bg-gray-300 w-10/12 transition m-auto mb-2 sm:mb-0;
 }
 
 .card-left {
@@ -40,17 +41,34 @@
 }
 
 .card-title {
-  @apply font-semibold text-lg mb-1 text-gray-800 bg-purple-400 rounded-t-xl py-2 px-4;
+  background-color: $primary;
+  color: $light;
+  @apply mb-1 py-2 px-4;
 }
 
 .card-images {
-  @apply max-h-32 overflow-hidden flex flex-row justify-center items-center bg-gray-200 border-t border-b border-purple-200;
+  border-color: $primary;
+  background-color: $light;
+  @apply max-h-64 overflow-hidden flex flex-row justify-center items-center border-t border-b;
 }
 
 .card-attachments {
-  @apply flex flex-row justify-center items-center bg-gray-200 border-t border-b border-purple-200 mt-2;
+  border-color: $primary;
+  background-color: $light;
+  @apply flex flex-row justify-center items-center border-t border-b mt-2;
+}
+
+.card-description {
+  color: $dark;
+  margin: $base / 2 $base;
+}
+
+.card-post-time {
+  color: $dark;
+  margin: 0 $base;
 }
 
 .publish-date {
-  @apply hidden sm:flex justify-center items-center uppercase text-xl;
+  color: $dark;
+  @apply hidden sm:flex justify-center items-center;
 }

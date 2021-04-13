@@ -9,7 +9,7 @@
         'name' => 'description',
         'label' => 'Description',
         'toolbarOptions' => [
-            [ 'header' => [2,3,4, false] ],
+            [ 'header' => [3,4,5 false] ],
             'list-ordered',
             'list-unordered',
             'bold',
