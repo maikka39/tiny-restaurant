@@ -2,10 +2,13 @@
 
 namespace App\View\Components;
 
+use App\Models\Municipality;
 use Illuminate\View\Component;
 
 class Navbar extends Component
 {
+    public $municipalities;
+
     /**
      * Create a new component instance.
      *
@@ -13,7 +16,8 @@ class Navbar extends Component
      */
     public function __construct()
     {
-        //
+        $this->municipalities = Municipality::all()->where('published', true);
+        dd($this->municipalities);
     }
 
     /**
