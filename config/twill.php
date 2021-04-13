@@ -16,7 +16,6 @@ return [
         'users-2fa' => false, // requires imagick
         'users-oauth' => false,
     ],
-
     'locale' => 'nl',
     'fallback_locale' => 'en',
     'block_editor' => [
@@ -78,5 +77,5 @@ return [
                 ],
             ],
         ],
-    ],
+    ]
 ];

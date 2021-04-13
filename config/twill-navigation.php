@@ -1,6 +1,18 @@
 <?php
 
 return [
+    'settings' => [
+        'title' => 'Settings',
+        'route' => 'admin.settings',
+        'params' => ['section' => 'homepage'],
+        'primary_navigation' => [
+            'homepage' => [
+                'title' => 'Homepage',
+                'route' => 'admin.settings',
+                'params' => ['section' => 'homepage']
+            ],
+        ]
+    ],
     'pages' => [
         'title' => 'Pagina\'s',
         'module' => true
