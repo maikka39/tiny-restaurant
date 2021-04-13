@@ -68,7 +68,7 @@ $platinum: rgba(238, 235, 231, 1);
   user-select: none;
   background-color: rgba(0,0,0,0.8);
 
-  @apply top-28 md:top-60
+  @apply bottom-28 md:bottom-60;
 }
 
 /* Position the "next button" to the right */

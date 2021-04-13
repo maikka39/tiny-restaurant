@@ -7,7 +7,7 @@
 @section('content') 
     <div class="w-full flex justify-center px-2">
         <div class="w-full lg:max-w-6xl">
-            <h1>Onze projecten</h1><br>
+            <h1>Onze projecten</h1>
 
             <form method="POST" action="/projecten">
                 @csrf
@@ -48,7 +48,7 @@
             </form>
 
             @forelse ($projects as $project)
-                <div class="box primary projectcard ">
+                <div class="box secondary projectcard ">
                     <div class="w-full md:w-1/3 ">
                         <img src="{{ $project->image("project_image", 'desktop') }}" alt="{{ $project->imageAltText("project_image") }}">
                     </div>
@@ -70,7 +70,7 @@
                                 <p class="highlight">Adres: <span>{{$project->address}}</span></p>
                             </div>
                             <div class="linkholder">
-                                <a href='{{ route('project.show', $project->slug) }}' class='button readmore'> Lees meer </a>
+                                <a href='{{ route('project.show', $project->slug) }}' class='button primary'> Lees meer </a>
                             </div>
                         </div>
                     </div>

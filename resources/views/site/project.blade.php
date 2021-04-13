@@ -9,7 +9,7 @@
 
 @section('content')
     <div class="w-full flex justify-center">
-        <div class="max-w-full lg:max-w-6xl">
+        <div class="max-w-full py-6 lg:max-w-6xl">
 
 
             <div class="imgholder">
@@ -51,7 +51,7 @@
                                 <img class="w-full" src=' {{ $municipality->image('municipality_picture', 'desktop') }} '
                                 alt='Afbeelding Gemeente'>
                                 <div class='slidetextbox'>
-                                    <h5>Onze boeren uit gemeente {{ $municipality->title }}</h5>
+                                    <h4>Onze boeren uit gemeente {{ $municipality->title }}</h4>
                                     <a href='{{ route('municipality.show', $municipality->slug) }}' class='button primary'> Lees meer </a>
                                 </div>
                             </div>
@@ -62,7 +62,7 @@
                                 <img src=' {{ $farmer->image('farmer_profile', 'desktop') }} '
                                 alt='Afbeelding Boer'>
                                 <div class='slidetextbox'>
-                                    <h5> {{ $farmer->name }} </h5>
+                                    <h4> {{ $farmer->name }} </h4>
                                     <a href='{{ route('farmer.show', $farmer->slug) }}' class='button primary'> Lees meer </a>
                                 </div>
                             </div>

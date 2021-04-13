@@ -50,7 +50,7 @@ class ProjectController extends ModuleController
                     ->orWhere('address', 'like', "%".$keyword."%");
                 
             }
-        })->latest()->paginate(15);
+        })->paginate(15);
 
 
 
