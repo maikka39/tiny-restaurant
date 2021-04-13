@@ -15,7 +15,8 @@ class MunicipalityController extends ModuleController
 
     public function view ($slug) {
         $municipality = Municipality::forSlug($slug)->firstOrFail();
-        return view('municipality', [
+        
+        return view('site.municipality', [
             'municipality' => $municipality
         ]);
     }
