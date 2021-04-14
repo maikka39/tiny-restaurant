@@ -18,7 +18,7 @@ class PageSeeder extends Seeder
     public function run()
     {
         $pages = array([
-          "title" => 'Neem contact met ons op!',
+          "title" => 'Contact',
           "slug" => 'contact',
           "description" => 'Dit is de beschrijving van de contactpagina!',
           "blocks" => array([
