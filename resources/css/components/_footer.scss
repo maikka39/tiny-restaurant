@@ -1,25 +1,24 @@
 .footer {
     background-color: $secondary;
     padding: $base * 2;
-    position: fixed;
-    bottom: 0;
     text-decoration: none;
     font-style: normal;
 }
 
 .footer-title {
-    font-weight: 700;
-    color: white;
+    font-weight: $bold;
+    color: $light;
 }
 
 .footer-text {
     text-align: center;
     display: block;
-    font-size: 1.5rem;
-    color: white;
+    font-size: $base;
+    color: $light;
     text-decoration: none;
     font-style: normal;
     &:hover {
-        color: grey;
+        text-decoration: underline;
+        color: white;
     }
 }

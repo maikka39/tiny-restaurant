@@ -1,9 +1,9 @@
 @import "tailwindcss/utilities";
 
 .navbar-text {
-  font-size: 1.875rem;
+  font-size: $base;
   font-style: normal;
-  font-weight: 700;
+  font-weight: $bold;
   color: rgba(17, 24, 39, 1);
   padding: 0.5rem 0.75rem;
   line-height: 1.25rem;
@@ -12,16 +12,15 @@
 }
 
 .navbar-text:hover {
-  background-color: rgba(55, 65, 81, 1);
-  color: rgba(255, 255, 255, 1);
+  text-decoration: underline;
 }
 
 .navbar-text-small {
   text-align: center;
   display: block;
-  font-size: 1.5rem;
+  font-size: $base;
   margin-top: 0.125rem;
-  font-weight: 700;
+  font-weight: $bold;
 }
 
 .row {
@@ -57,7 +56,7 @@ html {
     display: block;
     text-decoration: none;
     font-style: normal;
-    font-weight: 700;
+    font-weight: $bold;
 
     &:hover {
       background-color: #ddd;
