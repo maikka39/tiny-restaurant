@@ -11,7 +11,7 @@
                             <button class="drop-button navbar-text">Gemeentes</button>
                             <div class="dropdown-content">
                                 @foreach($municipalities as $municipality)
-                                <a href="{{'/gemeente/' . $municipality->title}}">{{$municipality->title}}</a>
+                                <a href="{{ route('municipality.show', $municipality->title) }}</a>
                                 @endforeach
                             </div>
                         </div>
