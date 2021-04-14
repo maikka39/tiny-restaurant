@@ -18,9 +18,9 @@ class PageSeeder extends Seeder
     public function run()
     {
         $pages = array([
-          "title" => 'Neem Contact met ons op!',
+          "title" => 'Neem contact met ons op!',
           "slug" => 'contact',
-          "description" => 'Dit is de beschrijving van de contact pagina!',
+          "description" => 'Dit is de beschrijving van de contactpagina!',
           "blocks" => array([
               "type" => 'contact_form',
               "blockable_type" => 'App\\Models\\Page',
@@ -30,26 +30,26 @@ class PageSeeder extends Seeder
         ]);
 
         foreach ($pages as $page) {
-            $model = new Page();
-            $model->title = $page["title"];
-            $model->description = $page["description"];
-            $model->save();
+            $model = Page::create([
+                'title' => $page["title"],
+                'description' => $page["description"]
+            ]);
 
-            $slug = new PageSlug();
-            $slug->slug = Str::slug($page["slug"]);
-            $slug->locale = 'en';
-            $slug->active = true;
-            $slug->page_id = $model->id;
-            $slug->save();
+            PageSlug::create([
+                'slug' => Str::slug($page["slug"]),
+                'locale' => 'en',
+                'active' => true,
+                'page_id' => $model->id
+            ]);
 
             foreach ($page["blocks"] as $blocks) {
-                $block = new Block();
-                $block->type = $blocks["type"];
-                $block->blockable_type =  $blocks["blockable_type"];
-                $block->position = $blocks["position"];
-                $block->content = json_decode($blocks["content"]);
-                $block->blockable_id = $model->id;
-                $block->save();
+                Block::create([
+                    'type' => $blocks["type"],
+                    'blockable_type' =>  $blocks["blockable_type"],
+                    'position' => $blocks["position"],
+                    'content' => json_decode($blocks["content"]),
+                    'blockable_id' => $model->id
+                ]);
             }
         }
     }

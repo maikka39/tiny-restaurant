@@ -15,10 +15,7 @@ class TimeLine extends Component
      */
     public function __construct($isEven)
     {
-        if($isEven)
-            $this->direction = 'left';
-        else
-            $this->direction = 'right';
+        $this->direction = $isEven ? 'left' : 'right';
     }
 
     /**

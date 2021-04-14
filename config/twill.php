@@ -50,8 +50,8 @@ return [
             ],
             'App\Models\NewsItem' => [
                 'name' => 'newsItems',
-                'label' => 'Nieuws berichten',
-                'label_singular' => 'Nieuws bericht',
+                'label' => 'Nieuwsberichten',
+                'label_singular' => 'Nieuwsbericht',
                 'activity' => true,
                 'search' => true,
                 'create' => true,
