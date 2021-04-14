@@ -6,13 +6,19 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
-    <title>{{ env('APP_NAME') }}</title>
+    <title>@isset($title){{ $title }} | @endisset{{ env('APP_NAME') }}</title>
+
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    @stack('styles')
+
+    <script src="{{ asset('js/app.js') }}" defer></script>
+    @stack('scripts')
 </head>
 <body>
     <x-navbar />
-    <div>
-        @yield('content')
-    </div>
+        <div>
+            @yield('content')
+        </div>
     <x-footer />
 </body>
 </html>
