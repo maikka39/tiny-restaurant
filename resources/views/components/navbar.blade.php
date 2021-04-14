@@ -1,4 +1,4 @@
-<nav class="bg-gray-200 navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light">
     <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 collapse navbar-collapse" id="toggler">
         <div class="relative flex items-center h-16">
             <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
@@ -50,9 +50,4 @@
     </div>
 </nav>
 
-<style>
-    .active{
-        display: block;
-    }
-</style>
 <script src="../../js/navbar.js"></script>

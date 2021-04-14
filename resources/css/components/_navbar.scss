@@ -1,0 +1,74 @@
+@import "tailwindcss/utilities";
+
+.navbar-text {
+  font-size: 1.875rem;
+  font-style: normal;
+  font-weight: 700;
+  color: rgba(17, 24, 39, 1);
+  padding: 0.5rem 0.75rem;
+  line-height: 1.25rem;
+  border-radius: 0.375rem;
+  text-decoration: none;
+}
+
+.navbar-text:hover {
+  background-color: rgba(55, 65, 81, 1);
+  color: rgba(255, 255, 255, 1);
+}
+
+.navbar-text-small {
+  text-align: center;
+  display: block;
+  font-size: 1.5rem;
+  margin-top: 0.125rem;
+  font-weight: 700;
+}
+
+.row {
+  padding-right: 0px;
+  margin-right: 0px;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+.dropbtn {
+  margin:0 auto;
+  display:block;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  @apply sm:absolute relative;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  a {
+    color: black;
+    padding: 12px 16px;
+    display: block;
+    text-decoration: none;
+    font-style: normal;
+    font-weight: 700;
+
+    &:hover {
+      background-color: #ddd;
+    }
+  }
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.active{
+  display: block;
+}
