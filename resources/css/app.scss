@@ -49,30 +49,31 @@ html {
 }
 
 .dropbtn {
-  background-color: rgba(229, 231, 235, 1);;
+  background-color: rgba(229, 231, 235, 1);
+  margin:0 auto;
+  display:block;
 }
 
 .dropdown {
   position: relative;
-  display: inline-block;
 }
 
 .dropdown-content {
   display: none;
-  position: absolute;
+  @apply sm:absolute relative;
   background-color: #f1f1f1;
-  min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
+  a {
+    color: black;
+    padding: 12px 16px;
+    display: block;
+    &:hover {
+      background-color: #ddd;
+    }
+  }
 }
 
-.dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
+.dropdown:hover .dropdown-content {
   display: block;
 }
-
-.dropdown-content a:hover {background-color: #ddd;}
-
-.dropdown:hover .dropdown-content {display: block;}

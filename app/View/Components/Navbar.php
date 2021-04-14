@@ -17,7 +17,6 @@ class Navbar extends Component
     public function __construct()
     {
         $this->municipalities = Municipality::all()->where('published', true);
-        dd($this->municipalities);
     }
 
     /**
