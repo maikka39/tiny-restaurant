@@ -1,5 +1,12 @@
 @import "tailwindcss/utilities";
 
+a {
+  text-decoration: none;
+  &hover {
+    text-decoration: underline;
+  }
+}
+
 .navbar-text {
   font-size: $base;
   font-style: normal;
@@ -8,11 +15,6 @@
   padding: 0.5rem 0.75rem;
   line-height: 1.25rem;
   border-radius: 0.375rem;
-  text-decoration: none;
-}
-
-.navbar-text:hover {
-  text-decoration: underline;
 }
 
 .navbar-text-small {
@@ -54,7 +56,6 @@ html {
     color: black;
     padding: 12px 16px;
     display: block;
-    text-decoration: none;
     font-style: normal;
     font-weight: $bold;
 

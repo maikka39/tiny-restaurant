@@ -4,14 +4,14 @@
             <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
                 <div class="hidden sm:block sm:ml-6">
                     <div class="flex space-x-4">
-                        <a href="{{url('/')}}" class="navbar-text" aria-current="page">Tiny Restaurant</a>
+                        <a href="{{url('/home')}}" class="navbar-text" aria-current="page">Tiny Restaurant</a>
                         <a href="{{url('/nieuws')}}" class="navbar-text">Nieuws</a>
                         <a href="{{url('#')}}" class="navbar-text">Agenda</a>
                         <div class="dropdown">
                             <button class="drop-button navbar-text">Gemeentes</button>
                             <div class="dropdown-content">
                                 @foreach($municipalities as $municipality)
-                                <a href="{{ route('municipality.show', $municipality->title) }}</a>
+                                    <a href="{{ route('municipality.show', $municipality->title) }}">{{$municipality->title}}</a>
                                 @endforeach
                             </div>
                         </div>

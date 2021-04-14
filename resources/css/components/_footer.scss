@@ -1,8 +1,16 @@
+@import "tailwindcss/utilities";
+
+a {
+    text-decoration: none;
+    color: $light;
+}
+a:hover {
+    text-decoration: underline;
+    color: $light;
+}
 .footer {
     background-color: $secondary;
     padding: $base * 2;
-    text-decoration: none;
-    font-style: normal;
 }
 
 .footer-title {
@@ -14,11 +22,5 @@
     text-align: center;
     display: block;
     font-size: $base;
-    color: $light;
-    text-decoration: none;
     font-style: normal;
-    &:hover {
-        text-decoration: underline;
-        color: white;
-    }
 }
