@@ -23,9 +23,11 @@
                             @error('keyword')
                                 <p class="">{{$message}}</p>
                             @enderror
-                        
-                            <button class="button primary mr-2" type="submit">Filter</button>  
-                            <a href="{{route('project.showAll')}}" class="button primary">Verwijder filters</a>    
+                            
+                            <div class="mt-3 w-full md:mt-0 md:w-max">
+                                <button class="button primary mr-2" type="submit">Filter</button>  
+                                <a href="{{route('project.showAll')}}" class="button primary">Verwijder filters</a>
+                            </div>    
                         </div>
                     </div>
 
