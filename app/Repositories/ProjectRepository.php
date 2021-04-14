@@ -33,7 +33,6 @@ class ProjectRepository extends ModuleRepository
         $fields = parent::getFormFields($object);
         $fields['browsers']['municipalities'] = $this->getFormFieldsForBrowser($object, 'municipalities', null, 'title', 'municipalities');
         $fields['browsers']['farmers'] = $this->getFormFieldsForBrowser($object, 'farmers', null, 'name', 'farmers');
-        //dd($fields);
 
         return $fields;
     }
