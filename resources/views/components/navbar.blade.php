@@ -37,7 +37,7 @@
                 <div><a href="{{url('/nieuws')}}" class="navbar-text navbar-text-small">Nieuws</a></div>
                 <div><a href="{{url('#')}}" class="navbar-text navbar-text-small">Agenda</a></div>
                 <div class="dropdown">
-                    <button class="drop-button navbar-text navbar-text-small w-auto">Gemeentes</button>
+                    <button class="dropdown-button navbar-text navbar-text-small w-auto">Gemeentes</button>
                     <div class="dropdown-content">
                         @foreach($municipalities as $municipality)
                             <a href="{{ route('municipality.show', $municipality->title) }}">{{$municipality->title}}</a>
