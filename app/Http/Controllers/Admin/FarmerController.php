@@ -11,7 +11,7 @@ use App\Repositories\MunicipalityRepository;
 class FarmerController extends ModuleController
 {
     protected $moduleName = 'farmers';
-    protected $permalinkBase = 'boeren';
+    protected $permalinkBase = 'boer';
     protected $titleColumnKey = 'name';
 
     public function view($slug)

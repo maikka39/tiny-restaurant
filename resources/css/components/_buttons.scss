@@ -1,0 +1,27 @@
+.button {
+    display: inline-block;
+    font-weight: $bold;
+    padding: 1rem 2rem;
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    &.primary {
+        background: $primary;
+        color: $light;
+
+        &:hover {
+            background: darken($primary, 10%);
+        }
+    }
+
+    &.secondary {
+        background: $secondary;
+        color: $light;
+
+        &:hover {
+            background: darken($secondary, 10%);
+        }
+    }
+}
