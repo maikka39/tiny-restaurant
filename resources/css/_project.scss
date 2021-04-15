@@ -4,7 +4,8 @@
 }
 
 .cardimg {
-    @apply w-full h-96 bg-light justify-center sm:w-auto sm:h-64 flex sm:justify-start sm:bg-secondary items-center;
+    min-width: 24rem;
+    @apply h-96 bg-light justify-center sm:w-96 sm:h-64 flex sm:bg-secondary items-center;
 }
 
 .cardimg img {
@@ -20,7 +21,7 @@
 }
 
 .projectcard h2 {
-    @apply pl-1 max-w-md text-5xl md:text-5xl break-words; 
+    @apply pl-1 max-w-2xl text-5xl md:text-5xl break-words; 
 }
 
 .mainholder {

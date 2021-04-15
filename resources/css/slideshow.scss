@@ -54,11 +54,15 @@ $platinum: rgba(238, 235, 231, 1);
 }
 
 .slidetextbox {
-  @apply p-2 h-auto flex justify-between items-center whitespace-nowrap;
+  @apply p-2 h-auto flex justify-between items-center;
 }
 
 .slidetextbox h4, .slidetextbox .button {
-  @apply text-2xl font-bold mb-1 md:text-3xl whitespace-nowrap;
+  @apply text-2xl font-bold mb-1 md:text-3xl;
+}
+
+.slidetextbox .button {
+  @apply whitespace-nowrap;
 }
 
 /* Next & previous buttons */
