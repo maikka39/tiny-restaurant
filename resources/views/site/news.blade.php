@@ -1,5 +1,5 @@
 @extends('site.layouts.base', [
-    "title" => "Nieuws berichten"
+    "title" => "Nieuwsberichten"
 ])
 
 @push('styles')

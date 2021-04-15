@@ -18,12 +18,12 @@ class FarmerSeeder extends Seeder
     {
         $farmers = array([
                 'name' => 'Ton van de Vossenberg',
-                'description' => 'Dit is een standaard beschrijving die aangemaakt wordt door het CMS van het Tiny Restaurant!', //replace with WYSIWYG description
+                'description' => 'Dit is een standaard beschrijving die aangemaakt wordt door het CMS van het Tiny Restaurant!',
                 'address' => 'Vollenweg 3, Venhorst',
                 'municipality' => 2
             ],[
                 'name' => 'Hans van Lierop',
-                'description' => 'Dit is een standaard beschrijving die aangemaakt wordt door het CMS van het Tiny Restaurant!', //replace with WYSIWYG description
+                'description' => 'Dit is een standaard beschrijving die aangemaakt wordt door het CMS van het Tiny Restaurant!',
                 'address' => 'Derneffestraat 11b, Mariahout',
                 'municipality' => 1
             ],
