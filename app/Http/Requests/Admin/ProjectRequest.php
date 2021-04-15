@@ -8,11 +8,25 @@ class ProjectRequest extends Request
 {
     public function rulesForCreate()
     {
-        return [];
+        return [
+            'published',
+            'name',
+            'description',
+            'active',
+            'date',
+            'address'
+        ];
     }
 
     public function rulesForUpdate()
     {
-        return [];
+        return [
+            'published',
+            'name',
+            'description',
+            'active',
+            'date',
+            'address'
+        ];
     }
 }
