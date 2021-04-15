@@ -1,8 +1,7 @@
-@import "tailwindcss/utilities";
-
 a {
   text-decoration: none;
-  &hover {
+
+  &:hover {
     text-decoration: underline;
   }
 }
@@ -52,13 +51,15 @@ html {
   @apply sm:absolute relative;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
+  background: #00ff00;
+
   a {
     color: black;
     padding: 12px 16px;
     display: block;
     font-style: normal;
     font-weight: $bold;
-
+    
     &:hover {
       background-color: #ddd;
     }
