@@ -41,11 +41,9 @@
                     <div class="box secondary">
                         <img class="h-64" src="{{ $farmer->image("farmer_profile", "desktop") }}" alt="{{ $farmer->name }}">
 
-                        <div>
-                            <h3>{{ $farmer->name }}</h3>
-                            <div class="description">{!! $farmer->description !!}</div>
-                            <a href="{{ route("farmer.show", $farmer->slug) }}" class="button primary float-right">Lees meer</a>
-                        </div>
+                        <h3>{{ $farmer->name }}</h3>
+                        <div class="description">{!! $farmer->description !!}</div>
+                        <a href="{{ route("farmer.show", $farmer->slug) }}" class="button primary float-right">Lees meer</a>
                     </div>
                 @endforeach
             </div>
