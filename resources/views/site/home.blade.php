@@ -5,10 +5,9 @@
         <div class="hero grid md:grid-cols-5">
             <div class="pl-12 md:col-span-3 md:mt-32">
                 <div class="content">
-                    <h1>Het Tiny Restaurant</h1>
-                    <p class="mb-2">Wilt u als bedrijf ook het verschil maken en waardevol ondernemen door naar uw doelgroep toe te
-                        gaan?</p>
-                    <a href="/contact" class="button primary float-right">Neem contact op!</a>
+                    <h1>{{$bannerTitle}}</h1>
+                    <p class="mb-2">{{$bannerDescription}}</p>
+                    <a href="{{url("/contact")}}" class="button primary float-right">Neem contact op!</a>
                 </div>
             </div>
         </div>

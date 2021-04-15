@@ -1,11 +1,6 @@
 @extends('twill::layouts.settings')
 
 @section('contentFields')
-    @formField('medias', [
-        'name' => 'banner_image',
-        'label' => 'Banner afbeelding'
-    ])
-
     @formField('input', [
         'name' => 'banner_title',
         'type' => 'text',
@@ -18,16 +13,5 @@
         'type' => 'text',
         'label' => 'Banner description',
         'maxlength' => 50
-    ])
-
-    @formField('medias', [
-        'name' => 'body_image',
-        'label' => 'Body afbeelding'
-    ])
-
-    @formField('wysiwyg', [
-        'name' => 'body_text',
-        'label' => 'Body tekst',
-        'placeholder' => 'Vul een tekst in'
     ])
 @stop
