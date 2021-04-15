@@ -16,6 +16,9 @@ return [
     'newsItems' => [
         'title' => 'Nieuwsberichten',
         'module' => true,
+    'projects' => [
+        'title' => 'Projecten',
+        'module' => true
     ]
 ];
 
