@@ -48,10 +48,13 @@ class MunicipalityTest extends DuskTestCase
                 ->assertUrlIs(config('app.url') . '/admin/municipalities/1/edit')
                 ->type('description', 'Dit is voor de gemeente Laarbeek, de groenste gemeente van Europa!')
                 ->click('.switcher__button')
-                ->press('Publiceren');
+                ->press('Publiceren')
+                ->waitForText('Content saved. All good!');;
 
             $browser
                 ->visit('/gemeente/laarbeek')
+                ->waitForDialog()
+                ->acceptDialog()
                 ->assertSee('Laarbeek');
         });
     }
