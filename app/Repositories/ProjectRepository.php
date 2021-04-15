@@ -8,9 +8,6 @@ use A17\Twill\Repositories\Behaviors\HandleMedias;
 use A17\Twill\Repositories\Behaviors\HandleRevisions;
 use A17\Twill\Repositories\Behaviors\HandleBrowsers;
 use A17\Twill\Repositories\ModuleRepository;
-use App\Models\Project;
-use phpDocumentor\Reflection\Types\Parent_;
-use Symfony\Polyfill\Intl\Idn\Info;
 
 class ProjectRepository extends ModuleRepository
 {
@@ -33,7 +30,6 @@ class ProjectRepository extends ModuleRepository
         $fields = parent::getFormFields($object);
         $fields['browsers']['municipalities'] = $this->getFormFieldsForBrowser($object, 'municipalities', null, 'title', 'municipalities');
         $fields['browsers']['farmers'] = $this->getFormFieldsForBrowser($object, 'farmers', null, 'name', 'farmers');
-        //dd($fields);
 
         return $fields;
     }

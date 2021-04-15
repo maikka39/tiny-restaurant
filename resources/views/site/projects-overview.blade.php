@@ -1,6 +1,6 @@
 @extends('site.layouts.base')
 
-@push('css')
+@push('styles')
     <link href="{{ asset('css/_project.css') }}" rel="stylesheet">
 @endpush
 
@@ -17,8 +17,11 @@
                         <label class="label" for="keyword">Zoekwoord</label>
                         <div class="flex flex-wrap md:flex-nowrap">
                             
+                            @php 
+                                $selectedkeyword = $keyword ?? '';
+                            @endphp
                         
-                            <input class="mr-3" type="text" name="keyword" id="keyword" value="{{$keyword}}">
+                            <input class="mr-3" type="text" name="keyword" id="keyword" value="{{$selectedkeyword}}">
                         
                             @error('keyword')
                                 <p class="">{{$message}}</p>
@@ -35,10 +38,13 @@
                         <label class="label" for="sort">Sorteren op</label>
                         <div class="flex flex-wrap md:flex-nowrap">
                             
+                            @php
+                                $selected = $sort ?? 'date_descending'; 
+                            @endphp
                         
                             <select class="h-12" name="sort" id="sort" onchange="this.form.submit()">
-                                <option value="date_descending" @if($sort == 'date_descending' || $sort == "") selected @endif>Datum aflopend</option>
-                                <option value="date_ascending" @if($sort == 'date_ascending') selected @endif>Datum oplopend</option>
+                                <option value="date_descending" @if($selected == 'date_descending') selected @endif>Datum aflopend</option>
+                                <option value="date_ascending" @if($selected == 'date_ascending') selected @endif>Datum oplopend</option>
                             </select>
                         
                             @error('sort')

@@ -14,12 +14,15 @@ class ProjectController extends ModuleController
     protected $permalinkBase = 'project';
     protected $titleColumnKey = 'name';
 
-    public function showAll() {
-        $projects = Project::orderBy('date', 'desc')->paginate(15);
+    public function showAll($projects = null, $keyword = null, $sort = null) {
+        if($projects == null) {
+            $projects = Project::orderBy('date', 'desc')->paginate(15);
+        }
+
         return view('site.projects-overview', [
             'projects' => $projects,
-            'keyword' => "",
-            'sort' => "date_descending",
+            'keyword' => $keyword,
+            'sort' => $sort,
         ]);
     }
 
@@ -40,21 +43,19 @@ class ProjectController extends ModuleController
                 $projects = Project::orderBy('date', 'desc');
         }
         
-        $projects = $projects->where(function ($p) use ($keyword){
+        $projects = $projects->where(function ($project) use ($keyword){
 
             if($keyword) {
 
-                $p->where('name', 'like', "%".$keyword."%")
-                    ->orWhere('name', 'like', "%".$keyword."%")
-                    ->orWhere('description', 'like', "%".$keyword."%")
-                    ->orWhere('address', 'like', "%".$keyword."%");
+                $project->where('name', 'like', "%$keyword%")
+                    ->orWhere('name', 'like', "%$keyword%")
+                    ->orWhere('description', 'like', "%$keyword%")
+                    ->orWhere('address', 'like', "%$keyword%");
                 
             }
         })->paginate(15);
 
-
-
-        return view('site.projects-overview', [
+        return redirect()->route('project.showAll', [
             'projects' => $projects,
             'keyword' => $keyword,
             'sort' => $sort,

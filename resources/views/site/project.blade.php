@@ -1,6 +1,6 @@
 @extends('site.layouts.base')
 
-@push('css')
+@push('styles')
     <link href="{{ asset('css/slideshow.css') }}" rel="stylesheet">
 @endpush
 @push('scripts') 
@@ -43,7 +43,6 @@
 
                 @if (count($item->municipalities) > 0 || count($item->farmers) > 0)
                     <h2>Wie doen er mee?</h2>
-                    <!-- Slideshow container -->
                     <div class="flex-container">
                         <div class="slideshow-container">
                             @foreach ($item->municipalities as $municipality)
@@ -72,13 +71,11 @@
                                 </div>
                             @endforeach
                         
-                            <!-- Next and previous buttons -->
                             <a class="prev">&#10094;</a>
                             <a class="next">&#10095;</a>
                         </div>
                         <br>
                         
-                        <!-- The dots/circles -->
                         <div id='slideshowdots'>
                         </div>
                     </div>
