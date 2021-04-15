@@ -15,17 +15,6 @@ jobs:
     timeout-minutes: 10
     name: Tests
     runs-on: ubuntu-latest
-    services:
-      mariadb:
-        image: mariadb:latest
-        ports:
-          - 33060
-        env:
-          MYSQL_USER: laravel
-          MYSQL_PASSWORD: password
-          MYSQL_DATABASE: tinyrestaurant
-          MYSQL_ROOT_PASSWORD: password
-        options: --health-cmd="mysqladmin ping" --health-interval=5s --health-timeout=2s --health-retries=3
     env:
       APP_NAME: TinyRestaurant
       APP_ENV: local
@@ -41,11 +30,15 @@ jobs:
 
       DB_CONNECTION: mysql
       DB_HOST: 127.0.0.1
-      DB_PORT: 33060
+      DB_PORT: 3306
       DB_DATABASE: tinyrestaurant
-      DB_USERNAME: laravel
-      DB_PASSWORD: password
+      DB_USERNAME: root
+      DB_PASSWORD: root
     steps:
+      - name: Set up MySQL
+        run: |
+          sudo /etc/init.d/mysql start
+          mysql -e 'CREATE DATABASE ${{ env.DB_DATABASE }};' -u${{ env.DB_USERNAME }} -p${{ env.DB_PASSWORD }}
       - name: Checkout code
         uses: actions/checkout@v2
       - name: Cache dependencies
