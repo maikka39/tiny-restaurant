@@ -1,12 +1,16 @@
 .block {
-    margin: $base 0;
-    padding: $base;
+  margin: $base 0;
+  padding: $base;
 }
 
 .section {
-    margin: $base 0;
+  margin: $base 0;
+}
+
+.w-container {
+  max-width: 940px;
 }
 
 body {
-    background: $light;
+  background: $light;
 }

@@ -21,6 +21,10 @@ Route::get('/', function() {
     return view('site.home');
 });
 
+Route::get('/styles', function() {
+    return view('site.styles');
+});
+
 Route::post('/contact', [MailController::class, 'sendMail'])->name('contact.sendMail');
 Route::get('/{slug}', [PageController::class, 'view'])->name('pages.show');
 Route::get('/gemeente/{slug}', [MunicipalityController::class, 'view'])->name('municipality.show');
