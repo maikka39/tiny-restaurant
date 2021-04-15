@@ -1,0 +1,75 @@
+@tailwind utilities;
+@import 'vars';
+
+.timeline {
+  @apply h-full w-12 flex items-center justify-center;
+}
+
+.timeline-inner {
+  background-color: darken($secondary, 10%);
+  @apply h-full w-1 pointer-events-none;
+}
+
+.timeline-circle {
+  background-color: $secondary;
+  @apply w-12 h-12 absolute top-1/2 rounded-full shadow text-center;
+}
+
+.timeline-circle-logo {
+  @apply relative align-middle w-12 h-12;
+}
+
+.timeline-wrapper {
+  @apply col-start-5 col-end-6 md:mx-auto relative ;
+}
+
+.timeline-component-wrapper {
+  margin-bottom: $base * 2;
+  @apply flex flex-col md:grid grid-cols-9 mx-auto p-2;
+}
+
+.card {
+  color: $dark;
+  @apply my-4 shadow-md bg-gray-300 w-10/12 transition m-auto mb-2 sm:mb-0;
+}
+
+.card-left {
+  @apply sm:col-start-1 sm:col-end-5 sm:ml-auto;
+}
+
+.card-right {
+  @apply sm:col-start-6 sm:col-end-10 sm:mr-auto;
+}
+
+.card-title {
+  background-color: $primary;
+  color: $light;
+  @apply mb-1 py-2 px-4;
+}
+
+.card-images {
+  border-color: $primary;
+  background-color: $light;
+  @apply overflow-hidden flex flex-wrap flex-row justify-around items-center border-t border-b;
+}
+
+.card-attachments {
+  border-color: $primary;
+  background-color: $light;
+  @apply flex flex-row flex-wrap justify-around items-center border-b mt-2;
+}
+
+.card-description {
+  color: $dark;
+  margin: $base / 2 $base;
+}
+
+.card-post-time {
+  color: $dark;
+  margin: 0 $base;
+}
+
+.publish-date {
+  color: $dark;
+  @apply hidden sm:flex justify-center items-center;
+}

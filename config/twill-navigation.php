@@ -13,6 +13,10 @@ return [
         'title' => 'Boeren',
         'module' => true
     ],
+    'newsItems' => [
+        'title' => 'Nieuwsberichten',
+        'module' => true,
+    ],
     'projects' => [
         'title' => 'Projecten',
         'module' => true
