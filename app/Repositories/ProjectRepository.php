@@ -20,7 +20,6 @@ class ProjectRepository extends ModuleRepository
     }
 
     public function aftersave($object, $fields) {
-        
         $this->updateBrowser($object, $fields, 'municipalities');
         $this->updateBrowser($object, $fields, 'farmers');
         parent::afterSave($object, $fields);
