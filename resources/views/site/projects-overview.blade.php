@@ -86,10 +86,7 @@
             @empty
                 <p>Geen resultaten gevonden</p>
             @endforelse 
-
             {{ $projects->render() }}
         </div>
-    </div>
-
-    
+    </div>   
 @endsection

@@ -10,12 +10,10 @@
 @section('content')
     <div class="w-full flex justify-center">
         <div class="max-w-full py-6 lg:max-w-6xl">
-
-
             <div class="imgholder">
                 <img class="w-full" src="{{ $item->image("project_image", 'desktop') }}" alt="{{ $item->imageAltText("project_image") }}"/><br/>
             </div>
-
+            
             <div class="m-4 lg:mx-0">
                 <div>
                     <h1 class="projectTitle">{{$item->name}}</h1>
@@ -39,8 +37,6 @@
                     {!! $item->description !!}
                 </div>
             
-
-
                 @if (count($item->municipalities) > 0 || count($item->farmers) > 0)
                     <h2>Wie doen er mee?</h2>
                     <div class="flex-container">
