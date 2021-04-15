@@ -25,7 +25,7 @@
                 </div>
                     
                 <div class="flex flex-col lg:w-2/6 md:w-2/6 sm:w-full mt-2 mb-2">
-                    <h2> Aankomende evenement </h2>
+                    <h2> Aankomend evenement </h2>
                     <p class="text-justify"> Kom ons bezoeken bij ons volgend evenement in {{ $municipality->title }}! Ervaar wat voor heerlijks ons land te bieden heeft met een proeverij, en maak kennis met de boer en de chef die met liefde en vakmanschap het product tot stand hebben gebracht. </p>
                 </div>
             </div>
@@ -44,7 +44,7 @@
                         <div>
                             <h3>{{ $farmer->name }}</h3>
                             <div class="description">{!! $farmer->description !!}</div>
-                            <button href="{{ route("farmer.show", $farmer->slug) }}" class="button primary float-right">Lees meer</button>
+                            <a href="{{ route("farmer.show", $farmer->slug) }}" class="button primary float-right">Lees meer</a>
                         </div>
                     </div>
                 @endforeach
