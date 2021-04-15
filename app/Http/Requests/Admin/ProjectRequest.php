@@ -22,11 +22,11 @@ class ProjectRequest extends Request
     {
         return [
             'published',
-            'name',
-            'description',
+            'name' => ['required'],
+            'description' => ['required'],
             'active',
-            'date',
-            'address'
+            'date' => ['required'],
+            'address' => ['required']
         ];
     }
 }
