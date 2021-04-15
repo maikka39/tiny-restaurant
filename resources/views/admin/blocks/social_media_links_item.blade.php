@@ -1,8 +1,3 @@
-@formField('color', [
-    'name' => 'logo_color',
-    'label' => 'Logo kleur'
-])
-
 @formField('input', [
     'type' => 'text',
     'name' => 'link',
