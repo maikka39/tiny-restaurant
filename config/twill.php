@@ -75,7 +75,6 @@ return [
                 'icon' => 'text',
                 'component' => 'a17-block-contact_link'
             ],
-            'banner' => 'a17-block-banner',
             'text_with_image' => 'a17-text-with-image',
             'contact_form' => 'a17-block-contact_form',
             'location_map' => 'a17-block-location_map',
@@ -121,5 +120,5 @@ return [
                 ],
             ],
         ],
-    ],
+    ]
 ];

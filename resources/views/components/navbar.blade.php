@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-light">
-    <div class="navbar-base collapse navbar-collapse" id="toggler">
+    <div class="w-container mx-auto collapse navbar-collapse" id="toggler">
         <div class="navbar-flex">
             <div class="navbar-flex-wrapper">
                 <div class="navbar-hidden">
@@ -15,7 +15,7 @@
                                 @endforeach
                             </div>
                         </div>
-                        <a href="{{url('/contact')}}" class="navbar-text">Contact</a>
+                        <a href="#" class="navbar-text">Contact</a>
                     </div>
                 </div>
             </div>
@@ -44,7 +44,7 @@
                         @endforeach
                     </div>
                 </div>
-                <a href="{{url('/contact')}}" class="navbar-text navbar-text-small">Contact</a>
+                <a href="#" class="navbar-text navbar-text-small">Contact</a>
             </div>
         </div>
     </div>
