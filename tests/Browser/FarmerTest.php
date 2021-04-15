@@ -17,6 +17,7 @@ class FarmerTest extends DuskTestCase
     public function setUp(): void
     {
         parent::setUp();
+        $this->artisan('php artisan twill:build');
         $this->artisan('db:seed --class=SuperAdminSeeder');
         $model = Municipality::create([
             'title' => 'Laarbeek',
