@@ -11,11 +11,11 @@
 }
 
 #slideshowdots {
-    display: flex;
-    width: 100%;
-    margin: $base 0;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  width: 100%;
+  margin: $base 0;
+  justify-content: center;
+  align-items: center;
 }
 
 .slideshow-container {
@@ -27,8 +27,7 @@
 
 .mySlides {
   display: none;
-  background-color: $platinum;
-  @apply font-sans fade shadow-lg;
+  @apply font-sans fade shadow-lg bg-light;
 }
 
 .mySlides .imgholder {
@@ -67,7 +66,6 @@
   padding: $base;
   color: white;
   font-weight: $bold;
-  font-size: 18px;
   transition: 0.6s ease;
   border-radius: 0 3px 3px 0;
   user-select: none;
