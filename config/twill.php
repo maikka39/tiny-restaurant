@@ -16,7 +16,7 @@ return [
         'users-2fa' => false, // requires imagick
         'users-oauth' => false,
     ],
-
+    'auth_login_redirect_path' => '/admin',
     'locale' => 'nl',
     'fallback_locale' => 'en',
     'block_editor' => [
