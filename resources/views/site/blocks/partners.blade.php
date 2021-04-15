@@ -8,19 +8,14 @@
 <div class="flex-container">
     <div class="slideshow-container">
         @foreach($block->children as $child)
-            {{-- <h1>{{$child->input('name')}}</h1>
-            <img src="{{$child->image('image', 'desktop')}}" alt="{{$child->imageAltText('image')}}">
-            <p>{!!$child->input('description')!!}</p> --}}
-
             <div class='mySlides'>
                 <div class="imgholder">
                     <img src="{{$child->image('image', 'desktop')}}" alt="{{$child->imageAltText('image')}}">
                 </div>
-                <div class='slidetextbox'>
+                {{-- <div class='slidetextbox flex-col'>
                     <h4>{{$child->input('name')}}</h4>
                     <p>{!!$child->input('description')!!}</p>
-                    {{-- <a href='{{ route('farmer.show', $farmer->slug) }}' class='button primary '> Lees meer </a> --}}
-                </div>
+                </div> --}}
             </div>
         @endforeach
 
