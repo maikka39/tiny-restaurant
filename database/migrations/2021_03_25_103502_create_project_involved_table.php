@@ -14,7 +14,7 @@ class CreateProjectInvolvedTable extends Migration
     public function up()
     {
         Schema::create('project_involved', function (Blueprint $table) {
-            $table->integer('project_id');
+            $table->foreignId('project_id');
             $table->integer('involved_id');
             $table->string('involved_type');
             $table->integer('position')->unsigned();
