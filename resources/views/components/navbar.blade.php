@@ -1,9 +1,9 @@
 <nav class="navbar navbar-expand-lg navbar-light">
-    <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 collapse navbar-collapse" id="toggler">
-        <div class="relative flex items-center h-16">
-            <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
-                <div class="hidden sm:block sm:ml-6">
-                    <div class="flex space-x-4">
+    <div class="navbar-base collapse navbar-collapse" id="toggler">
+        <div class="navbar-flex">
+            <div class="navbar-flex-wrapper">
+                <div class="navbar-hidden">
+                    <div class="navbar-links">
                         <a href="{{url('/home')}}" class="navbar-text" aria-current="page">Tiny Restaurant</a>
                         <a href="{{url('/nieuws')}}" class="navbar-text">Nieuws</a>
                         <a href="{{url('#')}}" class="navbar-text">Agenda</a>
@@ -31,8 +31,8 @@
     </div>
 
     <div class="sm:hidden" id="mobile-menu">
-        <div class="px-2 pt-2 pb-3 space-y-1">
-            <div class="hidden md:flex md:flex-row" id="mobileMenu">
+        <div class="mobile-navbar">
+            <div class="mobile-navbar-flex" id="mobileMenu">
                 <div><a href="{{url('/')}}" class="navbar-text navbar-text-small" aria-current="page">Home</a></div>
                 <div><a href="{{url('/nieuws')}}" class="navbar-text navbar-text-small">Nieuws</a></div>
                 <div><a href="{{url('#')}}" class="navbar-text navbar-text-small">Agenda</a></div>
