@@ -6,31 +6,33 @@ use A17\Twill\Models\Behaviors\HasBlocks;
 use A17\Twill\Models\Behaviors\HasSlug;
 use A17\Twill\Models\Behaviors\HasMedias;
 use A17\Twill\Models\Behaviors\HasRevisions;
+use A17\Twill\Models\Behaviors\Sortable;
 use A17\Twill\Models\Model;
 
-use Illuminate\Database\Eloquent\Relations\HasMany;
-
-class Municipality extends Model 
+class Project extends Model 
 {
     use HasBlocks, HasSlug, HasMedias, HasRevisions;
 
-    public function farmers (): HasMany
-    {
-        return $this->hasMany(Farmer::class);
-    }
-
     protected $fillable = [
         'published',
-        'title',
+        'name',
         'description',
+        'active',
+        'date',
+        'address'
     ];
     
     public $slugAttributes = [
-        'title',
+        'name',
+    ];
+
+    public $browsers = [
+        'municipalities',
+        'farmers'
     ];
     
     public $mediasParams = [
-        'municipality_picture' => [
+        'project_image' => [
             'desktop' => [
                 [
                     'name' => 'desktop',
@@ -60,8 +62,13 @@ class Municipality extends Model
         ],
     ];
 
-    public function projects() 
+    public function farmers() 
     {
-        return $this->morphToMany(Project::class, 'involved', 'project_involved');
+        return $this->morphedByMany(Farmer::class, 'involved', 'project_involved');
+    }
+
+    public function municipalities() 
+    {
+        return $this->morphedByMany(Municipality::class, 'involved', 'project_involved', 'project_id', 'involved_id', null, null );
     }
 }
