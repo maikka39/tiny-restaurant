@@ -16,6 +16,7 @@ return [
         'users-2fa' => false, // requires imagick
         'users-oauth' => false,
     ],
+    'auth_login_redirect_path' => '/admin',
     'dashboard' => [
         'modules' => [
             'App\Models\Farmer' => [
