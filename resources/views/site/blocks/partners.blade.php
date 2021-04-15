@@ -12,10 +12,6 @@
                 <div class="imgholder">
                     <img src="{{$child->image('image', 'desktop')}}" alt="{{$child->imageAltText('image')}}">
                 </div>
-                {{-- <div class='slidetextbox flex-col'>
-                    <h4>{{$child->input('name')}}</h4>
-                    <p>{!!$child->input('description')!!}</p>
-                </div> --}}
             </div>
         @endforeach
 
@@ -27,10 +23,17 @@
     <div id='slideshowdots'>
     </div>
 </div>
-<div class="flex flex-row flex-wrap justify-around content-around">
+<div class="flex flex-row flex-wrap justify-around content-around sponsor-list">
     @foreach($block->children as $child)
+        <div class="form-popup" onclick="event.target === this ? togglePartnerPopup(this) : console.log(1)">
+            <div class="modal">
+                <h2>{{$child->input('name')}}</h2>
+                <p>{!!$child->input('description')!!}</p>
+                <button class="close" href="#" onclick="togglePartnerPopup(this.parentElement.parentElement)">X</button>
+            </div>
+        </div>
         <div class="w-1/5 m-4">
-            <img src="{{$child->image('image', 'desktop')}}" alt="{{$child->imageAltText('image')}}" class="rounded-3xl">
+            <img src="{{$child->image('image', 'desktop')}}" alt="{{$child->imageAltText('image')}}" class="rounded-3xl cursor-pointer" onclick="togglePartnerPopup(this.parentElement.parentElement.getElementsByClassName('form-popup')[0])">
         </div>
     @endforeach
 </div>
