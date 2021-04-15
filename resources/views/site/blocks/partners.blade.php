@@ -7,7 +7,7 @@
 
 <div class="flex-container">
     <div class="slideshow-container">
-        @foreach($block->children as $child)
+        @foreach($block->children->shuffle() as $child)
             <div class='mySlides'>
                 <div class="imgholder">
                     <img src="{{$child->image('image', 'desktop')}}" alt="{{$child->imageAltText('image')}}">
@@ -29,6 +29,8 @@
 </div>
 <div class="flex flex-row flex-wrap justify-around content-around">
     @foreach($block->children as $child)
-        <img src="{{$child->image('image', 'desktop')}}" alt="{{$child->imageAltText('image')}}" class="w-1/5 rounded-3xl m-4">
+        <div class="w-1/5 m-4">
+            <img src="{{$child->image('image', 'desktop')}}" alt="{{$child->imageAltText('image')}}" class="rounded-3xl">
+        </div>
     @endforeach
 </div>

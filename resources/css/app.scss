@@ -13,18 +13,19 @@
 @import "tailwindcss/utilities";
 
 // Theme
-@import 'vars';
-@import 'typography';
-@import 'layout';
+@import "vars";
+@import "typography";
+@import "layout";
 
 // Components
-@import 'components/buttons';
-@import 'components/lists';
-@import 'components/box';
-@import 'components/forms';
-@import 'components/hero';
-@import 'components/footer';
-@import 'components/sidecard';
+@import "components/buttons";
+@import "components/lists";
+@import "components/box";
+@import "components/forms";
+@import "components/hero";
+@import "components/footer";
+@import "components/sidecard";
+@import "components/partners";
 
 //partials
-@import 'project' 
+@import "project";
