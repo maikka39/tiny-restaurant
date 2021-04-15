@@ -36,11 +36,11 @@
                 <a href="{{url('/')}}" class="navbar-text navbar-text-small" aria-current="page">Home</a>
                 <a href="{{url('/nieuws')}}" class="navbar-text navbar-text-small">Nieuws</a>
                 <a href="{{url('#')}}" class="navbar-text navbar-text-small">Agenda</a>
-                <div class="dropdown">
+                <div class="dropdown flex justify-center flex-col">
                     <button class="dropdown-button navbar-text navbar-text-small w-auto">Gemeentes</button>
                     <div class="dropdown-content">
                         @foreach($municipalities as $municipality)
-                            <a href="{{ route('municipality.show', $municipality->title) }}">{{$municipality->title}}</a>
+                            <a class="text-center" href="{{ route('municipality.show', $municipality->title) }}">{{$municipality->title}}</a>
                         @endforeach
                     </div>
                 </div>
