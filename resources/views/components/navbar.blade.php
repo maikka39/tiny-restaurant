@@ -44,7 +44,7 @@
                         @endforeach
                     </div>
                 </div>
-                <a href="{{url('/contact')}}" class="navbar-text navbar-text-small">Contact</a>
+                <a href="#" class="navbar-text navbar-text-small">Contact</a>
             </div>
         </div>
     </div>
