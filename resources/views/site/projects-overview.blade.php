@@ -9,7 +9,7 @@
         <div class="w-full lg:max-w-6xl">
             <h1>Onze projecten</h1>
 
-            <form method="POST" action="/projecten">
+            <form method="POST" action="{{route('project.filter')}}">
                 @csrf
 
                 <div class="flex justify-between">

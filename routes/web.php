@@ -24,9 +24,13 @@ Route::get('/', function() {
 });
 
 Route::post('/contact', [MailController::class, 'sendMail'])->name('contact.sendMail');
-Route::get('/projecten', [ProjectController::class, 'showAll'])->name('project.showAll');
-Route::post('/projecten', [ProjectController::class, 'filter'])->name('project.filter');
-Route::get('/project/{slug}', [ProjectController::class, 'view'])->name('project.show');
+
+Route::name('project.')->group(function () {
+    Route::get('/projecten', [ProjectController::class, 'showAll'])->name('showAll');
+    Route::post('/projecten', [ProjectController::class, 'filter'])->name('filter');
+    Route::get('/project/{slug}', [ProjectController::class, 'view'])->name('show');
+});
+
 Route::get('/{slug}', [PageController::class, 'view'])->name('pages.show');
 Route::get('/gemeente/{slug}', [MunicipalityController::class, 'view'])->name('municipality.show');
 Route::get('/boer/{slug}', [FarmerController::class, 'view'])->name('farmer.show');
