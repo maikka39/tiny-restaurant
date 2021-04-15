@@ -20,6 +20,7 @@ use App\Http\Controllers\Admin\ProjectController;
 */
 
 Route::get('/', [HomeController::class, 'view']);
+Route::get('/home', [HomeController::class, 'view']);
 Route::post('/contact', [MailController::class, 'sendMail'])->name('contact.sendMail');
 Route::get('/gemeente/{slug}', [MunicipalityController::class, 'view'])->name('municipality.show');
 Route::get('/nieuws', [NewsItemController::class, 'view'])->name('newsItems.show');
