@@ -55,7 +55,7 @@ class MunicipalityTest extends DuskTestCase
                 ->visit('/gemeente/laarbeek')
                 ->waitForDialog()
                 ->acceptDialog()
-                ->assertSee('Laarbeek');
+                ->assertUrlIs(config('app.url') . '/gemeente/laarbeek');;
         });
     }
 }

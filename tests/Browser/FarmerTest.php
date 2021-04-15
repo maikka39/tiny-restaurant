@@ -77,7 +77,7 @@ class FarmerTest extends DuskTestCase
                 ->visit('/boer/hans-van-lierop')
                 ->waitForDialog()
                 ->acceptDialog()
-                ->assertSee('Hans van Lierop');
+                ->assertUrlIs(config('app.url') . '/boer/hans-van-lierop');
         });
     }
 }
