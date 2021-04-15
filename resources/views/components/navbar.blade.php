@@ -49,5 +49,3 @@
         </div>
     </div>
 </nav>
-
-<script src="../../js/navbar.js"></script>

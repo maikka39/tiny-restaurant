@@ -13,12 +13,13 @@
 
     <script src="{{ asset('js/app.js') }}" defer></script>
     @stack('scripts')
+
 </head>
 <body>
     <x-navbar />
-        <div>
-            @yield('content')
-        </div>
+    <div>
+        @yield('content')
+    </div>
     <x-footer />
 </body>
 </html>
