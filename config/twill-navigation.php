@@ -24,6 +24,14 @@ return [
     'farmers' => [
         'title' => 'Boeren',
         'module' => true
+    ],
+    'newsItems' => [
+        'title' => 'Nieuwsberichten',
+        'module' => true,
+    ],
+    'projects' => [
+        'title' => 'Projecten',
+        'module' => true
     ]
 ];
 
