@@ -1,4 +1,3 @@
-<?
 @extends('twill::layouts.settings')
 
 @section('contentFields')
@@ -21,16 +20,14 @@
         'maxlength' => 50
     ])
 
-    @formField('wysiwyg', [
-        'name' => 'body_text',
-        'label' => 'Body tekst',
-        'placeholder' => 'Vul een tekst in',
-        'maxlength' => 2500
-    ])
-
     @formField('medias', [
         'name' => 'body_image',
         'label' => 'Body afbeelding'
     ])
 
+    @formField('wysiwyg', [
+        'name' => 'body_text',
+        'label' => 'Body tekst',
+        'placeholder' => 'Vul een tekst in'
+    ])
 @stop

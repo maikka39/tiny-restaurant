@@ -2,12 +2,12 @@
 
 return [
     'settings' => [
-        'title' => 'Settings',
+        'title' => 'Instellingen',
         'route' => 'admin.settings',
         'params' => ['section' => 'homepage'],
         'primary_navigation' => [
             'homepage' => [
-                'title' => 'Homepage',
+                'title' => 'Hoofdpagina',
                 'route' => 'admin.settings',
                 'params' => ['section' => 'homepage']
             ],
