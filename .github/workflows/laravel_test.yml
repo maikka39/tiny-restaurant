@@ -19,13 +19,32 @@ jobs:
       mariadb:
         image: mariadb:latest
         ports:
-          - 3306
+          - 33060
         env:
           MYSQL_USER: laravel
           MYSQL_PASSWORD: password
           MYSQL_DATABASE: tinyrestaurant
           MYSQL_ROOT_PASSWORD: password
         options: --health-cmd="mysqladmin ping" --health-interval=5s --health-timeout=2s --health-retries=3
+    env:
+      APP_NAME: TinyRestaurant
+      APP_ENV: local
+      APP_KEY: base64:LtLCtQk18gp5uSQDGpaRCTKAH96vVBeSN4wgaz6of2s=
+      APP_DEBUG: true
+      APP_URL: http://localhost:8000
+
+      ADMIN_APP_URL: "http://localhost"
+      ADMIN_APP_PATH: admin
+
+      LOG_CHANNEL: stack
+      LOG_LEVEL: debug
+
+      DB_CONNECTION: mysql
+      DB_HOST: 127.0.0.1
+      DB_PORT: 33060
+      DB_DATABASE: tinyrestaurant
+      DB_USERNAME: laravel
+      DB_PASSWORD: password
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -40,8 +59,6 @@ jobs:
           php-version: 8.0
           extensions: dom, curl, libxml, mbstring, zip, pcntl, pdo, sqlite, pdo_sqlite
           coverage: none
-      - name: Copy ENV Laravel Configuration for CI
-        run: cp -n .env.ci .env
       - name: Install Dependencies (PHP vendors)
         run: composer install -q --no-ansi --no-interaction --no-scripts --no-suggest --no-progress --prefer-dist
       - name: Generate key
