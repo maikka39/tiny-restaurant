@@ -42,9 +42,6 @@
                         <div class="body">
                             <h3>{{ $farmer->name }}</h3>
                             <div class="description">{!! $farmer->description !!}</div>
-                            <div class="footer">
-                                <a class="button" href="{{ route("farmer.show", $farmer->slug) }}">Lees meer</a>
-                            </div>
                         </div>
                     </div>
                 @endforeach
