@@ -34,7 +34,7 @@
                         <label class="label" for="sort">Sorteren op</label>
                         <div class="flex flex-wrap md:flex-nowrap">                        
                             <select class="h-12" name="sort" id="sort" onchange="this.form.submit()">
-                                <option value="date_descending" @if($sort == 'date_descending' || isEmpty($sort)) selected @endif>Datum aflopend</option>
+                                <option value="date_descending" @if($sort == 'date_descending' || empty($sort)) selected @endif>Datum aflopend</option>
                                 <option value="date_ascending" @if($sort == 'date_ascending') selected @endif>Datum oplopend</option>
                             </select>
                         

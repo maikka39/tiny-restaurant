@@ -21,12 +21,12 @@ class ProjectRequest extends Request
     public function rulesForUpdate()
     {
         return [
-            'published',
-            'name' => ['required'],
-            'description' => ['required'],
-            'active',
-            'date' => ['required'],
-            'address' => ['required']
+            'published' => ['required', 'boolean'],
+            'name' => ['required', 'string'],
+            'description' => ['required', 'string'],
+            'active' => ['required', 'boolean'],
+            'date' => ['required', 'date'],
+            'address' => ['required', 'string']
         ];
     }
 }
