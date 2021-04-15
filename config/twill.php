@@ -16,7 +16,51 @@ return [
         'users-2fa' => false, // requires imagick
         'users-oauth' => false,
     ],
-
+    'auth_login_redirect_path' => '/admin',
+    'dashboard' => [
+        'modules' => [
+            'App\Models\Farmer' => [
+                'name' => 'farmers',
+                'label' => 'Boeren',
+                'label_singular' => 'Boer',
+                'activity' => true,
+                'search' => true,
+                'create' => true,
+                'count' => true,
+                'search_fields' => ['name', 'description', 'address']
+            ],
+            'App\Models\Page' => [
+                'name' => 'pages',
+                'label' => 'Pagina\'s',
+                'label_singular' => 'Pagina',
+                'activity' => true,
+                'search' => true,
+                'create' => true,
+                'count' => true,
+                'search_fields' => ['title', 'description']
+            ],
+            'App\Models\Municipality' => [
+                'name' => 'municipalities',
+                'label' => 'Gemeentes',
+                'label_singular' => 'Gemeente',
+                'activity' => true,
+                'search' => true,
+                'create' => true,
+                'count' => true,
+                'search_fields' => ['title', 'description']
+            ],
+            'App\Models\NewsItem' => [
+                'name' => 'newsItems',
+                'label' => 'Nieuwsberichten',
+                'label_singular' => 'Nieuwsbericht',
+                'activity' => true,
+                'search' => true,
+                'create' => true,
+                'count' => true,
+                'search_fields' => ['title', 'description']
+            ],
+        ]
+    ],
     'locale' => 'nl',
     'fallback_locale' => 'en',
     'block_editor' => [
@@ -32,7 +76,6 @@ return [
                 'icon' => 'text',
                 'component' => 'a17-block-contact_link'
             ],
-            'banner' => 'a17-block-banner',
             'text_with_image' => 'a17-text-with-image',
             'contact_form' => 'a17-block-contact_form',
             'location_map' => 'a17-block-location_map',
@@ -80,5 +123,5 @@ return [
                 ],
             ],
         ],
-    ],
+    ]
 ];
