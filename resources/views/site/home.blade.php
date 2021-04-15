@@ -24,7 +24,7 @@
                     <span>10/3 Proeverij Helmond</span>
                 </div>
                 <div class="sidecard row">
-                    <h4>Agenda</h4>
+                    <h4>Links</h4>
                     <a>https://www.groentjessoep.nl/</a>
                     <a>https://www.smaakcentrum.nl/</a>
                     <a>https://www.jonglereneten.nl/</a>
