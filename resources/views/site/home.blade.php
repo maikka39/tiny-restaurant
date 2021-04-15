@@ -13,11 +13,11 @@
             </div>
         </div>
         <div class="grid grid-cols-3 py-1">
-            <div class="col-span-2">
+            <div class="col-span-3 md:col-span-2">
                 <h2>Activiteiten</h2>
                 <p>Momenteel geen activiteiten</p>
             </div>
-            <div class="col-span-1 mt-36 grid gap-y-6 md:gap-y-12">
+            <div class="col-span-3 md:col-span-1 mt-36 grid gap-y-6 md:gap-y-12">
                 <div class="sidecard row">
                     <h4>Agenda</h4>
                     <p>Agenda is leeg</p>
