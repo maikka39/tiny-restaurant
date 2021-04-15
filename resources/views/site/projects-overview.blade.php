@@ -57,12 +57,12 @@
 
             @forelse ($projects as $project)
                 <div class="box secondary projectcard ">
-                    <div class="w-full md:w-1/3 ">
-                        <img src="{{ $project->image("project_image", 'desktop') }}" alt="{{ $project->imageAltText("project_image") }}">
+                    <div class="cardimg">
+                        <img  src="{{ $project->image("project_image", 'desktop') }}" alt="{{ $project->imageAltText("project_image") }}">
                     </div>
                     <div class="mainholder">
-                        <div class="flex justify-between">
-                            <h2  class="w-2/3">{{$project->name}}</h2>
+                        <div class="w-full flex justify-between">
+                            <h2 >{{$project->name}}</h2>
                             <div class="mr-1 mt-1 flex">
                                 @if($project->active) 
                                     <p class="mr-2">Actief</p><i class="mt-1 mr-1 fas fa-calendar-check fa-lg"></i>

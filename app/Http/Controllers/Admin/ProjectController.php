@@ -16,7 +16,7 @@ class ProjectController extends ModuleController
 
     public function showAll($projects = null, $keyword = null, $sort = null) {
         if($projects == null) {
-            $projects = Project::orderBy('date', 'desc')->paginate(15);
+            $projects = Project::where('published', true)->orderBy('date', 'desc')->paginate(15);
         }
 
         return view('site.projects-overview', [
@@ -42,8 +42,8 @@ class ProjectController extends ModuleController
                 $sort = ""; 
                 $projects = Project::orderBy('date', 'desc');
         }
-        
-        $projects = $projects->where(function ($project) use ($keyword){
+
+        $projects = $projects->where('published', true)->where(function ($project) use ($keyword){
 
             if($keyword) {
 
