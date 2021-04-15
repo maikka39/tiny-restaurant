@@ -8,7 +8,7 @@
                     <h1>Het Tiny Restaurant</h1>
                     <p>Wilt u als bedrijf ook het verschil maken en waardevol ondernemen door naar uw doelgroep toe te
                         gaan?</p>
-                    <a href="#" class="button primary">Neem contact op!</a>
+                    <a href="{{ route('contact') }}" class="button primary">Neem contact op!</a>
                 </div>
             </div>
         </div>
