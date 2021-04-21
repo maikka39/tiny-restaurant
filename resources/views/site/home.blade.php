@@ -19,7 +19,11 @@
             <div class="col-span-3 md:col-span-1 mt-36 grid gap-y-6 md:gap-y-12">
                 <div class="sidecard row">
                     <h4>Agenda</h4>
-                    <p>Agenda is leeg</p>
+                    @forelse($agendaItems as $item)
+                        <a class="agenda-item" href="{{ route('project.show', $item->name) }}">{{ $item->agendaDate() }} {{ $item->name }}</a><br>
+                    @empty
+                        <p>Geen agenda items</p>
+                    @endforelse
                 </div>
                 <div class="sidecard row">
                     <h4>Links</h4>
