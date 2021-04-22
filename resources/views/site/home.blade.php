@@ -20,7 +20,7 @@
                 <div class="sidecard row">
                     <h4>Agenda</h4>
                     @forelse($agendaItems as $item)
-                        <a class="agenda-item" href="{{ route('project.show', $item->name) }}">{{ $item->agendaDate() }} {{ $item->name }}</a><br>
+                        <a class="agenda-item" href="{{ route('project.show', \Illuminate\Support\Str::slug($item->name)) }}">{{ $item->agendaDate() }} {{ $item->name }}</a><br>
                     @empty
                         <p>Geen agenda items</p>
                     @endforelse
