@@ -15,7 +15,7 @@
         'maxlength' => 50
     ])
 
-    @formField('input', [
+    @formField('repeater', [
         'name' => 'homepage_links,',
         'type' => 'text',
         'label' => 'Homepagina links',

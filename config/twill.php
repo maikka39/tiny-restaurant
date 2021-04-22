@@ -86,6 +86,11 @@ return [
                 'trigger' => 'Nieuwe link toevoegen',
                 'component' => 'a17-block-social_media_links_item'
             ],
+            'homepage_links' => [
+                'title' => 'Homepagina Link',
+                'trigger' => 'Nieuwe link toevoegen',
+                'component' => 'a17-block-text'
+            ],
         ],
         'crops' => [
             'image' => [

@@ -17,9 +17,22 @@ class CustomSettingRepository extends SettingRepository
         parent::__construct($model, $config);
     }
 
+    public function getFormFields($section = null)
+    {
+        $fields = parent::getFormFields($section);
+        $fields = $this->getJsonRepeater($fields, 'homepage_links');
+        return $fields;
+    }
+
+    public function getJsonRepeater($fields, $repeaterName) {
+		$repeatersConfig = config('twill.block_editor.repeaters');
+
+        
+    }
+
+
     public function saveAll($settingsFields, $section = null)
     {
-        dd('test');
         parent::saveAll($settingsFields, $section);
         
         //Hier je custom repeater save
