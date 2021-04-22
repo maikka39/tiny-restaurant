@@ -14,4 +14,10 @@
         'label' => 'Banner description',
         'maxlength' => 50
     ])
+
+    @formField('input', [
+        'name' => 'homepage_links,',
+        'type' => 'text',
+        'label' => 'Homepagina links',
+    ])
 @stop

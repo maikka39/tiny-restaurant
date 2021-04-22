@@ -8,7 +8,7 @@ return [
         'block-editor' => true,
         'buckets' => true,
         'users-image' => true,
-        'settings' => true,
+        'settings' => false, // We are using a custom setting controller now.
         'dashboard' => true,
         'search' => true,
         'users-description' => false,
@@ -85,7 +85,7 @@ return [
                 'title' => 'Social Media link',
                 'trigger' => 'Nieuwe link toevoegen',
                 'component' => 'a17-block-social_media_links_item'
-            ]
+            ],
         ],
         'crops' => [
             'image' => [
