@@ -1,5 +1,5 @@
 .box {
-    padding: $base * 2;
+    padding: ($base * 2) 0;
     margin: $base 0;
 
     &.primary,

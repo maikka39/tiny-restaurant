@@ -1,7 +1,7 @@
 @extends('site.layouts.base')
 
 @section('content')
-    <div class="w-container mx-auto mb-5">
+    <div class="w-container mb-5">
         <div class="hero grid md:grid-cols-5">
             <div class="pl-12 md:col-span-3 md:mt-32">
                 <div class="content">
