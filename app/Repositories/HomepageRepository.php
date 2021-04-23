@@ -3,10 +3,9 @@
 namespace App\Repositories;
 
 use A17\Twill\Models\Setting;
-use A17\Twill\Repositories\SettingRepository;
 use Illuminate\Config\Repository as Config;
 
-class CustomSettingRepository extends SettingRepository
+class HomepageRepository extends ModuleRepository
 {
     /**
      * @param Setting $model
@@ -14,13 +13,12 @@ class CustomSettingRepository extends SettingRepository
      */
     public function __construct(Setting $model, Config $config)
     {
-        parent::__construct($model, $config);
+        
     }
 
     public function getFormFields($section = null)
     {
-        $fields = parent::getFormFields($section);
-        $fields = $this->getJsonRepeater($fields, 'homepage_links');
+        $fields = '';
         return $fields;
     }
 
@@ -32,9 +30,7 @@ class CustomSettingRepository extends SettingRepository
 
 
     public function saveAll($settingsFields, $section = null)
-    {
-        parent::saveAll($settingsFields, $section);
-        
+    {       
         //Hier je custom repeater save
     }
 }
