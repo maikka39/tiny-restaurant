@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\HomeController;
+use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\NewsItemController;
 use App\Http\Controllers\MailController;
 use App\Http\Controllers\Admin\FarmerController;
