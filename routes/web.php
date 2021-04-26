@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\FarmerController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\MunicipalityController;
 use App\Http\Controllers\Admin\ProjectController;
+use App\Http\Controllers\Admin\PageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,6 +34,8 @@ Route::name('project.')->group(function () {
 
 Route::get('/boer/{slug}', [FarmerController::class, 'view'])->name('farmer.show');
 
-Route::get('/styles', function() {
+Route::get('/styles', function () {
     return view('site.styles');
 });
+
+Route::get('/{slug}', [PageController::class, 'view'])->name('pages.show');
