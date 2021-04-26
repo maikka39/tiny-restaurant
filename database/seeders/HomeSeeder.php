@@ -3,11 +3,11 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use App\Models\Homepage;
-use App\Models\HomepageSetting;
+use App\Models\Home;
+use App\Models\HomeSetting;
 use App\Models\Link;
 
-class HomepageSeeder extends Seeder
+class HomeSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -16,8 +16,9 @@ class HomepageSeeder extends Seeder
      */
     public function run()
     {
-        $homepages = array([
+        $homes = array([
             'name' => 'v1.0',
+            'published' => true
         ]);
 
         $settings = array([
@@ -36,12 +37,12 @@ class HomepageSeeder extends Seeder
             'url' => 'https://www.youtube.com' 
         ]);
 
-        foreach ($homepages as $homepage) {
-            $model = Homepage::create($homepage);
+        foreach ($homes as $home) {
+            $model = Home::create($home);
 
             foreach($settings as $setting) {
-                $setting = HomepageSetting::create([
-                    'homepage_id' => $model->id,
+                $setting = HomeSetting::create([
+                    'home_id' => $model->id,
                     'key' => $setting['key'],
                     'value' => $setting['value'],
                 ]);

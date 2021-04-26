@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateHomepageLinkTable extends Migration
+class CreateHomeLinkTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,9 @@ class CreateHomepageLinkTable extends Migration
      */
     public function up()
     {
-        Schema::create('homepage_link', function (Blueprint $table) {
+        Schema::create('home_link', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('homepage_id')->constrained(); 
+            $table->foreignId('home_id')->constrained(); 
             $table->foreignId('link_id')->constrained();
             $table->timestamps();
         });

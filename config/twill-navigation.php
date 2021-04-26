@@ -13,9 +13,9 @@ return [
     //         ],
     //     ]
     // ],
-    'home' => [
+    'homes' => [
         'title' => 'Instellingen',
-        'route' => 'admin.homesettings.show',
+        'route' => 'admin.homesettings.show'
     ],
     'pages' => [
         'title' => 'Pagina\'s',

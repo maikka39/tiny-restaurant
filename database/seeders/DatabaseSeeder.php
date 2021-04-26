@@ -19,7 +19,7 @@ class DatabaseSeeder extends Seeder
             PageSeeder::class,
             FarmerSeeder::class,
             NewsItemSeeder::class,
-            HomepageSeeder::class,
+            HomeSeeder::class,
         ]);
         // \App\Models\User::factory(10)->create();
     }

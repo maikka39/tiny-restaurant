@@ -6,14 +6,13 @@ use App\Models\Home;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Link extends Model
+class HomeSetting extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'url'];
+    protected $fillable = ['home_id', 'key', 'value'];
 
-    public function homes() 
-    {
-        return $this->belongsToMany(Home::class);
+    public function homes() {
+        return $this->belongsTo(Home::class);
     }
 }

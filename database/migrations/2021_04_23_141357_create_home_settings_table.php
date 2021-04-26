@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateHomepageSettingsTable extends Migration
+class CreateHomeSettingsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,9 @@ class CreateHomepageSettingsTable extends Migration
      */
     public function up()
     {
-        Schema::create('homepage_settings', function (Blueprint $table) {
+        Schema::create('home_settings', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('homepage_id')->constrained();
+            $table->foreignId('home_id')->constrained();
             $table->string('key');
             $table->string('value');
             $table->timestamps();
