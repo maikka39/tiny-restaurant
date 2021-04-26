@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use A17\Twill\Http\Controllers\Admin\ModuleController;
+use Illuminate\Support\Str;
 
 class NewsItemController extends ModuleController
 {
@@ -69,6 +70,12 @@ class NewsItemController extends ModuleController
             ->sortByDesc(function ($newItem) {
                 return $newItem->created_at;
             });
+
+        if(request()->has('search') && request()->query('search') != null) {
+            $publishedNewItems = $publishedNewItems->filter(function ($newsItem, $key) {
+                return $newsItem->filter(request()->query('search'));
+            })->all();
+        }
 
         return view('site.news')
             ->with('newsItems', $publishedNewItems);

@@ -10,6 +10,7 @@ use A17\Twill\Models\Model;
 use A17\Twill\Services\FileLibrary\FileService;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Support\Str;
 
 class NewsItem extends Model 
 {
@@ -83,5 +84,13 @@ class NewsItem extends Model
             array_push($returnableObjects, $fileObject);
         }
         return $returnableObjects;
+    }
+
+    public function filter($search): bool
+    {
+        $search = Str::lower($search);
+        return
+            Str::contains(Str::lower($this->title), $search) ||
+            Str::contains(Str::lower($this->description), $search);
     }
 }

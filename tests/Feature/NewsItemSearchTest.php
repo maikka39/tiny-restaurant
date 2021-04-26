@@ -49,9 +49,7 @@ class NewsItemSearchTest extends TestCase
         $newsItem = $this->newsItems->random();
         $response = $this
             ->followingRedirects()
-            ->post('/nieuws', [
-                'search' => $newsItem->title
-            ]);
+            ->get('/nieuws?search=' . $newsItem->title);
         $response->assertSee($newsItem->title);
         $newsItems = $response->original['newsItems'];
         $this->assertCount(1, $newsItems);
