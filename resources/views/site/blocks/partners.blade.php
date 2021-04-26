@@ -29,7 +29,7 @@
         @foreach($block->children as $child)
             <div class="w-1/5 m-4">
                 <div class="form-popup" onclick="event.target === this ? togglePartnerPopup(this) : () => {}">
-                    <div class="modal">
+                    <div class="modal lg:max-w-6xl">
                         <h2>{{$child->input('name')}}</h2>
                         <p>{!!$child->input('description')!!}</p>
                         <button class="close" href="#" onclick="togglePartnerPopup(this.parentElement.parentElement)">X</button>
