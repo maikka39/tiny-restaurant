@@ -27,15 +27,15 @@
     </div>
     <div class="flex flex-row flex-wrap justify-around content-around partner-list">
         @foreach($block->children as $child)
-            <div class="form-popup" onclick="event.target === this ? togglePartnerPopup(this) : () => {}">
-                <div class="modal">
-                    <h2>{{$child->input('name')}}</h2>
-                    <p>{!!$child->input('description')!!}</p>
-                    <button class="close" href="#" onclick="togglePartnerPopup(this.parentElement.parentElement)">X</button>
-                </div>
-            </div>
             <div class="w-1/5 m-4">
-                <img src="{{$child->image('image', 'desktop')}}" alt="{{$child->imageAltText('image')}}" class="rounded-3xl cursor-pointer" onclick="togglePartnerPopup(this.parentElement.parentElement.getElementsByClassName('form-popup')[0])">
+                <div class="form-popup" onclick="event.target === this ? togglePartnerPopup(this) : () => {}">
+                    <div class="modal">
+                        <h2>{{$child->input('name')}}</h2>
+                        <p>{!!$child->input('description')!!}</p>
+                        <button class="close" href="#" onclick="togglePartnerPopup(this.parentElement.parentElement)">X</button>
+                    </div>
+                </div>
+                <img src="{{$child->image('image', 'desktop')}}" alt="{{$child->imageAltText('image')}}" class="rounded-3xl cursor-pointer" onclick="togglePartnerPopup(this.parentElement.getElementsByClassName('form-popup')[0])">
             </div>
         @endforeach
     </div>
