@@ -2,10 +2,10 @@
     <link href="{{ asset('css/slideshow.css') }}" rel="stylesheet">
 @endpush
 @push('scripts')
-    <script type="text/javascript" src="{{asset('js/partners.js')}}" defer></script>
+    <script type="text/javascript" src="{{asset('js/partners.js')}}"></script>
 @endpush
 
-<div class="flex-container">
+<div class="flex-container slideshow">
     <div class="slideshow-container">
         @foreach($block->children->shuffle() as $child)
             <div class='mySlides'>
@@ -20,7 +20,7 @@
     </div>
     <br>
 
-    <div id='slideshowdots'>
+    <div class="slideshowdots">
     </div>
 </div>
 <div class="flex flex-row flex-wrap justify-around content-around partner-list">

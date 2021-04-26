@@ -1,71 +1,73 @@
-let slideIndex = 1;
+let slideshows = []
 
-window.addEventListener('load', function () {
-  var prev = document.getElementsByClassName('prev')[0];
-  var next = document.getElementsByClassName('next')[0];
+window.addEventListener('load', () => {
+  for (const el of document.getElementsByClassName("slideshow")) {
+    if (el.getAttribute("rendered") == "true") continue
+    el.setAttribute("rendered", "true")
 
-  if (prev == null || next == null) return;
+    let ss = new slideshow(el)
 
-  prev.addEventListener('click', function () {
-    plusSlides(-1)
-  });
-  next.addEventListener('click', function () {
-    plusSlides(1)
-  });
+      ss.setup()
+      ss.showSlides()
+      ss.autoScroll()
 
-  var slides = document.getElementsByClassName("mySlides");
-  var dots = document.getElementById('slideshowdots');
-  dots.innerHTML = ""
-  for (let i = 0; i < slides.length; i++) {
-    if (i >= 10)
-      break;
-
-    let dot = document.createElement('span');
-    dot.className = 'dot';
-    dot.onclick = () => {
-      currentSlide(i + 1)
-    }
-    dots.appendChild(dot);
+    slideshows.push(ss)
   }
-
-  showSlides(slideIndex);
-
-  autoScroll();
+  console.log(slideshows);
 })
 
 
+function slideshow(el) {
+  this.index = 0
+  this.el = el
 
-// Next/previous controls
-function plusSlides(n) {
-  showSlides(slideIndex += n);
-}
+  this.setup = () => {
+    var prev = this.el.getElementsByClassName('prev')[0]
+    var next = this.el.getElementsByClassName('next')[0]
 
-// Thumbnail image controls
-function currentSlide(n) {
-  showSlides(slideIndex = n);
-}
+    if (prev == null || next == null) return
 
-function autoScroll() {
-  setTimeout(() => {
-    plusSlides(1)
-    autoScroll()
-  }, 5000)
-}
+    prev.addEventListener('click', () => this.showSlides(this.index--))
+    next.addEventListener('click', () => this.showSlides(this.index++))
 
-function showSlides(n) {
-  var i;
-  var slides = document.getElementsByClassName("mySlides");
-  var dots = document.getElementsByClassName("dot");
-  if (n > slides.length)
-    slideIndex = 1
-  if (n < 1)
-    slideIndex = slides.length
-  for (i = 0; i < slides.length; i++)
-    slides[i].style.display = "none";
+    this.slides = this.el.getElementsByClassName("mySlides")
+    let dots = this.el.getElementsByClassName('slideshowdots')[0]
 
-  for (i = 0; i < dots.length; i++)
-    dots[i].className = dots[i].className.replace(" active", "");
+    for (let i = 0; i < this.slides.length; i++) {
+      if (i >= 10)
+        break
 
-  slides[slideIndex - 1].style.display = "block";
-  dots[slideIndex - 1].className += " active";
+      let dot = document.createElement('span')
+      dot.className = 'dot'
+      dot.onclick = () => {
+        this.index = i
+        this.showSlides()
+      }
+      dots.appendChild(dot)
+    }
+  }
+
+  this.autoScroll = () => {
+    setTimeout(() => {
+      this.index++
+      this.showSlides()
+      this.autoScroll()
+    }, 5000)
+  }
+
+  this.showSlides = () => {
+    let dots = this.el.getElementsByClassName("dot")
+    if (this.index >= this.slides.length)
+      this.index = 0
+    if (this.index < 0)
+      this.index = this.slides.length - 1
+    for (let i = 0; i < this.slides.length; i++)
+      this.slides[i].style.display = "none"
+
+    for (let i = 0; i < dots.length; i++)
+      dots[i].className = dots[i].className.replace(" active", "")
+
+    this.slides[this.index].style.display = "block"
+    dots[this.index].className += " active"
+  }
 }
