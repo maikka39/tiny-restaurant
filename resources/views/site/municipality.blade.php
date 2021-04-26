@@ -34,6 +34,7 @@
         </div>
     </div>
 
+    <div class="w-container">
     @if (count($municipality->farmers) > 0)
         <h2 class="text-center">Partners</h2>
 
@@ -53,4 +54,5 @@
             </div>
         @endforeach
     @endif
+    </div>
 @endsection
