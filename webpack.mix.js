@@ -14,6 +14,7 @@ const tailwindcss = require('tailwindcss');
 
 mix.js('resources/js/app.js', 'public/js')
     .js('resources/js/slideshow.js', 'public/js')
+    .js('resources/js/partners.js', 'public/js')
     .sass('resources/css/app.scss', 'public/css')
     .sass('resources/css/newsItem.scss', 'public/css')
     .sass('resources/css/slideshow.scss', 'public/css')

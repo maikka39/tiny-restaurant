@@ -1,3 +1,5 @@
+require("./slideshow")
+
 window.togglePartnerPopup = (el) => {
     if (el.style.display === "block") {
         el.style.display = "none"

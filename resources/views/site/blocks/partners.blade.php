@@ -2,7 +2,7 @@
     <link href="{{ asset('css/slideshow.css') }}" rel="stylesheet">
 @endpush
 @push('scripts')
-    <script type="text/javascript" src="{{asset('js/slideshow.js')}}" defer></script>
+    <script type="text/javascript" src="{{asset('js/partners.js')}}" defer></script>
 @endpush
 
 <div class="flex-container">
