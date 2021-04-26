@@ -18,7 +18,7 @@
     <div class="box primary">
         <div class="w-container">
             <div class="flex flex-wrap place-content-around">
-                <div class="overflow-hidden lg:w-3/6 md:w-3/6 sm:w-full">
+                <div class="overflow-hidden md:w-3/6 sm:w-full">
                     <iframe class="w-full h-full overflow-hidden"
                             src="https://maps.google.com/maps?q={{ $municipality->title }}&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
                 </div>
