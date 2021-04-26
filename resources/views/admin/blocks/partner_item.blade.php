@@ -17,9 +17,3 @@
     'name' => 'description',
     'label' => 'Beschrijving',
 ])
-
-{{-- @formField('input', [
-    'type' => 'text',
-    'name' => 'description',
-    'label' => 'Beschrijving',
-]) --}}
