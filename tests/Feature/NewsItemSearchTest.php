@@ -45,8 +45,14 @@ class NewsItemSearchTest extends TestCase
      */
     public function search_exact_title()
     {
-        $response = $this->get('/nieuws');
+        $newsItem = $this->newsItems->random();
+        $response = $this
+            ->followingRedirects()
+            ->post('/nieuws', [
+                'search' => $newsItem->title
+            ]);
 
         $response->assertStatus(200);
+        $response->assertSee($newsItem->title);
     }
 }
