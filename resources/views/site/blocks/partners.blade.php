@@ -27,7 +27,7 @@
     </div>
     <div class="flex flex-row flex-wrap justify-around content-around partner-list">
         @foreach($block->children as $child)
-            <div class="form-popup" onclick="event.target === this ? togglePartnerPopup(this) : console.log(1)">
+            <div class="form-popup" onclick="event.target === this ? togglePartnerPopup(this) : () => {}">
                 <div class="modal">
                     <h2>{{$child->input('name')}}</h2>
                     <p>{!!$child->input('description')!!}</p>
