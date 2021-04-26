@@ -3,7 +3,7 @@
 ])
 
 @section("content")
-    <div class="w-container my-4">
+    <div class="container my-4">
         <div class="flex flex-wrap place-content-around">
             <div class="flex flex-col w-3/6">
                 <h1 class="">{{ $municipality->title }}</h1>
@@ -16,7 +16,7 @@
     </div>
 
     <div class="box primary">
-        <div class="w-container">
+        <div class="container">
             <div class="flex flex-wrap place-content-around">
                 <div class="overflow-hidden md:w-3/6 sm:w-full">
                     <iframe class="w-full h-full overflow-hidden"
@@ -34,7 +34,7 @@
         </div>
     </div>
 
-    <div class="w-container">
+    <div class="container">
     @if (count($municipality->farmers) > 0)
         <h2 class="text-center">Partners</h2>
 

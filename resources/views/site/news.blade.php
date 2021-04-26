@@ -8,7 +8,7 @@
 
 @section('content')
     <h1 class="text-center">Nieuwsberichten</h1>
-    <div class="timeline-component-wrapper">
+    <div class="container timeline-component-wrapper">
         @foreach($newsItems as $newsItem)
             <div class="flex @if($loop->even) flex-row-reverse @endif md:contents">
                 @if(!$loop->even)
