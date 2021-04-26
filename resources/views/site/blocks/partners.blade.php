@@ -23,7 +23,7 @@
     <div id='slideshowdots'>
     </div>
 </div>
-<div class="flex flex-row flex-wrap justify-around content-around sponsor-list">
+<div class="flex flex-row flex-wrap justify-around content-around partner-list">
     @foreach($block->children as $child)
         <div class="form-popup" onclick="event.target === this ? togglePartnerPopup(this) : console.log(1)">
             <div class="modal">
