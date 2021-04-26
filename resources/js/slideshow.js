@@ -13,7 +13,6 @@ window.addEventListener('load', () => {
 
     slideshows.push(ss)
   }
-  console.log(slideshows);
 })
 
 
