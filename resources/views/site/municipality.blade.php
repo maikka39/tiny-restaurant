@@ -3,7 +3,7 @@
 ])
 
 @section("content")
-    <div class="w-container mt-4 mb-4">
+    <div class="w-container my-4">
         <div class="flex flex-wrap place-content-around">
             <div class="flex flex-col w-3/6">
                 <h1 class="">{{ $municipality->title }}</h1>
