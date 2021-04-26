@@ -41,6 +41,7 @@ class NewsItemSearchTest extends TestCase
      * Searching for the title of a news item
      * Should return just 1 record
      *
+     * @test
      * @return void
      */
     public function search_exact_title()
@@ -51,8 +52,13 @@ class NewsItemSearchTest extends TestCase
             ->post('/nieuws', [
                 'search' => $newsItem->title
             ]);
-
-        $response->assertStatus(200);
         $response->assertSee($newsItem->title);
+        $newsItems = $response->original['newsItems'];
+        $this->assertCount(1, $newsItems);
+    }
+
+    public function search_description()
+    {
+        //fill in
     }
 }
