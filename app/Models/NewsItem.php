@@ -9,10 +9,11 @@ use A17\Twill\Models\Behaviors\HasRevisions;
 use A17\Twill\Models\Model;
 use A17\Twill\Services\FileLibrary\FileService;
 use Carbon\Carbon;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class NewsItem extends Model 
 {
-    use HasBlocks, HasMedias, HasRevisions, HasFiles;
+    use HasBlocks, HasMedias, HasRevisions, HasFiles, HasFactory;
 
     protected $fillable = [
         'published',
