@@ -18,7 +18,6 @@ class HomeSeeder extends Seeder
     {
         $homes = array([
             'name' => 'v1.0',
-            'published' => true
         ]);
 
         $settings = array([
