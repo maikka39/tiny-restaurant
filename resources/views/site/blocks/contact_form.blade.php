@@ -1,7 +1,7 @@
-<div class="">
+<div class="box">
     <div class="w-container bg-white mx-auto">
         <h3 class="pl-10 pt-5">{{ $block->input('title') }}</h3>
-        <p class="pl-20">{{ $block->input('description') }}</p>
+        <p class="text-center">{{ $block->input('description') }}</p>
 
         <form class="px-5" method="POST" action="{{ route('contact.sendMail') }}">
             @csrf
