@@ -1,0 +1,26 @@
+ul, ol {
+    li {
+        margin-left: $base;
+
+        &:before {
+            margin-right: $base;
+        }
+    }
+}
+
+li:before {
+    font-family: $handwriting;
+    font-weight: $bold;
+}
+
+ol li {
+    counter-increment: counter;
+
+    &:before {
+        content: counter(counter) ".";
+    }
+}
+
+ul li:before {
+    content: '-';
+}
