@@ -23,7 +23,9 @@
                 </div>
                 <div class="sidecard row">
                     <h4>Links</h4>
-                    <p>Geen links</p>
+                    @foreach($links as $link)
+                    <p>{{$link->url}}</p>
+                    @endforeach
                 </div>
             </div>
         </div>

@@ -24,7 +24,11 @@ class HomeSettingsRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'banner_title' => ['required', 'string', 'max:50'],
+            'banner_description' => ['required', 'string', 'max:150'],
+            'links' => ['array', 'max:10'],
+            'links.*.name' => ['required', 'string'],
+            'links.*.url' => ['required', 'url'] 
         ];
     }
 }

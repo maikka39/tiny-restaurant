@@ -2,6 +2,7 @@
 
 @push('extra_css')
   <link rel="stylesheet" href="{{ asset('css/settings.css') }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
 @endpush
 
 @push('extra_js')
@@ -9,7 +10,7 @@
 @endpush
 
 @section('customPageContent')
-<form method="POST" action="{{route('admin.homesettings.update')}}">
+<form id='settingform' method="POST" action="{{route('admin.homesettings.update')}}">
     @csrf
 
   <a17-fieldset>

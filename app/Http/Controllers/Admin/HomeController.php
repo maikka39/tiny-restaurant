@@ -7,9 +7,15 @@ use App\Models\Homepage;
 use Illuminate\Routing\Controller;
 use App\Repositories\HomeRepository;
 use App\Http\Requests\HomeSettingsRequest;
+use App\Models\HomeSetting;
 
 class HomeController extends Controller
 {
+    public function __construct() 
+    {
+        $this->homeRepository = new HomeRepository();
+    } 
+
     //Mainhomepage: id = 1;
     //Extra 'concept setting pages' could be made using other id's
     public function show() 
@@ -32,13 +38,19 @@ class HomeController extends Controller
     
         return view('site.home', [
             'bannerTitle' => $bannerTitle,
-            'bannerDescription' => $bannerDescription
+            'bannerDescription' => $bannerDescription,
+            'links' => $homepage->links
         ]);
     }
 
     public function update(HomeSettingsRequest $request) 
     {
-        dd($request->links);
-        return redirect()->route('homesettings.show');
+        //save settings
+        $this->homeRepository->updateSetting('banner_title', $request['banner_title']);
+        $this->homeRepository->updateSetting('banner_description', $request['banner_description']);
+
+        $this->homeRepository->saveLinks($request['links']);
+        
+        return redirect()->route('admin.homesettings.show');
     }
 }
