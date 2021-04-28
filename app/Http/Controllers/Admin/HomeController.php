@@ -17,10 +17,10 @@ class HomeController extends Controller
         $homepage = Home::find(1);
         $bannerTitle = $homepage->settings->where('key', 'banner_title')->first()->value ?? "Het Tiny Restaurant";
         $bannerDescription = $homepage->settings->where('key', 'banner_description')->first()->value ?? "Wilt u als bedrijf ook het verschil maken en waardevol ondernemen door naar uw doelgroep toe te gaan?";
-
         return view('admin.homesettings.form', [
             'bannerTitle' => $bannerTitle,
-            'bannerDescription' => $bannerDescription
+            'bannerDescription' => $bannerDescription,
+            'links' => $homepage->links
         ]);
     }
 
@@ -38,7 +38,7 @@ class HomeController extends Controller
 
     public function update(HomeSettingsRequest $request) 
     {
-        dd($request);
+        dd($request->links);
         return redirect()->route('homesettings.show');
     }
 }
