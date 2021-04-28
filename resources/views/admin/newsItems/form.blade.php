@@ -24,7 +24,7 @@
 
     @formField('input', [
         'name' => 'summary',
-        'label' => 'Summary',
+        'label' => 'Samenvatting',
         'maxlength' => 250,
         'required' => true,
         'note' => 'Vat kort de inhoud van het nieuwsbericht samen.',
