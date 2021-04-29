@@ -24,15 +24,15 @@
     @for ($i = 0; $i <= count($links); $i++)
       <!-- Linkblock -->
       <div class="linkblock">
-        <div class="link mb-5">
+        <div class="link mb-5"> <!-- Name -->
           <label for="links">Link naam</label>
           <div class="form__field">
             <input class="link-input" type="text" name="links[{{$i}}][name]" placeholder="Voorbeeld: Facebook" 
               @if($i != count($links)) value="{{ $links[$i]->name}}"@endif>
           </div>
         </div>
-        <div class="link">
-          <label for="links">Link url</label>
+        <div class="link"> <!-- URL -->
+          <label for="links">Link URL</label>
           <div class="form__field">
             <input class="link-input" type="text" name="links[{{$i}}][url]" placeholder="Voorbeeld: https://www.facebook.com/TinyRestaurant.nl/" 
             @if($i != count($links)) value="{{ $links[$i]->url}}"@endif>

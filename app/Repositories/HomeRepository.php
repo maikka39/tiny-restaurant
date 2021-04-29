@@ -9,23 +9,22 @@ use Illuminate\Config\Repository;
 
 class HomeRepository extends Repository
 {
-    public function __construct()
+    public function updateSetting($key, $value) 
     {
-    }
-
-    public function updateSetting($key, $value) {
         $title = HomeSetting::where('key', $key)->first();
         $title->value = $value;
         $title->save();
     }
 
-    public function saveLinks($links) {
+    public function saveLinks($links) 
+    {
         $homepage = Home::find(1);
         $homepage->links()->detach();
 
         if($links == null) {return;} 
         
-        foreach($links as $reqLink) {
+        foreach($links as $reqLink) 
+        {
             $newLink = Link::where('name', $reqLink['name'])->where('url', $reqLink['url'])->first();
 
             if($newLink == null) {

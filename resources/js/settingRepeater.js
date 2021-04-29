@@ -10,7 +10,6 @@ let linkholder = document.querySelector('#links');
 let addButton = document.querySelector('#addButton');
 let error = document.querySelector('#add-error')
 
-
 addButton.addEventListener('click', () => {
     error.textContent = ''
     let blocks = document.querySelectorAll('.linkblock');
@@ -47,9 +46,7 @@ addButton.addEventListener('click', () => {
     linkholder.appendChild(newblock);
     renderRemoveButtons(document.querySelectorAll('.linkblock'));
     blockcount++
-
 });
-
 
 //Remove empty blocks on form submit
 let form = document.querySelector('#settingform');
@@ -71,9 +68,7 @@ form.addEventListener('submit', (e) => {
     }) 
 });
 
-
 //Give every linkblock a removeicon
-
 function renderRemoveButtons(blocks) {
     blocks.forEach((el) => {
         console.log(el);

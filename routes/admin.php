@@ -7,6 +7,7 @@ Route::module('farmers');
 Route::module('newsItems');
 Route::module('projects');
 
-Route::get('/homesettings', 'HomeController@show')->name('homesettings.show');
-Route::post('/homesettings', 'HomeController@update')->name('homesettings.update');
-
+Route::name('homesettings.')->group(function () {
+    Route::get('/homesettings', 'HomeController@show')->name('show');
+    Route::post('/homesettings', 'HomeController@update')->name('update'); 
+});

@@ -23,9 +23,13 @@
                 </div>
                 <div class="sidecard row">
                     <h4>Links</h4>
-                    @foreach($links as $link)
-                    <p>{{$link->url}}</p>
-                    @endforeach
+                    <div class="flex flex-col">
+                    @forelse($links as $link)
+                        <a href="{{$link->url}}" target="_blank">{{$link->name}}</a>
+                    @empty 
+                        Momenteel geen links
+                    @endforelse
+                    </div>
                 </div>
             </div>
         </div>

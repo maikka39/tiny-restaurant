@@ -11,7 +11,6 @@ const tailwindcss = require('tailwindcss');
  | file for the application as well as bundling up all the JS files.
  |
  */
- mix.disableSuccessNotifications();
 
 mix.js('resources/js/app.js', 'public/js')
     .js('resources/js/slideshow.js', 'public/js')
