@@ -26,7 +26,8 @@ class SendEmailRequest extends FormRequest
         return [
             'name'=>'required|string',
             'email'=>'required|email',
-            'message'=>'required|string'
+            'message'=>'required|string',
+            'g-recaptcha-response' => 'required|recaptcha'
         ];
     }
 }

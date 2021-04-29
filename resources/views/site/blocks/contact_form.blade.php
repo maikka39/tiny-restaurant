@@ -1,7 +1,18 @@
+<div class="w-container mx-auto mb-5">
+    <div class="hero grid md:grid-cols-5">
+        <div class="pl-12 md:col-span-3 md:mt-32">
+            <div class="content">
+                <h1>Contact</h1>
+                <p class="mb-2">E-mail ons met eventuele vragen of verzoeken of bel ons via 06-20466555. Wij beantwoorden graag uw vragen en/of maken een afspraak met u!</p>
+            </div>
+        </div>
+    </div>
+</div>
+
 <div class="box">
-    <div class="w-container bg-white mx-auto">
-        <h3 class="pl-10 pt-5">{{ $block->input('title') }}</h3>
-        <p class="text-center">{{ $block->input('description') }}</p>
+    <div class="w-container mx-auto">
+        <h3 class="pl-4">{{ $block->input('title') }}</h3>
+        <p class="pl-5">{{ $block->input('description') }}</p>
 
         <form class="px-5" method="POST" action="{{ route('contact.sendMail') }}">
             @csrf
@@ -25,12 +36,18 @@
 
             <div class="field input">
                 <textarea class="resize-none" cols="30" rows="10" id="message" name="message" placeholder="Bericht" required>{{ old("message") }}</textarea>
-                <label>Bericht</label>
+                <label class="pl-1">Bericht</label>
             </div>
 
             @error('message')
                 <div class="error">{{ $message }}</div>
             @enderror
+
+            @if(env('GOOGLE_RECAPTCHA_KEY'))
+                <div class="g-recaptcha"
+                     data-sitekey="{{env('GOOGLE_RECAPTCHA_KEY')}}">
+                </div>
+            @endif
 
             <button class="button" type="submit">Verstuur bericht</button>
 

@@ -38,7 +38,6 @@ input {
 .input input, 
 .input textarea {
     width: 100%;
-    border: 0;
     border-bottom: 1px solid $dark;
     outline: 0;
     padding: $base 0 $base / 2 0;
@@ -73,6 +72,10 @@ input {
     &:invalid { 
         box-shadow: none; 
     }
+}
+
+.input textarea {
+    border: 1px solid $dark;
 }
 
 .success {

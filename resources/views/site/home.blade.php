@@ -7,7 +7,7 @@
                 <div class="content">
                     <h1>{{$bannerTitle}}</h1>
                     <p class="mb-2">{{$bannerDescription}}</p>
-                    <a href="#" class="button primary float-right">Neem contact op!</a>
+                    <a href="" class="button primary float-right">Neem contact op!</a>
                 </div>
             </div>
         </div>
