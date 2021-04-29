@@ -8,6 +8,7 @@ use A17\Twill\Models\Behaviors\HasMedias;
 use A17\Twill\Models\Behaviors\HasRevisions;
 use A17\Twill\Models\Behaviors\Sortable;
 use A17\Twill\Models\Model;
+use Carbon\Carbon;
 
 class Project extends Model 
 {
@@ -70,5 +71,10 @@ class Project extends Model
     public function municipalities() 
     {
         return $this->morphedByMany(Municipality::class, 'involved', 'project_involved', 'project_id', 'involved_id', null, null );
+    }
+
+    public function agendaDate()
+    {
+        return Carbon::parse($this->date)->format('m/d');
     }
 }
