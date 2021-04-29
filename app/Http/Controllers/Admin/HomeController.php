@@ -4,10 +4,11 @@ namespace App\Http\Controllers\Admin;
 
 use App\Models\Home;
 use App\Models\Homepage;
+use App\Models\HomeSetting;
 use Illuminate\Routing\Controller;
 use App\Repositories\HomeRepository;
+use App\Repositories\ProjectRepository;
 use App\Http\Requests\HomeSettingsRequest;
-use App\Models\HomeSetting;
 
 class HomeController extends Controller
 {
