@@ -10,6 +10,11 @@ use App\Http\Requests\HomeSettingsRequest;
 
 class HomeController extends Controller
 {
+    /**
+     * @var HomeRepository
+     */
+    private $homeRepository;
+
     public function __construct() 
     {
         $this->homeRepository = new HomeRepository();
