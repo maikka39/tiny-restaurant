@@ -15,7 +15,7 @@ class CreateHomeSettingsTable extends Migration
     {
         Schema::create('home_settings', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('home_id')->constrained();
+            $table->foreignId('home_id')->constrained()->onDelete('cascade');
             $table->string('key');
             $table->string('value');
             $table->timestamps();

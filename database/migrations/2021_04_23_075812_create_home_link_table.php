@@ -15,8 +15,8 @@ class CreateHomeLinkTable extends Migration
     {
         Schema::create('home_link', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('home_id')->constrained(); 
-            $table->foreignId('link_id')->constrained();
+            $table->foreignId('home_id')->constrained()->onDelete('cascade');
+            $table->foreignId('link_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }
