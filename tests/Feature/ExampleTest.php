@@ -11,9 +11,10 @@ class ExampleTest extends TestCase
     /**
      * A basic feature test example.
      *
+     * @test
      * @return void
      */
-    public function test_example()
+    public function load_home_page()
     {
         $response = $this->get('/');
 
