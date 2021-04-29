@@ -36,10 +36,17 @@ class HomeController extends Controller
         $homepage = Home::find(1);
         $bannerTitle = $homepage->settings->where('key', 'banner_title')->first()->value ?? "Het Tiny Restaurant";
         $bannerDescription = $homepage->settings->where('key', 'banner_description')->first()->value ?? "Wilt u als bedrijf ook het verschil maken en waardevol ondernemen door naar uw doelgroep toe te gaan?";
-    
+        $agendaItems = app(ProjectRepository::class)
+            ->where('date', '>=', now())
+            ->where('published', true)
+            ->orderBy('date')
+            ->get()
+            ->take(3);
+
         return view('site.home', [
             'bannerTitle' => $bannerTitle,
             'bannerDescription' => $bannerDescription,
+            'agendaItems' => $agendaItems,
             'links' => $homepage->links
         ]);
     }
