@@ -15,7 +15,7 @@ class CreateHomeSettingsTable extends Migration
     {
         Schema::create('home_settings', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('home_id')->constrained()->onDelete('cascade');
+            $table->foreignId('home_id')->constrained()->on('homes')->onDelete('cascade');
             $table->string('key');
             $table->string('value');
             $table->timestamps();
@@ -29,6 +29,6 @@ class CreateHomeSettingsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('homepage_settings');
+        Schema::dropIfExists('home_settings');
     }
 }
