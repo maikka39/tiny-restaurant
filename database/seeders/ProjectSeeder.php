@@ -19,49 +19,49 @@ class ProjectSeeder extends Seeder
     {
         $projects = array([
                 'published' => '1',
-                'name' => 'Project A',
+                'name' => 'Proeverij Laarbeek',
                 'active' => '0',
-                'description' => '<p>Welkom in de Blackboard course voor SOPRJ8. Je bent automatisch geenrolled en toegevoegd aan je projectgroep zoals deze in de SOPRJ7 blackboard course zat. Mocht dit onjuist zijn, laat dit dan even aan mij (Rik Meijer) even weten.</p><p>Verder wensen wij je weer veel leerzaam plezier komende weken!</p>',
+                'description' => '<p>Wij hebben een passie voor lekker eten en drinken en die delen we graag met jou! Bij het Tiny Restaurant krijg je de leukste proeverij in Laarbeek.</p>',
                 'date' => '2021-04-15 12:00:00',
                 "address" => '1111AA',
                 "municipality_id" => '1'
             ],[
                 'published' => '1',
-                'name' => 'Project B',
+                'name' => 'Op bezoek bij de boer',
                 'active' => '0',
-                'description' => '<p>Welkom in de Blackboard course voor SOPRJ8. Je bent automatisch geenrolled en toegevoegd aan je projectgroep zoals deze in de SOPRJ7 blackboard course zat. Mocht dit onjuist zijn, laat dit dan even aan mij (Rik Meijer) even weten.</p><p>Verder wensen wij je weer veel leerzaam plezier komende weken!</p>',
+                'description' => '<p>Boer Bart geeft een openhartig interview over duurzaam ondernemen.</p>',
                 'date' => '2021-04-15 12:00:00',
                 "address" => '1111AA',
                 "municipality_id" => '1'
             ],[
                 'published' => '1',
-                'name' => 'Project C',
+                'name' => 'Voedsel educatie',
                 'active' => '0',
-                'description' => '<p>Welkom in de Blackboard course voor SOPRJ8. Je bent automatisch geenrolled en toegevoegd aan je projectgroep zoals deze in de SOPRJ7 blackboard course zat. Mocht dit onjuist zijn, laat dit dan even aan mij (Rik Meijer) even weten.</p><p>Verder wensen wij je weer veel leerzaam plezier komende weken!</p>',
+                'description' => '<p>Basisschool krijgt voedsel educatie</p>',
                 'date' => '2021-04-15 12:00:00',
                 "address" => '1111AA',
                 "municipality_id" => '1'
             ],[
                 'published' => '1',
-                'name' => 'Project D',
+                'name' => 'Waardevol ondernemen',
                 'active' => '0',
-                'description' => '<p>Welkom in de Blackboard course voor SOPRJ8. Je bent automatisch geenrolled en toegevoegd aan je projectgroep zoals deze in de SOPRJ7 blackboard course zat. Mocht dit onjuist zijn, laat dit dan even aan mij (Rik Meijer) even weten.</p><p>Verder wensen wij je weer veel leerzaam plezier komende weken!</p>',
+                'description' => '<p>Wilt u als bedrijf ook het verschil maken en waardevol ondernemen door naar uw doelgroep toe te gaan?</p>',
                 'date' => '2021-04-15 12:00:00',
                 "address" => '1111AA',
                 "municipality_id" => '1'
             ],[
                 'published' => '1',
-                'name' => 'Project E',
+                'name' => 'Onze nieuwe partner',
                 'active' => '0',
-                'description' => '<p>Welkom in de Blackboard course voor SOPRJ8. Je bent automatisch geenrolled en toegevoegd aan je projectgroep zoals deze in de SOPRJ7 blackboard course zat. Mocht dit onjuist zijn, laat dit dan even aan mij (Rik Meijer) even weten.</p><p>Verder wensen wij je weer veel leerzaam plezier komende weken!</p>',
+                'description' => '<p>Leer onze nieuwe partner kennen uit Laarbeek!</p>',
                 'date' => '2021-04-15 12:00:00',
                 "address" => '1111AA',
                 "municipality_id" => '1'
             ],[
                 'published' => '1',
-                'name' => 'Project AA',
+                'name' => 'Proeverij Boekel',
                 'active' => '0',
-                'description' => '<p>Welkom in de Blackboard course voor SOPRJ8. Je bent automatisch geenrolled en toegevoegd aan je projectgroep zoals deze in de SOPRJ7 blackboard course zat. Mocht dit onjuist zijn, laat dit dan even aan mij (Rik Meijer) even weten.</p><p>Verder wensen wij je weer veel leerzaam plezier komende weken!</p>',
+                'description' => '<p>Wij hebben een passie voor lekker eten en drinken en die delen we graag met jou! Bij het Tiny Restaurant krijg je de leukste proeverij in Boekel.</p>',
                 'date' => '2021-04-15 12:00:00',
                 "address" => '1111AA',
                 "municipality_id" => '2'
