@@ -6,7 +6,7 @@
 @endpush
 
 @push('extra_js')
-  <script type="text/javascript" src="{{asset('js/settingRepeater.js')}}" defer></script>
+  <script src="{{ asset('js/settingRepeater.js') }}" defer></script>
 @endpush
 
 @section('customPageContent')

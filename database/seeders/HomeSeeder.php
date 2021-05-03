@@ -25,7 +25,7 @@ class HomeSeeder extends Seeder
             'value' => 'TinyRestaurant'
         ],[
             'key' => 'banner_description',
-            'value' => 'Welkom op de officiele pagina van TinyRestaurant!'
+            'value' => 'Welkom op de officiële pagina van TinyRestaurant!'
         ]);
 
         $links = array([

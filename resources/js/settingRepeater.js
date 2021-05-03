@@ -1,25 +1,25 @@
 //Gets a copy of the block it should add
-let linkblocks = document.querySelectorAll('.linkblock');
-renderRemoveButtons(linkblocks);
+let linkblocks = document.querySelectorAll('.linkblock')
+renderRemoveButtons(linkblocks)
 
-let blockcount = linkblocks.length;
-let linkblock = linkblocks[0].cloneNode(true);
+let blockcount = linkblocks.length
+let linkblock = linkblocks[0].cloneNode(true)
 //Gets the holder in which it should be added.
-let linkholder = document.querySelector('#links');
+let linkholder = document.querySelector('#links')
 //Gets the button on which the event should be called
-let addButton = document.querySelector('#addButton');
+let addButton = document.querySelector('#addButton')
 let error = document.querySelector('#add-error')
 
 addButton.addEventListener('click', () => {
     error.textContent = ''
-    let blocks = document.querySelectorAll('.linkblock');
-    let hasEmpty = false;
+    let blocks = document.querySelectorAll('.linkblock')
+    let hasEmpty = false
     //wont add a new one when there is still one empty
     blocks.forEach(el => {
         let fields = el.querySelectorAll('.link-input')
         fields.forEach(f => {
             if (f.value == null || f.value == '') {
-                hasEmpty = true;
+                hasEmpty = true
                 return
             }
         })
@@ -43,27 +43,27 @@ addButton.addEventListener('click', () => {
     fields[1].name = `links[${blockcount + 1}][url]`
     fields[1].value = ''
     
-    linkholder.appendChild(newblock);
-    renderRemoveButtons(document.querySelectorAll('.linkblock'));
+    linkholder.appendChild(newblock)
+    renderRemoveButtons(document.querySelectorAll('.linkblock'))
     blockcount++
 });
 
 //Remove empty blocks on form submit
-let form = document.querySelector('#settingform');
+let form = document.querySelector('#settingform')
 form.addEventListener('submit', (e) => {
-    let blocks = document.querySelectorAll('.linkblock');
+    let blocks = document.querySelectorAll('.linkblock')
     //wont add a new one when there is still one empty
     blocks.forEach(el => {
         let allEmpty = true;
         let fields = el.querySelectorAll('.link-input')
         fields.forEach(f => {
             if (f.value != '') {
-                allEmpty = false;
+                allEmpty = false
             }
         })
 
         if (allEmpty) {
-            blocks[0].parentNode.removeChild(el);
+            blocks[0].parentNode.removeChild(el)
         }
     }) 
 });
@@ -71,13 +71,12 @@ form.addEventListener('submit', (e) => {
 //Give every linkblock a removeicon
 function renderRemoveButtons(blocks) {
     blocks.forEach((el) => {
-        console.log(el);
-        let icon = document.createElement('icon');
-        icon.classList.add('fas', 'fa-times' ,'fa-lg' , 'remove-button')
+        let icon = document.createElement('icon')
+        icon.classList.add('fas', 'fa-times' ,'fa-lg', 'remove-button')
 
         icon.addEventListener('click', () => {
             blocks[0].parentNode.removeChild(el);
-            blocks = document.querySelectorAll('.linkblock');
+            blocks = document.querySelectorAll('.linkblock')
         });
 
         let existing = el.querySelectorAll('.remove-button')

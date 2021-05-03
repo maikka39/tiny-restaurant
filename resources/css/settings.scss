@@ -3,10 +3,12 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+@import 'vars';
+
 .addButton {
-    color: white;
-    margin-top: 10px;
-    padding: 10px;
+    color: $light;
+    margin-top: 0.5 * $base;
+    padding: 0.5 * $base;
     background-color: rgb(35, 146, 35);
 }
 

@@ -24,22 +24,18 @@ class HomeController extends Controller
     //Extra 'concept setting pages' could be made using other id's (no view for it))
     public function show() 
     {
-        $homepage = Home::find(1);
-        $bannerTitle = $homepage->settings->where('key', 'banner_title')->first()->value ?? "Het Tiny Restaurant";
-        $bannerDescription = $homepage->settings->where('key', 'banner_description')->first()->value ?? "Wilt u als bedrijf ook het verschil maken en waardevol ondernemen door naar uw doelgroep toe te gaan?";
-       
+        $settings = $this->getSettings();
+
         return view('admin.homesettings.form', [
-            'bannerTitle' => $bannerTitle,
-            'bannerDescription' => $bannerDescription,
-            'links' => $homepage->links
+            'bannerTitle' => $settings['bannerTitle'],
+            'bannerDescription' => $settings['bannerDescription'],
+            'links' => $settings['links'],
         ]);
     }
 
     public function view()
     {
-        $homepage = Home::find(1);
-        $bannerTitle = $homepage->settings->where('key', 'banner_title')->first()->value ?? "Het Tiny Restaurant";
-        $bannerDescription = $homepage->settings->where('key', 'banner_description')->first()->value ?? "Wilt u als bedrijf ook het verschil maken en waardevol ondernemen door naar uw doelgroep toe te gaan?";
+        $settings = $this->getSettings();
         $agendaItems = app(ProjectRepository::class)
             ->where('date', '>=', now())
             ->where('published', true)
@@ -48,10 +44,10 @@ class HomeController extends Controller
             ->take(3);
 
         return view('site.home', [
-            'bannerTitle' => $bannerTitle,
-            'bannerDescription' => $bannerDescription,
+            'bannerTitle' => $settings['bannerTitle'],
+            'bannerDescription' => $settings['bannerDescription'],
             'agendaItems' => $agendaItems,
-            'links' => $homepage->links
+            'links' => $settings['links'],
         ]);
     }
 
@@ -62,5 +58,13 @@ class HomeController extends Controller
         $this->homeRepository->saveLinks($request['links']);
         
         return redirect()->route('admin.homesettings.show');
+    }
+
+    public function getSettings() {   
+        $homepage = Home::find(1);
+        $data['bannerTitle'] = $homepage->settings->where('key', 'banner_title')->first()->value ?? "Het Tiny Restaurant";
+        $data['bannerDescription'] = $homepage->settings->where('key', 'banner_description')->first()->value ?? "Wilt u als bedrijf ook het verschil maken en waardevol ondernemen door naar uw doelgroep toe te gaan?";
+        $data['links'] = $homepage->links;
+        return $data;
     }
 }
