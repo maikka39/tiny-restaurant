@@ -7,21 +7,17 @@
 @endpush
 
 @section('content')
-    <div class="relative">
-        <div class="absolute h-full right-0 w-1/4">
-            <form class="flex pr-5 justify-center items-center space-x-10">
-                <div class="field input">
-                    <input type="text" placeholder="zoek hier..." id="search" name="search" @if(request()->has('search'))value="{{ request()->query('search') }}"@endif>
-                    <label for="search">Zoeken in nieuwsberichten</label>
-                </div>
-                <div class="field">
-                    <button class="button primary" type="submit">
-                        <i class="fa fa-search"></i>
-                    </button>
-                </div>
-            </form>
-        </div>
-        <h1 class="text-center">Nieuwsberichten</h1>
+    <div class="title-wrapper">
+        <h1>Nieuwsberichten</h1>
+        <form>
+            <div class="field input w-1/2">
+                <input type="text" placeholder="zoek hier..." id="search" name="search" @if(request()->has('search'))value="{{ request()->query('search') }}"@endif>
+                <label for="search">Zoeken in nieuwsberichten</label>
+            </div>
+            <button class="button primary" type="submit">
+                <i class="fa fa-search"></i>
+            </button>
+        </form>
     </div>
     <div class="timeline-component-wrapper">
         @foreach($newsItems as $newsItem)
