@@ -1,19 +1,19 @@
 @import "tailwindcss/utilities";
 
-a {
-    text-decoration: none;
-    color: $light;
-
-    &:hover {
-        text-decoration: underline;
-    }
-}
-
 .footer {
     background-color: $secondary;
     padding: $base * 2;
     position: relative;
     padding-top: 0.25rem;
+
+    a {
+        text-decoration: none;
+        color: $light;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
 }
 
 .footer-title {
