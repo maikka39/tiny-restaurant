@@ -17,6 +17,7 @@ class LatestNews extends Component
     public function __construct()
     {
         $this->news = app(NewsItemRepository::class)
+            ->where('published', true)
             ->orderBy('created_at', 'desc')
             ->take(3)
             ->get();
