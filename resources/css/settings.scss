@@ -1,0 +1,33 @@
+// Tailwind
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@import 'vars';
+
+.addButton {
+    color: $light;
+    margin-top: 0.5 * $base;
+    padding: 0.5 * $base;
+    background-color: rgb(35, 146, 35);
+}
+
+.linkblock {
+    position: relative;
+    padding: 20px 10px 20px 10px;
+    margin-bottom: 20px !important;
+    background-color: rgb(195, 224, 241);
+}
+
+.error {
+    width: 100% !important;
+    font-size: small;
+    color: red;
+}
+
+.remove-button {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    color: red;
+}

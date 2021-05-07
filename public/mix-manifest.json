@@ -1,7 +1,9 @@
 {
     "/js/app.js": "/js/app.js",
     "/js/slideshow.js": "/js/slideshow.js",
+    "/js/settingRepeater.js": "/js/settingRepeater.js",
     "/css/app.css": "/css/app.css",
+    "/css/settings.css": "/css/settings.css",
     "/css/slideshow.css": "/css/slideshow.css",
     "/css/newsItem.css": "/css/newsItem.css"
 }

@@ -27,7 +27,13 @@
                 </div>
                 <div class="sidecard row">
                     <h4>Links</h4>
-                    <p>Geen links</p>
+                    <div class="flex flex-col">
+                    @forelse($links as $link)
+                        <a href="{{$link->url}}" target="_blank">{{$link->name}}</a>
+                    @empty 
+                        Momenteel geen links
+                    @endforelse
+                    </div>
                 </div>
             </div>
         </div>

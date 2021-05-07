@@ -8,7 +8,7 @@ return [
         'block-editor' => true,
         'buckets' => true,
         'users-image' => true,
-        'settings' => true,
+        'settings' => false, // We are using a custom setting controller now.
         'dashboard' => true,
         'search' => true,
         'users-description' => false,
@@ -76,16 +76,16 @@ return [
                 'icon' => 'text',
                 'component' => 'a17-block-contact_link'
             ],
-            'text_with_image' => 'a17-text-with-image',
-            'contact_form' => 'a17-block-contact_form',
-            'location_map' => 'a17-block-location_map',
+            'text_with_image' => ['component' => 'a17-text-with-image'],
+            'contact_form' => ['component' => 'a17-block-contact_form'],
+            'location_map' => ['component' => 'a17-block-location_map'],
         ],
         'repeaters' => [
             'social_media_links_item' => [
                 'title' => 'Social Media link',
                 'trigger' => 'Nieuwe link toevoegen',
                 'component' => 'a17-block-social_media_links_item'
-            ]
+            ],
         ],
         'crops' => [
             'image' => [
