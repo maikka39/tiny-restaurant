@@ -32,7 +32,7 @@
                     <div class="modal lg:max-w-6xl">
                         <h2>{{$child->input('name')}}</h2>
                         <p>{!!$child->input('description')!!}</p>
-                        <button class="close" onclick="togglePartnerPopup(this.parentElement.parentElement)">X</button>
+                        <button class="close" onclick="togglePartnerPopup(this.parentElement.parentElement)"><i class="fas fa-times"></i></button>
                     </div>
                 </div>
                 <img src="{{$child->image('image', 'desktop')}}" alt="{{$child->imageAltText('image')}}" class="rounded-3xl cursor-pointer" onclick="togglePartnerPopup(this.parentElement.getElementsByClassName('form-popup')[0])">
