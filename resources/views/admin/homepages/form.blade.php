@@ -14,4 +14,6 @@
     ])
 
     @formField('repeater', ['type' => 'homepage_link_items'])
+
+    @formField('repeater', ['type' => 'partner_items'])
 @stop
