@@ -57,7 +57,7 @@ jobs:
       - name: Create DB and schemas
         run: php artisan migrate
       - name: Adding Homepage to Database
-        run: php artisan db:seed --class=HomeSeeder
+        run: php artisan db:seed --class=HomepageSeeder
       - name: Execute tests (Unit and Feature tests) via PHPUnit
         run: vendor/bin/phpunit
       - name: Execute tests (Browser tests) via Dusk
