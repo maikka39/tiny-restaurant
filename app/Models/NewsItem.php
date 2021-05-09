@@ -20,6 +20,7 @@ class NewsItem extends Model
         'published',
         'title',
         'description',
+        'summary',
     ];
     
     public $mediasParams = [

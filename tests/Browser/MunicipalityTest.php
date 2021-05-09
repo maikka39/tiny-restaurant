@@ -16,6 +16,7 @@ class MunicipalityTest extends DuskTestCase
         parent::setUp();
         $this->artisan('twill:update');
         $this->artisan('db:seed --class=SuperAdminSeeder');
+        $this->artisan('db:seed --class=HomeSeeder');
     }
 
     /**
