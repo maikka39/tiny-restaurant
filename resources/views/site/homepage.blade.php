@@ -40,6 +40,8 @@
                 </div>
             </div>
         </div>
+
+        <x-partners />
     </div>
 @endsection
 
