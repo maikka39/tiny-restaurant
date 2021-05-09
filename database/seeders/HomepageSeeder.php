@@ -17,7 +17,7 @@ class HomepageSeeder extends Seeder
         Homepage::class::create([
             'id' => 1,
             'title' => 'Homepage',
-            'description' => 'Test desc.',
+            'banner' => 'Test desc.',
             'published' => true
         ]);
     }

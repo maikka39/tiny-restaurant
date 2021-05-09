@@ -15,7 +15,9 @@ class Homepage extends Model
     protected $fillable = [
         'published',
         'title',
-        'description',
+        'banner',
+        'links',
+        'repeaters',
     ];
 
     public $slugAttributes = [
@@ -52,4 +54,9 @@ class Homepage extends Model
             ],
         ],
     ];
+
+    public function homepage_link_items()
+    {
+        return $this->hasMany(HomepageLinkItem::class);
+    }
 }

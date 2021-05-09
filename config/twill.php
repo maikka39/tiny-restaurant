@@ -96,7 +96,7 @@ return [
                 'trigger' => 'Nieuwe link toevoegen',
                 'component' => 'a17-block-social_media_links_item'
             ],
-            'homepage_link' => ['component' => 'a17-block-homepage_link'],
+            'homepage_link_items' => ['component' => 'a17-block-homepage_link_items'],
         ],
         'crops' => [
             'image' => [

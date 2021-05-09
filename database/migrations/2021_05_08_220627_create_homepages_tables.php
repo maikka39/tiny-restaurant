@@ -11,7 +11,9 @@ class CreateHomepagesTables extends Migration
         Schema::create('homepages', function (Blueprint $table) {
             createDefaultTableFields($table);
             $table->string('title', 20)->nullable();
-            $table->text('description')->nullable();
+            $table->text('banner')->nullable();
+            $table->text('links')->nullable();
+            $table->text('repeaters')->nullable();
         });
 
         Schema::create('homepage_slugs', function (Blueprint $table) {

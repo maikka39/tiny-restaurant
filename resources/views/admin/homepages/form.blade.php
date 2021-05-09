@@ -2,10 +2,16 @@
 
 @section('contentFields')
     @formField('input', [
-        'name' => 'description',
-        'label' => 'Description',
+        'name' => 'title',
+        'label' => 'Titel',
+        'maxlength' => 20
+    ])
+
+    @formField('input', [
+        'name' => 'banner',
+        'label' => 'Banner',
         'maxlength' => 100
     ])
 
-    @formField('repeater', ['type' => 'homepage_link'])
+    @formField('repeater', ['type' => 'homepage_link_items'])
 @stop
