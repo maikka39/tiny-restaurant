@@ -1,17 +1,22 @@
 <?php
 
 return [
-    'settings' => [
-        'title' => 'Instellingen',
-        'route' => 'admin.settings',
-        'params' => ['section' => 'homepage'],
-        'primary_navigation' => [
-            'homepage' => [
-                'title' => 'Hoofdpagina',
-                'route' => 'admin.settings',
-                'params' => ['section' => 'homepage']
-            ],
-        ]
+    // 'settings' => [
+    //     'title' => 'Instellingen',
+    //     'route' => 'admin.settings',
+    //     'params' => ['section' => 'homepage'],
+    //     'primary_navigation' => [
+    //         'homepage' => [
+    //             'title' => 'Hoofdpagina',
+    //             'route' => 'admin.settings',
+    //             'params' => ['section' => 'homepage']
+    //         ],
+    //     ]
+    // ],
+    'homepages' => [
+        'title' => 'Homepagina',
+        'route' => 'admin.homepage',
+        // 'module' => true
     ],
     'pages' => [
         'title' => 'Pagina\'s',
@@ -32,6 +37,6 @@ return [
     'projects' => [
         'title' => 'Projecten',
         'module' => true
-    ]
-];
+    ],
 
+];
