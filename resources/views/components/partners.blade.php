@@ -5,14 +5,18 @@
     <script type="text/javascript" src="{{asset('js/partners.js')}}"></script>
 @endpush
 
-<div class="partners">
-    <h2>Partners</h2>
+<div class="partners homepage">
+    <h2>Maatjes van het tiny restaurant!</h2>
     <div class="flex-container slideshow">
         <div class="slideshow-container">
             @foreach($partners as $child)
                 <div class='mySlides'>
                     <div class="imgholder">
                         <img src="{{$child->image('image', 'desktop')}}" alt="{{$child->imageAltText('image')}}">
+                        <div class="info">
+                            <h2>{{$child->name}}</h2>
+                            <p>{!!$child->description!!}</p>
+                        </div>
                     </div>
                 </div>
             @endforeach
