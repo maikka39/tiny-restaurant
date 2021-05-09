@@ -29,6 +29,6 @@ class CreateHomepageLinks extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('homepage_links');
+        Schema::dropIfExists('homepage_link_item');
     }
 }
