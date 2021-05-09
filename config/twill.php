@@ -8,7 +8,7 @@ return [
         'block-editor' => true,
         'buckets' => true,
         'users-image' => true,
-        'settings' => true,
+        'settings' => false, // We are using a custom setting controller now.
         'dashboard' => true,
         'search' => true,
         'users-description' => false,
@@ -39,6 +39,16 @@ return [
                 'count' => true,
                 'search_fields' => ['title', 'description']
             ],
+            // 'App\Models\Homepage' => [
+            //     'name' => 'homepages',
+            //     'label' => 'Voorpagina\'s',
+            //     'label_singular' => 'Voorpagina',
+            //     'activity' => true,
+            //     'search' => true,
+            //     'create' => false,
+            //     'count' => true,
+            //     'search_fields' => ['title', 'description']
+            // ],
             'App\Models\Municipality' => [
                 'name' => 'municipalities',
                 'label' => 'Gemeentes',
@@ -76,16 +86,17 @@ return [
                 'icon' => 'text',
                 'component' => 'a17-block-contact_link'
             ],
-            'text_with_image' => 'a17-text-with-image',
-            'contact_form' => 'a17-block-contact_form',
-            'location_map' => 'a17-block-location_map',
+            'text_with_image' => ['component' => 'a17-text-with-image'],
+            'contact_form' => ['component' => 'a17-block-contact_form'],
+            'location_map' => ['component' => 'a17-block-location_map'],
         ],
         'repeaters' => [
             'social_media_links_item' => [
                 'title' => 'Social Media link',
                 'trigger' => 'Nieuwe link toevoegen',
                 'component' => 'a17-block-social_media_links_item'
-            ]
+            ],
+            'homepage_link_items' => ['component' => 'a17-block-homepage_link_items'],
         ],
         'crops' => [
             'image' => [

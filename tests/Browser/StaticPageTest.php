@@ -14,8 +14,9 @@ class StaticPageTest extends DuskTestCase
     public function setUp(): void
     {
         parent::setUp();
-        $this->artisan('twill:build');
+        $this->artisan('twill:update');
         $this->artisan('db:seed --class=SuperAdminSeeder');
+        $this->artisan('db:seed --class=HomeSeeder');
     }
 
     /**

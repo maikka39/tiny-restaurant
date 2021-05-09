@@ -22,6 +22,16 @@
         'editSource' => $enableSourceCode
     ])
 
+    @formField('input', [
+        'name' => 'summary',
+        'label' => 'Samenvatting',
+        'maxlength' => 250,
+        'required' => true,
+        'note' => 'Vat kort de inhoud van het nieuwsbericht samen.',
+        'type' => 'textarea',
+        'rows' => 3
+    ])
+
     @formField('medias', [
         'label' => 'Afbeeldingen',
         'name' => 'cover',
