@@ -4,13 +4,18 @@
   }
 
   &.homepage {
+    background: none;
+
+    .slideshow {
+      background: none;
+    }
+
     .mySlides {
       padding: $large;
+
       .imgholder {
-        display: grid;
-        grid-template-columns: 2fr 3fr;
-        gap: $large;
-        height: 23rem;
+        padding: $base $large;
+        height: 28rem;
 
         .info {
           display: block;
