@@ -16,7 +16,7 @@ class Partners extends Component
      */
     public function __construct()
     {
-        $this->partners = app(HomepagePartnerItemRepository::class)->get();
+        $this->partners = app(HomepagePartnerItemRepository::class)->where('deleted_at', NULL)->get();
     }
 
     /**
