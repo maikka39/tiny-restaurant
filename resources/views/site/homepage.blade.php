@@ -1,12 +1,14 @@
-@extends('site.layouts.base')
+@extends("site.layouts.base", [
+    "title" => $homepage->title
+])
 
 @section('content')
     <div class="w-container mx-auto mb-5">
         <div class="hero grid md:grid-cols-5">
             <div class="pl-12 md:col-span-3 md:mt-32">
                 <div class="content">
-                    <h1>{{$bannerTitle}}</h1>
-                    <p class="mb-2">{{$bannerDescription}}</p>
+                    <h1>{{$homepage->title}}</h1>
+                    <p class="mb-2">{{$homepage->banner}}</p>
                     <a href="#" class="button primary float-right">Neem contact op!</a>
                 </div>
             </div>
@@ -29,9 +31,9 @@
                 <div class="sidecard row">
                     <h4>Links</h4>
                     <div class="flex flex-col">
-                    @forelse($links as $link)
+                    @forelse($homepage->homepage_link_items as $link)
                         <a href="{{$link->url}}" target="_blank">{{$link->name}}</a>
-                    @empty 
+                    @empty
                         Momenteel geen links
                     @endforelse
                     </div>
@@ -40,3 +42,4 @@
         </div>
     </div>
 @endsection
+
