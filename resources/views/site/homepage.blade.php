@@ -31,7 +31,7 @@
                 <div class="sidecard row">
                     <h4>Links</h4>
                     <div class="flex flex-col">
-                    @forelse($homepage->homepage_link_items()->get() as $link)
+                    @forelse($homepage->homepage_link_items as $link)
                         <a href="{{$link->url}}" target="_blank">{{$link->name}}</a>
                     @empty
                         Momenteel geen links
