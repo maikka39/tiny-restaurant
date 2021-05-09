@@ -13,6 +13,11 @@ return [
     //         ],
     //     ]
     // ],
+    'homepages' => [
+        'title' => 'Homepagina',
+        'route' => 'admin.homepage',
+        // 'module' => true
+    ],
     'homes' => [
         'title' => 'Instellingen',
         'route' => 'admin.homesettings.show'
@@ -39,4 +44,3 @@ return [
     ],
 
 ];
-

@@ -39,6 +39,16 @@ return [
                 'count' => true,
                 'search_fields' => ['title', 'description']
             ],
+            // 'App\Models\Homepage' => [
+            //     'name' => 'homepages',
+            //     'label' => 'Voorpagina\'s',
+            //     'label_singular' => 'Voorpagina',
+            //     'activity' => true,
+            //     'search' => true,
+            //     'create' => false,
+            //     'count' => true,
+            //     'search_fields' => ['title', 'description']
+            // ],
             'App\Models\Municipality' => [
                 'name' => 'municipalities',
                 'label' => 'Gemeentes',
@@ -86,6 +96,7 @@ return [
                 'trigger' => 'Nieuwe link toevoegen',
                 'component' => 'a17-block-social_media_links_item'
             ],
+            'homepage_link' => ['component' => 'a17-block-homepage_link'],
         ],
         'crops' => [
             'image' => [

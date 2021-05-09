@@ -15,12 +15,12 @@ class DatabaseSeeder extends Seeder
     {
         $this->call([
             SuperAdminSeeder::class,
+            HomepageSeeder::class,
             MunicipalitySeeder::class,
             PageSeeder::class,
             FarmerSeeder::class,
             NewsItemSeeder::class,
             HomeSeeder::class,
         ]);
-        // \App\Models\User::factory(10)->create();
     }
 }

@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\MunicipalityController;
 use App\Http\Controllers\Admin\ProjectController;
 use App\Http\Controllers\Admin\PageController;
+use App\Http\Controllers\Admin\HomepageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,7 +21,7 @@ use App\Http\Controllers\Admin\PageController;
 |
 */
 
-Route::get('/', [HomeController::class, 'view']);
+Route::get('/', [HomepageController::class, 'view'])->name('homepages.show');
 Route::get('/home', [HomeController::class, 'view']);
 Route::post('/contact', [MailController::class, 'sendMail'])->name('contact.sendMail');
 Route::get('/gemeente/{slug}', [MunicipalityController::class, 'view'])->name('municipality.show');
