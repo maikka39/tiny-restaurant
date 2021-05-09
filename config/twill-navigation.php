@@ -18,10 +18,6 @@ return [
         'route' => 'admin.homepage',
         // 'module' => true
     ],
-    'homes' => [
-        'title' => 'Instellingen',
-        'route' => 'admin.homesettings.show'
-    ],
     'pages' => [
         'title' => 'Pagina\'s',
         'module' => true

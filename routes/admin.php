@@ -12,8 +12,3 @@ Route::module('projects');
 Route::module('homepages');
 
 Route::name('homepage')->get('/homepage', 'HomepageController@admin');
-
-Route::name('homesettings.')->group(function () {
-    Route::get('/homesettings', 'HomeController@show')->name('show');
-    Route::post('/homesettings', 'HomeController@update')->name('update');
-});
