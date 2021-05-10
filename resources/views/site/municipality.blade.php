@@ -38,12 +38,32 @@
         @foreach ($municipality->farmers->chunk(3) as $chunk)
             <div class="flex justify-around flex-wrap min-w-100">
                 @foreach ($chunk as $farmer)
-                    <div class="box secondary">
-                        <img class="h-64" src="{{ $farmer->image("farmer_profile", "desktop") }}" alt="{{ $farmer->name }}">
-
+                    <div class="box secondary lg:w-1/5 md:w-2/5">
+                        <div class="flex justify-center">
+                            <img class="h-64" src="{{ $farmer->image("farmer_profile", "desktop") }}" alt="{{ $farmer->name }}">
+                        </div>
                         <h3>{{ $farmer->name }}</h3>
                         <div class="description">{!! $farmer->description !!}</div>
                         <a href="{{ route("farmer.show", $farmer->slug) }}" class="button primary float-right">Lees meer</a>
+                    </div>
+                @endforeach
+            </div>
+        @endforeach
+    @endif
+
+    @if (count($municipality->projects) > 0)
+        <h2 class="text-center">Projecten</h2>
+
+        @foreach ($municipality->projects->chunk(3) as $chunk)
+            <div class="flex justify-around flex-wrap min-w-100">
+                @foreach ($chunk as $project)
+                    <div class="box secondary lg:w-1/5 md:w-2/5">
+                        <div class="flex justify-center">
+                            <img class="h-64" src="{{ $project->image("project_image", "desktop") }}" alt="{{ $project->name }}">
+                        </div>
+                        <h3>{{ $project->name }}</h3>
+                        <div class="description">{!! $project->description !!}</div>
+                        <a href="{{ route("project.show", $project->slug) }}" class="button primary float-right">Lees meer</a>
                     </div>
                 @endforeach
             </div>
