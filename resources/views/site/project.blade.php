@@ -39,7 +39,7 @@
             
                 @if (count($item->municipalities) > 0 || count($item->farmers) > 0)
                     <h2>Wie doen er mee?</h2>
-                    <div class="flex-container">
+                    <div class="flex-container slideshow">
                         <div class="slideshow-container">
                             @foreach ($item->municipalities as $municipality)
                                 <div class='mySlides'>
@@ -72,7 +72,7 @@
                         </div>
                         <br>
                         
-                        <div id='slideshowdots'>
+                        <div class="slideshowdots">
                         </div>
                     </div>
                 @endif

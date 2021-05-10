@@ -25,6 +25,7 @@ class HomepageRepository extends ModuleRepository
         $fields = parent::getFormFields($object);
 
         $fields = $this->getFormFieldsForRepeater($object, $fields, 'homepage_link_items', 'HomepageLinkItem');
+        $fields = $this->getFormFieldsForRepeater($object, $fields, 'partner_items', 'HomepagePartnerItem');
 
         return $fields;
     }
@@ -32,6 +33,7 @@ class HomepageRepository extends ModuleRepository
     public function afterSave($object, $fields)
     {
         $this->updateRepeater($object, $fields, 'homepage_link_items', 'HomepageLinkItem');
+        $this->updateRepeater($object, $fields, 'partner_items', 'HomepagePartnerItem');
 
         parent::afterSave($object, $fields);
     }
