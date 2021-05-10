@@ -1,0 +1,23 @@
+@import "vars";
+
+.donate {
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .prices {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+
+    > label {
+      background-color: $secondary;
+      margin: $base;
+
+      input[type="radio"] {
+        // display: none;
+      }
+    }
+  }
+}
