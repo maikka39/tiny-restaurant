@@ -13,6 +13,12 @@ class HomepageRequest extends Request
 
     public function rulesForUpdate()
     {
-        return [];
+        return [
+            'title' => ['required', 'string'],
+            'banner' => ['required', 'string'],
+            'repeaters.homepage_link_items' => ['array', 'max:10'],
+            'repeaters.homepage_link_items.*.name' => ['required', 'string'],
+            'repeaters.homepage_link_items.*.url' => ['required', 'url']
+        ];
     }
 }
