@@ -21,7 +21,7 @@
         "tailwindcss": "^2.0.3"
     },
     "dependencies": {
-        "@fortawesome/fontawesome-free": "^5.15.2",
+        "@fortawesome/fontawesome-free": "^5.15.3",
         "postcss-import": "^14.0.1",
         "postcss-loader": "^5.2.0"
     }

@@ -6,14 +6,15 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 
-class ExampleTest extends TestCase
+class HomePageTest extends TestCase
 {
     /**
      * A basic feature test example.
      *
+     * @test
      * @return void
      */
-    public function test_example()
+    public function load_home_page()
     {
         $response = $this->get('/');
 

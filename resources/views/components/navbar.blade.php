@@ -4,7 +4,7 @@
             <div class="navbar-flex-wrapper">
                 <div class="navbar-hidden">
                     <div class="navbar-links">
-                        <a href="{{url('/home')}}" class="navbar-text" aria-current="page">Tiny Restaurant</a>
+                        <a href="{{url('/')}}" class="navbar-text" aria-current="page">Tiny Restaurant</a>
                         <a href="{{url('/nieuws')}}" class="navbar-text">Nieuws</a>
                         <a href="{{url('#')}}" class="navbar-text">Agenda</a>
                         <div class="dropdown">

@@ -13,20 +13,23 @@
 @import "tailwindcss/utilities";
 
 // Theme
-@import 'vars';
-@import 'typography';
-@import 'layout';
+@import "vars";
+@import "typography";
+@import "layout";
 
 // Components
-@import 'components/buttons';
-@import 'components/lists';
-@import 'components/box';
-@import 'components/forms';
-@import 'components/hero';
-@import 'components/footer';
-@import 'components/sidecard';
-@import 'components/logo';
-@import 'components/navbar';
+@import "components/buttons";
+@import "components/lists";
+@import "components/box";
+@import "components/forms";
+@import "components/hero";
+@import "components/footer";
+@import "components/sidecard";
+@import "components/partners";
+@import "components/logo";
+@import "components/navbar";
+@import "components/latest-news";
 
 // Partials
-@import 'project';
+@import "misc";
+@import "project";
