@@ -5,8 +5,8 @@
 @endpush
 
 @section('content') 
-    <div class="w-full flex justify-center px-2">
-        <div class="w-full lg:max-w-6xl">
+    <div class="flex justify-center px-2">
+        <div class="container">
             <h1>Onze projecten</h1>
 
             <form method="POST" action="{{route('project.filter')}}">
