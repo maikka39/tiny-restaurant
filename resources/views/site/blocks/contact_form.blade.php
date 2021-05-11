@@ -35,7 +35,7 @@
             @enderror
 
             <div class="field input">
-                <textarea class="resize-none" cols="30" rows="10" id="message" name="message" placeholder="Bericht" required>{{ old("message") }}</textarea>
+                <textarea class="contact-message" cols="30" rows="10" id="message" name="message" placeholder="Bericht" required>{{ old("message") }}</textarea>
                 <label class="pl-1">Bericht</label>
             </div>
 
@@ -52,7 +52,7 @@
             <button class="button" type="submit">Verstuur bericht</button>
 
             @if (session('success_message'))
-                <p class="success">
+                <p class="contact-success-button">
                     {{ session('success_message') }}
                 </p>
             @endif

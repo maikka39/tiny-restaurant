@@ -74,10 +74,11 @@ input {
     }
 }
 
-.input textarea {
+.contact-message {
     border: 1px solid $dark;
+    resize: none;
 }
 
-.success {
+.contact-success-button {
     color: $primary;
 }
