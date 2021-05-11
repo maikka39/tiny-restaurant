@@ -44,12 +44,12 @@
             @enderror
 
             @if(env('GOOGLE_RECAPTCHA_KEY'))
-                <div class="g-recaptcha"
+                <div class="g-recaptcha mb-3"
                      data-sitekey="{{env('GOOGLE_RECAPTCHA_KEY')}}">
                 </div>
             @endif
 
-            <button class="button" type="submit">Verstuur bericht</button>
+            <button class="button primary" type="submit">Verstuur bericht</button>
 
             @if (session('success_message'))
                 <p class="contact-success-button">
@@ -59,3 +59,7 @@
         </form>
     </div>
 </div>
+
+@push('scripts')
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+@endpush
