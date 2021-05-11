@@ -2,28 +2,24 @@
 
 namespace App\Models;
 
-use A17\Twill\Models\Behaviors\HasBlocks;
-use A17\Twill\Models\Behaviors\HasSlug;
 use A17\Twill\Models\Behaviors\HasMedias;
-use A17\Twill\Models\Behaviors\HasRevisions;
-use A17\Twill\Models\Model;
+use Illuminate\Database\Eloquent\Model;
 
-class Homepage extends Model
+class HomepagePartnerItem extends Model
 {
-    use HasBlocks, HasSlug, HasMedias, HasRevisions;
+    use HasMedias;
+
+    public $table = "homepage_partner_item";
 
     protected $fillable = [
         'published',
-        'title',
-        'banner',
-    ];
-
-    public $slugAttributes = [
-        'title',
+        'name',
+        'description',
+        'homepage_id',
     ];
 
     public $mediasParams = [
-        'cover' => [
+        'image' => [
             'desktop' => [
                 [
                     'name' => 'desktop',
@@ -52,14 +48,4 @@ class Homepage extends Model
             ],
         ],
     ];
-
-    public function homepage_link_items()
-    {
-        return $this->hasMany(HomepageLinkItem::class);
-    }
-
-    public function partner_items()
-    {
-        return $this->hasMany(HomepagePartnerItem::class);
-    }
 }

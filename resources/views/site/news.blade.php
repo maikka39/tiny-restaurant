@@ -7,8 +7,19 @@
 @endpush
 
 @section('content')
-    <h1 class="text-center">Nieuwsberichten</h1>
-    <div class="timeline-component-wrapper">
+    <div class="container title-wrapper">
+        <h1>Nieuwsberichten</h1>
+        <form>
+            <div class="field input w-1/2">
+                <input type="text" placeholder="zoek hier..." id="search" name="search" @if(request()->has('search'))value="{{ request()->query('search') }}"@endif>
+                <label for="search">Zoeken in nieuwsberichten</label>
+            </div>
+            <button class="button primary" type="submit">
+                <i class="fa fa-search"></i>
+            </button>
+        </form>
+    </div>
+    <div class="container timeline-component-wrapper">
         @foreach($newsItems as $newsItem)
             <div class="flex @if($loop->even) flex-row-reverse @endif md:contents">
                 @if(!$loop->even)

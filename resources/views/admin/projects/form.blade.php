@@ -44,6 +44,6 @@
     ])
 
     @formField('block_editor', [
-        'blocks' => ['social_media_links']
+        'blocks' => ['social_media_links', 'partners']
     ])
 @stop
