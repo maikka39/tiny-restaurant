@@ -7,8 +7,8 @@
         <div class="hero grid md:grid-cols-5">
             <div class="pl-12 lg:col-span-3 md:col-span-5 md:mt-32 md:pr-10">
                 <div class="content">
-                    <h1>{{$bannerTitle}}</h1>
-                    <p class="mb-2">{{$bannerDescription}}</p>
+                    <h1>{{$homepage->title}}</h1>
+                    <p class="mb-2">{{$homepage->banner}}</p>
                     <a href="{{url('/contact')}}" class="button primary float-right">Neem contact op!</a>
                 </div>
             </div>
