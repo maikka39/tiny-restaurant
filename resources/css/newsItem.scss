@@ -25,7 +25,7 @@
 
 .timeline-component-wrapper {
   margin-bottom: $base * 2;
-  @apply flex flex-col md:grid grid-cols-9 mx-auto p-2;
+  @apply flex flex-col md:grid grid-cols-9 mx-auto;
 }
 
 .card {
@@ -72,4 +72,16 @@
 .publish-date {
   color: $dark;
   @apply hidden sm:flex justify-center items-center;
+}
+
+.title-wrapper {
+  @apply lg:grid lg:grid-cols-2 xl:grid-cols-3 justify-center;
+
+  h1 {
+    @apply lg:col-start-1 xl:col-start-2 lg:col-span-1 text-center;
+  }
+
+  form {
+    @apply flex pr-5 justify-center items-center space-x-10;
+  }
 }

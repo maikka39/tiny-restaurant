@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use A17\Twill\Http\Controllers\Admin\ModuleController;
+use App\Models\NewsItem;
+use Illuminate\Support\Str;
 
 class NewsItemController extends ModuleController
 {
@@ -63,12 +65,18 @@ class NewsItemController extends ModuleController
 
     public function view()
     {
-        $publishedNewItems = $this->repository
-            ->get()
+        $publishedNewItems = NewsItem::query()
             ->where('published', true)
+            ->get()
             ->sortByDesc(function ($newItem) {
                 return $newItem->created_at;
             });
+
+        if(request()->has('search') && request()->query('search') != null) {
+            $publishedNewItems = $publishedNewItems->filter(function ($newsItem, $key) {
+                return $newsItem->filter(request()->query('search'));
+            })->all();
+        }
 
         return view('site.news')
             ->with('newsItems', $publishedNewItems);
