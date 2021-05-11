@@ -49,7 +49,7 @@
                 </div>
             @endif
 
-            <button class="button" type="submit">Verstuur bericht</button>
+            <button class="button primary" type="submit">Verstuur bericht</button>
 
             @if (session('success_message'))
                 <p class="contact-success-button">
