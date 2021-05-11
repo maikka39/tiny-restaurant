@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-light">
-    <div class="w-container mx-auto collapse navbar-collapse" id="toggler">
+    <div class="container mx-auto collapse navbar-collapse" id="toggler">
         <div class="navbar-flex">
             <div class="navbar-flex-wrapper">
                 <div class="navbar-hidden">

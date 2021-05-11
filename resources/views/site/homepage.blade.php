@@ -3,9 +3,9 @@
 ])
 
 @section('content')
-    <div class="w-container mx-auto mb-5">
+    <div class="container mb-5">
         <div class="hero grid md:grid-cols-5">
-            <div class="pl-12 md:col-span-3 md:mt-32">
+            <div class="pl-12 lg:col-span-3 md:col-span-5 md:mt-32 md:pr-10">
                 <div class="content">
                     <h1>{{$homepage->title}}</h1>
                     <p class="mb-2">{{$homepage->banner}}</p>

@@ -7,7 +7,7 @@
 @endpush
 
 @section('content')
-    <div class="title-wrapper">
+    <div class="container title-wrapper">
         <h1>Nieuwsberichten</h1>
         <form>
             <div class="field input w-1/2">
@@ -19,7 +19,7 @@
             </button>
         </form>
     </div>
-    <div class="timeline-component-wrapper">
+    <div class="container timeline-component-wrapper">
         @foreach($newsItems as $newsItem)
             <div class="flex @if($loop->even) flex-row-reverse @endif md:contents">
                 @if(!$loop->even)
