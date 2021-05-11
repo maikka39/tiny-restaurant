@@ -21,6 +21,7 @@ mix.js('resources/js/app.js', 'public/js')
     .options({
         processCssUrls: false,
         postCss: [tailwindcss('./tailwind.config.js')],
-    });
+    })
+    .copyDirectory('resources/img', 'public/img');
 
 mix.disableSuccessNotifications();

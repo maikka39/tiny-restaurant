@@ -55,7 +55,7 @@ class Homepage extends Model
 
     public function homepage_link_items()
     {
-        return $this->hasMany(HomepageLinkItem::class);
+        return $this->hasMany(HomepageLinkItem::class)->where('deleted_at', NULL);
     }
 
     public function partner_items()
