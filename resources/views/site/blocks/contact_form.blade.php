@@ -44,7 +44,7 @@
             @enderror
 
             @if(env('GOOGLE_RECAPTCHA_KEY'))
-                <div class="g-recaptcha"
+                <div class="g-recaptcha mb-3"
                      data-sitekey="{{env('GOOGLE_RECAPTCHA_KEY')}}">
                 </div>
             @endif
