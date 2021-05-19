@@ -43,14 +43,26 @@
                 <div class="error">{{ $message }}</div>
             @enderror
 
-            <div class="field input">
-                <select id="project" name="project">
-                    <option selected disabled>Selecteer een project</option>
-                    @foreach($projectList as $project)
-                        <option>{{$project->name}}</option>
-                    @endforeach
-                </select>
-            </div>
+{{--            <div class="field input">--}}
+{{--                <select id="project" name="project">--}}
+{{--                    <option selected disabled>Selecteer een project</option>--}}
+{{--                    @foreach($projectList as $project)--}}
+{{--                        <option>{{$project->name}}</option>--}}
+{{--                    @endforeach--}}
+{{--                </select>--}}
+{{--            </div>--}}
+
+
+{{--            {!! NoCaptcha::renderJs() !!}--}}
+
+{{--            {!! NoCaptcha::display(['data-theme' => 'dark']) !!}--}}
+
+
+            @if ($errors->has('g-recaptcha-response'))
+                <span class="help-block">
+                    <strong>{{ $errors->first('g-recaptcha-response') }}</strong>
+                </span>
+            @endif
 
             @if (session('success_message'))
                 <p class="contact-success-button">
