@@ -3,7 +3,6 @@
 namespace App\Providers;
 
 use App\Http\Composers\ContactComposer;
-use App\Http\View\Composers\ProfileComposer;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 

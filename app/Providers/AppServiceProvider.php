@@ -2,7 +2,6 @@
 
 namespace App\Providers;
 
-use App\Validators\ReCaptcha;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Validator;
 
@@ -28,6 +27,5 @@ class AppServiceProvider extends ServiceProvider
         if ($this->app->environment('production')) {
             \URL::forceScheme('https');
         }
-        Validator::extend('recaptcha', 'App\Validators\ReCaptcha@validate');
     }
 }
