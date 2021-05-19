@@ -165,7 +165,7 @@ return [
         /*
          * Package Service Providers...
          */
-        Mews\Captcha\CaptchaServiceProvider,
+        Biscolab\ReCaptcha\ReCaptchaServiceProvider::class,
 
 
         /*
@@ -176,6 +176,7 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        App\Providers\ViewServiceProvider::class,
 
     ],
 
@@ -216,6 +217,7 @@ return [
         'Notification' => Illuminate\Support\Facades\Notification::class,
         'Password' => Illuminate\Support\Facades\Password::class,
         'Queue' => Illuminate\Support\Facades\Queue::class,
+        'ReCaptcha' => Biscolab\ReCaptcha\Facades\ReCaptcha::class, // google recaptcha package
         'Redirect' => Illuminate\Support\Facades\Redirect::class,
         // 'Redis' => Illuminate\Support\Facades\Redis::class,
         'Request' => Illuminate\Support\Facades\Request::class,

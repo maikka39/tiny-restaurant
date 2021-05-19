@@ -43,12 +43,14 @@
                 <div class="error">{{ $message }}</div>
             @enderror
 
-            <button data-sitekey="{{ env('GOOGLE_RECAPTCHA_SITE_KEY') }}"
-                    data-callback='onSubmit' class="g-recaptcha button primary" type="submit">Verstuur bericht</button>
-
-            @error('g-recaptcha-response')
-                <div>{{ $message }}</div>
-            @enderror
+            <div class="field input">
+                <select id="project" name="project">
+                    <option selected disabled>Selecteer een project</option>
+                    @foreach($projectList as $project)
+                        <option>{{$project->name}}</option>
+                    @endforeach
+                </select>
+            </div>
 
             @if (session('success_message'))
                 <p class="contact-success-button">
@@ -60,10 +62,5 @@
 </div>
 
 @push('scripts')
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-    <script>
-        function onSubmit(token) {
-            document.getElementById('form').submit();
-        }
-    </script>
+{{----}}
 @endpush
