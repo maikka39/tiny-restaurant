@@ -19,8 +19,11 @@ class MailController extends BaseController
     {
         $validated = $request->validated();
 
+        if(is_null($request['project'])) {
+            $request['project'] = "Geen project geselecteerd";
+        }
 
-        Mail::queue(new EmailFromUser($validated['message'], $validated['name'], $validated['email']));
+        Mail::queue(new EmailFromUser($validated['message'], $validated['name'], $validated['email'], $request['project']));
 
         $request->session()->flash('success_message', 'Email verzonden!');
 

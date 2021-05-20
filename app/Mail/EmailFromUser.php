@@ -13,6 +13,7 @@ class EmailFromUser extends Mailable
     public $message;
     public $name;
     public $sender;
+    public $project;
 
     /**
      * Create a new message instance.
@@ -20,12 +21,14 @@ class EmailFromUser extends Mailable
      * @param string $message
      * @param string $name
      * @param string $sender
+     * @param string $project
      */
-    public function __construct(string $message, string $name, string $sender)
+    public function __construct(string $message, string $name, string $sender, string $project)
     {
         $this->message = $message;
         $this->name = $name;
         $this->sender = $sender;
+        $this->project = $project;
     }
 
     /**
