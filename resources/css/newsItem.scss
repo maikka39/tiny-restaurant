@@ -1,62 +1,62 @@
-@tailwind utilities;
+//@tailwind utilities;
 @import 'vars';
 
 .timeline {
-  @apply h-full w-12 flex items-center justify-center;
+  //@apply h-full w-12 flex items-center justify-center;
 }
 
 .timeline-inner {
   background-color: darken($secondary, 10%);
-  @apply h-full w-1 pointer-events-none;
+  //@apply h-full w-1 pointer-events-none;
 }
 
 .timeline-circle {
   background-color: $secondary;
-  @apply w-12 h-12 absolute top-1/2 rounded-full shadow text-center;
+  //@apply w-12 h-12 absolute top-1/2 rounded-full shadow text-center;
 }
 
 .timeline-circle-logo {
-  @apply relative align-middle w-12 h-12;
+  //@apply relative align-middle w-12 h-12;
 }
 
 .timeline-wrapper {
-  @apply col-start-5 col-end-6 md:mx-auto relative ;
+  //@apply col-start-5 col-end-6 md:mx-auto relative ;
 }
 
 .timeline-component-wrapper {
   margin-bottom: $base * 2;
-  @apply flex flex-col md:grid grid-cols-9 mx-auto;
+  //@apply flex flex-col md:grid grid-cols-9 mx-auto;
 }
 
 .card {
   color: $dark;
-  @apply my-4 shadow-md bg-gray-300 w-10/12 transition m-auto mb-2 sm:mb-0;
+  //@apply my-4 shadow-md bg-gray-300 w-10/12 transition m-auto mb-2 sm:mb-0;
 }
 
 .card-left {
-  @apply sm:col-start-1 sm:col-end-5 sm:ml-auto;
+  //@apply sm:col-start-1 sm:col-end-5 sm:ml-auto;
 }
 
 .card-right {
-  @apply sm:col-start-6 sm:col-end-10 sm:mr-auto;
+  //@apply sm:col-start-6 sm:col-end-10 sm:mr-auto;
 }
 
 .card-title {
   background-color: $primary;
   color: $light;
-  @apply mb-1 py-2 px-4;
+  //@apply mb-1 py-2 px-4;
 }
 
 .card-images {
   border-color: $primary;
   background-color: $light;
-  @apply overflow-hidden flex flex-wrap flex-row justify-around items-center border-t border-b;
+  //@apply overflow-hidden flex flex-wrap flex-row justify-around items-center border-t border-b;
 }
 
 .card-attachments {
   border-color: $primary;
   background-color: $light;
-  @apply flex flex-row flex-wrap justify-around items-center border-b mt-2;
+  //@apply flex flex-row flex-wrap justify-around items-center border-b mt-2;
 }
 
 .card-description {
@@ -71,17 +71,17 @@
 
 .publish-date {
   color: $dark;
-  @apply hidden sm:flex justify-center items-center;
+  //@apply hidden sm:flex justify-center items-center;
 }
 
 .title-wrapper {
-  @apply lg:grid lg:grid-cols-2 xl:grid-cols-3 justify-center;
+  //@apply lg:grid lg:grid-cols-2 xl:grid-cols-3 justify-center;
 
   h1 {
-    @apply lg:col-start-1 xl:col-start-2 lg:col-span-1 text-center;
+    //@apply lg:col-start-1 xl:col-start-2 lg:col-span-1 text-center;
   }
 
   form {
-    @apply flex pr-5 justify-center items-center space-x-10;
+    //@apply flex pr-5 justify-center items-center space-x-10;
   }
 }

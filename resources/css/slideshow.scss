@@ -31,14 +31,14 @@
 
 .mySlides {
   display: none;
-  @apply font-sans fade;
+  //@apply font-sans fade;
 }
 
 .mySlides .imgholder {
   width: 100%;
   height: 40rem;
   position: relative;
-  @apply flex justify-center items-center;
+  //@apply flex justify-center items-center;
 
   img {
     display: block;
@@ -48,16 +48,16 @@
 }
 
 .slidetextbox {
-  @apply p-2 h-auto flex justify-between items-center;
+  //@apply p-2 h-auto flex justify-between items-center;
 }
 
 .slidetextbox h4,
 .slidetextbox .button {
-  @apply text-2xl font-bold mb-1 md:text-3xl;
+  //@apply text-2xl font-bold mb-1 md:text-3xl;
 }
 
 .slidetextbox .button {
-  @apply whitespace-nowrap;
+  //@apply whitespace-nowrap;
 }
 
 .prev,
@@ -75,7 +75,7 @@
   user-select: none;
   background-color: rgba(0, 0, 0, 0.8);
 
-  @apply bottom-1/2;
+  //@apply bottom-1/2;
 }
 
 .next {
