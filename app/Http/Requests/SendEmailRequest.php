@@ -30,4 +30,20 @@ class SendEmailRequest extends FormRequest
             'g-recaptcha-response' => 'required|captcha',
         ];
     }
+
+    /**
+     * Get the error messages for the defined validation rules.
+     *
+     * @return array
+     */
+    public function messages(): array
+    {
+        return [
+            'name.required' => 'Laat ons weten wie je bent!',
+            'email.required' => 'Laat ons weten hoe we je kunnen bereiken!',
+            'message.required' => 'Je bericht is nog leeg!',
+            'g-recaptcha-response.required' => 'Laat ons weten dat je geen robot bent!',
+            'g-recaptcha-response.captcha' => 'Er is iets fout gegaan, probeer het opnieuw.',
+        ];
+    }
 }
