@@ -43,14 +43,14 @@
                 <div class="error">{{ $message }}</div>
             @enderror
 
-{{--            <div class="field input">--}}
-{{--                <select id="project" name="project">--}}
-{{--                    <option selected disabled>Selecteer een project</option>--}}
-{{--                    @foreach($projectList as $project)--}}
-{{--                        <option>{{$project->name}}</option>--}}
-{{--                    @endforeach--}}
-{{--                </select>--}}
-{{--            </div>--}}
+            <div class="field input">
+                <select id="project" name="project">
+                    <option selected disabled>Selecteer een project</option>
+                    @foreach($projectList as $project)
+                        <option>{{$project->name}}</option>
+                    @endforeach
+                </select>
+            </div>
 
 
 {{--            {!! NoCaptcha::renderJs() !!}--}}

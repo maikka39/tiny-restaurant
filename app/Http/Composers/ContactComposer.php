@@ -8,17 +8,6 @@ use Illuminate\View\View;
 
 class ContactComposer
 {
-    protected $projectList = [];
-    /**
-     * Create a movie composer.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->projectList = Project::all()->where('published', true);
-    }
-
     /**
      * Bind data to the view.
      *
@@ -27,6 +16,6 @@ class ContactComposer
      */
     public function compose(View $view)
     {
-        $view->with('projectList', $this->projectList);
+        $view->with('projectList', Project::all()->where('published', true));
     }
 }
