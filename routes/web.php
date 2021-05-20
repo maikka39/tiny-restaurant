@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\NewsItemController;
+use App\Http\Controllers\DonationController;
 use App\Http\Controllers\MailController;
 use App\Http\Controllers\Admin\FarmerController;
 use Illuminate\Support\Facades\Route;
@@ -25,7 +26,8 @@ Route::get('/', [HomepageController::class, 'view'])->name('homepages.show');
 Route::post('/contact', [MailController::class, 'sendMail'])->name('contact.sendMail');
 Route::get('/gemeente/{slug}', [MunicipalityController::class, 'view'])->name('municipality.show');
 Route::get('/nieuws', [NewsItemController::class, 'view'])->name('newsItems.show');
-Route::get('/doneer', [DonateController::class, 'view']);
+Route::get('/doneer', [DonationController::class, 'view'])->name('donation.show');
+Route::post('/doneer', [DonationController::class, 'new'])->name('donation.new'); //TODO refactor route into Route::name w/ get and post
 
 Route::name('project.')->group(function () {
     Route::get('/projecten', [ProjectController::class, 'showAll'])->name('showAll');

@@ -17,9 +17,10 @@
         <div class="info">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam dolorum illo voluptatibus delectus qui quia natus nobis. Consequatur quo earum a velit accusantium dicta quam, tempore itaque totam. Vel, ea.
         </div>
-        <form id="pay-form" class="pay-container">
-            <h2>Doneeer nu</h2>
+        <form id="pay-form" class="pay-container" method="post" action="{{ route('donation.new') }}">
+            <h2>Steun het Tiny Restaurant</h2>
             <div class="prices">
+                <input name="_token" type="hidden" value="{{ csrf_token() }}"/>
                 <label>€3
                     <input name="amount" type="radio" value="3">
                 </label>
@@ -38,7 +39,7 @@
                 <label>
                     <input name="custom_amount" type="number" placeholder="Bedrag">
                 </label>
-                <input type="submit">
+                <button type="submit">Bevestigen</button>
             </div>
         </form>
     </div>

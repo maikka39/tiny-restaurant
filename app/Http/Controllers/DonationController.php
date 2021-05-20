@@ -2,16 +2,22 @@
 
 namespace App\Http\Controllers;
 
-
-use Illuminate\Http\Request;
+use App\Http\Requests\DonationRequest;
 use Mollie\Api\Exceptions\ApiException;
 use Mollie\Api\MollieApiClient;
 
 class DonationController extends Controller
 {
-    public function newDonation(Request $request)
+    public function view()
     {
-        $amount = number_format((float)$request->amount, 2, '.', '');
+        return view('site.donate', []);
+    }
+
+    public function new(DonationRequest $request)
+    {
+        $validated = $request->validated();
+        dd($validated['amount']);
+        $amount = number_format((float)$request->validated()['amount'], 2, '.', '');
 
         $mollie = new MollieApiClient();
 
