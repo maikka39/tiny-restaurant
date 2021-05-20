@@ -3,7 +3,6 @@
 namespace App\Http\Composers;
 
 use App\Models\Project;
-use App\Repositories\ProjectRepository;
 use Illuminate\View\View;
 
 class ContactComposer
