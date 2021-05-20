@@ -28,7 +28,7 @@
             </div>
 
             @error('name')
-                <div class="error">{{ $message }}</div>
+                <div class="has-text-danger">{{ $message }}</div>
             @enderror
 
             <div class="field">
@@ -42,7 +42,7 @@
             </div>
 
             @error('email')
-                <div class="error">{{ $message }}</div>
+                <div class="has-text-danger">{{ $message }}</div>
             @enderror
 
             <div class="field">
@@ -53,7 +53,7 @@
             </div>
 
             @error('message')
-                <div class="error">{{ $message }}</div>
+                <div class="has-text-danger">{{ $message }}</div>
             @enderror
 
             <div class="field">
@@ -70,18 +70,16 @@
 
             {!! NoCaptcha::display() !!}
 
-            @if ($errors->has('g-recaptcha-response'))
-                <span class="help-block">
-                    <strong>{{ $errors->first('g-recaptcha-response') }}</strong>
-                </span>
-            @endif
+            @error('g-recaptcha-response')
+                <div class="has-text-danger">{{ $message }}</div>
+            @enderror
 
             <div class="control">
                 <button class="button is-primary">Verstuur bericht</button>
             </div>
 
             @if (session('success_message'))
-                <p>{{ session('success_message') }}</p>
+                <p class="has-text-success">{{ session('success_message') }}</p>
             @endif
         </form>
     </div>
