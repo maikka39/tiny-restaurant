@@ -1,12 +1,5 @@
 @extends('site.layouts.base')
 
-@push('styles')
-    <link href="{{ asset('css/slideshow.css') }}" rel="stylesheet">
-@endpush
-@push('scripts')
-    <script type="text/javascript" src="{{asset('js/slideshow.js')}}" defer></script>
-@endpush
-
 @section('content')
     <div class="container">
         <div class="justify-center">

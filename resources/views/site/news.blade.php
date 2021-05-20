@@ -2,10 +2,6 @@
     "title" => "Nieuwsberichten"
 ])
 
-@push('styles')
-    <link rel="stylesheet" href="{{ asset('css/newsItem.css') }}"></style>
-@endpush
-
 @section('content')
     <div class="container title-wrapper">
         <h1>Nieuwsberichten</h1>
@@ -26,7 +22,6 @@
                     <h4 class="publish-date col-start-3 col-end-5 ">
                         {{ $newsItem->getCreatedTimeForView() }}
                     </h4>
-                    <x-time-line :isEven="$loop->even"></x-time-line>
                 @endif
                 <div class="card @if($loop->even) card-left @else card-right @endif">
                     <h3 class="card-title" id="{{ $newsItem->title }}">
@@ -57,7 +52,6 @@
                     <small class="card-post-time">{{ $newsItem->getTimeSincePosted() }} geleden</small>
                 </div>
                 @if($loop->even)
-                    <x-time-line :isEven="$loop->even"></x-time-line>
                     <h4 class="publish-date col-start-6 col-end-8">
                         {{ $newsItem->getCreatedTimeForView() }}
                     </h4>
