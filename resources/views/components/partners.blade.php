@@ -1,10 +1,3 @@
-@push('styles')
-    <link href="{{ asset('css/slideshow.css') }}" rel="stylesheet">
-@endpush
-@push('scripts')
-    <script type="text/javascript" src="{{asset('js/partners.js')}}"></script>
-@endpush
-
 <div class="partners homepage">
     <h2>Partners</h2>
     <div class="flex-container slideshow">

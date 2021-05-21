@@ -1,9 +1,5 @@
 @extends('site.layouts.base')
 
-@push('styles')
-    <link href="{{ asset('css/_project.css') }}" rel="stylesheet">
-@endpush
-
 @section('content') 
     <div class="flex justify-center px-2">
         <div class="container">
