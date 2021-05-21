@@ -12,6 +12,7 @@ class HomepageLinkItem extends Model
         'published',
         'name',
         'url',
+        'logo_url',
         'homepage_id',
     ];
 }

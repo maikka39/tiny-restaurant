@@ -18,6 +18,7 @@ class CreateHomepageLinks extends Migration
 
             $table->text('name')->nullable();
             $table->text('url')->nullable();
+            $table->text('logo_url')->nullable();
             $table->foreignId('homepage_id')->constrained()->on('homepages')->onDelete('cascade');
         });
     }
