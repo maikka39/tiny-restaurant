@@ -3,38 +3,44 @@
 ])
 
 @section('content')
-    <section class="hero">
+    <section class="hero news-hero">
         <div class="hero-body">
             <h1 class="is-size-1 has-text-centered has-text-weight-bold mt-2">Nieuws</h1>
             <h3 class="is-size-3 has-text-centered mt-4 mb-5">Bekijk het laatste nieuws van het Tiny Restaurant en check wat er momenteel gaande is.</h3>
             <div class="field search-input">
                 <label for="search" class="label sr-only">Zoek naar nieuwsberichten</label>
                 <div class="control has-icons-right">
-                    <input class="input" type="text" placeholder="Zoek naar nieuwsberichten..." name="search" id="search">
-                    <span class="icon is-small is-right">
-                        <i class="fas fa-search"></i>
-                    </span>
+                    <form>
+                        <input class="input" type="text" placeholder="Zoek naar nieuwsberichten..." name="search" id="search" @if(request()->has('search'))value="{{ request()->query('search') }}"@endif>
+                        <span class="icon is-small is-right">
+                            <i class="fas fa-search"></i>
+                        </span>
+                    </form>
                 </div>
             </div>
         </div>
     </section>
-    <section class="section">
-        <div class="timeline is-centered">
+    <section class="section section-timeline">
+        <div class="timeline">
             <header class="timeline-header">
-                <span class="tag is-medium is-primary">Vandaag</span>
+                <span class="tag is-medium">Vandaag</span>
             </header>
             @foreach($newsItems as $newsItem)
-            <div class="timeline-item is-primary">
-                <div class="timeline-marker is-primary"></div>
-                <div class="timeline-content">
-                    <small class="is-size-7 mb-2">{{ $newsItem->getCreatedTimeForView() }}</small>
-                    <p class="is-size-6 has-text-weight-bold mb-4">{{ $newsItem->title }}</p>
-                    <p>{!! $newsItem->description !!}</p>
+                <div class="timeline-item">
+                    <figure class="image timeline-image">
+                        @php($image = $newsItem->imageAsArray('cover', 'flexible'))
+                        <img src="{{ $image ? $image['src'] : asset('img/news-placeholder.png') }}" alt="{{ $image ? $image['alt'] : 'news placeholder' }}">
+                    </figure>
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <small class="is-size-7 mb-2">{{ $newsItem->getCreatedTimeForView() }}</small>
+                        <p class="is-size-6 has-text-weight-bold mb-4">{{ $newsItem->title }}</p>
+                        <p>{!! $newsItem->summary !!}</p>
+                    </div>
                 </div>
-            </div>
             @endforeach
             <header class="timeline-header">
-                <span class="tag is-medium is-primary">Einde</span>
+                <span class="tag is-medium">Einde</span>
             </header>
         </div>
     </section>

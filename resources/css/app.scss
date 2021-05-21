@@ -13,5 +13,8 @@
 // Bulma
 @import "bulma/bulma";
 
-// Custom Pages
+// Components
+@import "components/timeline";
+
+// Custom CSS for pages
 @import "pages/news";
