@@ -56,7 +56,7 @@ _Note: Make sure your php server is running before running this command. You als
 
 ## Style guide Tiny Restaurant
 
-All the pages should follow the new [Design](https://www.figma.com/file/bNZsokOLB7Pk2AQjaNB3Hv/Tiny-Restaurant?node-id=207%3A275)
+All pages should follow the new [Design](https://www.figma.com/file/bNZsokOLB7Pk2AQjaNB3Hv/Tiny-Restaurant?node-id=207%3A275)
 
 Almost no custom CSS is needed, just use the [Bulma classes](https://bulma.io/documentation/)
 
