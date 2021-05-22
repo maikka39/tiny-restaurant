@@ -1,3 +1,6 @@
+// Components
+@use "../components/timeline";
+
 .news-hero {
   width: 60%;
   margin: auto;
@@ -6,6 +9,16 @@
 .search-input {
   width: 60%;
   margin: auto;
+}
+
+.clear-filter {
+  width: 60%;
+  margin: 0 auto;
+}
+
+.search-button {
+  border-left: 0;
+  border-color: #b5b5b5;
 }
 
 .section-timeline {

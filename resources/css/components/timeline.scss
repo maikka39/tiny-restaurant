@@ -1,8 +1,10 @@
-$timeline-background-color: $primary-background;
-$timeline-border-color: $primary;
-$timeline-block-spacing: 3rem 1.5rem; // spacing around timeline item content
-$timeline-block-width: 750px;
-$timeline-space: 15%; // amount of space the timeline column takes
+@import "../vars";
+
+$timeline-background-color: $primary-background !default;
+$timeline-border-color: $primary !default;
+$timeline-block-spacing: 3rem 1.5rem !default; // spacing around timeline item content
+$timeline-block-width: 750px !default;
+$timeline-space: 15% !default; // amount of space the timeline column takes
 
 .timeline {
   width: 100%;

@@ -2,6 +2,10 @@
     "title" => "Nieuwsberichten"
 ])
 
+@push('styles')
+    <link rel="stylesheet" href="{{ asset('css/news.css') }}">
+@endpush
+
 @section('content')
     <section class="hero news-hero">
         <div class="hero-body">
