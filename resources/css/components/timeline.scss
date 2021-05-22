@@ -31,12 +31,13 @@ $timeline-border-color: $primary;
       flex-shrink: 1;
       order: 3;
       display: flex;
-      padding: 3rem 1.5rem;
+      justify-content: center;
 
       img {
         width: 750px;
         height: 440px;
         object-fit: cover;
+        padding: 3rem 1.5rem;
       }
     }
 
@@ -53,6 +54,7 @@ $timeline-border-color: $primary;
         border: 1px solid $timeline-border-color;
       }
 
+      // Timeline (line)
       &::before {
         top: 0;
         width: 1px;
@@ -61,6 +63,7 @@ $timeline-border-color: $primary;
         left: calc(50% - 1px);
       }
 
+      // Circle on Timeline
       &::after {
         top: 50%;
         width: 25px;
@@ -83,6 +86,10 @@ $timeline-border-color: $primary;
       text-align: left;
       align-items: start;
       justify-content: center;
+
+      & > * {
+        padding-left: 3rem;
+      }
     }
 
     &:nth-child(2n) {
@@ -94,6 +101,10 @@ $timeline-border-color: $primary;
 
       .timeline-content {
         order: 3;
+
+        & > * {
+          padding-left: 0;
+        }
       }
     }
   }

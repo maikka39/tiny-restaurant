@@ -34,8 +34,8 @@
                     <div class="timeline-marker"></div>
                     <div class="timeline-content">
                         <small class="is-size-7 mb-2">{{ $newsItem->getCreatedTimeForView() }}</small>
-                        <p class="is-size-6 has-text-weight-bold mb-4">{{ $newsItem->title }}</p>
-                        <p>{!! $newsItem->summary !!}</p>
+                        <p class="is-size-4 has-text-weight-bold mb-5">{{ $newsItem->title }}</p>
+                        <p>{{ $newsItem->summary }}</p>
                     </div>
                 </div>
             @endforeach
