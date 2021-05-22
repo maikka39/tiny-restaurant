@@ -6,7 +6,7 @@
     <section class="hero news-hero">
         <div class="hero-body">
             <h1 class="is-size-1 has-text-centered has-text-weight-bold mt-2">Nieuws</h1>
-            <h3 class="is-size-3 has-text-centered mt-4 mb-5">Bekijk het laatste nieuws van het Tiny Restaurant en check wat er momenteel gaande is.</h3>
+            <h3 class="is-size-3-desktop is-size-4-tablet is-size-5-mobile has-text-centered mt-4 mb-5">Bekijk het laatste nieuws van het Tiny Restaurant en check wat er momenteel gaande is.</h3>
             <div class="field search-input">
                 <label for="search" class="label sr-only">Zoek naar nieuwsberichten</label>
                 <div class="control has-icons-right">
@@ -33,9 +33,11 @@
                     </figure>
                     <div class="timeline-marker"></div>
                     <div class="timeline-content">
-                        <small class="is-size-7 mb-2">{{ $newsItem->getCreatedTimeForView() }}</small>
-                        <p class="is-size-4 has-text-weight-bold mb-5">{{ $newsItem->title }}</p>
-                        <p>{{ $newsItem->summary }}</p>
+                        <div class="timeline-content-wrapper">
+                            <small class="is-size-7 mb-2">{{ $newsItem->getCreatedTimeForView() }}</small>
+                            <p class="is-size-4 has-text-weight-bold mb-5">{{ $newsItem->title }}</p>
+                            <p>{{ $newsItem->summary }}</p>
+                        </div>
                     </div>
                 </div>
             @endforeach

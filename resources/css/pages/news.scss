@@ -11,3 +11,14 @@
 .section-timeline {
   padding: 0;
 }
+
+//mobile
+@media only screen and (max-width: 768px) {
+  .news-hero {
+    width: 90%;
+  }
+
+  .search-input {
+    width: 90%;
+  }
+}
