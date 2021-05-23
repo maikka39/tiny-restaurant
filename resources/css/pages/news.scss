@@ -1,18 +1,20 @@
 // Components
 @use "../components/timeline";
 
+$hero-width: 70%;
+
 .news-hero {
-  width: 60%;
+  width: $hero-width;
   margin: auto;
 }
 
 .search-input {
-  width: 60%;
+  width: $hero-width;
   margin: auto;
 }
 
 .clear-filter {
-  width: 60%;
+  width: $hero-width;
   margin: 0 auto;
 }
 
@@ -25,13 +27,17 @@
   padding: 0;
 }
 
-//mobile
-@media only screen and (max-width: 768px) {
+// mobile to tablet
+@media screen and (max-width: 1028px) {
   .news-hero {
     width: 90%;
   }
 
   .search-input {
     width: 90%;
+
+    input::placeholder {
+      font-size: .85rem;
+    }
   }
 }
