@@ -9,6 +9,7 @@ use A17\Twill\Models\Behaviors\HasRevisions;
 use A17\Twill\Models\Behaviors\Sortable;
 use A17\Twill\Models\Model;
 use Carbon\Carbon;
+use Illuminate\Support\Str;
 
 class Project extends Model 
 {
@@ -76,5 +77,20 @@ class Project extends Model
     public function agendaDate()
     {
         return Carbon::parse($this->date)->format('m/d');
+    }
+
+    public function getCreatedTimeForView(): string
+    {
+        return $this->created_at->isoFormat('D-MM-YYYY');
+    }
+
+    public function filter($search): bool
+    {
+        $search = Str::lower($search);
+        return
+            Str::contains(Str::lower($this->name), $search) ||
+            Str::contains(Str::lower($this->description), $search) ||
+            Str::contains(Str::lower($this->getCreatedTimeForView()), $search) ||
+            Str::contains(Str::lower($this->municipalities->first()->name), $search);
     }
 }
