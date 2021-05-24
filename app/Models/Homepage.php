@@ -15,7 +15,7 @@ class Homepage extends Model
     protected $fillable = [
         'published',
         'title',
-        'banner',
+        'slogan',
     ];
 
     public $slugAttributes = [
