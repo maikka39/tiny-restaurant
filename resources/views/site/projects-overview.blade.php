@@ -7,7 +7,7 @@
 @endpush
 
 @section('content')
-    <section class="hero news-hero">
+    <section class="hero projects-hero">
         <div class="hero-body">
             <h1 class="is-size-1 has-text-centered has-text-weight-bold mt-2">Projecten</h1>
             <h3 class="is-size-3-desktop is-size-4-tablet is-size-5-mobile has-text-centered mt-4 mb-5">Bekijk de projecten waar wij ons op dit moment mee bezig houden!</h3>
@@ -51,7 +51,7 @@
                                 <p>{!! $project->description !!}</p>
                                 <div class="project-footer">
                                     <button class="button is-primary read-more-button"><a href="{{ route('project.show', $project->slug) }}">Lees meer</a></button>
-                                    <small class="is-size-6 mb-2">{{ $project->getCreatedTimeForView() }}</small>
+                                    <small class="is-size-6">{{ $project->getCreatedTimeForView() }}</small>
                                 </div>
                             </div>
                         </div>

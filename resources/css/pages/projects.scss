@@ -31,8 +31,8 @@ $hero-width: 70%;
 }
 .project-footer {
   display: flex;
+  flex-direction: row;
   align-items: center;
-  justify-content: start;
   margin-top: 1rem;
 
   .read-more-button {
@@ -43,6 +43,7 @@ $hero-width: 70%;
 
   small {
     margin-left: 1.5rem;
+    text-align: center;
   }
 }
 
