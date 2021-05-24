@@ -21,6 +21,7 @@
             'type' => 'text',
             'note' => 'Voorbeeld: "Voorbeeld"',
             'label' => 'Naam',
+            'maxlength' => 20,
         ])
 
         @formField('input', [
@@ -28,6 +29,7 @@
             'type' => 'text',
             'note' => 'Voorbeeld: "http://example.com/"',
             'label' => 'Volledige link',
+            'maxlength' => 150
         ])
 
         @formField('select', [
