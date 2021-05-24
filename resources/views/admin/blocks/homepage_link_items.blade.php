@@ -18,7 +18,7 @@
 
 @formField('select', [
     'name' => 'logo_url',
-    'label' => 'Logo',
+    'label' => 'Logo', 
     'options' => [
         [
             'label' => 'Facebook',

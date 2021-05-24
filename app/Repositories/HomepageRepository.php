@@ -9,6 +9,7 @@ use A17\Twill\Repositories\Behaviors\HandleRepeaters;
 use A17\Twill\Repositories\Behaviors\HandleRevisions;
 use A17\Twill\Repositories\ModuleRepository;
 use App\Models\Homepage;
+use App\Models\HomepageLinkItem;
 
 class HomepageRepository extends ModuleRepository
 {
