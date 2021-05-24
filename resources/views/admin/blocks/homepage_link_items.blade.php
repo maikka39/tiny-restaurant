@@ -38,7 +38,7 @@
         ],
         [
             'label' => 'Twitch',
-            'value' => 'twitch.png'
+            'value' => 'Twitch.png'
         ],
         [
             'label' => 'Twitter',
