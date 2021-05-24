@@ -12,9 +12,6 @@ class CreateHomepagesTables extends Migration
             createDefaultTableFields($table);
             $table->string('title', 20)->nullable();
             $table->text('banner')->nullable();
-            $table->text('highlight_link_name')->nullable();
-            $table->text('highlight_link_url')->nullable();
-            $table->text('highlight_link_logo_url')->nullable();
         });
 
         Schema::create('homepage_slugs', function (Blueprint $table) {

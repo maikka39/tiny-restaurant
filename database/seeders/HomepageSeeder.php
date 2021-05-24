@@ -26,6 +26,7 @@ class HomepageSeeder extends Seeder
             'name' => 'Facebook',
             'url' => 'https://www.facebook.com/TinyRestaurant.nl/',
             'logo_url' => 'Facebook.png',
+            'pitch' => 'Sluit jezelf aan bij onze facebook pagina samen met talloze andere.',
             'position' => 1,
             'homepage_id' => 1
         ]);

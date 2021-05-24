@@ -50,3 +50,10 @@
         ]
     ]
 ])
+
+@formField('input', [
+    'name' => 'pitch',
+    'label' => 'Pitch (optioneel)',
+    'placeholder' => 'Wordt afgebeeld wanneer de link highlighted is.',
+    'maxlength' => 300
+])

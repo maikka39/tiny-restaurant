@@ -16,6 +16,7 @@ class HomepageLinkItem extends Model
         'name',
         'url',
         'logo_url',
+        'pitch',
         'position',
         'homepage_id',
     ];

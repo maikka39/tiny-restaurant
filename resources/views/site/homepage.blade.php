@@ -41,12 +41,15 @@
                                     <figure class="image is-64x64 mr-2">
                                             <img type="image/png" src="{{ asset('img/link_icons/'.$highlight->logo_url)}}" />
                                     </figure>
-                                    <h1 class="title has-text-centered is-size-2 is-size-3-tablet">{{$highlight->name}}</h1>
+                                    <h1 class="has-text-centered is-size-2">{{$highlight->name}}</h1>
                                 </div>
 
-                                <div class="content">
-                                    <p class="has-text-centered">Sluit jezelf aan bij onze facebook pagina samen met talloze andere.</p>
-                                    <p class="has-text-centered has-text-weight-semibold">Bekijk deze pagina</p>
+                                <br>
+                                <div class="container">
+                                    <div class="content">
+                                        <p class="has-text-centered">{{ $highlight->pitch }}</p>
+                                        <p class="has-text-centered has-text-weight-semibold">Bekijk deze pagina</p>
+                                    </div>
                                 </div>
                             </div>
                         </a>
