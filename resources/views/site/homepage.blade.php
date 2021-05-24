@@ -43,23 +43,47 @@
 
         <section class="hero is-primary">
             <div class="hero-body">
-                <div class="columns">
-                    <div class="column is-narrow">
+                <div class="columns is-tablet">
+                    <div class="column is-one-third-tablet">
                         <a href="{{$homepage->highlight_link_url}}" target="#">
-                            <div class="columns is-variable is-2">
-                                <div class="column is-narrow">
-                                    <figure class="image is-64x64">
-                                        <img type="image/png" src="{{ asset('img/link_icons/'.$homepage->highlight_link_logo_url) }}" />
+                            <div class="container is-flex-tablet is-justify-content-center is-flex-wrap-wrap">
+                                <div class="is-flex is-align-items-center is-justify-content-center is-flex-wrap-wrap mb-4">
+                                    <figure class="image is-64x64 mr-2">
+                                            <img type="image/png" src="{{ asset('img/link_icons/'.$homepage->highlight_link_logo_url) }}" />
                                     </figure>
+                                    <h1 class="title has-text-centered is-size-2 is-size-3-tablet">{{$homepage->highlight_link_name}}</h1>
                                 </div>
-                                <div class="column">
-                                    <h1 class="is-size-2">{{$homepage->highlight_link_name}}</h1>
+
+                                <div class="content">
+                                    <p class="has-text-centered">Sluit jezelf aan bij onze facebook pagina samen met talloze andere.</p>
+                                    <p class="has-text-centered has-text-weight-semibold">Bekijk deze pagina</p>
                                 </div>
                             </div>
                         </a>
                     </div>
-                    <div class="column is-two-thirds">
-                        Second
+                    <div class="divider is-vertical"></div>
+                    <hr class="is-mobile">
+                    <div class="column">
+                        <div class="container">
+                            <h1 class="title is-4 has-text-centered">Bekijk de andere pagina's van het Tiny Restaurant!</h1>
+                            <br>
+                            <div class="columns is-mobile is-multiline">
+                               @foreach($homepage->homepage_link_items as $link)
+                                    <div class="column is-half-mobile">
+                                        <a href="{{$link->url}}" target="#">
+                                            <div class="is-flex is-justify-content-center is-flex-wrap-wrap">
+                                                <div class="block">
+                                                    <figure class="image is-64x64 mb-1">
+                                                        <img type="image/png" src="{{ asset('img/link_icons/'.$link->logo_url) }}" />
+                                                    </figure>
+                                                    <p class="has-text-weight-medium has-text-centered">{{$link->name}}</p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                @endforeach 
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
