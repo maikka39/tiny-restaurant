@@ -60,7 +60,7 @@
         </section>
     @else
         <section class="section">
-            <h3 class="is-size-4 has-text-centered">Het hebben geen nieuwsberichten voor je kunnen vinden :(</h3>
+            <h3 class="is-size-4 has-text-centered">We hebben geen nieuwsberichten voor je kunnen vinden :(</h3>
         </section>
     @endif
 @endsection
