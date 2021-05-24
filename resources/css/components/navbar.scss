@@ -9,4 +9,31 @@
   .navbar-link::after {
     border-color: $primary;
   }
+
+  .navbar-brand img {
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .navbar {
+    padding: 0;
+    .navbar-item {
+      &.has-dropdown {
+        .navbar-dropdown {
+          display: none;
+        }
+        &:hover {
+          .navbar-dropdown {
+            display: block !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+.show-dropdown {
+  display: block !important;
 }

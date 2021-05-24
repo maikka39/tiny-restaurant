@@ -16,21 +16,22 @@
             <div class="navbar-start">
                 <a class="navbar-item" href="{{ route('newsItems.show') }}">Nieuws</a>
                 <a class="navbar-item" href="{{ route('project.showAll') }}">Projecten</a>
-                <div class="navbar-item has-dropdown is-hoverable">
+                <div class="navbar-item has-dropdown is-hoverable" data-target="dropdown-link">
                     <a class="navbar-link">Gemeentes</a>
                     <div class="navbar-dropdown">
                         @foreach($municipalities as $municipality)
-                            <a class="navbar-item" href="{{ route('municipality.show', $municipality->title) }}">
+                            <a class="navbar-item" id="dropdown-link" href="{{ route('municipality.show', $municipality->title) }}">
                                 {{ $municipality->title }}
                             </a>
                         @endforeach
                     </div>
                 </div>
-            <div class="navbar-item">
-                <div class="buttons">
-                    <a class="button is-primary" href="{{ url('contact') }}">
-                        <strong>Contact</strong>
-                    </a>
+                <div class="navbar-item">
+                    <div class="buttons">
+                        <a class="button is-primary" href="{{ url('contact') }}">
+                            <strong>Contact</strong>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
