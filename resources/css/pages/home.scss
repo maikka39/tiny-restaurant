@@ -10,6 +10,26 @@ section.section {
     }
 }
 
+.hero {
+    .hero-body {
+        padding: 0 0 0 3rem;
+
+        .left,
+        .right {
+            width: 50%;
+        }
+
+        .right {
+            clip-path: polygon(25% 0%, 100% 0, 100% 100%, 0% 100%);
+
+            .hero-image {
+                width: auto;
+                height: 100%;
+            }
+        }
+    }
+}
+
 .news-item {
     display: flex;
     flex-direction: column;
