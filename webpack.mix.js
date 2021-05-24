@@ -13,7 +13,7 @@ const mix = require('laravel-mix');
 
 mix.js('resources/js/app.js', 'public/js')
     .sass('resources/css/app.scss', 'public/css')
-    .sass('resources/css/pages/news.scss', 'public/css')
+    .sass('resources/css/pages/home.scss', 'public/css')
     .copyDirectory('resources/img', 'public/img');
 
 mix.disableSuccessNotifications();

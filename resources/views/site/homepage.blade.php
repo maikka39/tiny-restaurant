@@ -2,7 +2,7 @@
     "title" => $homepage->title
 ])
 
-@section('content')
+@section('old-content')
     <div class="container mb-5">
         <div class="hero grid md:grid-cols-5">
             <div class="pl-12 lg:col-span-3 md:col-span-5 md:mt-32 md:pr-10">
@@ -45,3 +45,63 @@
     </div>
 @endsection
 
+@push('styles')
+    <link rel="stylesheet" href="{{ asset('css/home.css') }}">
+@endpush
+
+@section('content')   
+    <!-- Hero -->
+    <section class="section">
+        <div class="container">
+            <div class="columns is-vcentered">
+                <div class="column">
+                    <h1 class="title">Tiny Restaurant</h1>
+                    <p class="subtitle">Welkom op onze website!</p>
+                    
+                    <a class="button is-primary" href="#projecten">Projecten</a>
+                </div>
+                
+                <div class="column">
+                    <figure class="image is-256x256">
+                        <img src="https://bulma.io/images/placeholders/256x256.png" />
+                    </figure>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Social media -->
+    <section class="section is-medium has-text-centered">
+        <div class="container">
+            <p>Social media hier</p>
+        </div>
+    </section>
+    
+    <!-- Latest news -->
+    <section class="section">
+        <div class="container">
+            <x-latest-news />
+        </div>
+    </section>
+    
+    <!-- Projects -->
+    <section class="section">
+        <div class="container">
+            <x-projects />
+        </div>
+    </section>
+    
+    <!-- Partner slideshow -->
+    <section class="section has-text-centered">
+        <div class="container">
+            <p>Slideshow hier</p>
+        </div>
+    </section>
+    
+    <!-- Partners -->
+    <section class="section is-medium has-text-centered">
+        <div class="container">
+            <x-partners />
+        </div>
+    </section>
+@endsection
