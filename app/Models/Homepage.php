@@ -23,7 +23,7 @@ class Homepage extends Model
     ];
 
     public $mediasParams = [
-        'cover' => [
+        'hero' => [
             'desktop' => [
                 [
                     'name' => 'desktop',

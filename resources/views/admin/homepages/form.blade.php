@@ -8,9 +8,15 @@
     ])
 
     @formField('input', [
-        'name' => 'banner',
-        'label' => 'Banner',
+        'name' => 'slogan',
+        'label' => 'Slogan',
         'maxlength' => 100
+    ])
+
+    @formField('medias', [
+        'type' => 'image',
+        'name' => 'hero',
+        'label' => 'Afbeelding'
     ])
 @stop
 
