@@ -81,6 +81,6 @@ class Project extends Model
     public function getCreatedTimeForView(): string
     {
         Carbon::setLocale('nl');
-        return $this->created_at->isoFormat('D MMMM YYYY');
+        return $this->created_at->isoFormat('D-MM-YYYY');
     }
 }

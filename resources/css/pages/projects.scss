@@ -29,6 +29,22 @@ $hero-width: 70%;
 .section-timeline {
   padding: 0;
 }
+.project-footer {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  margin-top: 1rem;
+
+  .read-more-button {
+    a {
+      color: white;
+    }
+  }
+
+  small {
+    margin-left: 1.5rem;
+  }
+}
 
 // mobile to tablet
 @media screen and (max-width: 1028px) {
