@@ -28,16 +28,6 @@
                         <p>Geen agenda items</p>
                     @endforelse
                 </div>
-                <div class="sidecard row">
-                    <h4>Links</h4>
-                    <div class="flex flex-col">
-                    @forelse($homepage->homepage_link_items as $link)
-                        <a href="{{$link->url}}" target="_blank">{{$link->name}}</a>
-                    @empty
-                        Momenteel geen links
-                    @endforelse
-                    </div>
-                </div>
             </div>
         </div>
 
@@ -45,13 +35,13 @@
             <div class="hero-body">
                 <div class="columns is-tablet">
                     <div class="column is-one-third-tablet">
-                        <a href="{{$homepage->highlight_link_url}}" target="#">
+                        <a href="{{$highlight->url}}" target="#">
                             <div class="container is-flex-tablet is-justify-content-center is-flex-wrap-wrap">
                                 <div class="is-flex is-align-items-center is-justify-content-center is-flex-wrap-wrap mb-4">
                                     <figure class="image is-64x64 mr-2">
-                                            <img type="image/png" src="{{ asset('img/link_icons/'.$homepage->highlight_link_logo_url) }}" />
+                                            <img type="image/png" src="{{ asset('img/link_icons/'.$highlight->logo_url)}}" />
                                     </figure>
-                                    <h1 class="title has-text-centered is-size-2 is-size-3-tablet">{{$homepage->highlight_link_name}}</h1>
+                                    <h1 class="title has-text-centered is-size-2 is-size-3-tablet">{{$highlight->name}}</h1>
                                 </div>
 
                                 <div class="content">
@@ -68,7 +58,7 @@
                             <h1 class="title is-4 has-text-centered">Bekijk de andere pagina's van het Tiny Restaurant!</h1>
                             <br>
                             <div class="columns is-mobile is-multiline">
-                               @foreach($homepage->homepage_link_items as $link)
+                               @foreach($homepage->homepage_link_items->where('position', '!=', 1)->all() as $link)
                                     <div class="column is-half-mobile">
                                         <a href="{{$link->url}}" target="#">
                                             <div class="is-flex is-justify-content-center is-flex-wrap-wrap">
