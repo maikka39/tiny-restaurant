@@ -16,7 +16,7 @@
 
         <div class="hero-body">
             <span class="watermark">ONZE BOEREN</span>
-            <div class="columns is-vcentered is-desktop">
+            <div class="columns is-vcentered">
                 <div class="left">
                     <h1 class="title is-size-1 has-text-weight-bold">{{ $homepage->title }}</h1>
                     <p class="subtitle is-size-3">{{ $homepage->slogan }}</p>
@@ -29,6 +29,7 @@
                     </figure>
                 </div>
             </div>
+            <div class="scroll-down-indicator"></div>
         </div>
     </section>
     
