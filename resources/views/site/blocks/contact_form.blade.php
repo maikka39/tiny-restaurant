@@ -1,90 +1,86 @@
-<div class="w-container mx-auto mb-5">
-    <div class="hero grid md:grid-cols-5">
-        <div class="pl-12 md:col-span-3 md:mt-32">
-            <div class="content">
-                <h1>Contact</h1>
-                <p class="mb-2">E-mail ons met eventuele vragen of verzoeken of bel ons via 06-20466555. Wij beantwoorden graag uw vragen en/of maken een afspraak met u!</p>
-            </div>
-        </div>
-    </div>
-</div>
-
 <div class="box">
-    <div class="w-container mx-auto">
-        <h3 class="pl-4">{{ $block->input('title') }}</h3>
-        <p class="pl-5">{{ $block->input('description') }}</p>
+    <div class="columns">
+        <div class="column is-one-third is-offset-three-fifths box">
+            <form class="control" method="POST" action="{{ route('contact.sendMail') }}">
+                @csrf
+                <h1 class="title mt-5 mb-5">Contact</h1>
 
-        <form method="POST" action="{{ route('contact.sendMail') }}">
-            @csrf
+                <div class="columns">
+                    <div class="column">
+                        <div class="control">
+                            <input class="input" id="firstname" type="text" name="firstname" value="{{ old("firstname") }}" placeholder="Voornaam" required>
+                            @error('firstname')
+                                <div class="has-text-danger">{{ $message }}</div>
+                            @enderror
+                        </div>
+                    </div>
+                    <div class="column is-three-fifths">
+                        <input class="input" id="lastname" type="text" name="lastname" value="{{ old("lastname") }}" placeholder="Achternaam" required>
+                        @error('lastname')
+                            <div class="has-text-danger">{{ $message }}</div>
+                        @enderror
+                    </div>
+                </div>
 
-            <div class="field">
-                <label class="label" for="name">Naam</label>
-                <div class="control has-icons-left">
-                    <input class="input is-rounded" id="name" type="text" name="name" value="{{ old("name") }}" placeholder="Naam" required>
-                    <span class="icon is-small is-left">
-                        <i class="fas fa-user"></i>
+                <div class="columns">
+                    <div class="column is-full">
+                        <div class="control">
+                            <input class="input" id="email" type="email" name="email" value="{{ old("email") }}" placeholder="E-mailadres" required>
+                            @error('email')
+                                <div class="has-text-danger">{{ $message }}</div>
+                            @enderror
+                        </div>
+                    </div>
+                </div>
+
+                <div class="columns">
+                    <div class="column is-full">
+                        <div class="control">
+                            <textarea class="textarea has-fixed-size" id="message" name="message" placeholder="Bericht" required>{{ old("message") }}</textarea>
+                            @error('message')
+                                <div class="has-text-danger">{{ $message }}</div>
+                            @enderror
+                        </div>
+                    </div>
+                </div>
+
+                <span class="icon-text">
+                <label class="label has-icons-right" for="project">Optioneel</label>
+                <span class="icon is-right">
+                        <i class="far fa-question-circle"></i>
                     </span>
+            </span>
+
+                <div class="columns">
+                    <div class="column">
+                        <div class="control select">
+                            <select id="project" name="project">
+                                <option selected disabled>Selecteer een project</option>
+                                @foreach($projectList as $project)
+                                    <option>{{$project->name}}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                    </div>
                 </div>
-            </div>
 
-            @error('name')
+                {!! NoCaptcha::displaySubmit('my-form-id', 'Verstuur bericht') !!}
+
+                @error('g-recaptcha-response')
                 <div class="has-text-danger">{{ $message }}</div>
-            @enderror
+                @enderror
 
-            <div class="field">
-                <label class="label" for="email">E-mailadres</label>
-                <div class="control has-icons-left">
-                    <input class="input is-rounded" id="email" type="email" name="email" value="{{ old("email") }}" placeholder="E-mailadres" required>
-                    <span class="icon is-small is-left">
-                    <i class="fas fa-envelope"></i>
-                </span>
-                </div>
-            </div>
+                @if (session('success_message'))
+                    <p class="has-text-success">{{ session('success_message') }}</p>
+                @endif
+            </form>
+        </div>
 
-            @error('email')
-                <div class="has-text-danger">{{ $message }}</div>
-            @enderror
 
-            <div class="field">
-                <label class="label" for="message">Bericht</label>
-                <div class="control">
-                    <textarea class="textarea has-fixed-size" id="message" name="message" placeholder="Bericht" required>{{ old("message") }}</textarea>
-                </div>
-            </div>
-
-            @error('message')
-                <div class="has-text-danger">{{ $message }}</div>
-            @enderror
-
-            <div class="field">
-                <label class="label" for="project">(Optioneel) Selecteer een project</label>
-                <div class="control select is-rounded">
-                    <select id="project" name="project">
-                        <option selected disabled>Selecteer een project</option>
-                        @foreach($projectList as $project)
-                            <option>{{$project->name}}</option>
-                        @endforeach
-                    </select>
-                </div>
-            </div>
-
-            {!! NoCaptcha::display() !!}
-
-            @error('g-recaptcha-response')
-                <div class="has-text-danger">{{ $message }}</div>
-            @enderror
-
-            <div class="control">
-                <button class="button is-primary">Verstuur bericht</button>
-            </div>
-
-            @if (session('success_message'))
-                <p class="has-text-success">{{ session('success_message') }}</p>
-            @endif
-        </form>
     </div>
 </div>
 
 @push('scripts')
     {!! NoCaptcha::renderJs() !!}
+    <script src="https://www.google.com/recaptcha/api.js?render=6LdQs94aAAAAADY5gu0AFUSYCIh8zxSdzmGbepGy"></script>
 @endpush
