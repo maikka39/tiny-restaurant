@@ -17,6 +17,19 @@
         background-color: $primary-background;
     }
 
+    .columns {
+        width: 100%;
+        margin-right: 0;
+
+        .left {
+            width: 80%;
+        }
+
+        .right {
+            width: 120%;
+        }
+    }
+
     .hero-body {
         padding: 0 0 0 3rem;
 
