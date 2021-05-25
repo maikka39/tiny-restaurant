@@ -11,7 +11,8 @@ class EmailFromUser extends Mailable
     use Queueable, SerializesModels;
 
     public $message;
-    public $name;
+    public $firstname;
+    public $lastname;
     public $sender;
     public $project;
 
@@ -19,14 +20,16 @@ class EmailFromUser extends Mailable
      * Create a new message instance.
      *
      * @param string $message
-     * @param string $name
+     * @param string $firstname
+     * @param string $lastname
      * @param string $sender
      * @param string $project
      */
-    public function __construct(string $message, string $name, string $sender, string $project)
+    public function __construct(string $message, string $firstname, string $lastname, string $sender, string $project)
     {
         $this->message = $message;
-        $this->name = $name;
+        $this->firstname = $firstname;
+        $this->lastname = $lastname;
         $this->sender = $sender;
         $this->project = $project;
     }
