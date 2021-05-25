@@ -25,7 +25,7 @@
     
                 <div class="right">
                     <figure class="image">
-                        <img class="hero-image" src="{{ $image }}" alt="{{ $alt }}" />
+                        <img class="hero-image" src="{{ $image }}" alt="{{ $alt }}" draggable="false" />
                     </figure>
                 </div>
             </div>
