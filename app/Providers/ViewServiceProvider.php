@@ -25,6 +25,6 @@ class ViewServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        View::composer('site.blocks.contact_form', ContactComposer::class);
+        View::composer('site.contact', ContactComposer::class);
     }
 }

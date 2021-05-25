@@ -28,7 +28,7 @@
                 </div>
                 <div class="navbar-item">
                     <div class="buttons">
-                        <a class="button is-primary" href="{{ url('contact') }}">
+                        <a class="button is-primary" href="{{ route('contact.show') }}">
                             <strong>Contact</strong>
                         </a>
                     </div>
