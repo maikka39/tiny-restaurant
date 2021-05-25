@@ -68,4 +68,8 @@ class Farmer extends Model
         return $this->morphToMany(Project::class, 'involved', 'project_involved');
     }
 
+    public function getJoinedTime()
+    {
+        return $this->created_at->diff(now())->days;
+    }
 }
