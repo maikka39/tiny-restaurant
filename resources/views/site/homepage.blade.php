@@ -9,22 +9,24 @@
 @section('content')   
     <!-- Hero -->
     <section class="hero is-fullheight-with-navbar">
-        <div class="hero-body">
-            <div class="left">
-                <h1 class="title is-size-1 has-text-weight-bold">{{ $homepage->title }}</h1>
-                <p class="subtitle is-size-3">{{ $homepage->slogan }}</p>
-                <a class="button is-primary" href="{{ route('project.showAll') }}">Projecten</a>
-            </div>
-            
-            @php
-                $image = $homepage->image('hero', 'flexible');
-                $alt = $homepage->imageAltText('hero');
-            @endphp
+        @php
+            $image = $homepage->image('hero', 'flexible');
+            $alt = $homepage->imageAltText('hero');
+        @endphp
 
-            <div class="right">
-                <figure class="image">
-                    <img class="hero-image" src="{{ $image }}" alt="{{ $alt }}" />
-                </figure>
+        <div class="hero-body">
+            <div class="columns is-vcentered is-desktop">
+                <div class="left">
+                    <h1 class="title is-size-1 has-text-weight-bold">{{ $homepage->title }}</h1>
+                    <p class="subtitle is-size-3">{{ $homepage->slogan }}</p>
+                    <a class="button is-primary" href="{{ route('project.showAll') }}">Projecten</a>
+                </div>
+    
+                <div class="right is-hidden-touch">
+                    <figure class="image">
+                        <img class="hero-image" src="{{ $image }}" alt="{{ $alt }}" />
+                    </figure>
+                </div>
             </div>
         </div>
     </section>

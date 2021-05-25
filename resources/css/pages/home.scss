@@ -1,4 +1,5 @@
 @import "../vars";
+@import "bulma/bulma";
 
 .section {
     &.primary {
@@ -11,15 +12,15 @@
 }
 
 .hero {
+    @include until($desktop) {
+        min-height: 500px !important;
+        background-color: $primary-background;
+    }
+
     .hero-body {
         padding: 0 0 0 3rem;
 
-        .left {
-            width: 50%;
-        }
-
         .right {
-            width: 100%;
             clip-path: polygon(25% 0%, 100% 0, 100% 100%, 0% 100%);
 
             .hero-image {
