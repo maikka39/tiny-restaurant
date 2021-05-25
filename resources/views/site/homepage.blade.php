@@ -37,7 +37,7 @@
                     <div class="column is-one-third-tablet">
                         <a href="{{$highlight->url}}" target="#">
                             <div class="container is-flex-tablet is-justify-content-center is-flex-wrap-wrap">
-                                <div class="is-flex is-align-items-center is-justify-content-center is-flex-wrap-wrap mb-4">
+                                <div class="is-flex is-align-items-center is-justify-content-center is-flex-wrap-wrap mb-4 grow">
                                     <figure class="image is-64x64 mr-2">
                                             <img type="image/png" src="{{ asset('img/link_icons/'.$highlight->logo_url)}}" />
                                     </figure>
@@ -65,7 +65,7 @@
                                     <div class="column is-half-mobile">
                                         <a href="{{$link->url}}" target="#">
                                             <div class="is-flex is-justify-content-center is-flex-wrap-wrap">
-                                                <div class="block">
+                                                <div class="block grow">
                                                     <figure class="image is-64x64 mb-1">
                                                         <img type="image/png" src="{{ asset('img/link_icons/'.$link->logo_url) }}" />
                                                     </figure>
