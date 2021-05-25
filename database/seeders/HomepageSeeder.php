@@ -19,6 +19,8 @@ class HomepageSeeder extends Seeder
             'id' => 1,
             'title' => 'Tiny Restaurant',
             'slogan' => 'Welkom op onze website!',
+            'button_text' => 'Projecten',
+            'button_url' => '/projecten',
             'published' => true
         ]);
 

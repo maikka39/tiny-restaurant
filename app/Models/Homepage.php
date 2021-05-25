@@ -16,6 +16,8 @@ class Homepage extends Model
         'published',
         'title',
         'slogan',
+        'button_text',
+        'button_url',
     ];
 
     public $slugAttributes = [
