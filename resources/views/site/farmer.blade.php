@@ -19,4 +19,17 @@
             </div>
         </div>
     </section>
+    <section class="section story">
+        <h3 class="story-header">Lees het hele verhaal van {{ $item->name }}</h3>
+        <div class="story-body">{!! $item->description !!}</div>
+    </section>
+    <section class="section section-farmer-gallery">
+        <h3 class="gallery-header">De fotogalerij</h3>
+        <p class="gallery-text">Bekijk de foto's van {{ $item->name }}</p>
+        <div class="gallery">
+            @foreach($item->imagesAsArrays('farmer_profile', 'flexible') as $image)
+                <img class="farmer-hero-image" src="{{ $image ? $image['src'] : asset('img/news-placeholder.png') }}" alt="{{ $image ? $image['alt'] : 'news placeholder' }}">
+            @endforeach
+        </div>
+    </section>
 @endsection

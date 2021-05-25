@@ -1,3 +1,5 @@
+@import "../vars";
+
 .section-farmer-hero {
   padding: 0;
 
@@ -26,5 +28,57 @@
 
   .hero-content > * {
      flex-basis: 100%;
+  }
+}
+
+.story {
+  margin: 6rem 8rem 4rem 8rem;
+
+  .story-header {
+    text-align: center;
+    font-size: 48px;
+    color: $primary;
+    font-weight: 500;
+    margin-bottom: 1rem;
+  }
+  .story-body * {
+    text-align: center;
+    font-size: 28px;
+    color: black;
+  }
+}
+
+.section-farmer-gallery {
+  padding: 8rem 10rem;
+  background: $secondary-background;
+
+  .gallery-header {
+    text-align: center;
+    font-size: 48px;
+    margin-bottom: 1rem;
+  }
+
+  .gallery-text {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 4rem;
+  }
+
+  .gallery {
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: repeat(5, auto);
+    margin: 3rem 4rem;
+
+    img {
+      object-fit: cover;
+      width: 218px;
+      height: 128px;
+
+      &:hover {
+        -webkit-box-shadow: 0 0 5px 0 rgba(0,0,0,0.5);
+        box-shadow: 0 0 5px 0 rgba(0,0,0,0.5);
+      }
+    }
   }
 }

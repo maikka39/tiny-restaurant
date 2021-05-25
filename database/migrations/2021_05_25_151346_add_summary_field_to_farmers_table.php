@@ -14,7 +14,7 @@ class AddSummaryFieldToFarmersTable extends Migration
     public function up()
     {
         Schema::table('farmers', function (Blueprint $table) {
-            $table->string('summary')->nullable();
+            $table->text('summary')->nullable();
         });
     }
 }

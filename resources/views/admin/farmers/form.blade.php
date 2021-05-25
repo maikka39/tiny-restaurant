@@ -5,14 +5,14 @@
         'name' => 'description',
         'label' => 'Beschrijving',
         'placeholder' => 'Vul een beschrijving in voor de boer',
-        'maxlength' => 500
+        'maxlength' => 1500
     ])
 
 
     @formField('input', [
         'name' => 'summary',
         'label' => 'Samenvatting',
-        'maxlength' => 255,
+        'maxlength' => 500,
         'required' => true,
         'note' => 'Maak een samenvatting voor de boer',
         'placeholder' => 'Voer een samenvatting in...',
