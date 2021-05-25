@@ -1,0 +1,26 @@
+@import "../vars";
+
+.contact-text {
+  color: $primary;
+}
+
+.main-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-shadow {
+  border: solid 1px grey;
+  -webkit-box-shadow: -50px 50px 0px 0px rgba(240, 252, 236, 1);
+  box-shadow: -50px 50px 0px 0px rgba(240, 252, 236, 1);
+  margin-bottom: 7.8125rem;
+}
+
+@media screen and (max-width: 992px) {
+  .form-shadow {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    margin-bottom: 0px;
+  }
+}

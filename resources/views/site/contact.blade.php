@@ -2,15 +2,19 @@
     "title" => "Contact"
 ])
 
+@push('styles')
+    <link rel="stylesheet" href="{{ asset('css/contact.css') }}">
+@endpush
+
 @section("content")
 <div class="box">
-    <div class="columns">
-        <div class="column is-one-third">
-            <h1 class="title has-text-primary is-centered">
+    <div class="columns is-flex">
+        <div class="column is-three-fifths main-text is-hidden-mobile">
+            <h1 class="title contact-text is-centered">
                 Neem gerust contact met ons op!
             </h1>
         </div>
-        <div class="column is-offset-one-third is-one-third box">
+        <div class="column mr-5 mt-5 is-one-third form-shadow">
                 <form class="control" method="POST" action="{{ route('contact.sendMail') }}" id="contactform">
                     @csrf
                     <h1 class="title mt-5 mb-5">Contact</h1>
