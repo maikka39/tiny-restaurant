@@ -19,7 +19,8 @@ class Farmer extends Model
         'name',
         'address',
         'description',
-        'municipality_id'
+        'municipality_id',
+        'summary'
     ];
 
     public $slugAttributes = [

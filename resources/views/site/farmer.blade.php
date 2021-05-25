@@ -3,30 +3,16 @@
 ])
 
 @section('content')
-    <div class="flex place-content-center">
-        <div class="w-5/6 mt-4 mb-4">
-            <div class="flex flex-wrap place-content-around">
-                <div class="flex flex-col w-2/6">
-                    <h1>{{ $item->name }}</h1>
-                    <p class="text-justify">{!! $item->description !!}</p>
-                </div>
-
-                <img class="municipalityImage shadow-lg rounded w-4/6" src="{{ $item->image("farmer_profile", 'desktop') }}" alt="{{ $item->imageAltText("farmer_profile") }}" >
+    <section class="section">
+        <div class="is-flex">
+            @php($image = $item->imageAsArray('farmer_profile', 'flexible'))
+            <img src="{{ $image ? $image['src'] : asset('img/news-placeholder.png') }}" alt="{{ $image ? $image['alt'] : 'news placeholder' }}">
+            <div>
+                <h2>{{ $item->name }}</h2>
+                <p>{{ $item->summary }}</p>
+                <hr>
+                <small>{{ $item->name }} is al x dagen lid by het Tiny Restaurant!</small>
             </div>
         </div>
-    </div>
-    <div class="flex place-content-center box primary">
-        <div class="w-5/6 mt-4 mb-4">
-            @if(!empty($item->blocks))
-                <div class="self-center flex flex-row justify-center mb-5">
-                    <h2>
-                        Volg {{ $item->name }} op social media!
-                    </h2>
-                </div>
-                <div class="w-full flex flex-row place-content-around">
-                    {!! $item->renderBlocks(false) !!}
-                </div>
-            @endif
-        </div>
-    </div>
+    </section>
 @endsection

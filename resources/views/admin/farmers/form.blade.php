@@ -8,6 +8,18 @@
         'maxlength' => 500
     ])
 
+
+    @formField('input', [
+        'name' => 'summary',
+        'label' => 'Samenvatting',
+        'maxlength' => 255,
+        'required' => true,
+        'note' => 'Maak een samenvatting voor de boer',
+        'placeholder' => 'Voer een samenvatting in...',
+        'type' => 'textarea',
+        'rows' => 3
+    ])
+
     @formField('input', [
         'name' => 'address',
         'label' => 'Adres',
@@ -23,6 +35,7 @@
 
     @formField('medias', [
         'name' => 'farmer_profile',
+        'max' => 10,
         'label' => 'Profiel foto',
         'fieldNote' => 'Een mooie afbeelding van de boer of de boerderij',
     ])
