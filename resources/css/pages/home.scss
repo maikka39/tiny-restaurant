@@ -73,14 +73,19 @@
       font-weight: 900;
       opacity: 0.05;
 
+      writing-mode: vertical-rl;
+      text-orientation: sideways;
+      transform: rotateZ(180deg);
+
+      text-align: center;
+      font-size: 11.5vmin;
+      line-height: 1em;
+      white-space: nowrap;
+
       @include until($desktop) {
         display: none;
       }
 
-      svg {
-        width: 100%;
-        height: 100%;
-      }
     }
     
     .right {
