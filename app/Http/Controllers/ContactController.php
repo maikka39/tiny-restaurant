@@ -23,7 +23,6 @@ class ContactController extends BaseController
 
     public function sendMail(SendEmailRequest $request): \Illuminate\Http\RedirectResponse
     {
-        dd($request);
         $validated = $request->validated();
 
         if(is_null($request['project'])) {
