@@ -11,7 +11,7 @@
             </h1>
         </div>
         <div class="column is-offset-one-third is-one-third box">
-                <form class="control" method="POST" action="{{ route('contact.sendMail') }}">
+                <form class="control" method="POST" action="{{ route('contact.sendMail') }}" id="contactform">
                     @csrf
                     <h1 class="title mt-5 mb-5">Contact</h1>
 
@@ -78,7 +78,7 @@
                         </div>
                     </div>
 
-                    {!! NoCaptcha::displaySubmit('my-form-id', 'Verstuur bericht') !!}
+                    {!! NoCaptcha::displaySubmit('contactform', 'Verstuur bericht') !!}
 
                     @error('g-recaptcha-response')
                     <div class="has-text-danger">{{ $message }}</div>
