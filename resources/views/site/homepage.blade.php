@@ -22,7 +22,7 @@
                     <a class="button is-primary" href="{{ route('project.showAll') }}">Projecten</a>
                 </div>
     
-                <div class="right is-hidden-touch">
+                <div class="right">
                     <figure class="image">
                         <img class="hero-image" src="{{ $image }}" alt="{{ $alt }}" />
                     </figure>

@@ -13,7 +13,6 @@
 .hero {
   @include until($desktop) {
     min-height: 500px !important;
-    background-color: $primary-background;
   }
   
   .columns {
@@ -31,13 +30,34 @@
   
   .hero-body {
     padding: 0 0 0 3rem;
+    position: relative;
     
     .right {
       clip-path: polygon(25% 0%, 100% 0, 100% 100%, 0% 100%);
+
+      @include until($desktop) {
+        clip-path: unset;
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        z-index: -10;
+
+        .image {
+          height: 100%;
+          width: 100%;
+        }
+      }
       
       .hero-image {
         width: auto;
         height: 100%;
+
+        @include until($desktop) {
+          width: 100%;
+        }
       }
     }
   }
