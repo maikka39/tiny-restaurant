@@ -70,7 +70,7 @@ class NewsItem extends Model
     public function getCreatedTimeForView(): string
     {
         Carbon::setLocale('nl');
-        return $this->created_at->isoFormat('dddd D MMMM YYYY, H:mm') . ' uur';
+        return $this->created_at->isoFormat('D MMMM YYYY');
     }
 
     private $previewTypes = ['mp3', 'mp4', 'pdf'];
