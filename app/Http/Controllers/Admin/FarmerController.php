@@ -4,8 +4,6 @@ namespace App\Http\Controllers\Admin;
 
 use A17\Twill\Http\Controllers\Admin\ModuleController;
 use App\Models\Farmer;
-use App\Models\Municipality;
-use App\Repositories\FarmerRepository;
 use App\Repositories\MunicipalityRepository;
 
 class FarmerController extends ModuleController
@@ -19,7 +17,7 @@ class FarmerController extends ModuleController
         $page = Farmer::with('municipality')->forSlug($slug)->first() ?? abort(404);
 
         return view('site.farmer', [
-            'item' => $page
+            'item' => $page,
         ]);
     }
 

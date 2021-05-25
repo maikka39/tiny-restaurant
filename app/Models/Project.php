@@ -3,17 +3,19 @@
 namespace App\Models;
 
 use A17\Twill\Models\Behaviors\HasBlocks;
-use A17\Twill\Models\Behaviors\HasSlug;
 use A17\Twill\Models\Behaviors\HasMedias;
 use A17\Twill\Models\Behaviors\HasRevisions;
-use A17\Twill\Models\Behaviors\Sortable;
+use A17\Twill\Models\Behaviors\HasSlug;
 use A17\Twill\Models\Model;
 use Carbon\Carbon;
 use Illuminate\Support\Str;
 
-class Project extends Model 
+class Project extends Model
 {
-    use HasBlocks, HasSlug, HasMedias, HasRevisions;
+    use HasBlocks;
+    use HasSlug;
+    use HasMedias;
+    use HasRevisions;
 
     protected $fillable = [
         'published',
@@ -21,18 +23,18 @@ class Project extends Model
         'description',
         'active',
         'date',
-        'address'
+        'address',
     ];
-    
+
     public $slugAttributes = [
         'name',
     ];
 
     public $browsers = [
         'municipalities',
-        'farmers'
+        'farmers',
     ];
-    
+
     public $mediasParams = [
         'project_image' => [
             'desktop' => [
@@ -64,14 +66,14 @@ class Project extends Model
         ],
     ];
 
-    public function farmers() 
+    public function farmers()
     {
         return $this->morphedByMany(Farmer::class, 'involved', 'project_involved');
     }
 
-    public function municipalities() 
+    public function municipalities()
     {
-        return $this->morphedByMany(Municipality::class, 'involved', 'project_involved', 'project_id', 'involved_id', null, null );
+        return $this->morphedByMany(Municipality::class, 'involved', 'project_involved', 'project_id', 'involved_id', null, null);
     }
 
     public function agendaDate()
@@ -87,6 +89,7 @@ class Project extends Model
     public function filter($search): bool
     {
         $search = Str::lower($search);
+
         return
             Str::contains(Str::lower($this->name), $search) ||
             Str::contains(Str::lower($this->description), $search) ||

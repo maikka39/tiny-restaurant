@@ -25,7 +25,7 @@ class MunicipalityTest extends DuskTestCase
      *
      * @return void
      */
-    public function admin_can_create_municipality()
+    public function adminCanCreateMunicipality()
     {
         $user = User::find(1);
         $this->browse(function (Browser $browser) use ($user) {
@@ -51,13 +51,13 @@ class MunicipalityTest extends DuskTestCase
                 ->type('description', 'Dit is voor de gemeente Laarbeek, de groenste gemeente van Europa!')
                 ->click('.switcher__button')
                 ->press('Publiceren')
-                ->waitForText('Content saved. All good!');;
+                ->waitForText('Content saved. All good!');
 
             $browser
                 ->visit('/gemeente/laarbeek')
                 ->waitForDialog()
                 ->acceptDialog()
-                ->assertUrlIs(config('app.url') . '/gemeente/laarbeek');;
+                ->assertUrlIs(config('app.url') . '/gemeente/laarbeek');
         });
     }
 }

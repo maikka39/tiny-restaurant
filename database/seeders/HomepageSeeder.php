@@ -2,9 +2,9 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Seeder;
 use App\Models\Homepage;
 use App\Models\HomepageLinkItem;
+use Illuminate\Database\Seeder;
 
 class HomepageSeeder extends Seeder
 {
@@ -19,19 +19,19 @@ class HomepageSeeder extends Seeder
             'id' => 1,
             'title' => 'TinyRestaurant',
             'banner' => 'Welkom op de officiële pagina van TinyRestaurant!',
-            'published' => true
+            'published' => true,
         ]);
 
         HomepageLinkItem::create([
             'name' => 'YouTube',
             'url' => 'https://youtube.nl/',
-            'homepage_id' => 1
+            'homepage_id' => 1,
         ]);
 
         HomepageLinkItem::create([
             'name' => 'Google',
             'url' => 'https://google.nl/',
-            'homepage_id' => 1
+            'homepage_id' => 1,
         ]);
     }
 }

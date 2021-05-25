@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Models\Page;
 use A17\Twill\Http\Controllers\Admin\ModuleController;
+use App\Models\Page;
 
 class PageController extends ModuleController
 {
@@ -16,7 +16,7 @@ class PageController extends ModuleController
         $page = Page::forSlug($slug)->first() ?? abort(404);
 
         return view('site.pages.show', [
-            'item' => $page
+            'item' => $page,
         ]);
     }
 }

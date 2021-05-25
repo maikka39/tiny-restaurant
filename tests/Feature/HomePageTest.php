@@ -2,8 +2,6 @@
 
 namespace Tests\Feature;
 
-use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 
 class HomePageTest extends TestCase
@@ -12,9 +10,10 @@ class HomePageTest extends TestCase
      * A basic feature test example.
      *
      * @test
+     *
      * @return void
      */
-    public function load_home_page()
+    public function loadHomePage()
     {
         $response = $this->get('/');
 

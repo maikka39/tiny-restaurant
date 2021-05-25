@@ -3,14 +3,17 @@
 namespace App\Models;
 
 use A17\Twill\Models\Behaviors\HasBlocks;
-use A17\Twill\Models\Behaviors\HasSlug;
 use A17\Twill\Models\Behaviors\HasMedias;
 use A17\Twill\Models\Behaviors\HasRevisions;
+use A17\Twill\Models\Behaviors\HasSlug;
 use A17\Twill\Models\Model;
 
 class Homepage extends Model
 {
-    use HasBlocks, HasSlug, HasMedias, HasRevisions;
+    use HasBlocks;
+    use HasSlug;
+    use HasMedias;
+    use HasRevisions;
 
     protected $fillable = [
         'published',
@@ -55,7 +58,7 @@ class Homepage extends Model
 
     public function homepage_link_items()
     {
-        return $this->hasMany(HomepageLinkItem::class)->where('deleted_at', NULL);
+        return $this->hasMany(HomepageLinkItem::class)->where('deleted_at', null);
     }
 
     public function partner_items()

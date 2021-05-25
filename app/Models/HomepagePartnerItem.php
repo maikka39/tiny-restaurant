@@ -9,7 +9,7 @@ class HomepagePartnerItem extends Model
 {
     use HasMedias;
 
-    public $table = "homepage_partner_item";
+    public $table = 'homepage_partner_item';
 
     protected $fillable = [
         'published',

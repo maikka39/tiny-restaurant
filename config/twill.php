@@ -27,7 +27,7 @@ return [
                 'search' => true,
                 'create' => true,
                 'count' => true,
-                'search_fields' => ['name', 'description', 'address']
+                'search_fields' => ['name', 'description', 'address'],
             ],
             'App\Models\Page' => [
                 'name' => 'pages',
@@ -37,7 +37,7 @@ return [
                 'search' => true,
                 'create' => true,
                 'count' => true,
-                'search_fields' => ['title', 'description']
+                'search_fields' => ['title', 'description'],
             ],
             // 'App\Models\Homepage' => [
             //     'name' => 'homepages',
@@ -57,7 +57,7 @@ return [
                 'search' => true,
                 'create' => true,
                 'count' => true,
-                'search_fields' => ['title', 'description']
+                'search_fields' => ['title', 'description'],
             ],
             'App\Models\NewsItem' => [
                 'name' => 'newsItems',
@@ -67,9 +67,9 @@ return [
                 'search' => true,
                 'create' => true,
                 'count' => true,
-                'search_fields' => ['title', 'description']
+                'search_fields' => ['title', 'description'],
             ],
-        ]
+        ],
     ],
     'locale' => 'nl',
     'fallback_locale' => 'en',
@@ -79,12 +79,12 @@ return [
             'social_media_links' => [
                 'title' => 'Social Media Links',
                 'icon' => 'text',
-                'component' => 'a17-block-social_media_links'
+                'component' => 'a17-block-social_media_links',
             ],
             'contact_link' => [
                 'title' => 'Contact Link',
                 'icon' => 'text',
-                'component' => 'a17-block-contact_link'
+                'component' => 'a17-block-contact_link',
             ],
             'text_with_image' => ['component' => 'a17-text-with-image'],
             'contact_form' => ['component' => 'a17-block-contact_form'],
@@ -94,7 +94,7 @@ return [
             'social_media_links_item' => [
                 'title' => 'Social Media link',
                 'trigger' => 'Nieuwe link toevoegen',
-                'component' => 'a17-block-social_media_links_item'
+                'component' => 'a17-block-social_media_links_item',
             ],
             'partner_items' => ['component' => 'a17-block-partner_items'],
             'homepage_link_items' => ['component' => 'a17-block-homepage_link_items'],
@@ -133,5 +133,5 @@ return [
                 ],
             ],
         ],
-    ]
+    ],
 ];

@@ -11,7 +11,8 @@ use Tests\TestCase;
 
 class NewsItemSearchTest extends TestCase
 {
-    use DatabaseMigrations, WithFaker;
+    use DatabaseMigrations;
+    use WithFaker;
 
     /**
      * @var Collection
@@ -27,11 +28,11 @@ class NewsItemSearchTest extends TestCase
 
     /**
      * Checking if the news items page can be rendered
-     * If not, non of these tests wil work
+     * If not, non of these tests wil work.
      *
      * @test search_page_can_be_rendered
      */
-    public function search_page_can_be_rendered()
+    public function searchPageCanBeRendered()
     {
         $response = $this->get('/nieuws');
         $response->assertStatus(200);
@@ -40,11 +41,11 @@ class NewsItemSearchTest extends TestCase
 
     /**
      * Searching for the title of a news item
-     * Should return just 1 record
+     * Should return just 1 record.
      *
      * @test search_exact_title
      */
-    public function search_exact_title()
+    public function searchExactTitle()
     {
         $newsItem = $this->newsItems->where('published', true)->random();
         $response = $this
@@ -63,7 +64,7 @@ class NewsItemSearchTest extends TestCase
      *
      * @test search_description
      */
-    public function search_description()
+    public function searchDescription()
     {
         $response = $this
             ->followingRedirects()

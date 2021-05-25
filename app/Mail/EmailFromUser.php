@@ -8,7 +8,8 @@ use Illuminate\Queue\SerializesModels;
 
 class EmailFromUser extends Mailable
 {
-    use Queueable, SerializesModels;
+    use Queueable;
+    use SerializesModels;
 
     public $message;
     public $name;
@@ -16,10 +17,6 @@ class EmailFromUser extends Mailable
 
     /**
      * Create a new message instance.
-     *
-     * @param string $message
-     * @param string $name
-     * @param string $sender
      */
     public function __construct(string $message, string $name, string $sender)
     {
