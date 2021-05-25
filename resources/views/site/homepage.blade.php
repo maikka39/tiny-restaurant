@@ -15,6 +15,11 @@
         @endphp
 
         <div class="hero-body">
+            <span class="watermark">
+                <svg viewBox="-16 -64 20 128">
+                    <text text-anchor="middle" transform="rotate(270)">ONZE BOEREN</text>
+                </svg>
+            </span>
             <div class="columns is-vcentered is-desktop">
                 <div class="left">
                     <h1 class="title is-size-1 has-text-weight-bold">{{ $homepage->title }}</h1>
