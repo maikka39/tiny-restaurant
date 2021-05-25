@@ -1,0 +1,63 @@
+// Components
+@use "../components/timeline" with (
+  $timeline-background-color: #FFE9DB,
+  $timeline-border-color: rgba(206, 103, 39, 1),
+);
+
+$hero-width: 70%;
+
+.projects-hero {
+  width: $hero-width;
+  margin: auto;
+}
+
+.search-input {
+  width: $hero-width;
+  margin: auto;
+}
+
+.clear-filter {
+  width: $hero-width;
+  margin: 0 auto;
+}
+
+.search-button {
+  border-left: 0;
+  border-color: #b5b5b5;
+}
+
+.section-timeline {
+  padding: 0;
+}
+.project-footer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 1rem;
+
+  .read-more-button {
+    a {
+      color: white;
+    }
+  }
+
+  small {
+    margin-left: 1.5rem;
+    text-align: center;
+  }
+}
+
+// mobile to tablet
+@media screen and (max-width: 1028px) {
+  .projects-hero {
+    width: 90%;
+  }
+
+  .search-input {
+    width: 90%;
+
+    input::placeholder {
+      font-size: .85rem;
+    }
+  }
+}
