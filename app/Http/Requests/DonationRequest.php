@@ -24,7 +24,7 @@ class DonationRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'amount' => 'required|min:1'
+            'amount' => ['required', 'min:1', 'numeric'],
         ];
     }
 }
