@@ -9,7 +9,6 @@ use App\Http\Controllers\Admin\MunicipalityController;
 use App\Http\Controllers\Admin\ProjectController;
 use App\Http\Controllers\Admin\PageController;
 use App\Http\Controllers\Admin\HomepageController;
-use App\Http\Controllers\Admin\DonateController;
 
 /*
 |--------------------------------------------------------------------------
