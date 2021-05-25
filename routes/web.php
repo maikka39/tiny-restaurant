@@ -26,8 +26,7 @@ Route::get('/', [HomepageController::class, 'view'])->name('homepages.show');
 Route::post('/contact', [MailController::class, 'sendMail'])->name('contact.sendMail');
 Route::get('/gemeente/{slug}', [MunicipalityController::class, 'view'])->name('municipality.show');
 Route::get('/nieuws', [NewsItemController::class, 'view'])->name('newsItems.show');
-Route::get('/doneer', [DonationController::class, 'view'])->name('donation.show');
-Route::post('/doneer', [DonationController::class, 'new'])->name('donation.new'); //TODO refactor route into Route::name w/ get and post
+Route::post('/doneer', [DonationController::class, 'new'])->name('donation.new');
 
 Route::name('project.')->group(function () {
     Route::get('/projecten', [ProjectController::class, 'showAll'])->name('showAll');
