@@ -1,5 +1,5 @@
 @component('mail::message')
-    <p>Naam: {{ $name }}</p>
+    <p>Naam: {{$firstname}} {{$lastname}}</p>
     <p>Project: {{$project}}</p>
     <p>
         Bericht:<br>
