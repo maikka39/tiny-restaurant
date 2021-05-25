@@ -1,11 +1,11 @@
 @import "../vars";
 
-section.section {
-    &:nth-child(2n) {
+.section {
+    &.primary {
         background-color: $primary-background;
     }
     
-    &:nth-child(4n) {
+    &.secondary {
         background-color: $secondary-background;
     }
 }
@@ -14,12 +14,12 @@ section.section {
     .hero-body {
         padding: 0 0 0 3rem;
 
-        .left,
-        .right {
+        .left {
             width: 50%;
         }
 
         .right {
+            width: 100%;
             clip-path: polygon(25% 0%, 100% 0, 100% 100%, 0% 100%);
 
             .hero-image {

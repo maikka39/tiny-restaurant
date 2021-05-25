@@ -30,7 +30,7 @@
     </section>
     
     <!-- Social media -->
-    <section class="section is-medium has-text-centered">
+    <section class="section primary is-medium has-text-centered">
         <div class="container">
             <p>Social media hier</p>
         </div>
@@ -44,7 +44,7 @@
     </section>
     
     <!-- Projects -->
-    <section class="section">
+    <section class="section secondary">
         <div class="container">
             <x-projects />
         </div>
@@ -58,7 +58,7 @@
     </section>
     
     <!-- Partners -->
-    <section class="section is-medium has-text-centered">
+    <section class="section primary is-medium has-text-centered">
         <div class="container">
             <x-partners />
         </div>
