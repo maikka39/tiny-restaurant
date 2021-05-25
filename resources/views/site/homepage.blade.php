@@ -29,7 +29,7 @@
                     </figure>
                 </div>
             </div>
-            <div class="scroll-down-indicator"></div>
+            <a class="scroll-down-indicator" id="scroll-down-indicator" href="#scroll-down-indicator"></a>
         </div>
     </section>
     
