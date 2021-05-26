@@ -31,7 +31,7 @@
                     @foreach($donationPage->donation_amounts->sortBy('position')->map(function ($obj) {return $obj->amount;}) as $amount)
                         <label class="amount radio">
                             <input type="radio" name="amount" value="{{$amount}}">
-                            <span>Doneer €{{$amount}}</span>
+                            <span>Doneer €{{ number_format($amount, 2) }}</span>
                         </label>
                     @endforeach
                     <label class="amount radio">
