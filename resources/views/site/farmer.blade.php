@@ -10,7 +10,14 @@
     <section class="section section-farmer-hero">
         <div class="is-flex hero-content">
             @php($image = $item->imageAsArray('farmer_profile', 'flexible'))
-            <img class="farmer-hero-image" src="{{ $image ? $image['src'] : asset('img/news-placeholder.png') }}" alt="{{ $image ? $image['alt'] : 'news placeholder' }}">
+            @if($image)
+                <img class="farmer-hero-image" src="{{ $image['src'] }}" alt="{{ $image['alt']}}">
+            @else
+                <div class="farmer-hero-no-image">
+                    <i class="fas fa-tractor fa-10x"></i>
+                    <p>Deze boer heeft helaas geen profiel foto</p>
+                </div>
+            @endif
             <div class="farmer-hero-text">
                 <h2 class="mb-4">{{ $item->name }}</h2>
                 <p>{{ $item->summary }}</p>
@@ -27,9 +34,11 @@
         <h3 class="gallery-header">De fotogalerij</h3>
         <p class="gallery-text">Bekijk de foto's van {{ $item->name }}</p>
         <div class="gallery">
-            @foreach($item->imagesAsArrays('farmer_profile', 'flexible') as $image)
+            @forelse($item->imagesAsArrays('farmer_profile', 'flexible') as $image)
                 <img class="farmer-hero-image" src="{{ $image ? $image['src'] : asset('img/news-placeholder.png') }}" alt="{{ $image ? $image['alt'] : 'news placeholder' }}">
-            @endforeach
+            @empty
+                <p>Er staan geen foto's in de galerij</p>
+            @endforelse
         </div>
     </section>
 @endsection

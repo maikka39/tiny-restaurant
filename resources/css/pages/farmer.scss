@@ -3,6 +3,20 @@
 .section-farmer-hero {
   padding: 0;
 
+  .farmer-hero-no-image {
+    background-color: #F8F8F8;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 75vh;
+
+    p {
+      font-weight: bold;
+      margin-top: 1rem;
+    }
+  }
+
   .farmer-hero-text {
     display: flex;
     flex-direction: column;
@@ -33,6 +47,7 @@
 
 .story {
   margin: 6rem 8rem 4rem 8rem;
+  text-align: center;
 
   .story-header {
     text-align: center;
@@ -69,6 +84,7 @@
     grid-gap: 1rem;
     grid-template-columns: repeat(5, auto);
     margin: 3rem 4rem;
+    justify-content: center;
 
     img {
       object-fit: cover;
@@ -79,6 +95,11 @@
         -webkit-box-shadow: 0 0 5px 0 rgba(0,0,0,0.5);
         box-shadow: 0 0 5px 0 rgba(0,0,0,0.5);
       }
+    }
+
+    p {
+      text-align: center;
+      font-weight: bold;
     }
   }
 }
