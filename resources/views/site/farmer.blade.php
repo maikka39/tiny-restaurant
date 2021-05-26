@@ -35,7 +35,7 @@
         <p class="gallery-text">Bekijk de foto's van {{ $item->name }}</p>
         <div class="gallery">
             @forelse($item->imagesAsArrays('farmer_profile', 'flexible') as $image)
-                <img class="farmer-hero-image" src="{{ $image ? $image['src'] : asset('img/news-placeholder.png') }}" alt="{{ $image ? $image['alt'] : 'news placeholder' }}">
+                <img src="{{ $image ? $image['src'] : asset('img/news-placeholder.png') }}" alt="{{ $image ? $image['alt'] : 'news placeholder' }}">
             @empty
                 <p>Er staan geen foto's in de galerij</p>
             @endforelse
