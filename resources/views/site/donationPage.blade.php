@@ -6,6 +6,10 @@
     <link rel="stylesheet" href="{{ asset('css/donate.css') }}">
 @endpush
 
+@push('scripts')
+    <script type="text/javascript" src="{{ asset('js/donate.js') }}" defer></script>
+@endpush
+
 @section('content')
     <div class="donate">
         @php
@@ -31,14 +35,14 @@
                         </label>
                     @endforeach
                     <label class="amount radio">
-                        <input type="radio" name="amount" value="custom">
+                        <input type="radio" name="amount" value="custom" id="custom-amount-radio">
                         <span>Ander bedrag...</span>
                     </label>
                 </div>
                 <h2 class="title is-size-4 has-text-weight-bold">Kies zelf een bedrag</h2>
                 <div class="custom-amount field">
                     <p class="control has-icons-left">
-                        <input class="input" type="number" placeholder="Voer een bedrag in...">
+                        <input class="input" type="number" placeholder="Voer een bedrag in..." id="custom-amount-input">
                         <span class="icon is-small is-left">
                             €
                         </span>
