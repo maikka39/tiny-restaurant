@@ -20,8 +20,22 @@
         </div>
 
         <div class="info-container">
-            <h1 class="title is-size-3 has-text-weight-bold">{{ $donationPage->title }}</h1>
-            <p class="subtitle is-size-5">{{ $donationPage->description }}</p>
+            <form id="donate-form" action="#">
+                <h1 class="title is-size-3 has-text-weight-bold">{{ $donationPage->title }}</h1>
+                <p class="subtitle is-size-5">{{ $donationPage->description }}</p>
+                <div class="amounts control">
+                    @foreach($donationPage->donation_amounts->sortBy('position')->map(function ($obj) {return $obj->amount;}) as $amount)
+                        <label class="amount radio">
+                            <input type="radio" name="amount" value="{{$amount}}">
+                            <span>Doneer €{{$amount}}</span>
+                        </label>
+                    @endforeach
+                    <label class="amount radio">
+                        <input type="radio" name="amount" value="custom">
+                        <span>Ander bedrag...</span>
+                    </label>
+                </div>
+            </form>
         </div>
     </div>
 @endsection
