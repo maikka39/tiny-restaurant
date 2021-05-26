@@ -21,7 +21,7 @@
                 <i class="fab fa-youtube fa-3x"></i>
             </div>
 
-            <div class="columns .no-text-wrap">
+            <div class="columns no-text-wrap">
                 <div class="column">
                     <p class="has-text-weight-bold">Stichting MIEP</p>
                     <p>Wijksestraat, 15</p>
