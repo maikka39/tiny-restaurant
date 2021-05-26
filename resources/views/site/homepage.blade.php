@@ -14,7 +14,7 @@
             $alt = $homepage->imageAltText('hero');
         @endphp
 
-        <div class="hero-body to-background">
+        <div class="hero-body">
             <span class="watermark">ON TOUR</span>
             <div class="columns is-vcentered">
                 <div class="left">
