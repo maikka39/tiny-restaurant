@@ -1,35 +1,21 @@
-<div class="partners homepage">
-    <h2>Partners</h2>
-    <div class="flex-container slideshow">
-        <div class="slideshow-container">
-            @foreach($partners as $child)
-                <div class='mySlides'>
-                    <div class="imgholder">
-                        <img src="{{$child->image('image', 'desktop')}}" alt="{{$child->imageAltText('image')}}">
-                    </div>
-                </div>
-            @endforeach
+<div class="block">
+    <h2 class="title is-size-1 has-text-weight-normal">Trotse partners van het Tiny Restaurant</h2>
+    <p class="subtitle is-size-3 mt-3">Dit zijn de partners die er voor zorgen dat wij er kunnen zijn voor onze mooie samenlevingen!</p>
+</div>
 
-            <a class="prev">&#10094;</a>
-            <a class="next">&#10095;</a>
-        </div>
-        <br>
-
-        <div class="slideshowdots">
-        </div>
-    </div>
-    <div class="flex flex-row flex-wrap justify-around content-around partner-list">
-        @foreach($partners as $child)
-            <div class="w-1/5 m-4">
-                <div class="form-popup" onclick="event.target === this ? togglePartnerPopup(this) : () => {}">
-                    <div class="modal lg:max-w-6xl">
-                        <h2>{{$child->name}}</h2>
-                        <p>{!!$child->description!!}</p>
-                        <button class="close" onclick="togglePartnerPopup(this.parentElement.parentElement)"><i class="fas fa-times"></i></button>
-                    </div>
-                </div>
-                <img src="{{$child->image('image', 'desktop')}}" alt="{{$child->imageAltText('image')}}" class="rounded-3xl cursor-pointer" onclick="togglePartnerPopup(this.parentElement.getElementsByClassName('form-popup')[0])">
+@foreach ($partners->chunk(4) as $chunk)
+    <div class="columns is-vcentered">
+        @foreach ($chunk as $partner)
+            @php
+                $image = $partner->image('image', 'desktop');
+                $alt = $partner->imageAltText('image');
+            @endphp
+            
+            <div class="column">
+                <figure>
+                    <img width="150" src="{{ $image }}" alt="{{ $alt }}" onclick="togglePartnerPopup(this.parentElement.getElementsByClassName('form-popup')[0])">
+                </figure>
             </div>
         @endforeach
     </div>
-</div>
+@endforeach
