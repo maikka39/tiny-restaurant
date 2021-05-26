@@ -14,7 +14,7 @@
             $alt = $homepage->imageAltText('hero');
         @endphp
 
-        <div class="hero-body to-background">
+        <div class="hero-body">
             <span class="watermark">ON TOUR</span>
             <div class="columns is-vcentered">
                 <div class="left">
@@ -24,7 +24,7 @@
                 </div>
             
                 <div class="right">
-                    <figure class="image">
+                    <figure class="image to-background">
                         <img class="hero-image" src="{{ $image }}" alt="{{ $alt }}" draggable="false" />
                     </figure>
                 </div>
