@@ -24,7 +24,7 @@
                 </div>
             
                 <div class="right">
-                    <figure class="image">
+                    <figure class="image to-background">
                         <img class="hero-image" src="{{ $image }}" alt="{{ $alt }}" draggable="false" />
                     </figure>
                 </div>
