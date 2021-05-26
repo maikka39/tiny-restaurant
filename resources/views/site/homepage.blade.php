@@ -15,7 +15,7 @@
         @endphp
 
         <div class="hero-body">
-            <span class="watermark">ONZE BOEREN</span>
+            <span class="watermark">ON TOUR</span>
             <div class="columns is-vcentered">
                 <div class="left">
                     <h1 class="title is-size-1 has-text-weight-bold">{{ $homepage->title }}</h1>
