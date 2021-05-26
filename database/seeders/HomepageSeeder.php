@@ -35,7 +35,7 @@ class HomepageSeeder extends Seeder
 
         HomepageLinkItem::create([
             'name' => 'YouTube',
-            'url' => 'https://youtube.nl/',
+            'url' => 'https://www.youtube.com/channel/UCpBXOgGlZXXr8y8o-hAg9iw',
             'logo_url' => 'youtube.png',
             'position' => 1,
             'homepage_id' => 1
