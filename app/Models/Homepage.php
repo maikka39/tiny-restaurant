@@ -15,7 +15,9 @@ class Homepage extends Model
     protected $fillable = [
         'published',
         'title',
-        'banner',
+        'slogan',
+        'button_text',
+        'button_url',
     ];
 
     public $slugAttributes = [
@@ -23,7 +25,7 @@ class Homepage extends Model
     ];
 
     public $mediasParams = [
-        'cover' => [
+        'hero' => [
             'desktop' => [
                 [
                     'name' => 'desktop',

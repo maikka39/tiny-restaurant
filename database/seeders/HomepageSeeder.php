@@ -17,8 +17,10 @@ class HomepageSeeder extends Seeder
     {
         Homepage::create([
             'id' => 1,
-            'title' => 'TinyRestaurant',
-            'banner' => 'Welkom op de officiële pagina van TinyRestaurant!',
+            'title' => 'Tiny Restaurant',
+            'slogan' => 'Welkom op onze website!',
+            'button_text' => 'Projecten',
+            'button_url' => '/projecten',
             'published' => true
         ]);
 
