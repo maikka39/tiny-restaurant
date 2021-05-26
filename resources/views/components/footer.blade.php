@@ -16,18 +16,21 @@
         <hr>
         <div>
             <div class="pb-6 media-links">
-                <span>
-                    <i class="fab fa-facebook fa-3x m-2"></i>
-                </span>
-                <span>
-                    <i class="fab fa-instagram fa-3x m-2"></i>
-                </span>
-                <span>
-                    <i class="fab fa-youtube fa-3x m-2"></i>
-                </span>
-                
-                
-                
+                <a href="https://www.facebook.com/TinyRestaurant.nl/">
+                    <span>
+                        <i class="fab fa-facebook fa-3x m-2"></i>
+                    </span>
+                </a>
+                <a target="_blank">
+                    <span>
+                        <i class="fab fa-instagram fa-3x m-2"></i>
+                    </span>
+                </a>
+                <a target="_blank">
+                    <span>
+                        <i class="fab fa-youtube fa-3x m-2"></i>
+                    </span>
+                </a>
             </div>
 
             <div class="columns no-text-wrap">
