@@ -22,9 +22,9 @@
 </head>
 <body>
     <x-navbar />
-    <div>
-        @yield('content')
-    </div>
+
+    @yield('content')
+
     <x-footer />
 </body>
 </html>

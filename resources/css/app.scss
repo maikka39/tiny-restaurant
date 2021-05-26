@@ -9,10 +9,14 @@
 
 // Theme
 @import "vars";
+@import "global";
 
 // Bulma
 @import "bulma/bulma";
 @import "~@creativebulma/bulma-divider";
+
+// Global Components
+@import "components/navbar";
 
 .grow { transition: all .2s ease-in-out; }
 .grow:hover { transform: scale(1.1); }

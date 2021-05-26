@@ -8,9 +8,32 @@
     ])
 
     @formField('input', [
-        'name' => 'banner',
-        'label' => 'Banner',
+        'name' => 'slogan',
+        'label' => 'Slogan',
         'maxlength' => 100
+    ])
+
+    @formField('medias', [
+        'type' => 'image',
+        'name' => 'hero',
+        'label' => 'Afbeelding'
+    ])
+
+    @formField('input', [
+        'name' => 'button_text',
+        'label' => 'Knoptekst',
+        'maxlength' => 50,
+        'default' => 'Projecten',
+        'placeholder' => 'Projecten',
+        'note' => 'Maak de tekst niet te lang!'
+    ])
+
+    @formField('input', [
+        'name' => 'button_url',
+        'label' => 'Knop-url',
+        'defaullt' => '/projecten',
+        'placeholder' => '/projecten',
+        'note' => 'Mag een interne of externe URL zijn'
     ])
 @stop
 
