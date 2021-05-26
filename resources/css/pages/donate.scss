@@ -2,12 +2,13 @@
     display: grid;
     grid-template-columns: .9fr 1fr;
     gap: 2rem;
-    position: relative;
 
-    height: 750px;
+    height: 80vh;
+    max-height: 750px;
 
     .image-container {
         clip-path: polygon(0% 0%, 100% 0%, 75% 100%, 0% 100%);
+        position: relative;
 
         .image {
             position: absolute;
@@ -17,14 +18,15 @@
             left: 0;
 
             img {
+                object-fit: cover;
                 height: 100%;
-                width: auto;
+                width: 100%;
             }
         }
     }
 
     .info-container {
-        padding: 4rem;
+        padding: 6rem 4rem;
 
         h1 {
             padding-bottom: 1.5rem;
