@@ -34,11 +34,11 @@
                 <div class="column">
                     <p class="has-text-weight-bold">Stichting MIEP</p>
                     <p>Nassaustraat, 4</p>
-                    <p>06 - 20 46 65 55 (Krista Werker)</p>
+                    <p>5741HR Beek en Donk</p>
                 </div>
                 <div class="column">
                     <a class="text-link" href=""> info@stichtingmiep.nl </a>
-                    <p>5741HR Beek en Donk</p>
+                    <p>06 - 20 46 65 55 (Krista Werker)</p>
                     <p>06 - 24 62 96 76 (Jorick Cardon)</p>
                 </div>
             </div>
