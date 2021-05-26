@@ -22,31 +22,31 @@
     'options' => [
         [
             'label' => 'Facebook',
-            'value' => 'Facebook.png'
+            'value' => 'facebook.png'
         ],
         [
             'label' => 'Instagram',
-            'value' => 'Instagram.png'
+            'value' => 'instagram.png'
         ],
         [
             'label' => 'Youtube',
-            'value' => 'Youtube.png'
+            'value' => 'youtube.png'
         ],
         [
             'label' => 'Pinterest',
-            'value' => 'Pinterest.png'
+            'value' => 'pinterest.png'
         ],
         [
             'label' => 'Twitch',
-            'value' => 'Twitch.png'
+            'value' => 'twitch.png'
         ],
         [
             'label' => 'Twitter',
-            'value' => 'Twitter.png'
+            'value' => 'twitter.png'
         ],
         [
             'label' => 'Alternatief',
-            'value' => 'Share.png'
+            'value' => 'share.png'
         ]
     ]
 ])

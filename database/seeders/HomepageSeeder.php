@@ -27,7 +27,7 @@ class HomepageSeeder extends Seeder
         HomepageLinkItem::create([
             'name' => 'Facebook',
             'url' => 'https://www.facebook.com/TinyRestaurant.nl/',
-            'logo_url' => 'Facebook.png',
+            'logo_url' => 'facebook.png',
             'pitch' => 'Sluit jezelf aan bij onze facebook pagina samen met talloze andere.',
             'position' => 1,
             'homepage_id' => 1
@@ -36,7 +36,7 @@ class HomepageSeeder extends Seeder
         HomepageLinkItem::create([
             'name' => 'YouTube',
             'url' => 'https://youtube.nl/',
-            'logo_url' => 'Youtube.png',
+            'logo_url' => 'youtube.png',
             'position' => 1,
             'homepage_id' => 1
         ]);
@@ -44,7 +44,7 @@ class HomepageSeeder extends Seeder
         HomepageLinkItem::create([
             'name' => 'Google',
             'url' => 'https://google.nl/',
-            'logo_url' => 'Share.png',
+            'logo_url' => 'share.png',
             'position' => 3,
             'homepage_id' => 1
         ]);
