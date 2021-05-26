@@ -20,7 +20,8 @@ class HomepageRequest extends Request
             'button_url' => ['required', 'min:1', 'string'],
             'repeaters.homepage_link_items' => ['array', 'max:10'],
             'repeaters.homepage_link_items.*.name' => ['required', 'string'],
-            'repeaters.homepage_link_items.*.url' => ['required', 'url']
+            'repeaters.homepage_link_items.*.url' => ['required', 'url'],
+            'repeaters.homepage_link_items.*.logo_url' => ['required', 'ends_with:.png'],
         ];
     }
 }
