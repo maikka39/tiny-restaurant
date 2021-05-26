@@ -35,6 +35,22 @@
                         <span>Ander bedrag...</span>
                     </label>
                 </div>
+                <h2 class="title is-size-4 has-text-weight-bold">Kies zelf een bedrag</h2>
+                <div class="custom-amount field">
+                    <p class="control has-icons-left">
+                        <input class="input" type="number" placeholder="Voer een bedrag in...">
+                        <span class="icon is-small is-left">
+                            €
+                        </span>
+                    </p>
+                </div>
+                <div class="field">
+                    <p class="control">
+                        <button class="button is-primary">
+                            Doneer
+                        </button>
+                    </p>
+                </div>
             </form>
         </div>
     </div>
