@@ -1,0 +1,33 @@
+.donate {
+    display: grid;
+    grid-template-columns: .9fr 1fr;
+    gap: 2rem;
+    position: relative;
+
+    height: 750px;
+
+    .image-container {
+        clip-path: polygon(0% 0%, 100% 0%, 75% 100%, 0% 100%);
+
+        .image {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+
+            img {
+                height: 100%;
+                width: auto;
+            }
+        }
+    }
+
+    .info-container {
+        padding: 4rem;
+
+        h1 {
+            padding-bottom: 1.5rem;
+        }
+    }
+}

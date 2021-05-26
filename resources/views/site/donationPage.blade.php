@@ -3,30 +3,25 @@
 ])
 
 @push('styles')
-    <link rel="stylesheet" href="{{ asset('css/donationPage.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/donate.css') }}">
 @endpush
 
 @section('content')
-    <!-- Hero -->
-    <section class="hero is-fullheight-with-navbar">
+    <div class="donate">
         @php
             $image = $donationPage->image('hero', 'flexible');
             $alt = $donationPage->imageAltText('hero');
         @endphp
 
-        <div class="hero-body">
-            <div class="columns is-vcentered">
-                <div class="left">
-                    <h1 class="title is-size-1 has-text-weight-bold">{{ $donationPage->title }}</h1>
-                    <p class="subtitle is-size-3">{{ $donationPage->slogan }}</p>
-                </div>
-            
-                <div class="right">
-                    <figure class="image to-background">
-                        <img class="hero-image" src="{{ $image }}" alt="{{ $alt }}" draggable="false" />
-                    </figure>
-                </div>
-            </div>
+        <div class="image-container">
+            <figure class="image to-background">
+                <img src="{{ $image }}" alt="{{ $alt }}" draggable="false" />
+            </figure>
         </div>
-    </section>
+
+        <div class="info-container">
+            <h1 class="title is-size-3 has-text-weight-bold">{{ $donationPage->title }}</h1>
+            <p class="subtitle is-size-5">{{ $donationPage->description }}</p>
+        </div>
+    </div>
 @endsection
