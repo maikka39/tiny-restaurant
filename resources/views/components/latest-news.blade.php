@@ -1,25 +1,31 @@
-<div class="news-items">
-    <h2>Laatste nieuws</h2>
-
+<h2 class="title is-size-1 has-text-weight-normal">Het laatste nieuws van het Tiny Restaurant</h2>
+            
+<div class="columns">
     @forelse ($news as $item)
         @php $image = $item->imagesAsArrays('cover', 'flexible')[0] ?? null; @endphp
 
-        <div class="news-item">
-            <div class="image">
+        <div class="column">
+            <div class="news-item">
                 @if ($image)
-                    <img src="{{ $image['src'] }}" alt="{{ $image['alt'] }}">
+                    <div class="block">
+                        <figure class="image is-2by1">
+                            <img class="news-image" src="{{ $image['src'] }}" alt="{{ $image['alt'] }}">
+                        </figure>
+                    </div>
                 @endif
-            </div>
-
-            <div class="text">
-                <h3>{{ $item->title }}</h3>
-                <div class="summary">
-                    {{ $item->summary }}
+                
+                <div class="block news-item-content">
+                    <h3 class="is-size-4 has-text-weight-bold">{{ $item->title }}</h3>
+                    <p class="content">{{ $item->summary }}</p>
+                    <div>
+                        <a class="has-text-weight-bold" href="{{ route('newsItems.show') }}">Bekijk nieuws</a>
+                    </div>
                 </div>
-                <a class="button primary more" href="{{ route('newsItems.show') }}">Lees meer</a>
             </div>
         </div>
     @empty
-        <p>Er is geen nieuws!</p>
+        <div class="column">
+            <p>Er is geen nieuws!</p>
+        </div>
     @endforelse
 </div>
