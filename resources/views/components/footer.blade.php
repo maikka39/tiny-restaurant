@@ -1,4 +1,4 @@
-<footer>
+<footer class="footer">
     <div class="container">
         <div class="columns is-vcentered">
             <a class="column has-text-centered" href="">Nieuws</a>
@@ -16,20 +16,29 @@
         <hr>
         <div>
             <div class="pb-6 media-links">
-                <i class="fab fa-facebook fa-3x"></i>
-                <i class="fab fa-instagram fa-3x"></i>
-                <i class="fab fa-youtube fa-3x"></i>
+                <span>
+                    <i class="fab fa-facebook fa-3x m-2"></i>
+                </span>
+                <span>
+                    <i class="fab fa-instagram fa-3x m-2"></i>
+                </span>
+                <span>
+                    <i class="fab fa-youtube fa-3x m-2"></i>
+                </span>
+                
+                
+                
             </div>
 
-            <div class="columns .no-text-wrap">
+            <div class="columns no-text-wrap">
                 <div class="column">
                     <p class="has-text-weight-bold">Stichting MIEP</p>
-                    <p>Wijksestraat, 15</p>
+                    <p>Nassaustraat, 4</p>
                     <p>06 - 20 46 65 55 (Krista Werker)</p>
                 </div>
                 <div class="column">
                     <a class="text-link" href=""> info@stichtingmiep.nl </a>
-                    <p>5256 BH Heusden</p>
+                    <p>5741HR Beek en Donk</p>
                     <p>06 - 24 62 96 76 (Jorick Cardon)</p>
                 </div>
             </div>
