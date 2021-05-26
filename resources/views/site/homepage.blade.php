@@ -68,7 +68,7 @@
                         <h1 class="title is-4 has-text-centered">Bekijk de andere pagina's van het Tiny Restaurant!</h1>
                         <br>
                         <div class="columns is-mobile is-multiline px-6">
-                           @foreach($homepage->homepage_link_items->where('position', '!=', 1)->all() as $link)
+                           @foreach($homepage->homepage_link_items->where('position', '!=', 1)->sortBy('position') as $link)
                                 <div class="column is-half-mobile px-0">
                                     <a href="{{$link->url}}" target="#">
                                         <div class="is-flex is-justify-content-center">
