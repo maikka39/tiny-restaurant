@@ -22,6 +22,14 @@ class CreateDonationPagesTables extends Migration
         Schema::create('donation_page_revisions', function (Blueprint $table) {
             createDefaultRevisionsTableFields($table, 'donation_page');
         });
+
+        Schema::create('donation_page_amounts', function (Blueprint $table) {
+            createDefaultTableFields($table);
+
+            $table->text('amount');
+            $table->integer('position')->unsigned()->nullable();
+            $table->foreignId('donation_page_id')->constrained()->on('donation_pages')->onDelete('cascade');
+        });
     }
 
     /**
@@ -32,5 +40,7 @@ class CreateDonationPagesTables extends Migration
     public function down()
     {
         Schema::dropIfExists('donation_pages');
+        Schema::dropIfExists('donation_page_revisions');
+        Schema::dropIfExists('donation_page_amounts');
     }
 }

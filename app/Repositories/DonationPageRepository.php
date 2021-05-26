@@ -12,7 +12,7 @@ use App\Models\DonationPage;
 
 class DonationPageRepository extends ModuleRepository
 {
-    use HandleBlocks, HandleSlugs, HandleMedias, HandleRevisions, HandleRepeaters;
+    use HandleBlocks, HandleMedias, HandleRevisions, HandleRepeaters;
 
     public function __construct(DonationPage $model)
     {
@@ -21,14 +21,17 @@ class DonationPageRepository extends ModuleRepository
 
     public function getFormFields($object)
     {
-
         $fields = parent::getFormFields($object);
+
+        $fields = $this->getFormFieldsForRepeater($object, $fields, 'donation_amounts', 'DonationPageAmount');
 
         return $fields;
     }
 
     public function afterSave($object, $fields)
     {
+        $this->updateRepeater($object, $fields, 'donation_amounts', 'DonationPageAmount');
+
         parent::afterSave($object, $fields);
     }
 }

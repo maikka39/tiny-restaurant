@@ -52,4 +52,9 @@ class DonationPage extends Model
             ],
         ],
     ];
+
+    public function donation_amounts()
+    {
+        return $this->hasMany(DonationPageAmount::class)->where('deleted_at', NULL);
+    }
 }

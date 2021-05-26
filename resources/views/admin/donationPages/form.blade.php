@@ -18,4 +18,11 @@
         'name' => 'hero',
         'label' => 'Afbeelding'
     ])
-@stop
+@endsection
+
+
+@section('fieldsets')
+    <a17-fieldset title="Bedragen" id="amounts" :open="true">
+        @formField('repeater', ['type' => 'donation_amounts'])
+    </a17-fieldset>
+@endsection

@@ -16,6 +16,8 @@ class DonationPageRequest extends Request
         return [
             'title' => ['required', 'string'],
             'description' => ['required', 'string'],
+            'repeaters.donation_amounts' => ['array', 'max:5'],
+            'repeaters.donation_amounts.*.amount' => ['required', 'min:1', 'numeric'],
         ];
     }
 }
