@@ -1,4 +1,5 @@
 @import "../vars";
+@import "bulma/sass/utilities/mixins";
 
 .donate {
     display: grid;
@@ -8,9 +9,20 @@
     height: 80vh;
     max-height: 750px;
 
+    @include until($desktop) {
+        grid-template-columns: 1fr;
+        height: auto;
+        max-height: unset;
+    }
+
     .image-container {
         clip-path: polygon(0% 0%, 100% 0%, 75% 100%, 0% 100%);
         position: relative;
+
+        @include until($desktop) {
+            clip-path: none;
+            height: 200px;
+        }
 
         .image {
             position: absolute;
@@ -18,6 +30,11 @@
             right: 0;
             bottom: 0;
             left: 0;
+
+            @include until($desktop) {
+                position: static;
+                height: 100%;
+            }
 
             img {
                 object-fit: cover;
@@ -29,6 +46,10 @@
 
     .info-container {
         padding: 6rem 4rem;
+
+        @include until($desktop) {
+            padding: 0rem 4rem;
+        }
 
         h1 {
             padding-bottom: 1.5rem;
@@ -42,6 +63,10 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             padding-top: .3rem;
+
+            @include until($tablet) {
+                grid-template-columns: 1fr;
+            }
 
             .amount {
                 padding: 1rem 0rem;
