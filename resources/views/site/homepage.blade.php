@@ -38,7 +38,7 @@
         <div class="hero-body">
             <div class="columns is-tablet">
                 <div class="column is-one-third-tablet">
-                    <a href="{{$highlight->url}}" target="#">
+                    <a href="{{$highlight->url}}" target="_blank">
                         <div class="container is-flex-tablet is-justify-content-center is-flex-wrap-wrap">
                             <div class="is-flex is-align-items-center is-justify-content-center is-flex-wrap-wrap mb-5 grow">
                                 <figure class="image is-64x64 mr-2">
@@ -50,7 +50,7 @@
                             <div class="container">
                                 <div class="content">
                                     <p class="has-text-centered">{{ $highlight->pitch }}</p>
-                                    <a href="{{$highlight->url}}" target="#">
+                                    <a href="{{$highlight->url}}" target="_blank">
                                         <p class="has-text-centered has-text-weight-semibold">Bekijk deze pagina</p>
                                     </a>
                                 </div>
@@ -71,9 +71,9 @@
                            @foreach($homepage->homepage_link_items->where('position', '!=', 1)->all() as $link)
                                 <div class="column is-half-mobile px-0">
                                     <a href="{{$link->url}}" target="#">
-                                        <div class="is-flex is-justify-content-center is-flex-wrap-wrap">
-                                            <div class="block grow">
-                                                <figure class="image is-64x64 mb-1">
+                                        <div class="is-flex is-justify-content-center">
+                                            <div class="is-flex is-flex-direction-column is-justify-content-center is-align-items-center grow">
+                                                <figure class="image is-64x64">
                                                     <img type="image/png" src="{{ asset('img/link_icons/'.$link->logo_url) }}" />
                                                 </figure>
                                                 <p class="has-text-weight-medium has-text-centered">{{$link->name}}</p>
