@@ -85,7 +85,10 @@
                         </div>
                     </div>
 
-                    {!! NoCaptcha::displaySubmit('contactform', 'Verstuur bericht', ['class' => 'g-recaptcha is-primary button']) !!}
+                    {!! NoCaptcha::display()!!}
+
+                    <button class="button is-primary" type="submit">Verstuur Bericht</button>
+
 
                     @error('g-recaptcha-response')
                     <div class="has-text-danger">{{ $message }}</div>
