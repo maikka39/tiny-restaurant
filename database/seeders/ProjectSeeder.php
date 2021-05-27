@@ -8,7 +8,7 @@ use App\Models\Slugs\ProjectSlug;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Str;
 
-class ProjectSeeder extends Seeder
+class ProjectSeeder extends MediaSeeder
 {
     /**
      * Run the database seeds.
@@ -90,6 +90,14 @@ class ProjectSeeder extends Seeder
                 'active' => true,
                 'project_id' => $model->id
             ]);
+
+            $this->seed_media(
+                "App\Models\Project",
+                $model->id,
+                "project_image",
+                preg_replace('/[^a-z]/', "_", strtolower($model->name)).".jpg",
+                "Foto van ".$model->name,
+            );
         }
     }
 }
