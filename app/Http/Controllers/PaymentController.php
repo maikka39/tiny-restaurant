@@ -46,7 +46,7 @@ class PaymentController extends Controller
                     "value" => "$amount"
                 ],
                 "description" => "Tiny Restaurant donatie via website",
-                "redirectUrl" => URL::to("/betaling/") //TODO: Replace with actual redirect URL once donation frontend is finished
+                "redirectUrl" => route("payment.info")
             ]);
             $request->session()->put('payment_id', $payment->id);
             return redirect($payment->getCheckoutUrl());
