@@ -8,7 +8,7 @@ use Carbon\Carbon;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Str;
 
-class FarmerSeeder extends Seeder
+class FarmerSeeder extends MediaSeeder
 {
     /**
      * Run the database seeds.
@@ -55,6 +55,14 @@ class FarmerSeeder extends Seeder
                 'active' => true,
                 'farmer_id' => $model->id
             ]);
+
+            $this->seed_media(
+                "App\Models\Farmer",
+                $model->id,
+                "farmer_profile",
+                preg_replace('/[^a-z]/', "_", strtolower($model->name)).".jpg",
+                "Foto van ".$model->name,
+            );
         }
     }
 }
