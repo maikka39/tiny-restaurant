@@ -44,13 +44,10 @@ class DonationPageSeeder extends MediaSeeder
 
         $this->seed_media(
             "App\Models\DonationPage",
+            1,
+            "hero",
             "donate_cover.jpg",
             "Donate cover image",
-            1600,
-            1200,
-            [0, 112, 1598, 899],
-            [0, 0, 1200, 1200],
-            [0, 0, 1598, 1200],
         );
     }
 }

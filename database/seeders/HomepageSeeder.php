@@ -51,13 +51,10 @@ class HomepageSeeder extends MediaSeeder
 
         $this->seed_media(
             "App\Models\Homepage",
+            1,
+            "hero",
             "homepage_cover.jpg",
             "Homepage cover image",
-            1600,
-            1200,
-            [0, 224, 1598, 899],
-            [375, 0, 1200, 1200],
-            [0, 0, 1598, 1200],
         );
     }
 }

@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Schema;
 
 class MediaSeeder extends Seeder
 {
-    public function seed_media($model, $filename, $alt_text, $width, $height, $desktop_crop, $mobile_crop, $flexible_crop)
+    public function seed_media($model, $model_id, $role, $filename, $alt_text)
     {
         $twillMediasTable = config('twill.medias_table', 'twill_medias');
         $twillMediablesTable = config('twill.mediables_table', 'twill_mediables');
@@ -18,6 +18,9 @@ class MediaSeeder extends Seeder
         $id = DB::table($twillMediasTable)->max('id');
 
         $id = ($id == null) ? 1 : $id + 1;
+
+        list($width, $height) = getimagesize("storage/app/public/uploads/seeder/".$filename);
+        $smallest_wh = min($width, $height);
 
         DB::table($twillMediasTable)->insert([
             'id' => $id,
@@ -28,15 +31,25 @@ class MediaSeeder extends Seeder
             'height' => $height,
         ]);
 
+        if ($width / $height >= 16/9) {
+            $width16x9 = $height * (16/9);
+            $height16x9 = $height;
+        } else {
+            $height16x9 = $width * (9/16);
+            $width16x9 = $width;
+        }
+
+        echo $width." x ".$height." -> ".$width16x9." x ".$height16x9."\n";
+
         DB::table($twillMediablesTable)->insert([
-            'mediable_id' => 1,
+            'mediable_id' => $model_id,
             'mediable_type' => $model,
             'media_id' => $id,
-            'crop_x' => $desktop_crop[0],
-            'crop_y' => $desktop_crop[1],
-            'crop_w' => $desktop_crop[2],
-            'crop_h' => $desktop_crop[3],
-            'role' => 'hero',
+            'crop_x' => ($width - $width16x9) / 2,
+            'crop_y' => ($height - $height16x9) / 2,
+            'crop_w' => $width16x9,
+            'crop_h' => $height16x9,
+            'role' => $role,
             'crop' => 'desktop',
             'ratio' => 'desktop',
             'metadatas' => '{"video": null, "altText": null, "caption": null}',
@@ -44,14 +57,14 @@ class MediaSeeder extends Seeder
         ]);
 
         DB::table($twillMediablesTable)->insert([
-            'mediable_id' => 1,
+            'mediable_id' => $model_id,
             'mediable_type' => $model,
             'media_id' => $id,
-            'crop_x' => $mobile_crop[0],
-            'crop_y' => $mobile_crop[1],
-            'crop_w' => $mobile_crop[2],
-            'crop_h' => $mobile_crop[3],
-            'role' => 'hero',
+            'crop_x' => ($width - $smallest_wh) / 2,
+            'crop_y' => ($height - $smallest_wh) / 2,
+            'crop_w' => $smallest_wh,
+            'crop_h' => $smallest_wh,
+            'role' => $role,
             'crop' => 'mobile',
             'ratio' => 'mobile',
             'metadatas' => '{"video": null, "altText": null, "caption": null}',
@@ -59,14 +72,14 @@ class MediaSeeder extends Seeder
         ]);
 
         DB::table($twillMediablesTable)->insert([
-            'mediable_id' => 1,
+            'mediable_id' => $model_id,
             'mediable_type' => $model,
             'media_id' => $id,
-            'crop_x' => $flexible_crop[0],
-            'crop_y' => $flexible_crop[1],
-            'crop_w' => $flexible_crop[2],
-            'crop_h' => $flexible_crop[3],
-            'role' => 'hero',
+            'crop_x' => 0,
+            'crop_y' => 0,
+            'crop_w' => $width,
+            'crop_h' => $height,
+            'role' => $role,
             'crop' => 'flexible',
             'ratio' => 'flexible',
             'metadatas' => '{"video": null, "altText": null, "caption": null}',
