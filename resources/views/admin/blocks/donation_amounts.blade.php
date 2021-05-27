@@ -1,6 +1,6 @@
 
 @twillBlockTitle('Bedrag')
-@twillBlockTrigger('Nieuwe bedrag toevoegen')
+@twillBlockTrigger('Nieuw bedrag toevoegen')
 
 @formField('input', [
     'name' => 'amount',
