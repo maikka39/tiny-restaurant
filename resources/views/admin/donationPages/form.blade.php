@@ -7,9 +7,10 @@
         'maxlength' => 40
     ])
 
-    @formField('input', [
+    @formField('wysiwyg', [
         'name' => 'description',
         'label' => 'Beschrijving',
+        'maxlength' => 2500,
     ])
 
     @formField('medias', [

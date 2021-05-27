@@ -27,7 +27,7 @@
             <form id="donate-form" action="#">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <h1 class="title is-size-3 has-text-weight-bold">{{ $donationPage->title }}</h1>
-                <p class="subtitle is-size-5">{{ $donationPage->description }}</p>
+                <p class="subtitle is-size-5">{!! $donationPage->description !!}</p>
                 @error("donation_error")
                     <div class="has-text-danger">{{ $message }}</div>
                 @enderror
