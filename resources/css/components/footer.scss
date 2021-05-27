@@ -1,0 +1,87 @@
+@import "../vars";
+@import "bulma/sass/utilities/mixins";
+
+footer {
+    a {
+        color: $text;
+    }
+
+    .links {
+        font-weight: 800;
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        gap: 1rem;
+
+        @include until($desktop) {
+            grid-template-columns: repeat(6, 1fr);
+        }
+
+        @include until($tablet) {
+            grid-template-columns: 1fr;
+        }
+
+        a {
+            padding-top: 1.5rem;
+            display: inline-flex;
+            align-self: center;
+            justify-self: center;
+        }
+
+        .logo {
+            margin: 1rem 0rem;
+            height: 5rem;
+
+            @include until($desktop) {
+                grid-column: 1 / span 6;
+                grid-row: 1 / 1;
+            }
+
+            @include until($tablet) {
+                grid-column: 1 / 1;
+            }
+
+            .image {
+                height: 100%;
+                width: 100%;
+
+                img {
+                    height: 100%;
+                    width: auto;
+                    margin: 0px auto;
+                }
+            }
+        }
+    }
+
+    .is-horizontal-center {
+        justify-content: center;
+    }
+
+    hr {
+        border-top: 1px solid black;
+
+        & + div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+
+    .media-links {
+        width: fit-content;
+
+        span {
+            opacity: 0.6;
+        }
+
+    }
+    .text-link {
+        color: $primary;
+        text-decoration: underline;
+        text-align: center;
+    }
+
+    .no-text-wrap {
+        white-space: nowrap;
+    }
+}
