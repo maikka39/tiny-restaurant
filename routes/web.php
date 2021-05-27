@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\NewsItemController;
-use App\Http\Controllers\DonationController;
+use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\MailController;
 use App\Http\Controllers\Admin\FarmerController;
 use Illuminate\Support\Facades\Route;
@@ -27,6 +27,7 @@ Route::post('/contact', [MailController::class, 'sendMail'])->name('contact.send
 Route::get('/gemeente/{slug}', [MunicipalityController::class, 'view'])->name('municipality.show');
 Route::get('/nieuws', [NewsItemController::class, 'view'])->name('newsItems.show');
 Route::get('/doneer', [DonationPageController::class, 'view'])->name('donations.show');
+Route::post('/makepayment', [PaymentController::class, 'new'])->name('payment.new');
 
 Route::name('project.')->group(function () {
     Route::get('/projecten', [ProjectController::class, 'showAll'])->name('showAll');

@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\DonationRequest;
+use App\Http\Requests\PaymentRequest;
 use Mollie\Api\Exceptions\ApiException;
 use Mollie\Api\MollieApiClient;
 
-class DonationController extends Controller
+class PaymentController extends Controller
 {
-    public function new(DonationRequest $request)
+    public function new(PaymentRequest $request)
     {
         $validated = $request->validated();
         $amount = number_format((float)$validated['amount'], 2, '.', '');
