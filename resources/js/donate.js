@@ -29,8 +29,6 @@ window.addEventListener("load", () => {
             return false;
         }
 
-        console.log(amount);
-
         const formReq = document.createElement("form");
         formReq.method = "post";
         formReq.action = "/betaling"
