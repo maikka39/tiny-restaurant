@@ -1,6 +1,6 @@
 <footer class="footer">
     <div class="container">
-        <div class="columns is-vcentered">
+        <div class="columns is-vcentered links">
             <a class="column has-text-centered" href="">Nieuws</a>
             <a class="column has-text-centered" href="">Projecten</a>
             <a class="column has-text-centered" href="">Algemene voorwaarden</a>
