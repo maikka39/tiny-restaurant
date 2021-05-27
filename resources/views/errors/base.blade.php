@@ -14,7 +14,7 @@
 
     <section class="section train">
         <marquee direction="right" scrollamount="10">
-            <img src="{{ asset('img/train.png') }}" alt="Tiny Treintje">
+            <img src="{{ asset('img/train.png') }}" alt="">
         </marquee>
     </section>
 @endsection
