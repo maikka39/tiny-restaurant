@@ -43,6 +43,14 @@
             </div>
         </div>
     </section>
+    <section class="section section-attendees">
+        @foreach($item->municipalities as $municipality)
+            <p>{{ $municipality->title }}</p>
+        @endforeach
+        @foreach($item->farmers as $farmer)
+            <p>{{ $farmer->name }}</p>
+        @endforeach
+    </section>
 @endsection
 
 @section('old_content')
