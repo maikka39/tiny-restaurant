@@ -18,7 +18,6 @@ class MediaSeeder extends Seeder
         $id = DB::table($twillMediasTable)->max('id');
 
         $id = ($id == null) ? 1 : $id + 1;
-        echo $id;
 
         DB::table($twillMediasTable)->insert([
             'id' => $id,
