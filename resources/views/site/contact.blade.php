@@ -105,5 +105,4 @@
 
 @push('scripts')
     {!! NoCaptcha::renderJs() !!}
-    <script src="https://www.google.com/recaptcha/api.js?render=6LdQs94aAAAAADY5gu0AFUSYCIh8zxSdzmGbepGy" defer></script>
 @endpush
