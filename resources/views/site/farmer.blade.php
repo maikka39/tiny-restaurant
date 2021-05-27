@@ -15,7 +15,7 @@
             @else
                 <div class="farmer-hero-no-image">
                     <i class="fas fa-tractor fa-10x"></i>
-                    <p>Deze boer heeft helaas geen profiel foto</p>
+                    <p>Deze boer heeft helaas geen profielfoto</p>
                 </div>
             @endif
             <div class="farmer-hero-text">
