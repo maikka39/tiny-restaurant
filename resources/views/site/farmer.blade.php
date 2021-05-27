@@ -15,7 +15,7 @@
             @else
                 <div class="farmer-hero-no-image">
                     <i class="fas fa-tractor fa-10x"></i>
-                    <p>Deze boer heeft helaas geen profiel foto</p>
+                    <p>Deze boer heeft helaas geen profielfoto</p>
                 </div>
             @endif
             <div class="farmer-hero-text">
@@ -31,7 +31,7 @@
         <div class="story-body">{!! $item->description !!}</div>
     </section>
     <section class="section section-farmer-gallery">
-        <h3 class="gallery-header">De fotogalerij</h3>
+        <h3 class="gallery-header">Fotogalerij</h3>
         <p class="gallery-text">Bekijk de foto's van {{ $item->name }}</p>
         <div class="gallery">
             @forelse($item->imagesAsArrays('farmer_profile', 'flexible') as $image)
