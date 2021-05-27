@@ -15,6 +15,10 @@
         max-height: unset;
     }
 
+    .hidden {
+        display: none;
+    }
+
     .image-container {
         clip-path: polygon(0% 0%, 100% 0%, 75% 100%, 0% 100%);
         position: relative;

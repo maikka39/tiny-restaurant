@@ -27,6 +27,7 @@
             <form id="donate-form" action="#">
                 <h1 class="title is-size-3 has-text-weight-bold">{{ $donationPage->title }}</h1>
                 <p class="subtitle is-size-5">{{ $donationPage->description }}</p>
+                <span id="donate-form-error" class="has-text-danger hidden"></span>
                 <div class="amounts control">
                     @foreach($donationPage->donation_amounts->sortBy('position')->map(function ($obj) {return $obj->amount;}) as $amount)
                         <label class="amount radio">
@@ -42,7 +43,7 @@
                 <h2 class="title is-size-4 has-text-weight-bold">Kies zelf een bedrag</h2>
                 <div class="custom-amount field">
                     <p class="control has-icons-left">
-                        <input class="input" type="number" placeholder="Voer een bedrag in..." id="custom-amount-input">
+                        <input class="input" type="number" placeholder="Voer een bedrag in..." name="custom-amount" id="custom-amount-input">
                         <span class="icon is-small is-left">
                             €
                         </span>
@@ -50,7 +51,7 @@
                 </div>
                 <div class="field">
                     <p class="control">
-                        <button class="button is-primary">
+                        <button type="submit" class="button is-primary">
                             Doneer
                         </button>
                     </p>
