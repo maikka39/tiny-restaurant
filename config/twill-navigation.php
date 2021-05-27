@@ -38,5 +38,8 @@ return [
         'title' => 'Projecten',
         'module' => true
     ],
-
+    'donationpages' => [
+        'title' => 'Doneren',
+        'route' => 'admin.donationPage',
+    ],
 ];

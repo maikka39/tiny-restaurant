@@ -20,7 +20,8 @@ class DatabaseSeeder extends Seeder
             PageSeeder::class,
             FarmerSeeder::class,
             NewsItemSeeder::class,
-            ProjectSeeder::class
+            ProjectSeeder::class,
+            DonationPageSeeder::class,
         ]);
     }
 }
