@@ -4,13 +4,12 @@
     @formField('input', [
         'name' => 'title',
         'label' => 'Titel',
-        'maxlength' => 20
+        'maxlength' => 40
     ])
 
     @formField('input', [
         'name' => 'description',
         'label' => 'Beschrijving',
-        'maxlength' => 100
     ])
 
     @formField('medias', [
