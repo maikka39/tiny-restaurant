@@ -28,7 +28,7 @@
         <div class="info-grid">
             <div class="when">
                 <h4>Wanneer?</h4>
-                <p>Het project is op {{ $item->getCreatedDateForView() }}, en vind plaats om {{ $item->getCreatedTimeForView() }} uur</p>
+                <p>Het project is op {{ $item->getCreatedDateForDetail() }}, en vind plaats om {{ $item->getCreatedTimeForView() }} uur</p>
             </div>
             <div class="where">
                 <h4>Waar?</h4>
@@ -39,8 +39,7 @@
                 <p>{!! $item->description !!}</p>
             </div>
             <div class="map">
-                <iframe class="w-full h-full overflow-hidden"
-                        src="https://maps.google.com/maps?q={{ $item->address }}&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+                <iframe src="https://maps.google.com/maps?q={{ $item->address }}&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
             </div>
         </div>
     </section>

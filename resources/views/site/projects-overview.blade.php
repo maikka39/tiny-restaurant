@@ -51,7 +51,7 @@
                                 <p>{!! $project->description !!}</p>
                                 <div class="project-footer">
                                     <button class="button is-primary read-more-button"><a href="{{ route('project.show', $project->slug) }}">Lees meer</a></button>
-                                    <small class="is-size-6">{{ $project->getCreatedTimeForView() }}</small>
+                                    <small class="is-size-6">{{ $project->getCreatedDateForOverview() }}</small>
                                 </div>
                             </div>
                         </div>

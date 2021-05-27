@@ -74,7 +74,12 @@ class Project extends Model
         return $this->morphedByMany(Municipality::class, 'involved', 'project_involved', 'project_id', 'involved_id', null, null );
     }
 
-    public function getCreatedDateForView(): string
+    public function getCreatedDateForOverview(): string
+    {
+        return $this->created_at->isoFormat('D-MM-YYYY');
+    }
+
+    public function getCreatedDateForDetail(): string
     {
         return $this->created_at->isoFormat('D MMMM YYYY');
     }
