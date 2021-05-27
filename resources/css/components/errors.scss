@@ -1,17 +1,7 @@
-.error-section {
-    position: relative;
-}
-
-marquee {
-    position: absolute;
-    bottom: 0;
-    height: 100%;
-    display: flex;
-    align-items: flex-end;
+.train {
+    padding: 0;
 
     img {
-        filter: grayscale(100%);
-        opacity: 50%;
         height: 100px;
     }
 }
