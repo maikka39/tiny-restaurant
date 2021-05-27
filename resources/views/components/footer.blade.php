@@ -13,7 +13,7 @@
             <a href="#">Contact</a>
             <a href="#">Steun ons</a>
         </div>
-        <hr>
+        <hr role="presentation">
         <div>
             <div class="pt-3 pb-6 media-links">
                 <a href="https://www.facebook.com/TinyRestaurant.nl/">
