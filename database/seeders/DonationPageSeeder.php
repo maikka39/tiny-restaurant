@@ -20,7 +20,7 @@ class DonationPageSeeder extends Seeder
         DonationPage::create([
             'id' => 1,
             'title' => 'Steun het Tiny Restaurant',
-            'description' => 'Steun samen met andere het Tiny Restaurant, zodat deze non-profit de boerensamenleving kan blijven helpen.',
+            'description' => 'Steun samen met anderen het Tiny Restaurant, zodat deze non-profit de boerensamenleving kan blijven helpen.',
             'published' => true,
         ]);
 
