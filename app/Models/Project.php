@@ -74,14 +74,14 @@ class Project extends Model
         return $this->morphedByMany(Municipality::class, 'involved', 'project_involved', 'project_id', 'involved_id', null, null );
     }
 
-    public function agendaDate()
+    public function getCreatedDateForView(): string
     {
-        return Carbon::parse($this->date)->format('m/d');
+        return $this->created_at->isoFormat('D MMMM YYYY');
     }
 
     public function getCreatedTimeForView(): string
     {
-        return $this->created_at->isoFormat('D-MM-YYYY');
+        return $this->created_at->isoFormat('hh.mm');
     }
 
     public function filter($search): bool

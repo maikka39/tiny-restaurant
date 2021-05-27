@@ -5,23 +5,45 @@
 @endpush
 
 @section('content')
-  <section class="section section-project-hero">
-      <div class="is-flex hero-content">
-          <div class="hero-content-info">
-              {{ $item->name }}
-              <a href="{{ url('/contact') }}" class="button is-primary">Ik doe mee!</a>
-          </div>
-          @php($image = $item->imageAsArray('project_image', 'flexible'))
-          @if($image)
-              <img class="project-hero-image" src="{{ $image['src'] }}" alt="{{ $image['alt']}}">
-          @else
-              <div class="project-hero-no-image">
-                  <i class="fas fa-book fa-10x"></i>
-                  <p>Dit project heeft geen afbeelding</p>
-              </div>
-          @endif
-      </div>
-  </section>
+    <section class="section section-project-hero">
+        <div class="is-flex hero-content">
+            <div class="hero-content-info">
+                <h2 class="project-name">{{ $item->name }}</h2>
+                <p class="municipality-text">{{ $item->municipalities->first()->title }}</p>
+                <a href="{{ url('/contact') }}" class="button is-primary">Ik doe mee!</a>
+            </div>
+            @php($image = $item->imageAsArray('project_image', 'flexible'))
+            @if($image)
+                <img class="project-hero-image" src="{{ $image['src'] }}" alt="{{ $image['alt']}}">
+            @else
+                <div class="project-hero-no-image">
+                    <i class="fas fa-book fa-10x"></i>
+                    <p>Dit project heeft geen afbeelding</p>
+                </div>
+            @endif
+        </div>
+    </section>
+    <section class="section section-project-info">
+        <h2 class="project-info-title">Informatie over het project</h2>
+        <div class="info-grid">
+            <div class="when">
+                <h4>Wanneer?</h4>
+                <p>Het project is op {{ $item->getCreatedDateForView() }}, en vind plaats om {{ $item->getCreatedTimeForView() }} uur</p>
+            </div>
+            <div class="where">
+                <h4>Waar?</h4>
+                <p>Het vind zich plaats in de gemeente {{ $item->municipalities->first()->title }}, en op de locatie {{ $item->address }}</p>
+            </div>
+            <div class="what">
+                <h4>Wat we gaan doen?</h4>
+                <p>{!! $item->description !!}</p>
+            </div>
+            <div class="map">
+                <iframe class="w-full h-full overflow-hidden"
+                        src="https://maps.google.com/maps?q={{ $item->address }}&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+            </div>
+        </div>
+    </section>
 @endsection
 
 @section('old_content')

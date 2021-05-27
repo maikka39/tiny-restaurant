@@ -4,6 +4,10 @@
 .section-project-hero {
   padding: 0;
 
+  .project-hero-image {
+    max-width: 50vw;
+  }
+
   .project-hero-no-image {
     background-color: $placeholder-background;
     display: flex;
@@ -23,9 +27,50 @@
     flex-direction: column;
     justify-content: center;
     padding: 4rem;
+
+    .project-name {
+      font-size: 56px;
+    }
+
+    .municipality-text {
+      font-size: 24px;
+    }
+
+    a {
+      margin-top: 3rem;
+      max-width: 25%;
+    }
   }
 
   .hero-content > * {
     flex-basis: 100%;
+  }
+}
+
+.section-project-info {
+  background-color: $secondary-background;
+
+  .project-info-title {
+    font-size: 48px;
+  }
+
+  .info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: repeat(2, auto);
+
+    .when,
+    .where,
+    .what {
+      h4 {
+        font-weight: bold;
+        font-size: 24px;
+      }
+
+      p {
+        font-size: 18px;
+        color: rgba(0,0,0, 0.8);
+      }
+    }
   }
 }
