@@ -1,6 +1,8 @@
 @component('mail::message')
     <p>Naam: {{$firstname}} {{$lastname}}</p>
-    <p>Project: {{$project}}</p>
+    @if ($project != "")
+        <p>Project: {{$project}}</p>
+    @endif
     <p>
         Bericht:<br>
         {{ $message }}

@@ -11,15 +11,6 @@
   align-items: center;
 }
 
-@mixin shadow {
-  @include desktop {
-
-  }
-}
-
-.form-shadow {
-  @include shadow();
-}
 @include desktop {
   .block {
     margin: 10px 50px;
@@ -43,6 +34,6 @@
     border: solid 1px grey;
     background-color: white;
     margin-left: -95%; /* required */
-    padding: 15px 15px 5%;
+    padding: 5% 5% 5% 5%;
   }
 }

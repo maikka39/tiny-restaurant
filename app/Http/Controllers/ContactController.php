@@ -26,7 +26,7 @@ class ContactController extends BaseController
         $validated = $request->validated();
 
         if(is_null($request['project'])) {
-            $request['project'] = "Geen project geselecteerd";
+            $request['project'] = "";
         }
 
         Mail::queue(new EmailFromUser($validated['message'], $validated['firstname'], $validated['lastname'], $validated['email'], $request['project']));

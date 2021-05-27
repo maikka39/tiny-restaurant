@@ -12,17 +12,18 @@
         <div class="column is-full"></div>
     </div>
     <div class="columns is-flex">
-        <div class="column is-three-fifths main-text is-hidden-mobile">
-            <h1 class="title contact-text has-text-weight-medium">
+        <div class="column is-hidden-mobile"></div>
+        <div class="column is-two-fifths main-text is-hidden-mobile">
+            <h1 class="title contact-text has-text-weight-medium is-size-1">
                 Neem gerust contact met ons op!
             </h1>
         </div>
-        <div class="column block is-one-third form-shadow">
+        <div class="column block is-two-fifths">
             <div class="background"></div>
             <div class="foreground">
                 <form class="control" method="POST" action="{{ route('contact.sendMail') }}">
                     @csrf
-                    <h1 class="title mt-5 mb-5 has-text-centered">Contact</h1>
+                    <h1 class="title mt-5 mb-5">Contact</h1>
 
                     <div class="columns">
                         <div class="column">
@@ -80,23 +81,20 @@
                                 <select id="project" name="project">
                                     <option selected disabled>Selecteer een project</option>
                                     @foreach($projectList as $project)
-                                        <option>{{$project->name}}</option>
+                                        <option value="{{ $project->name }}" {{ (old("project") == $project->name ? "selected":"") }}>{{ $project->name }}</option>
                                     @endforeach
                                 </select>
                             </div>
                         </div>
                     </div>
 
-                    <div>
-                        {!! NoCaptcha::display()!!}
-                    </div>
-
-                    <button class="button is-primary mt-5 mobile-button" type="submit">Verstuur Bericht</button>
-
+                    {!! NoCaptcha::display()!!}
 
                     @error('g-recaptcha-response')
                     <div class="has-text-danger">{{ $message }}</div>
                     @enderror
+
+                    <button class="button is-primary mt-5 mobile-button" type="submit">Verstuur Bericht</button>
 
                     @if (session('success_message'))
                         <p class="has-text-success">{{ session('success_message') }}</p>
