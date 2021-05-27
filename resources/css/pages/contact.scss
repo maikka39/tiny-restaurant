@@ -12,15 +12,37 @@
 }
 
 @mixin shadow {
-  border: 1px dashed #990000;
   @include desktop {
-    -webkit-box-shadow: -50px 50px 0px 0px rgba(240, 252, 236, 1);
-    box-shadow: -50px 50px 0px 0px rgba(240, 252, 236, 1), -50px 50px 0px 1px black;
-    margin-bottom: 7.8125rem;
+
   }
 }
 
 .form-shadow {
   @include shadow();
-  border: solid 1px grey;
+}
+@include desktop {
+  .block {
+    margin: 10px 50px;
+    display: flex; /* required */
+    flex-flow: row nowrap; /* required */
+  }
+  .block .background,
+  .block .foreground {
+    box-sizing: border-box; /* required */
+    width: 100%; /* required */
+    flex: none; /* required */
+  }
+  .block .background {
+    background: $primary-background;
+    border: solid 1px grey;
+    padding: 15px;
+    margin-top: 5%;
+    margin-bottom: -5%;
+  }
+  .block .foreground {
+    border: solid 1px grey;
+    background-color: white;
+    margin-left: -95%; /* required */
+    padding: 15px 15px 5%;
+  }
 }

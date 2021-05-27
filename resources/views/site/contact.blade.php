@@ -8,7 +8,7 @@
 
 @section("content")
 <div class="box">
-    <div class="columns mt-3">
+    <div class="columns">
         <div class="column is-full"></div>
     </div>
     <div class="columns is-flex">
@@ -17,8 +17,10 @@
                 Neem gerust contact met ons op!
             </h1>
         </div>
-        <div class="column mr-5 mt-5 is-one-third form-shadow">
-                <form class="control" method="POST" action="{{ route('contact.sendMail') }}" id="contactform">
+        <div class="column block is-one-third form-shadow">
+            <div class="background"></div>
+            <div class="foreground">
+                <form class="control" method="POST" action="{{ route('contact.sendMail') }}">
                     @csrf
                     <h1 class="title mt-5 mb-5 has-text-centered">Contact</h1>
 
@@ -66,11 +68,11 @@
                     </div>
 
                     <span class="icon-text">
-                <label class="label has-icons-right" for="project">Optioneel</label>
-                <span class="icon is-right">
-                        <i class="far fa-question-circle"></i>
+                        <label class="label has-icons-right" for="project">Optioneel</label>
+                        <span class="icon is-right">
+                                <i class="far fa-question-circle"></i>
+                            </span>
                     </span>
-            </span>
 
                     <div class="columns">
                         <div class="column">
@@ -85,9 +87,11 @@
                         </div>
                     </div>
 
-                    {!! NoCaptcha::display()!!}
+                    <div>
+                        {!! NoCaptcha::display()!!}
+                    </div>
 
-                    <button class="button is-primary mt-5" type="submit">Verstuur Bericht</button>
+                    <button class="button is-primary mt-5 mobile-button" type="submit">Verstuur Bericht</button>
 
 
                     @error('g-recaptcha-response')
@@ -98,7 +102,11 @@
                         <p class="has-text-success">{{ session('success_message') }}</p>
                     @endif
                 </form>
+            </div>
         </div>
+    </div>
+    <div class="columns mt-5">
+        <div class="column is-full"></div>
     </div>
 </div>
 @endsection
