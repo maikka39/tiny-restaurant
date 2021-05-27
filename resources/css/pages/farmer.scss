@@ -169,7 +169,7 @@
 }
 
 // tablet
-@media (min-width: 768px) and (max-width: 1024px) {
+@include tablet {
   .section-farmer-gallery {
     .gallery {
       grid-template-columns: repeat(3, auto);
@@ -178,7 +178,7 @@
   }
 }
 
-@media screen and (min-width: 1025px) and (max-width: 1611px) {
+@include widescreen {
   .farmer-hero-image {
     max-width: 50%;
     height: 50%;
