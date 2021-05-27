@@ -39,8 +39,8 @@ class CreateDonationPagesTables extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('donation_pages');
         Schema::dropIfExists('donation_page_revisions');
         Schema::dropIfExists('donation_page_amounts');
+        Schema::dropIfExists('donation_pages');
     }
 }
