@@ -87,7 +87,7 @@
 
                     {!! NoCaptcha::display()!!}
 
-                    <button class="button is-primary" type="submit">Verstuur Bericht</button>
+                    <button class="button is-primary mt-5" type="submit">Verstuur Bericht</button>
 
 
                     @error('g-recaptcha-response')
