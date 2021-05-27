@@ -51,7 +51,7 @@ class PaymentController extends Controller
             $request->session()->put('payment_id', $payment->id);
             return redirect($payment->getCheckoutUrl());
         } catch (ApiException $error) {
-            return back()->withErrors(["donation_error" => "Er is iets mis gegaan. Probeer het opnieuw!"]);
+            return back()->withErrors(["donation_error" => "Er is iets misgegaan. Probeer het opnieuw!"]);
         }
     }
 }
