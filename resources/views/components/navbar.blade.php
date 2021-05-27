@@ -27,10 +27,22 @@
                     </div>
                 </div>
                 <div class="navbar-item">
-                    <div class="buttons">
-                        <a class="button is-primary" href="{{ url('contact') }}">
-                            <strong>Contact</strong>
-                        </a>
+                    <div class="field is-grouped">
+                        <p class="control">
+                            <a class="button" href="{{ url('doneer') }}">
+                                <span class="icon">
+                                    <i class="fas fa-hand-holding-heart"></i>
+                                </span>
+                                <span>
+                                    Doneer
+                                </span>
+                            </a>
+                        </p>
+                        <p class="control">
+                            <a class="button is-primary" href="{{ url('contact') }}">
+                                <span class="has-text-weight-semibold">Contact</span>
+                            </a>
+                        </p>
                     </div>
                 </div>
             </div>
