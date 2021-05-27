@@ -14,7 +14,7 @@ class DonationPageRequest extends Request
     public function rulesForUpdate()
     {
         return [
-            'title' => ['required', 'string'],
+            'title' => ['required', 'string', 'max:40'],
             'description' => ['required', 'string'],
             'repeaters.donation_amounts' => ['array', 'max:5'],
             'repeaters.donation_amounts.*.amount' => ['required', 'min:1', 'numeric'],
