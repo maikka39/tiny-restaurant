@@ -16,6 +16,7 @@ class DonationPage extends Model
         'published',
         'title',
         'description',
+        'mollie_api_key',
     ];
 
     public $slugAttributes = [

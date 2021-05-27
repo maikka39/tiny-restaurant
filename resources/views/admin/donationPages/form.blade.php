@@ -22,6 +22,15 @@
 
 
 @section('fieldsets')
+    <a17-fieldset title="Instellingen" id="settings" :open="true">
+        @formField('input', [
+            'name' => 'mollie_api_key',
+            'label' => 'Mollie API sleutel',
+            'maxlength' => 40,
+        ])
+    </a17-fieldset>
+
+
     <a17-fieldset title="Bedragen" id="amounts" :open="true">
         @formField('repeater', ['type' => 'donation_amounts'])
     </a17-fieldset>

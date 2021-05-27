@@ -13,8 +13,10 @@ class PaymentController extends Controller
 {
     public function info(Request $request)
     {
+        $donationPage = DonationPage::first();
+
         $mollie = new MollieApiClient();
-        $mollie->setApiKey(env("MOLLIE_API_KEY"));
+        $mollie->setApiKey($donationPage->mollie_api_key);
 
         $payment_id = $request->session()->get('payment_id');
 
@@ -28,18 +30,20 @@ class PaymentController extends Controller
         return view('site.paymentResult', [
             'status' => $payment->status,
             'amount' => $payment->amount->value,
-            'donationPage' => DonationPage::first(),
+            'donationPage' => $donationPage,
         ]);
     }
 
     public function new(PaymentRequest $request)
     {
+        $donationPage = DonationPage::first();
+
         $validated = $request->validated();
         $amount = number_format((float)$validated['amount'], 2, '.', '');
 
         try {
             $mollie = new MollieApiClient();
-            $mollie->setApiKey(env("MOLLIE_API_KEY"));
+            $mollie->setApiKey($donationPage->mollie_api_key);
             $payment = $mollie->payments->create([
                 "amount" => [
                     "currency" => "EUR",

@@ -17,6 +17,7 @@ class CreateDonationPagesTables extends Migration
             createDefaultTableFields($table);
             $table->string('title', 40)->nullable();
             $table->text('description')->nullable();
+            $table->text('mollie_api_key')->nullable();
         });
 
         Schema::create('donation_page_revisions', function (Blueprint $table) {
