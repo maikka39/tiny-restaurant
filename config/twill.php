@@ -98,6 +98,7 @@ return [
             ],
             'partner_items' => ['component' => 'a17-block-partner_items'],
             'homepage_link_items' => ['component' => 'a17-block-homepage_link_items'],
+            'donation_amounts' => ['component' => 'a17-block-donation_amounts'],
         ],
         'crops' => [
             'image' => [

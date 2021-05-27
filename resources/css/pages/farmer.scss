@@ -1,0 +1,190 @@
+@import "../vars";
+@import "bulma/sass/utilities/_all.sass";
+
+.section-farmer-hero {
+  padding: 0;
+
+  .farmer-hero-no-image {
+    background-color: $placeholder-background;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 75vh;
+
+    p {
+      font-weight: bold;
+      margin-top: 1rem;
+    }
+  }
+
+  .farmer-hero-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 4rem;
+
+    h2 {
+      font-weight: bold;
+      text-transform: uppercase;
+      font-size: 24px;
+    }
+
+    p {
+      font-size: 18px;
+    }
+
+    .divider {
+      background: rgba(0,0,0, 50%);
+      border: none;
+      margin: 2rem 0;
+    }
+  }
+
+  .hero-content > * {
+     flex-basis: 100%;
+  }
+}
+
+.story {
+  margin: 6rem 8rem 4rem 8rem;
+  text-align: center;
+
+  .story-header {
+    text-align: center;
+    font-size: 48px;
+    color: $primary;
+    font-weight: 500;
+    margin-bottom: 1rem;
+  }
+  .story-body * {
+    text-align: center;
+    font-size: 28px;
+    color: black;
+  }
+}
+
+.section-farmer-gallery {
+  padding: 8rem 10rem;
+  background: $secondary-background;
+
+  .gallery-header {
+    text-align: center;
+    font-size: 48px;
+    margin-bottom: 1rem;
+  }
+
+  .gallery-text {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 4rem;
+  }
+
+  .gallery {
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: repeat(5, auto);
+    margin: 3rem 4rem;
+    justify-content: center;
+
+    img {
+      object-fit: cover;
+      width: 218px;
+      height: 128px;
+
+      &:hover {
+        -webkit-box-shadow: 0 0 5px 0 rgba(0,0,0,0.5);
+        box-shadow: 0 0 5px 0 rgba(0,0,0,0.5);
+      }
+    }
+
+    p {
+      text-align: center;
+      font-weight: bold;
+    }
+  }
+}
+
+// mobile to tablet
+@include until($tablet) {
+  .section-farmer-hero {
+    .hero-content {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .farmer-hero-text {
+      padding: 2rem;
+
+      h2 {
+        font-weight: bold;
+        text-transform: uppercase;
+        font-size: 24px;
+      }
+
+      p {
+        font-size: 16px;
+      }
+    }
+  }
+
+  .story {
+    margin: 0 .5rem .5rem;
+    text-align: center;
+
+    .story-header {
+      font-size: 28px;
+      margin-bottom: 1rem;
+    }
+    .story-body * {
+      font-size: 16px;
+    }
+  }
+
+  .section-farmer-gallery {
+    padding: 1rem .5rem;
+
+    .gallery-header {
+      font-size: 24px;
+      margin-bottom: .8rem;
+    }
+
+    .gallery-text {
+      font-size: 18px;
+      margin-bottom: 1.2rem;
+    }
+
+    .gallery {
+      grid-gap: .5rem;
+      grid-template-columns: repeat(2, auto);
+      margin: 1rem 1.5rem 0 1.5rem;
+
+      img {
+        object-fit: cover;
+        width: 200px;
+        height: 100px;
+      }
+    }
+  }
+}
+
+// tablet
+@include tablet {
+  .section-farmer-gallery {
+    .gallery {
+      grid-template-columns: repeat(3, auto);
+      margin: 1rem 1.5rem 0 1.5rem;
+    }
+  }
+}
+
+@include widescreen {
+  .farmer-hero-image {
+    max-width: 50%;
+    height: 50%;
+  }
+
+  .story {
+    margin-top: 1rem;
+  }
+}
