@@ -85,5 +85,48 @@
 }
 
 .section-attendees {
+  padding: 4rem;
 
+  .attendee-title {
+    font-size: 48px;
+    margin-bottom: 4rem;
+  }
+
+  .attendees {
+    display: grid;
+    gap: 1rem 3rem;
+    justify-content: center;
+    grid-template-columns: repeat(2, auto);
+
+    .attendee {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      justify-content: space-between;
+
+      .attendee-image {
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 100vh;
+        margin-bottom: 3rem;
+      }
+
+      .attendee-title {
+        font-weight: bold;
+        font-size: 24px;
+        margin-bottom: 2rem;
+      }
+
+      .attendee-text {
+        font-size: 18px;
+        color: rgba(0,0,0, 0.8);
+        margin-bottom: 3rem;
+      }
+
+      .button {
+        width: 20%;
+      }
+    }
+  }
 }

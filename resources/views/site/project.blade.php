@@ -44,12 +44,33 @@
         </div>
     </section>
     <section class="section section-attendees">
-        @foreach($item->municipalities as $municipality)
-            <p>{{ $municipality->title }}</p>
-        @endforeach
-        @foreach($item->farmers as $farmer)
-            <p>{{ $farmer->name }}</p>
-        @endforeach
+        <h2 class="attendee-title">Wie doen er mee?</h2>
+        <div class="attendees">
+            @foreach($item->municipalities as $municipality)
+                <div class="attendee">
+                    <div>
+                        @php($image = $municipality->imageAsArray('municipality_picture', 'flexible'))
+                        @if($image)
+                            <img class="attendee-image" src="{{ $image['src'] }}" alt="{{ $image['alt']}}">
+                        @endif
+                        <h2 class="attendee-title">Gemeente {{ $municipality->title }}</h2>
+                        <p class="attendee-text">{{ $municipality->description }}</p>
+                    </div>
+                    <a class="button is-primary">Lees meer</a>
+                </div>
+            @endforeach
+            @foreach($item->farmers as $farmer)
+                <div class="attendee">
+                    @php($image = $farmer->imageAsArray('farmer_profile', 'flexible'))
+                    @if($image)
+                        <img class="attendee-image" src="{{ $image['src'] }}" alt="{{ $image['alt']}}">
+                    @endif
+                    <h2 class="attendee-title">{{ $farmer->name }}</h2>
+                    <p class="attendee-text">{{ $farmer->summary }}</p>
+                    <a class="button is-primary">Lees meer</a>
+                </div>
+            @endforeach
+        </div>
     </section>
 @endsection
 
