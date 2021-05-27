@@ -4,7 +4,7 @@
             <a class="column has-text-centered" href="">Nieuws</a>
             <a class="column has-text-centered" href="">Projecten</a>
             <a class="column has-text-centered" href="">Algemene voorwaarden</a>
-            <div class="column is-flex is-horizontal-center">
+            <div class="logo column is-flex is-horizontal-center">
                 <figure class="image">
                     <img src="{{ asset('img/logo.png') }}"/>
                 </figure>
