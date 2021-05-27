@@ -1,4 +1,5 @@
 @import "../vars";
+@import "bulma/sass/utilities/_all.sass";
 
 .section-farmer-hero {
   padding: 0;
@@ -105,7 +106,7 @@
 }
 
 // mobile to tablet
-@media screen and (max-width: 1028px) {
+@include until($tablet) {
   .section-farmer-hero {
     .hero-content {
       display: flex;
