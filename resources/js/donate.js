@@ -33,7 +33,7 @@ window.addEventListener("load", () => {
 
         const formReq = document.createElement("form");
         formReq.method = "post";
-        formReq.action = "/makepayment"
+        formReq.action = "/betaling"
         formReq.classList.add("hidden");
 
         const formReqAmountField = document.createElement('input');

@@ -22,7 +22,7 @@ class PaymentController extends Controller
                     "value" => "$amount"
                 ],
                 "description" => "Tiny Restaurant donatie via website",
-                "redirectUrl" => env("APP_URL") //TODO: Replace with actual redirect URL once donation frontend is finished
+                "redirectUrl" => env("APP_URL")."/betaling" //TODO: Replace with actual redirect URL once donation frontend is finished
             ]);
             return redirect($payment->getCheckoutUrl());
         } catch (ApiException $error) {
