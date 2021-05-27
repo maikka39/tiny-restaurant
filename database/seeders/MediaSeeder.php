@@ -39,8 +39,6 @@ class MediaSeeder extends Seeder
             $width16x9 = $width;
         }
 
-        echo $width." x ".$height." -> ".$width16x9." x ".$height16x9."\n";
-
         DB::table($twillMediablesTable)->insert([
             'mediable_id' => $model_id,
             'mediable_type' => $model,
