@@ -1,17 +1,17 @@
 <footer class="footer">
     <div>
-        <div class="columns is-vcentered links">
-            <a class="column has-text-centered" href="">Nieuws</a>
-            <a class="column has-text-centered" href="">Projecten</a>
-            <a class="column has-text-centered" href="">Algemene voorwaarden</a>
-            <div class="logo column is-flex is-horizontal-center">
+        <div class="links is-vcentered">
+            <a href="#">Nieuws</a>
+            <a href="#">Projecten</a>
+            <a href="#">Algemene voorwaarden</a>
+            <div class="logo">
                 <figure class="image">
                     <img src="{{ asset('img/logo.png') }}"/>
                 </figure>
             </div>
-            <a class="column has-text-centered" href="">Privacy</a>
-            <a class="column has-text-centered" href="">Contact</a>
-            <a class="column has-text-centered" href="">Steun ons</a>
+            <a href="#">Privacy</a>
+            <a href="#">Contact</a>
+            <a href="#">Steun ons</a>
         </div>
         <hr>
         <div>
