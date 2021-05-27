@@ -1,0 +1,31 @@
+@import "../vars";
+@import "bulma/sass/utilities/_all.sass";
+
+.section-project-hero {
+  padding: 0;
+
+  .project-hero-no-image {
+    background-color: $placeholder-background;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 75vh;
+
+    p {
+      font-weight: bold;
+      margin-top: 1rem;
+    }
+  }
+
+  .hero-content-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 4rem;
+  }
+
+  .hero-content > * {
+    flex-basis: 100%;
+  }
+}

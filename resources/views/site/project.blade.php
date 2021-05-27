@@ -1,6 +1,30 @@
 @extends('site.layouts.base')
 
+@push('styles')
+    <link rel="stylesheet" href="{{ asset('css/project_individual.css') }}">
+@endpush
+
 @section('content')
+  <section class="section section-project-hero">
+      <div class="is-flex hero-content">
+          <div class="hero-content-info">
+              {{ $item->name }}
+              <a href="{{ url('/contact') }}" class="button is-primary">Ik doe mee!</a>
+          </div>
+          @php($image = $item->imageAsArray('project_image', 'flexible'))
+          @if($image)
+              <img class="project-hero-image" src="{{ $image['src'] }}" alt="{{ $image['alt']}}">
+          @else
+              <div class="project-hero-no-image">
+                  <i class="fas fa-book fa-10x"></i>
+                  <p>Dit project heeft geen afbeelding</p>
+              </div>
+          @endif
+      </div>
+  </section>
+@endsection
+
+@section('old_content')
     <div class="container">
         <div class="justify-center">
             <div class="py-6">
