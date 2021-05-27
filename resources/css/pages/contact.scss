@@ -13,7 +13,7 @@
 .form-shadow {
   border: solid 1px grey;
   -webkit-box-shadow: -50px 50px 0px 0px rgba(240, 252, 236, 1);
-  box-shadow: -50px 50px 0px 0px rgba(240, 252, 236, 1);
+  box-shadow: -50px 50px 0px 0px rgba(240, 252, 236, 1), -50px 50px 0px 1px black;
   margin-bottom: 7.8125rem;
 }
 
