@@ -8,16 +8,19 @@
 
 @section("content")
 <div class="box">
+    <div class="columns mt-3">
+        <div class="column is-full"></div>
+    </div>
     <div class="columns is-flex">
         <div class="column is-three-fifths main-text is-hidden-mobile">
-            <h1 class="title contact-text is-centered">
+            <h1 class="title contact-text has-text-weight-medium">
                 Neem gerust contact met ons op!
             </h1>
         </div>
         <div class="column mr-5 mt-5 is-one-third form-shadow">
                 <form class="control" method="POST" action="{{ route('contact.sendMail') }}" id="contactform">
                     @csrf
-                    <h1 class="title mt-5 mb-5">Contact</h1>
+                    <h1 class="title mt-5 mb-5 has-text-centered">Contact</h1>
 
                     <div class="columns">
                         <div class="column">
@@ -93,13 +96,11 @@
                     @endif
                 </form>
         </div>
-
-
     </div>
 </div>
 @endsection
 
 @push('scripts')
     {!! NoCaptcha::renderJs() !!}
-    <script src="https://www.google.com/recaptcha/api.js?render=6LdQs94aAAAAADY5gu0AFUSYCIh8zxSdzmGbepGy"></script>
+    <script src="https://www.google.com/recaptcha/api.js?render=6LdQs94aAAAAADY5gu0AFUSYCIh8zxSdzmGbepGy" defer></script>
 @endpush
