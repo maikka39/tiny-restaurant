@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\NewsItemController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\MailController;
 use App\Http\Controllers\Admin\FarmerController;
@@ -23,9 +24,10 @@ use App\Http\Controllers\Admin\DonationPageController;
 */
 
 Route::get('/', [HomepageController::class, 'view'])->name('homepages.show');
-Route::post('/contact', [MailController::class, 'sendMail'])->name('contact.sendMail');
+Route::post('/contact', [ContactController::class, 'sendMail'])->name('contact.sendMail');
 Route::get('/gemeente/{slug}', [MunicipalityController::class, 'view'])->name('municipality.show');
 Route::get('/nieuws', [NewsItemController::class, 'view'])->name('newsItems.show');
+Route::get('/contact', [ContactController::class, 'view'])->name('contact.show');
 Route::get('/doneer', [DonationPageController::class, 'view'])->name('donations.show');
 Route::get('/betaling', [PaymentController::class, 'info'])->name('payment.info');
 Route::post('/betaling', [PaymentController::class, 'new'])->name('payment.new');

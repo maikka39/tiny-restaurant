@@ -39,7 +39,7 @@
                             </a>
                         </p>
                         <p class="control">
-                            <a class="button is-primary" href="{{ url('contact') }}">
+                            <a class="button is-primary" href="{{ route('contact.show') }}">
                                 <span class="has-text-weight-semibold">Contact</span>
                             </a>
                         </p>
