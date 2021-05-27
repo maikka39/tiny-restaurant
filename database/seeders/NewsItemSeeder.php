@@ -5,7 +5,7 @@ namespace Database\Seeders;
 use App\Models\NewsItem;
 use Illuminate\Database\Seeder;
 
-class NewsItemSeeder extends Seeder
+class NewsItemSeeder extends MediaSeeder
 {
     /**
      * Run the database seeds.
@@ -26,12 +26,20 @@ class NewsItemSeeder extends Seeder
 
         foreach ($newsItems as $newsItem)
         {
-            NewsItem::create([
+            $model = NewsItem::create([
                'title' => $newsItem["title"],
                 'description' => $newsItem["description"],
                 'summary' => $newsItem["summary"],
                 'published' => true,
             ]);
+
+            $this->seed_media(
+                "App\Models\NewsItem",
+                $model->id,
+                "cover",
+                preg_replace('/[^a-z]/', "_", strtolower($model->title)).".jpg",
+                "Foto voor ".$model->title,
+            );
         }
     }
 }
