@@ -6,8 +6,20 @@ footer {
     .links {
         font-weight: 800;
 
+        a {
+            padding-top: 1.5rem;
+        }
+
         .logo {
             padding: 0rem 5rem;
+            margin: 1rem 0rem;
+            height: 5rem;
+
+            img {
+                height: 100%;
+                width: auto;
+                margin: 0px auto;
+            }
         }
     }
 

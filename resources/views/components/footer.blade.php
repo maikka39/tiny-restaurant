@@ -1,5 +1,5 @@
 <footer class="footer">
-    <div class="container">
+    <div>
         <div class="columns is-vcentered links">
             <a class="column has-text-centered" href="">Nieuws</a>
             <a class="column has-text-centered" href="">Projecten</a>
@@ -15,7 +15,7 @@
         </div>
         <hr>
         <div>
-            <div class="pb-6 media-links">
+            <div class="pt-3 pb-6 media-links">
                 <a href="https://www.facebook.com/TinyRestaurant.nl/">
                     <span>
                         <i class="fab fa-facebook fa-3x m-2"></i>
