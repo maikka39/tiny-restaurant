@@ -36,7 +36,7 @@
                     @foreach($donationPage->donation_amounts->sortBy('position')->map(function ($obj) {return $obj->amount;}) as $amount)
                         <label class="amount radio">
                             <input type="radio" name="amount" value="{{$amount}}">
-                            <span>Doneer €{{ number_format($amount, 2) }}</span>
+                            <span>Doneer &euro;{{ number_format($amount, 2) }}</span>
                         </label>
                     @endforeach
                     <label class="amount radio">
@@ -49,7 +49,7 @@
                     <p class="control has-icons-left">
                         <input class="input" type="number" placeholder="Voer een bedrag in..." name="custom-amount" id="custom-amount-input">
                         <span class="icon is-small is-left">
-                            €
+                            &euro;
                         </span>
                     </p>
                 </div>
