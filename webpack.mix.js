@@ -21,6 +21,7 @@ mix.js('resources/js/app.js', 'public/js')
     .sass('resources/css/pages/donate.scss', 'public/css')
     .sass('resources/css/pages/farmer.scss', 'public/css')
     .sass('resources/css/pages/project_individual.scss', 'public/css')
+    .sass('resources/css/pages/municipality.scss', 'public/css')
     .copyDirectory('resources/img', 'public/img');
 
 mix.disableSuccessNotifications();

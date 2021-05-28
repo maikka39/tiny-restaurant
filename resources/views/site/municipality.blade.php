@@ -2,7 +2,17 @@
     "title" => $municipality->title
 ])
 
+@push('styles')
+    <link rel="stylesheet" href="{{ asset('css/municipality.css') }}">
+@endpush
+
 @section("content")
+    <section class="section section-municipality-hero">
+        <p>content</p>
+    </section>
+@endsection
+
+@section("old_content")
     <div class="container my-4">
         <div class="flex flex-wrap place-content-around">
             <div class="flex flex-col w-3/6">
