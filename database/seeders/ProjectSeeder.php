@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\Project;
 use App\Models\Municipality;
 use App\Models\Slugs\ProjectSlug;
+use Carbon\Carbon;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Str;
 
@@ -22,7 +23,7 @@ class ProjectSeeder extends Seeder
                 'name' => 'Proeverij Laarbeek',
                 'active' => '0',
                 'description' => '<p>Wij hebben een passie voor lekker eten en drinken en die delen we graag met jou! Bij het Tiny Restaurant krijg je de leukste proeverij in Laarbeek.</p>',
-                'date' => '2021-04-15 12:00:00',
+                'date' => Carbon::now()->addDays(random_int(1, 31)),
                 "address" => '1111AA',
                 "municipality_id" => '1'
             ],[
@@ -30,7 +31,7 @@ class ProjectSeeder extends Seeder
                 'name' => 'Op bezoek bij de boer',
                 'active' => '0',
                 'description' => '<p>Boer Bart geeft een openhartig interview over duurzaam ondernemen.</p>',
-                'date' => '2021-04-15 12:00:00',
+                'date' => Carbon::now()->addDays(random_int(1, 31)),
                 "address" => '1111AA',
                 "municipality_id" => '1'
             ],[
@@ -38,7 +39,7 @@ class ProjectSeeder extends Seeder
                 'name' => 'Voedsel educatie',
                 'active' => '0',
                 'description' => '<p>Basisschool krijgt voedsel educatie</p>',
-                'date' => '2021-04-15 12:00:00',
+                'date' => Carbon::now()->addDays(random_int(1, 31)),
                 "address" => '1111AA',
                 "municipality_id" => '1'
             ],[
@@ -46,7 +47,7 @@ class ProjectSeeder extends Seeder
                 'name' => 'Waardevol ondernemen',
                 'active' => '0',
                 'description' => '<p>Wilt u als bedrijf ook het verschil maken en waardevol ondernemen door naar uw doelgroep toe te gaan?</p>',
-                'date' => '2021-04-15 12:00:00',
+                'date' => Carbon::now()->addDays(random_int(1, 31)),
                 "address" => '1111AA',
                 "municipality_id" => '1'
             ],[
@@ -54,7 +55,7 @@ class ProjectSeeder extends Seeder
                 'name' => 'Onze nieuwe partner',
                 'active' => '0',
                 'description' => '<p>Leer onze nieuwe partner kennen uit Laarbeek!</p>',
-                'date' => '2021-04-15 12:00:00',
+                'date' => Carbon::now()->subDays(random_int(1, 10)),
                 "address" => '1111AA',
                 "municipality_id" => '1'
             ],[
@@ -62,7 +63,7 @@ class ProjectSeeder extends Seeder
                 'name' => 'Proeverij Boekel',
                 'active' => '0',
                 'description' => '<p>Wij hebben een passie voor lekker eten en drinken en die delen we graag met jou! Bij het Tiny Restaurant krijg je de leukste proeverij in Boekel.</p>',
-                'date' => '2021-04-15 12:00:00',
+                'date' => Carbon::now()->subDays(random_int(1, 10)),
                 "address" => '1111AA',
                 "municipality_id" => '2'
             ],

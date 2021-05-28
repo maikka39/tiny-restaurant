@@ -32,7 +32,11 @@ class Project extends Model
         'municipalities',
         'farmers'
     ];
-    
+
+    protected $casts = [
+        'date' => 'datetime'
+    ];
+
     public $mediasParams = [
         'project_image' => [
             'desktop' => [
@@ -74,14 +78,19 @@ class Project extends Model
         return $this->morphedByMany(Municipality::class, 'involved', 'project_involved', 'project_id', 'involved_id', null, null );
     }
 
-    public function agendaDate()
+    public function getCreatedDateForOverview(): string
     {
-        return Carbon::parse($this->date)->format('m/d');
+        return $this->date->isoFormat('D-MM-YYYY');
+    }
+
+    public function getCreatedDateForDetail(): string
+    {
+        return $this->date->isoFormat('D MMMM YYYY');
     }
 
     public function getCreatedTimeForView(): string
     {
-        return $this->created_at->isoFormat('D-MM-YYYY');
+        return $this->date->isoFormat('hh.mm');
     }
 
     public function filter($search): bool

@@ -81,7 +81,12 @@
                                 <select id="project" name="project">
                                     <option selected disabled>Selecteer een project</option>
                                     @foreach($projectList as $project)
-                                        <option value="{{ $project->name }}" {{ (old("project") == $project->name ? "selected":"") }}>{{ $project->name }}</option>
+                                        <option
+                                            value="{{ $project->name }}"
+                                            {{ (old("project") == $project->name ? "selected":"") }}
+                                            @if(request()->has('project') && request()->get('project') === $project->name) selected @endif
+                                        >{{ $project->name }}
+                                        </option>
                                     @endforeach
                                 </select>
                             </div>

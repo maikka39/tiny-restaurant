@@ -6,6 +6,7 @@ use A17\Twill\Http\Controllers\Admin\ModuleController;
 use App\Repositories\FarmerRepository;
 use App\Models\Project;
 use App\Repositories\MunicipalityRepository;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
 
 class ProjectController extends ModuleController
@@ -36,7 +37,9 @@ class ProjectController extends ModuleController
 
 
     public function view($slug) {
-        $project = Project::forSlug($slug)->firstOrFail();
+        $project = Project::whereHas('slugs', function (Builder $query) use ($slug) {
+            $query->where('slug', $slug);
+        })->firstOrFail();
         return view('site.project', [
             'item' => $project
         ]);
