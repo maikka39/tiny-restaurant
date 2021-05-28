@@ -49,6 +49,7 @@
                                 <small class="is-size-7 mb-2">{{ $newsItem->getCreatedTimeForView() }}</small>
                                 <p class="is-size-4 has-text-weight-bold mb-5">{{ $newsItem->title }}</p>
                                 <p>{{ $newsItem->summary }}</p>
+                                <a href="{{ route('newsItem.show', $newsItem->id) }}" class="is-primary">Lees meer</a>
                             </div>
                         </div>
                     </div>

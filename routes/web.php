@@ -27,6 +27,7 @@ Route::get('/', [HomepageController::class, 'view'])->name('homepages.show');
 Route::post('/contact', [ContactController::class, 'sendMail'])->name('contact.sendMail');
 Route::get('/gemeente/{slug}', [MunicipalityController::class, 'view'])->name('municipality.show');
 Route::get('/nieuws', [NewsItemController::class, 'view'])->name('newsItems.show');
+Route::get('/nieuws/{newsItem}', [NewsItemController::class, 'detail'])->name('newsItem.show');
 Route::get('/contact', [ContactController::class, 'view'])->name('contact.show');
 Route::get('/doneer', [DonationPageController::class, 'view'])->name('donations.show');
 Route::get('/betaling', [PaymentController::class, 'info'])->name('payment.info');

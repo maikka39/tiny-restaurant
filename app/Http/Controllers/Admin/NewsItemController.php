@@ -81,4 +81,10 @@ class NewsItemController extends ModuleController
         return view('site.news')
             ->with('newsItems', $publishedNewItems);
     }
+
+    public function detail(NewsItem $newsItem)
+    {
+        return view('site.news-detail')
+            ->with('news', $newsItem);
+    }
 }
