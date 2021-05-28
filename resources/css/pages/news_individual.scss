@@ -3,22 +3,32 @@
 
 .section-hero-news {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 
-  img {
-    flex-basis: 100%;
+  .hero-images-title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 36px;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  .images {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    gap: 2rem;
+    align-items: center;
   }
 
   .hero-text {
-    flex-basis: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin: 0 4rem;
+    text-align: center;
 
     .hero-news-title {
-      font-weight: bold;
-      font-size: 24px;
+      font-size: 48px;
+      margin-bottom: .5rem;
     }
 
     .hero-news-summary {
