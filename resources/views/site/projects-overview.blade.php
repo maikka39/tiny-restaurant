@@ -46,7 +46,7 @@
                         <div class="timeline-marker"></div>
                         <div class="timeline-content">
                             <div class="timeline-content-wrapper">
-                                <small class="is-size-7 mb-2">{{ $project->municipalities->first()->title }}</small>
+                                <small class="is-size-7 mb-2">@if($project->municipalities->first()) {{ $project->municipalities->first()->title }} @endif</small>
                                 <p class="is-size-4 has-text-weight-bold mb-5">{{ $project->name }}</p>
                                 <p>{!! $project->description !!}</p>
                                 <div class="project-footer">

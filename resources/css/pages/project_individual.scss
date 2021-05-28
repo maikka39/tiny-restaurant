@@ -91,6 +91,12 @@
     font-size: 48px;
     margin-bottom: 4rem;
   }
+  
+  .no-attendees {
+    font-weight: bold;
+    font-size: 24px;
+    margin-bottom: 2rem;
+  }
 
   .attendees {
     display: grid;
@@ -104,12 +110,20 @@
       height: 100%;
       justify-content: space-between;
 
-      .attendee-image {
+      .attendee-image,
+      .attendee-no-image{
         width: 200px;
         height: 200px;
         object-fit: cover;
         border-radius: 100vh;
         margin-bottom: 3rem;
+      }
+
+      .attendee-no-image {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $placeholder-background;
       }
 
       .attendee-title {
