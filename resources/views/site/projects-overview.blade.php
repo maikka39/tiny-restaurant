@@ -50,7 +50,7 @@
                                 <p class="is-size-4 has-text-weight-bold mb-5">{{ $project->name }}</p>
                                 <p>{!! $project->description !!}</p>
                                 <div class="project-footer">
-                                    <button class="button is-primary read-more-button"><a href="{{ route('project.show', $project->slug) }}">Lees meer</a></button>
+                                    <a class="button is-primary read-more-button" href="{{ route('project.show', $project->slug) }}">Lees meer</a>
                                     <small class="is-size-6">{{ $project->getCreatedDateForOverview() }}</small>
                                 </div>
                             </div>
