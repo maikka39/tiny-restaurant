@@ -11,7 +11,7 @@
                 <h2 class="project-name">{{ $item->name }}</h2>
                 <p class="municipality-text">@if($item->municipalities->first()) {{ $item->municipalities->first()->title }} @endif</p>
                 <a href="{{ route('contact.show', ['project' => $item->name]) }}" class="button is-primary">Ik doe mee!</a>
-        </div>
+            </div>
             @php($image = $item->imageAsArray('project_image', 'flexible'))
             @if($image)
                 <img class="project-hero-image" src="{{ $image['src'] }}" alt="{{ $image['alt']}}">
@@ -52,12 +52,10 @@
         <div class="attendees">
             @foreach($item->municipalities as $municipality)
                 <div class="attendee">
-                    <div>
-                        @php($image = $municipality->imageAsArray('municipality_picture', 'flexible'))
-                        <img class="attendee-image" src="{{ $image ? $image['src'] : asset('img/house-placeholder.png') }}" alt="{{ $image ? $image['alt'] : 'municipality placeholder' }}">
-                        <h2 class="attendee-title">Gemeente {{ $municipality->title }}</h2>
-                        <p class="attendee-text">{{ $municipality->description }}</p>
-                    </div>
+                    @php($image = $municipality->imageAsArray('municipality_picture', 'flexible'))
+                    <img class="attendee-image" src="{{ $image ? $image['src'] : asset('img/house-placeholder.png') }}" alt="{{ $image ? $image['alt'] : 'municipality placeholder' }}">
+                    <h2 class="attendee-title">Gemeente {{ $municipality->title }}</h2>
+                    <p class="attendee-text">{{ $municipality->description }}</p>
                     <a class="button is-primary" href="{{ route('municipality.show', $municipality->slug) }}">Lees meer</a>
                 </div>
             @endforeach
