@@ -1,3 +1,24 @@
 .section-municipality-hero {
+  display: flex;
+  flex-direction: row;
 
+  .municipality-image {
+    flex-basis: 100%;
+  }
+
+  .municipality-text {
+    flex-basis: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 4rem;
+
+    .municipality-title {
+      font-size: 48px;
+    }
+
+    .municipality-description {
+      font-size: 24px;
+    }
+  }
 }
