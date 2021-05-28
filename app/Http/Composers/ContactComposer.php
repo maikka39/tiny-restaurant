@@ -15,6 +15,11 @@ class ContactComposer
      */
     public function compose(View $view)
     {
-        $view->with('projectList', Project::all()->where('published', true));
+        $view->with('projectList',
+            Project::all()
+                ->where('published', true)
+                ->where('date', '>', now())
+                ->sortByDesc('date')
+        );
     }
 }
