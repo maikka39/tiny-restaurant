@@ -10,7 +10,11 @@
             <div class="hero-content-info">
                 <h2 class="project-name">{{ $item->name }}</h2>
                 <p class="municipality-text">@if($item->municipalities->first()) {{ $item->municipalities->first()->title }} @endif</p>
-                <a href="{{ route('contact.show', ['project' => $item->name]) }}" class="button is-primary">Ik doe mee!</a>
+                @if($item->date > now())
+                    <a href="{{ route('contact.show', ['project' => $item->name]) }}" class="button is-primary">Ik doe mee!</a>
+                @else
+                    <a href="#verlopen" class="button is-warning">Dit project is verlopen</a>
+                @endif
             </div>
             @php($image = $item->imageAsArray('project_image', 'flexible'))
             @if($image)
