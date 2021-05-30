@@ -50,14 +50,15 @@
                                 </div>
                             </div>
                         </div>
-                        <span></span>
+                        {{-- There's a bug with the carousel: with 1 item the carrousel crashes, so I add an empty span --}}
+                        @if(count($municipality->farmers) == 1)<span></span>@endif
                     @endforeach
                 </div>
             </div>
         </div>
     </section>
-    <section class="section">
-        <div class="container">
+    <section class="section section-projects">
+
             <div class="block">
                 <h2 class="title is-size-1 has-text-weight-normal">Aanstaande projecten</h2>
                 <p class="subtitle is-size-3 mt-5">Hier is een korte agenda om te zien wat de aankomende projecten van de gemeente {{ $municipality->title }}.</p>
@@ -65,14 +66,14 @@
             </div>
 
             <div class="columns">
-                @forelse($municipality->projects as $project)
+                @forelse($projects as $project)
 
                     <div class="column">
                         <div class="card project-card">
                             @php($image = $project->imageAsArray('project_image', 'flexible'))
                             @if ($image)
                                 <div class="card-image">
-                                    <figure class="image">
+                                    <figure class="image is-3by2">
                                         <img class="project-image" src="{{ $image['src'] }}" alt="{{ $image['alt'] }}">
                                     </figure>
                                 </div>
@@ -94,6 +95,5 @@
                     </div>
                 @endforelse
             </div>
-        </div>
     </section>
 @endsection
