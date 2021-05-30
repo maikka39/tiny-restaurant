@@ -1,5 +1,5 @@
 @use "../vars" as *;
-@import "~bulma-carousel";
+@use "~bulma-carousel" as carousel;
 
 .section-municipality-hero {
   display: flex;
@@ -30,12 +30,16 @@
   background-color: $primary-background;
   display: flex;
   flex-direction: row;
+  height: 100vh;
+  padding-top: 5rem;
 
   .info {
     flex-basis: 100%;
+    margin: 0 5rem 5rem;
 
     h2 {
       font-size: 48px;
+      margin-bottom: 1rem;
     }
 
     p {
@@ -44,22 +48,50 @@
     }
 
     hr {
-      margin: 0 2rem;
+      margin: 4rem 0;
       background-color: rgba(0,0,0,.5);
     }
 
-    iframe {
-      padding: 5rem;
+    .map {
+      flex-grow: 1;
+      height: 100%;
       width: 100%;
+
+      iframe {
+        height: 65%;
+        width: 100%;
+      }
     }
   }
 
   .farmers {
     flex-basis: 100%;
     overflow: hidden;
-
     .column {
-      padding: 0 5rem;
+      display: flex;
+      height: 100%;
+      width: 100%;
+      padding: 0 5rem 5rem;
+
+      .card {
+        height: 100%;
+      }
+    }
+  }
+}
+
+.news-item {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  .news-item-content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+
+    p.content {
+      flex-grow: 1;
     }
   }
 }
