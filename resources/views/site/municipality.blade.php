@@ -70,18 +70,18 @@
 
                     <div class="column">
                         <div class="card project-card">
-                            @php($image = $project->imageAsArray('project_image', 'flexible'))
-                            @if ($image)
-                                <div class="card-image">
-                                    <figure class="image is-3by2">
-                                        <img class="project-image" src="{{ $image['src'] }}" alt="{{ $image['alt'] }}">
-                                    </figure>
-                                </div>
-                            @endif
+                            <div class="card-image">
+                                <figure class="image is-3by2">
+                                    @php($image = $project->imageAsArray('project_image', 'flexible'))
+                                    <img class="project-image" src="{{ $image ? $image['src'] : asset('img/news-placeholder.png') }}" alt="{{ $image ? $image['alt'] : 'news placeholder' }}">
+                                </figure>
+                            </div>
 
                             <div class="card-content">
                                 <p class="title is-4">{{ $project->name }}</p>
-                                <p class="subtitle is-6">{{ $project->created_at->format('d-m-Y') }}</p>
+                                <p class="subtitle is-6">
+                                    {{ $project->date->format('d-m-Y') }}
+                                </p>
 
                                 <div class="content">{!! $project->description !!}</div>
 

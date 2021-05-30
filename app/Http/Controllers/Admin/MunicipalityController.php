@@ -19,7 +19,8 @@ class MunicipalityController extends ModuleController
         $projects = $municipality
             ->projects()
             ->where('published', true)
-            ->orderBy('created_at', 'desc')
+            ->where('date', '>', now())
+            ->orderBy('date')
             ->take(3)
             ->get();
 
