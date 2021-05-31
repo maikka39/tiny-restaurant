@@ -1,5 +1,6 @@
 @use "../vars" as *;
 @use "~bulma-carousel" as carousel;
+@import "bulma/sass/utilities/mixins";
 
 $page-margin: 4rem;
 
@@ -9,6 +10,7 @@ $page-margin: 4rem;
 
   .municipality-image {
     flex-basis: 100%;
+    object-fit: cover;
   }
 
   .municipality-text {
@@ -103,5 +105,57 @@ $page-margin: 4rem;
         flex-grow: 1;
       }
     }
+  }
+}
+
+$responsive-margin: $page_margin / 3;
+
+@include until($desktop) {
+  .section-municipality-hero {
+    flex-direction: column;
+
+    .municipality-text {
+      margin: 0 $responsive-margin;
+
+      .municipality-title {
+        font-size: 28px;
+      }
+
+      .municipality-description {
+        font-size: 18px;
+      }
+    }
+  }
+
+  .section-farmers {
+    flex-direction: column;
+    padding-top: 2rem;
+
+    .info {
+      margin: 0 $responsive-margin $responsive-margin;
+
+      h2 {
+        font-size: 28px;
+        margin-bottom: .5rem;
+      }
+
+      p {
+        font-size: 20px;
+      }
+
+      hr {
+        margin: $responsive-margin 0;
+      }
+    }
+
+    .farmers {
+      .column {
+        padding: 0 $responsive-margin $responsive-margin;
+      }
+    }
+  }
+
+  .section-projects {
+    margin: 0 $responsive-margin;
   }
 }

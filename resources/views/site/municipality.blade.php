@@ -60,8 +60,8 @@
     <section class="section section-projects">
 
             <div class="block">
-                <h2 class="title is-size-1 has-text-weight-normal">Aanstaande projecten</h2>
-                <p class="subtitle is-size-3 mt-5">Hier is een korte agenda om te zien wat de aankomende projecten van de gemeente {{ $municipality->title }}.</p>
+                <h2 class="title is-size-1 is-size-3-mobile has-text-weight-normal">Aanstaande projecten</h2>
+                <p class="subtitle is-size-3 is-size-5-mobile mt-5">Hier is een korte agenda om te zien wat de aankomende projecten van de gemeente {{ $municipality->title }}.</p>
                 <a href="{{ route('project.showAll', ['search' => $municipality->title]) }}" class="button is-primary">Bekijk alle projecten</a>
             </div>
 
