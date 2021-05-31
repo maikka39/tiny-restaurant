@@ -7,7 +7,7 @@
 @endpush
 
 @push('scripts')
-    <script type="text/javascript" src="{{ asset('js/carrousel.js') }}" defer></script>
+    <script type="text/javascript" src="{{ asset('js/carousel.js') }}" defer></script>
 @endpush
 
 @section("content")
@@ -28,43 +28,44 @@
                 <iframe src="https://maps.google.com/maps?q={{ $municipality->title }}&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
             </div>
         </div>
-        <div class="farmers">
-            <div class="container">
-                <div class="carousel" id="municipality-carousel">
-                    @foreach($municipality->farmers as $farmer)
-                        <div class="column item-{{ $loop->iteration }}">
-                            <div class="card farmer-card item-{{ $loop->iteration }}">
-                                @php($image = $farmer->imageAsArray('farmer_profile', 'flexible'))
-                                @if ($image)
-                                    <div class="card-image">
-                                        <figure class="image">
-                                            <img class="project-image" src="{{ $image['src'] }}" alt="{{ $image['alt'] }}">
-                                        </figure>
-                                    </div>
-                                @endif
-
-                                <div class="card-content">
-                                    <p class="title is-4">{{ $farmer->name }}</p>
-                                    <div class="content">{{ $farmer->summary }}</div>
-                                    <a class="button is-primary" href="{{ route('farmer.show', $farmer->slug) }}">Lees meer</a>
+        <div class="farmers navigation-wrapper">
+            <div id="carousel" class="keen-slider">
+                @foreach($municipality->farmers as $farmer)
+                    <div class="keen-slider__slide number-slide{{ $loop->iteration }}">
+                        <div class="card farmer-card">
+                            @php($image = $farmer->imageAsArray('farmer_profile', 'flexible'))
+                            @if ($image)
+                                <div class="card-image">
+                                    <figure class="image">
+                                        <img class="project-image" src="{{ $image['src'] }}" alt="{{ $image['alt'] }}">
+                                    </figure>
                                 </div>
+                            @endif
+
+                            <div class="card-content">
+                                <p class="title is-4">{{ $farmer->name }}</p>
+                                <div class="content">{{ $farmer->summary }}</div>
+                                <a class="button is-primary" href="{{ route('farmer.show', $farmer->slug) }}">Lees meer</a>
                             </div>
                         </div>
-                        {{-- There's a bug with the carousel: with 1 item the carrousel crashes, so I add an empty span --}}
-                        @if(count($municipality->farmers) == 1)<span></span>@endif
-                    @endforeach
-                </div>
+                    </div>
+                @endforeach
             </div>
+            <button id="arrow-left" class="arrow arrow-left">
+                <i class="fa fa-chevron-left fa-4x"></i>
+            </button>
+            <button id="arrow-right" class="arrow arrow-right">
+                <i class="fa fa-chevron-right fa-4x"></i>
+            </button>
+            <div id="dots" class="dots"></div>
         </div>
     </section>
     <section class="section section-projects">
-
             <div class="block">
                 <h2 class="title is-size-1 is-size-3-mobile has-text-weight-normal">Aanstaande projecten</h2>
                 <p class="subtitle is-size-3 is-size-5-mobile mt-5">Hier is een korte agenda om te zien wat de aankomende projecten van de gemeente {{ $municipality->title }}.</p>
                 <a href="{{ route('project.showAll', ['search' => $municipality->title]) }}" class="button is-primary">Bekijk alle projecten</a>
             </div>
-
             <div class="columns">
                 @forelse($projects as $project)
 

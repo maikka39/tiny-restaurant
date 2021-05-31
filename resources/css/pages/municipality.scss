@@ -1,5 +1,5 @@
 @use "../vars" as *;
-@use "~bulma-carousel" as carousel;
+@use "../components/carousel" as carousel;
 @import "bulma/sass/utilities/mixins";
 
 $page-margin: 4rem;
@@ -70,17 +70,9 @@ $page-margin: 4rem;
 
   .farmers {
     flex-basis: 100%;
-    overflow: hidden;
 
-    .column {
-      display: flex;
-      height: 100%;
-      width: 100%;
-      padding: 0 5rem 5rem;
-
-      .card {
-        height: 100%;
-      }
+    .farmer-card {
+      //height: 250px;
     }
   }
 }
