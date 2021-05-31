@@ -44,4 +44,12 @@ Route::get('/styles', function () {
     return view('site.styles');
 });
 
+Route::get('/privacy', function () {
+    return view('site.privacy');
+});
+
+Route::get('/termsandconditions', function () {
+    return view('site.TermsAndConditions');
+});
+
 Route::get('/{slug}', [PageController::class, 'view'])->name('pages.show');

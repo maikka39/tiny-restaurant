@@ -3,13 +3,13 @@
         <div class="links is-vcentered">
             <a href="{{ route('newsItems.show') }}">Nieuws</a>
             <a href="{{ route('project.showAll') }}">Projecten</a>
-            <a href="#">Algemene voorwaarden</a>
+            <a href="{{ url('termsandconditions') }}">Algemene voorwaarden</a>
             <div class="logo">
                 <figure class="image">
                     <img src="{{ asset('img/logo.png') }}"/>
                 </figure>
             </div>
-            <a href="#">Privacy</a>
+            <a href="{{ url('privacy') }}">Privacy</a>
             <a href="{{ route('contact.show') }}">Contact</a>
             <a href="{{ url('doneer') }}">Steun ons</a>
         </div>
@@ -32,7 +32,7 @@
                     <p>5741HR Beek en Donk</p>
                 </div>
                 <div class="column">
-                    <a class="text-link" href=""> info@stichtingmiep.nl </a>
+                    <a class="text-link" href="mailto:info@stichtingmiep.nl"> info@stichtingmiep.nl </a>
                     <p>06 - 20 46 65 55 (Krista Werker)</p>
                     <p>06 - 24 62 96 76 (Jorick Cardon)</p>
                 </div>
