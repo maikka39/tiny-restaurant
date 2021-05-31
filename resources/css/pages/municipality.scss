@@ -1,6 +1,6 @@
 @use "../vars" as *;
 @use "../components/carousel" as carousel;
-@import "bulma/sass/utilities/mixins";
+@use "~bulma/sass/utilities/mixins" as mixins;
 
 $page-margin: 4rem;
 
@@ -70,10 +70,7 @@ $page-margin: 4rem;
 
   .farmers {
     flex-basis: 100%;
-
-    .farmer-card {
-      //height: 250px;
-    }
+    display: flex;
   }
 }
 .section-projects {
@@ -102,7 +99,7 @@ $page-margin: 4rem;
 
 $responsive-margin: $page_margin / 3;
 
-@include until($desktop) {
+@include mixins.until(mixins.$desktop) {
   .section-municipality-hero {
     flex-direction: column;
 
@@ -122,6 +119,7 @@ $responsive-margin: $page_margin / 3;
   .section-farmers {
     flex-direction: column;
     padding-top: 2rem;
+    height: 100%;
 
     .info {
       margin: 0 $responsive-margin $responsive-margin;
@@ -137,12 +135,6 @@ $responsive-margin: $page_margin / 3;
 
       hr {
         margin: $responsive-margin 0;
-      }
-    }
-
-    .farmers {
-      .column {
-        padding: 0 $responsive-margin $responsive-margin;
       }
     }
   }
