@@ -17,7 +17,6 @@ class footer extends Component
 
     public function __construct() 
     {
-        // dd(Homepage::first()->homepage_link_items);
         $this->links = Homepage::first()->homepage_link_items;
     }
 
