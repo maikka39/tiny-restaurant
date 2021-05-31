@@ -1,8 +1,8 @@
 <footer class="footer">
     <div>
         <div class="links is-vcentered">
-            <a href="#">Nieuws</a>
-            <a href="#">Projecten</a>
+            <a href="{{ route('newsItems.show') }}">Nieuws</a>
+            <a href="{{ route('project.showAll') }}">Projecten</a>
             <a href="#">Algemene voorwaarden</a>
             <div class="logo">
                 <figure class="image">
@@ -10,27 +10,19 @@
                 </figure>
             </div>
             <a href="#">Privacy</a>
-            <a href="#">Contact</a>
-            <a href="#">Steun ons</a>
+            <a href="{{ route('contact.show') }}">Contact</a>
+            <a href="{{ url('doneer') }}">Steun ons</a>
         </div>
         <hr role="presentation">
         <div>
             <div class="pt-3 pb-6 media-links">
-                <a href="https://www.facebook.com/TinyRestaurant.nl/">
-                    <span>
-                        <i class="fab fa-facebook fa-3x m-2"></i>
-                    </span>
-                </a>
-                <a target="_blank">
-                    <span>
-                        <i class="fab fa-instagram fa-3x m-2"></i>
-                    </span>
-                </a>
-                <a target="_blank">
-                    <span>
-                        <i class="fab fa-youtube fa-3x m-2"></i>
-                    </span>
-                </a>
+                @foreach ($links as $link)
+                    <a class=" pl-3 pr-3" style="display: inline-flex; align-self: center; justify-self: center;" href="{{ $link->url }}" target="#">
+                        <figure class="image is-32x32">
+                            <img style="filter: grayscale(100%);" type="image/png" src="{{ asset('img/link_icons/' .$link->logo_url) }}" />
+                        </figure>
+                    </a>
+                @endforeach
             </div>
 
             <div class="columns no-text-wrap">
