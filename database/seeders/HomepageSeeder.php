@@ -6,7 +6,7 @@ use Illuminate\Database\Seeder;
 use App\Models\Homepage;
 use App\Models\HomepageLinkItem;
 
-class HomepageSeeder extends Seeder
+class HomepageSeeder extends MediaSeeder
 {
     /**
      * Run the database seeds.
@@ -48,5 +48,13 @@ class HomepageSeeder extends Seeder
             'position' => 3,
             'homepage_id' => 1
         ]);
+
+        $this->seed_media(
+            "App\Models\Homepage",
+            1,
+            "hero",
+            "homepage_cover.jpg",
+            "Homepage cover image",
+        );
     }
 }
