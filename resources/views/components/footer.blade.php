@@ -3,7 +3,7 @@
         <div class="links is-vcentered">
             <a class="link" href="{{ route('newsItems.show') }}">Nieuws</a>
             <a class="link" href="{{ route('project.showAll') }}">Projecten</a>
-            <a class="link" href="{{ url('termsandconditions') }}">Algemene voorwaarden</a>
+            <a class="link" href="{{ route('site.algemene-voorwaarden') }}">Algemene voorwaarden</a>
             <div class="logo">
                 <a class="image-container" href="{{ route('homepages.show') }}">
                     <figure class="image">
@@ -13,7 +13,7 @@
             </div>
             <a class="link" href="{{ url('privacy') }}">Privacy</a>
             <a class="link" href="{{ route('contact.show') }}">Contact</a>
-            <a class="link" href="{{ url('doneer') }}">Steun ons</a>
+            <a class="link" href="{{ route('donations.show') }}">Steun ons</a>
         </div>
         <hr role="presentation">
         <div>
