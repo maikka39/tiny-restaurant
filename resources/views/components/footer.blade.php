@@ -1,36 +1,30 @@
 <footer class="footer">
     <div>
         <div class="links is-vcentered">
-            <a href="#">Nieuws</a>
-            <a href="#">Projecten</a>
-            <a href="#">Algemene voorwaarden</a>
+            <a class="link" href="{{ route('newsItems.show') }}">Nieuws</a>
+            <a class="link" href="{{ route('project.showAll') }}">Projecten</a>
+            <a class="link" href="{{ url('algemene-voorwaarden') }}">Algemene voorwaarden</a>
             <div class="logo">
-                <figure class="image">
-                    <img src="{{ asset('img/logo.png') }}"/>
-                </figure>
+                <a class="image-container" href="{{ route('homepages.show') }}">
+                    <figure class="image">
+                        <img src="{{ asset('img/logo.png') }}"/>
+                    </figure>
+                </a>
             </div>
-            <a href="#">Privacy</a>
-            <a href="#">Contact</a>
-            <a href="#">Steun ons</a>
+            <a class="link" href="{{ url('privacy') }}">Privacy</a>
+            <a class="link" href="{{ route('contact.show') }}">Contact</a>
+            <a class="link" href="{{ route('donations.show') }}">Steun ons</a>
         </div>
         <hr role="presentation">
         <div>
             <div class="pt-3 pb-6 media-links">
-                <a href="https://www.facebook.com/TinyRestaurant.nl/">
-                    <span>
-                        <i class="fab fa-facebook fa-3x m-2"></i>
-                    </span>
-                </a>
-                <a target="_blank">
-                    <span>
-                        <i class="fab fa-instagram fa-3x m-2"></i>
-                    </span>
-                </a>
-                <a target="_blank">
-                    <span>
-                        <i class="fab fa-youtube fa-3x m-2"></i>
-                    </span>
-                </a>
+                @foreach ($links as $link)
+                    <a class=" pl-3 pr-3" style="display: inline-flex; align-self: center; justify-self: center;" href="{{ $link->url }}" target="#">
+                        <figure class="image is-32x32">
+                            <img style="filter: grayscale(100%);" alt="Logo van {{ $link->name }}" src="{{ asset('img/link_icons/' .$link->logo_url) }}" />
+                        </figure>
+                    </a>
+                @endforeach
             </div>
 
             <div class="columns no-text-wrap">
@@ -40,7 +34,7 @@
                     <p>5741HR Beek en Donk</p>
                 </div>
                 <div class="column">
-                    <a class="text-link" href=""> info@stichtingmiep.nl </a>
+                    <a class="text-link" href="mailto:info@stichtingmiep.nl"> info@stichtingmiep.nl </a>
                     <p>06 - 20 46 65 55 (Krista Werker)</p>
                     <p>06 - 24 62 96 76 (Jorick Cardon)</p>
                 </div>
