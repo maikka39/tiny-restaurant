@@ -64,7 +64,6 @@
 @include mixins.until(mixins.$desktop) {
   .navigation-wrapper {
     position: relative;
-    overflow: scroll;
   }
 }
 
