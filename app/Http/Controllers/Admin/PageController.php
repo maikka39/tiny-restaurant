@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Models\Page;
 use A17\Twill\Http\Controllers\Admin\ModuleController;
+use Illuminate\Database\Eloquent\Builder;
 
 class PageController extends ModuleController
 {
@@ -13,7 +14,9 @@ class PageController extends ModuleController
 
     public function view($slug)
     {
-        $page = Page::forSlug($slug)->first() ?? abort(404);
+        $page = Page::whereHas('slugs', function (Builder $query) use ($slug) {
+            $query->where('slug', $slug);
+        })->firstOrFail();
 
         return view('site.pages.show', [
             'item' => $page
