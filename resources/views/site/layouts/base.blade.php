@@ -22,6 +22,6 @@
 
     @yield('content')
 
-    <x-footer />
+    <x-footer :links="$link" />
 </body>
 </html>
