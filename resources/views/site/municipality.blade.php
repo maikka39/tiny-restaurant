@@ -50,10 +50,10 @@
                     </div>
                 @endforeach
             </div>
-            <button id="arrow-left" class="arrow arrow-left">
+            <button id="arrow-left" class="arrow arrow-left" aria-label="Vorige boer">
                 <i class="fa fa-chevron-left fa-4x"></i>
             </button>
-            <button id="arrow-right" class="arrow arrow-right">
+            <button id="arrow-right" class="arrow arrow-right" aria-label="Volgende boer">
                 <i class="fa fa-chevron-right fa-4x"></i>
             </button>
             <div id="dots" class="dots"></div>
