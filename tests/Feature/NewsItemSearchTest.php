@@ -7,6 +7,8 @@ use Database\Factories\NewsItemFactory;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\WithFaker;
+use Database\Seeders\DatabaseSeeder;
+use Database\Seeders\HomepageSeeder;
 use Tests\TestCase;
 
 class NewsItemSearchTest extends TestCase
@@ -21,6 +23,7 @@ class NewsItemSearchTest extends TestCase
     protected function setUp(): void
     {
         parent::setUp();
+        app(DatabaseSeeder::class)->call(HomepageSeeder::class);
         $this->setUpFaker();
         $this->newsItems = NewsItem::factory(25)->create();
     }
