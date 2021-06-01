@@ -3,7 +3,7 @@
         <div class="links is-vcentered">
             <a class="link" href="{{ route('newsItems.show') }}">Nieuws</a>
             <a class="link" href="{{ route('project.showAll') }}">Projecten</a>
-            <a class="link" href="{{ route('site.algemene-voorwaarden') }}">Algemene voorwaarden</a>
+            <a class="link" href="{{ url('site.algemene-voorwaarden') }}">Algemene voorwaarden</a>
             <div class="logo">
                 <a class="image-container" href="{{ route('homepages.show') }}">
                     <figure class="image">
