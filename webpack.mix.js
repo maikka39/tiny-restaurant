@@ -23,6 +23,7 @@ mix.js('resources/js/app.js', 'public/js')
     .sass('resources/css/pages/farmer.scss', 'public/css')
     .sass('resources/css/pages/project_individual.scss', 'public/css')
     .sass('resources/css/pages/municipality.scss', 'public/css')
+    .sass('resources/css/pages/news_individual.scss', 'public/css')
     .copyDirectory('resources/img', 'public/img');
 
 mix.disableSuccessNotifications();
