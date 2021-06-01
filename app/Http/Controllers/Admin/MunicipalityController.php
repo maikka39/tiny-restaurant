@@ -15,9 +15,18 @@ class MunicipalityController extends ModuleController
         $municipality = Municipality::whereHas('slugs', function (Builder $query) use ($slug) {
             $query->where('slug', $slug);
         })->firstOrFail();
-        
+
+        $projects = $municipality
+            ->projects()
+            ->where('published', true)
+            ->where('date', '>', now())
+            ->orderBy('date')
+            ->take(3)
+            ->get();
+
         return view('site.municipality', [
-            'municipality' => $municipality
+            'municipality' => $municipality,
+            'projects' => $projects
         ]);
     }
 }

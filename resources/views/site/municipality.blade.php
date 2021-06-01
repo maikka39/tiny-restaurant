@@ -2,78 +2,98 @@
     "title" => $municipality->title
 ])
 
+@push('styles')
+    <link rel="stylesheet" href="{{ asset('css/municipality.css') }}">
+@endpush
+
+@push('scripts')
+    <script type="text/javascript" src="{{ asset('js/carousel.js') }}" defer></script>
+@endpush
+
 @section("content")
-    <div class="container my-4">
-        <div class="flex flex-wrap place-content-around">
-            <div class="flex flex-col w-3/6">
-                <h1 class="">{{ $municipality->title }}</h1>
-                <p class="text-justify">{{ $municipality->description }}</p>
-            </div>
-
-            <img class="municipalityImage shadow-lg rounded h-96"
-                 src="{{ $municipality->image("municipality_picture", "desktop") }}">
+    <section class="section section-municipality-hero">
+        <div class="municipality-text">
+            <h2 class="municipality-title">{{ $municipality->title }}</h2>
+            <p class="municipality-description">{{ $municipality->description }}</p>
         </div>
-    </div>
-
-    <div class="box primary">
-        <div class="container">
-            <div class="flex flex-wrap place-content-around">
-                <div class="overflow-hidden md:w-3/6 sm:w-full">
-                    <iframe class="w-full h-full overflow-hidden"
-                            src="https://maps.google.com/maps?q={{ $municipality->title }}&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
-                </div>
-
-                <div class="flex flex-col lg:w-2/6 md:w-2/6 sm:w-full my-2">
-                    <h2> Aankomend evenement </h2>
-                    <p class="text-justify"> Kom ons bezoeken bij ons volgend evenement in {{ $municipality->title }}!
-                        Ervaar wat voor heerlijks ons land te bieden heeft met een proeverij, en maak kennis met de boer
-                        en
-                        de chef die met liefde en vakmanschap het product tot stand hebben gebracht. </p>
-                </div>
+        @php($image = $municipality->imageAsArray('municipality_picture', 'flexible'))
+        <img class="municipality-image" src="{{ $image ? $image['src'] : asset('img/house-placeholder.png') }}" alt="{{ $image ? $image['alt'] : 'municipality placeholder' }}">
+    </section>
+    <section class="section section-farmers">
+        <div class="info">
+            <h2>De boeren van {{ $municipality->title }}</h2>
+            <p>Lees het verhaal van de boeren in gemeente {{ $municipality->title }}</p>
+            <div class="map">
+                <iframe src="https://maps.google.com/maps?q={{ $municipality->title }}&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
             </div>
         </div>
-    </div>
+        <div class="farmers navigation-wrapper">
+            <div id="carousel" class="keen-slider">
+                @foreach($municipality->farmers as $farmer)
+                    <div class="keen-slider__slide number-slide{{ $loop->iteration }}">
+                        <div class="card farmer-card">
+                            @php($image = $farmer->imageAsArray('farmer_profile', 'flexible'))
+                            @if ($image)
+                                <div class="card-image">
+                                    <figure class="image">
+                                        <img class="farmer-image" src="{{ $image['src'] }}" alt="{{ $image['alt'] }}">
+                                    </figure>
+                                </div>
+                            @endif
 
-    <div class="container">
-        @if (count($municipality->farmers) > 0)
-            <h2 class="text-center">Partners</h2>
-
-            @foreach ($municipality->farmers->chunk(3) as $chunk)
-                <div class="flex justify-around flex-wrap min-w-100">
-                    @foreach ($chunk as $farmer)
-                        <div class="box secondary">
-                            <div class="flex justify-center">
-                                <img class="h-64" src="{{ $farmer->image("farmer_profile", "desktop") }}"
-                                     alt="{{ $farmer->name }}">
+                            <div class="card-content">
+                                <p class="title is-4">{{ $farmer->name }}</p>
+                                <div class="content">{{ $farmer->summary }}</div>
+                                <a class="button is-primary" href="{{ route('farmer.show', $farmer->slug) }}">Lees meer</a>
                             </div>
-                            <h3>{{ $farmer->name }}</h3>
-                            <div class="description">{!! $farmer->description !!}</div>
-                            <a href="{{ route("farmer.show", $farmer->slug) }}" class="button primary float-right">Lees
-                                meer</a>
                         </div>
-                    @endforeach
-                </div>
-            @endforeach
-        @endif
-    </div>
-    @if (count($municipality->projects) > 0)
-        <h2 class="text-center">Projecten</h2>
-
-        @foreach ($municipality->projects->chunk(3) as $chunk)
-            <div class="flex justify-around flex-wrap min-w-100">
-                @foreach ($chunk as $project)
-                    <div class="box secondary lg:w-1/5 md:w-2/5">
-                        <div class="flex justify-center">
-                            <img class="h-64" src="{{ $project->image("project_image", "desktop") }}"
-                                 alt="{{ $project->name }}">
-                        </div>
-                        <h3>{{ $project->name }}</h3>
-                        <div class="description">{!! $project->description !!}</div>
-                        <a href="{{ route("project.show", $project->slug) }}" class="button primary float-right">Lees
-                            meer</a>
                     </div>
                 @endforeach
             </div>
-        @endforeach
-    @endif
+            <button id="arrow-left" class="arrow arrow-left" aria-label="Vorige boer">
+                <i class="fa fa-chevron-left fa-4x"></i>
+            </button>
+            <button id="arrow-right" class="arrow arrow-right" aria-label="Volgende boer">
+                <i class="fa fa-chevron-right fa-4x"></i>
+            </button>
+            <div id="dots" class="dots"></div>
+        </div>
+    </section>
+    <section class="section section-projects">
+            <div class="block">
+                <h2 class="title is-size-1 is-size-3-mobile has-text-weight-normal">Aanstaande projecten</h2>
+                <p class="subtitle is-size-3 is-size-5-mobile mt-5">Hier is een korte agenda met de aankomende projecten van gemeente {{ $municipality->title }}.</p>
+                <a href="{{ route('project.showAll', ['search' => $municipality->title]) }}" class="button is-primary">Bekijk alle projecten</a>
+            </div>
+            <div class="columns">
+                @forelse($projects as $project)
+
+                    <div class="column">
+                        <div class="card project-card">
+                            <div class="card-image">
+                                <figure class="image is-3by2">
+                                    @php($image = $project->imageAsArray('project_image', 'flexible'))
+                                    <img class="project-image" src="{{ $image ? $image['src'] : asset('img/news-placeholder.png') }}" alt="{{ $image ? $image['alt'] : 'news placeholder' }}">
+                                </figure>
+                            </div>
+
+                            <div class="card-content">
+                                <p class="title is-4">{{ $project->name }}</p>
+                                <p class="subtitle is-6">
+                                    {{ $project->date->format('d-m-Y') }}
+                                </p>
+
+                                <div class="content">{!! $project->description !!}</div>
+
+                                <a href="{{ route('project.show', $project->slug) }}">Lees meer</a>
+                            </div>
+                        </div>
+                    </div>
+                @empty
+                    <div class="column">
+                        <p>Er zijn geen projecten!</p>
+                    </div>
+                @endforelse
+            </div>
+    </section>
 @endsection
