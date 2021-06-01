@@ -35,7 +35,7 @@
                             @php($image = $farmer->imageAsArray('farmer_profile', 'flexible'))
                             @if ($image)
                                 <div class="card-image">
-                                    <figure class="image is-3by2">
+                                    <figure class="image">
                                         <img class="farmer-image" src="{{ $image['src'] }}" alt="{{ $image['alt'] }}">
                                     </figure>
                                 </div>
