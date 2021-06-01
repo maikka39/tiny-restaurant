@@ -23,7 +23,6 @@
         <div class="info">
             <h2>De boeren van {{ $municipality->title }}</h2>
             <p>Lees het verhaal van de boeren in gemeente {{ $municipality->title }}</p>
-            <hr>
             <div class="map">
                 <iframe src="https://maps.google.com/maps?q={{ $municipality->title }}&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
             </div>

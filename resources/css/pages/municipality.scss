@@ -43,17 +43,12 @@ $page-margin: 4rem;
 
     h2 {
       font-size: 48px;
-      margin-bottom: 1rem;
     }
 
     p {
       font-size: 36px;
       color: rgba(0,0,0,.8);
-    }
-
-    hr {
       margin: $page-margin 0;
-      background-color: rgba(0,0,0,.5);
     }
 
     .map {
@@ -131,9 +126,6 @@ $responsive-margin: $page_margin / 3;
 
       p {
         font-size: 20px;
-      }
-
-      hr {
         margin: $responsive-margin 0;
       }
     }
