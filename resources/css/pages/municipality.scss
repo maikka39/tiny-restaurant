@@ -11,6 +11,7 @@ $page-margin: 4rem;
   .municipality-image {
     flex-basis: 100%;
     object-fit: cover;
+    max-width: 50vw;
   }
 
   .municipality-text {
@@ -66,6 +67,14 @@ $page-margin: 4rem;
   .farmers {
     flex-basis: 100%;
     display: flex;
+
+    .farmer-card {
+      height: 100%;
+
+      .farmer-image {
+        object-fit: cover;
+      }
+    }
   }
 }
 .section-projects {
@@ -133,5 +142,24 @@ $responsive-margin: $page_margin / 3;
 
   .section-projects {
     margin: 0 $responsive-margin;
+  }
+}
+
+@include mixins.until(mixins.$fullhd) {
+  .section-farmers {
+    height: 80%;
+    .info {
+      margin: 0 $responsive-margin $responsive-margin;
+
+      h2 {
+        font-size: 28px;
+        margin-bottom: .5rem;
+      }
+
+      p {
+        font-size: 20px;
+        margin: $responsive-margin 0;
+      }
+    }
   }
 }
