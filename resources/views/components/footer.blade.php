@@ -18,7 +18,7 @@
         <hr role="presentation">
         <div>
             <div class="pt-3 pb-6 media-links">
-                @foreach ($links->all()->sortBy('position') as $link)
+                @foreach ($links as $link)
                     <a class=" pl-3 pr-3" style="display: inline-flex; align-self: center; justify-self: center;" href="{{ $link->url }}" target="#">
                         <figure class="image is-32x32">
                             <img style="filter: grayscale(100%);" type="image/png" src="{{ asset('img/link_icons/' .$link->logo_url) }}" />
