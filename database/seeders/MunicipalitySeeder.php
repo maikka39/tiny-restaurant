@@ -7,7 +7,7 @@ use App\Models\Slugs\MunicipalitySlug;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Str;
 
-class MunicipalitySeeder extends Seeder
+class MunicipalitySeeder extends MediaSeeder
 {
     /**
      * Run the database seeds.
@@ -38,6 +38,14 @@ class MunicipalitySeeder extends Seeder
                 'active' => true,
                 'municipality_id' => $model->id
             ]);
+
+            $this->seed_media(
+                "App\Models\Municipality",
+                $model->id,
+                "municipality_picture",
+                preg_replace('/[^a-z]/', "_", strtolower($model->title)).".jpg",
+                "Foto van ".$model->title,
+            );
         }
     }
 }
