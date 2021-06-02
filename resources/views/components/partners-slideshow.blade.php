@@ -12,17 +12,16 @@
                         $alt = $partner->imageAltText('image');
                     @endphp
                     <div class="card-content">
+                        <h2 class="title is-2 has-text-weight-normal section-title">Uitgelichte partner</h2>
+                        <figure class="image">
+                            <img src="{{ $image }}" alt="{{ $alt }}">
+                        </figure>
                         <div class="info-container">
-                            <h2 class="title is-2 has-text-weight-normal">Uitgelichte partner</h2>
                             <div class="info">
                                 <h3 class="title is-4 mb-3">{{ $partner->name }}</h3>
                                 <div class="content">{!! $partner->description !!}</div>
                             </div>
-                            <div class="spacer"></div>
                         </div>
-                        <figure class="image">
-                            <img src="{{ $image }}" alt="{{ $alt }}">
-                        </figure>
                     </div>
                 </div>
             </div>

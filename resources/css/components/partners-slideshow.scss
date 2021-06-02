@@ -6,7 +6,6 @@
     text-align: start;
 
     .carousel {
-        min-height: 25rem;
 
         .card {
             height: 100%;
@@ -16,23 +15,19 @@
             .card-content {
                 display: grid;
                 grid-template-columns: 3fr 2fr;
-                gap: 6rem;
+                grid-template-rows: repeat(3, auto);
+                row-gap: 2rem;
+                column-gap: 5rem;
                 height: 100%;
 
+
+                @include until($desktop) {
+                    grid-template-columns: 1fr;
+                    height: auto;
+                }
+
                 .info-container {
-                    display: flex;
-                    flex-direction: column;
-
-                    > * {
-                        flex: 3;
-                    }
-
-                    > .spacer {
-                        flex: 2;
-                    }
-
                     .info {
-                        flex: 0;
                         //align-self: center;
                     }
                 }
@@ -43,10 +38,19 @@
                     border: 1.5px solid #000000;
                     padding: 3rem;
                     position: relative;
+                    grid-area: 1 / 2 / last-line / 2;
+
+                    @include until($desktop) {
+                        grid-area: auto;
+
+                        @include from($tablet) {
+                            height: 15rem;
+                        }
+                    }
 
                     img {
-                        height: 80%;
-                        width: 80%;
+                        height: 75%;
+                        width: 75%;
                         top: 50%;
                         left: 50%;
                         transform: translate(-50%, -50%);
