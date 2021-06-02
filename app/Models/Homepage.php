@@ -62,6 +62,6 @@ class Homepage extends Model
 
     public function partner_items()
     {
-        return $this->hasMany(HomepagePartnerItem::class);
+        return $this->hasMany(HomepagePartnerItem::class)->where('deleted_at', NULL);
     }
 }

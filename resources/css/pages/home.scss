@@ -1,5 +1,6 @@
-@import "../vars";
-@import "bulma/sass/utilities/mixins";
+@use "../vars" as *;
+@use "bulma/sass/utilities/mixins" as *;
+@use "../components/partners-slideshow" as partner-slideshow;
 
 .section {
   &.primary {

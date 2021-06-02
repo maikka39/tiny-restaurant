@@ -28,7 +28,7 @@
             </div>
         </div>
         <div class="farmers navigation-wrapper">
-            <div id="carousel" class="keen-slider">
+            <div id="carousel" class="carousel keen-slider">
                 @foreach($municipality->farmers as $farmer)
                     <div class="keen-slider__slide number-slide{{ $loop->iteration }}">
                         <div class="card farmer-card">

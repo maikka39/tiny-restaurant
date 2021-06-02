@@ -4,7 +4,6 @@ namespace App\View\Components;
 
 use Illuminate\View\Component;
 use App\Models\Homepage;
-use App\Models\HomepageLinkItem;
 
 class Footer extends Component
 {

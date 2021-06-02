@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="{{ asset('css/home.css') }}">
 @endpush
 
-@section('content')   
+@section('content')
     <!-- Hero -->
     <section class="hero is-fullheight-with-navbar">
         @php
@@ -106,7 +106,7 @@
     <!-- Partner slideshow -->
     <section class="section has-text-centered">
         <div class="container">
-            <p>Slideshow hier</p>
+            <x-partners-slideshow />
         </div>
     </section>
     

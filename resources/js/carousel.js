@@ -1,6 +1,6 @@
 import KeenSlider from 'keen-slider'
 
-const slider = new KeenSlider('#carousel', {
+const slider = new KeenSlider('.carousel', {
     created: function (instance) {
         document
             .getElementById("arrow-left")
