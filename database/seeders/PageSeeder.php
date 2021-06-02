@@ -20,13 +20,25 @@ class PageSeeder extends Seeder
         $pages = array([
             "title" => 'Privacy',
             "slug" => 'privacy',
-            "description" => 'Vul hier de privacy policy in.',
+            "description" => 'Lees hier onze Privacy Policy',
             "published" => true,
+            "blocks" => array([
+              "type" => 'text',
+              "blockable_type" => 'App\\Models\\Page',
+              "position" => 1,
+              "content" => '{"html": "<p>Vul hier de privacy policy in.</p>"}',
+            ]),
         ], [
             "title" => 'Algemene voorwaarden',
             "slug" => 'algemene-voorwaarden',
-            "description" => 'Vul hier de algemene voorwaarden in.',
+            "description" => 'Lees hier onze Algemene Voorwaarden',
             "published" => true,
+            "blocks" => array([
+              "type" => 'text',
+              "blockable_type" => 'App\\Models\\Page',
+              "position" => 1,
+              "content" => '{"html": "<p>Vul hier de algemene voorwaarden in.</p>"}',
+            ]),
         ]);
 
         foreach ($pages as $page) {
