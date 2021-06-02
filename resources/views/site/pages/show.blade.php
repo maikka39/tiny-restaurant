@@ -14,7 +14,7 @@
         </div>
         <figure class="image">
             @php($image = $item->image('featured', 'desktop'))
-            <img src="{{ $image ?? "" }}" alt="Hero achtergrond foto" />
+            <img src="{{ $image ?? "" }}" alt="Hero achtergrondfoto" />
         </figure>
     </section>
     <section class="section container">
