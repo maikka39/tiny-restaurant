@@ -34,15 +34,19 @@
                 <span id="donate-form-error" class="has-text-danger hidden"></span>
                 <div class="amounts control">
                     @foreach($donationPage->donation_amounts->sortBy('position')->map(function ($obj) {return $obj->amount;}) as $amount)
-                        <label class="amount radio">
-                            <input type="radio" name="amount" value="{{$amount}}">
-                            <span>Doneer &euro;{{ number_format($amount, 2) }}</span>
-                        </label>
+                        <div>
+                            <input id="radio-amount-{{$amount}}" type="radio" name="amount" value="{{$amount}}" class="amount radio">
+                            <label for="radio-amount-{{$amount}}" class="amount label">
+                                <span>Doneer &euro;{{ number_format($amount, 2) }}</span>
+                            </label>
+                        </div>
                     @endforeach
-                    <label class="amount radio">
-                        <input type="radio" name="amount" value="custom" id="custom-amount-radio">
-                        <span>Ander bedrag...</span>
-                    </label>
+                    <div>
+                        <input type="radio" name="amount" value="custom" id="custom-amount-radio" class="amount radio">
+                        <label for="custom-amount-radio" class="amount label">
+                            <span>Ander bedrag...</span>
+                        </label>
+                    </div>
                 </div>
                 <h2 class="title is-size-4 has-text-weight-bold">Kies zelf een bedrag</h2>
                 <div class="custom-amount field">
