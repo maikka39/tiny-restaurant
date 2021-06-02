@@ -73,6 +73,10 @@ return [
     ],
     'locale' => 'nl',
     'fallback_locale' => 'en',
+    'available_user_locales' => [
+        'en',
+        'nl',
+    ],
     'block_editor' => [
         'block_preview_render_childs' => false, // indicates if childs should be rendered when using repeater in blocks
         'blocks' => [
