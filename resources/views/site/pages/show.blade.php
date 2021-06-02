@@ -17,7 +17,7 @@
             <img src="{{ $image ?? "" }}" alt="Hero achtergrond foto" />
         </figure>
     </section>
-    <section class="section">
+    <section class="section container">
         {!! $item->renderBlocks(false) !!}
     </section>
 @endsection
