@@ -24,15 +24,18 @@ class NewsItemFactory extends Factory
 
     /**
      * Define the model's default state.
-     * Model currently defined for the NewsItemSearchTest.
+     * Model currently defined for the NewsItemSearchTest
+     *
+     * @return array
      */
     public function definition(): array
     {
         return [
             'title' => $this->faker->ean8,
             'published' => $this->faker->boolean,
-            'description' => self::$descriptionPrefix .
-                $this->faker->paragraph(2, true),
+            'description' =>
+                self::$descriptionPrefix.
+                $this->faker->paragraph(2, true)
         ];
     }
 }

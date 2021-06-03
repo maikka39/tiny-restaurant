@@ -9,8 +9,7 @@ class Partner extends Model
 {
     use HasFactory;
 
-    public function municipalities()
-    {
+    public function municipalities () {
         return $this->belongsTo(Municipality::class);
     }
 }

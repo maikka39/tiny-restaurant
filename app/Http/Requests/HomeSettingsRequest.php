@@ -28,7 +28,7 @@ class HomeSettingsRequest extends FormRequest
             'banner_description' => ['required', 'string', 'max:150'],
             'links' => ['array', 'max:10'],
             'links.*.name' => ['required', 'string'],
-            'links.*.url' => ['required', 'url'],
+            'links.*.url' => ['required', 'url'] 
         ];
     }
 }

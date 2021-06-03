@@ -18,7 +18,7 @@ class HomepageRequest extends Request
             'banner' => ['required', 'string'],
             'repeaters.homepage_link_items' => ['array', 'max:10'],
             'repeaters.homepage_link_items.*.name' => ['required', 'string'],
-            'repeaters.homepage_link_items.*.url' => ['required', 'url'],
+            'repeaters.homepage_link_items.*.url' => ['required', 'url']
         ];
     }
 }

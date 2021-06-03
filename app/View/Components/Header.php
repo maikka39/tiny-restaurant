@@ -8,12 +8,14 @@ class Header extends Component
 {
     /**
      * Title that is displayed on the header.
+     * 
      */
     public $title;
 
     /**
      * A featured image for the page.
      * This is optional.
+     * 
      */
     public $featured;
 

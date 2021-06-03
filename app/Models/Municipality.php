@@ -3,20 +3,18 @@
 namespace App\Models;
 
 use A17\Twill\Models\Behaviors\HasBlocks;
+use A17\Twill\Models\Behaviors\HasSlug;
 use A17\Twill\Models\Behaviors\HasMedias;
 use A17\Twill\Models\Behaviors\HasRevisions;
-use A17\Twill\Models\Behaviors\HasSlug;
 use A17\Twill\Models\Model;
+
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
-class Municipality extends Model
+class Municipality extends Model 
 {
-    use HasBlocks;
-    use HasSlug;
-    use HasMedias;
-    use HasRevisions;
+    use HasBlocks, HasSlug, HasMedias, HasRevisions;
 
-    public function farmers(): HasMany
+    public function farmers (): HasMany
     {
         return $this->hasMany(Farmer::class);
     }
@@ -26,11 +24,11 @@ class Municipality extends Model
         'title',
         'description',
     ];
-
+    
     public $slugAttributes = [
         'title',
     ];
-
+    
     public $mediasParams = [
         'municipality_picture' => [
             'desktop' => [
@@ -62,7 +60,7 @@ class Municipality extends Model
         ],
     ];
 
-    public function projects()
+    public function projects() 
     {
         return $this->morphToMany(Project::class, 'involved', 'project_involved');
     }

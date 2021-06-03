@@ -16,27 +16,27 @@ class MunicipalitySeeder extends Seeder
      */
     public function run()
     {
-        $municipalities = [[
+        $municipalities = array([
                 'title' => 'Laarbeek',
                 'description' => 'Dit is de pagina van gemeente Laarbeek, de groenste gemeente van Europa, en het thuisfront van het Tiny Restaurant!',
-            ], [
+            ],[
                 'title' => 'Boekel',
                 'description' => 'Boekel had veel te lijden tijdens corona, maar onze boeren hebben het volgehouden!',
             ],
-        ];
+        );
 
         foreach ($municipalities as $municipality) {
             $model = Municipality::create([
-                'title' => $municipality['title'],
-                'description' => $municipality['description'],
-                'published' => true,
+                'title' => $municipality["title"],
+                'description' => $municipality["description"],
+                'published' => true
             ]);
 
             MunicipalitySlug::create([
-                'slug' => Str::slug($municipality['title']),
+                'slug' => Str::slug($municipality["title"]),
                 'locale' => 'en',
                 'active' => true,
-                'municipality_id' => $model->id,
+                'municipality_id' => $model->id
             ]);
         }
     }

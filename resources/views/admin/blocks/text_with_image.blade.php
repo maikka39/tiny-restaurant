@@ -1,3 +1,4 @@
+<?
 @twillBlockTitle('Tekst met afbeelding')
 @twillBlockIcon('text')
 

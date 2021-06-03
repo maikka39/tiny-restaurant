@@ -23,14 +23,14 @@ class FarmerTest extends DuskTestCase
         $model = Municipality::create([
             'title' => 'Laarbeek',
             'description' => 'Laarbeek',
-            'published' => true,
+            'published' => true
         ]);
 
         MunicipalitySlug::create([
             'slug' => Str::slug('Laarbeek'),
             'locale' => 'en',
             'active' => true,
-            'municipality_id' => $model->id,
+            'municipality_id' => $model->id
         ]);
     }
 
@@ -40,7 +40,7 @@ class FarmerTest extends DuskTestCase
      *
      * @return void
      */
-    public function adminCanCreateFarmer()
+    public function admin_can_create_farmer()
     {
         $user = User::find(1);
         $this->browse(function (Browser $browser) use ($user) {
@@ -60,7 +60,7 @@ class FarmerTest extends DuskTestCase
                 ->press('Aanmaken');
 
             //Editing the content of the municipality
-            $farmerDescription = 'Dit is de pagina van Hans van Lierop';
+            $farmerDescription = "Dit is de pagina van Hans van Lierop";
             $browser
                 ->waitForReload()
                 ->assertUrlIs(config('app.url') . '/admin/farmers/1/edit')

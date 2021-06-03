@@ -30,7 +30,6 @@ class HomepageController extends ModuleController
     public function admin()
     {
         $page = Homepage::first();
-
         return view('admin.homepages.form', $this->form($page->id));
     }
 }

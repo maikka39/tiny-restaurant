@@ -7,6 +7,7 @@ use App\Models\HomepageLinkItem;
 
 class HomepageLinkItemRepository extends ModuleRepository
 {
+
     public function __construct(HomepageLinkItem $model)
     {
         $this->model = $model;

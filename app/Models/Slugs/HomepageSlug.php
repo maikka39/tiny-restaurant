@@ -10,7 +10,7 @@ class HomepageSlug extends Model
         'slug',
         'locale',
         'active',
-        'homepage_id',
+        'homepage_id'
     ];
-    protected $table = 'homepage_slugs';
+    protected $table = "homepage_slugs";
 }

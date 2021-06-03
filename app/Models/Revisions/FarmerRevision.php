@@ -6,5 +6,5 @@ use A17\Twill\Models\Revision;
 
 class FarmerRevision extends Revision
 {
-    protected $table = 'farmer_revisions';
+    protected $table = "farmer_revisions";
 }

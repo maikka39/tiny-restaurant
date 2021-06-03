@@ -11,10 +11,7 @@ use App\Models\NewsItem;
 
 class NewsItemRepository extends ModuleRepository
 {
-    use HandleBlocks;
-    use HandleMedias;
-    use HandleRevisions;
-    use HandleFiles;
+    use HandleBlocks, HandleMedias, HandleRevisions, HandleFiles;
 
     public function __construct(NewsItem $model)
     {

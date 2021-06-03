@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use A17\Twill\Http\Controllers\Admin\ModuleController;
-use App\Models\Project;
 use App\Repositories\FarmerRepository;
+use App\Models\Project;
 use App\Repositories\MunicipalityRepository;
 use Illuminate\Http\Request;
 
@@ -23,7 +23,7 @@ class ProjectController extends ModuleController
                 return $project->created_at;
             });
 
-        if (request()->has('search') && null != request()->query('search')) {
+        if(request()->has('search') && request()->query('search') != null) {
             $publishedProjects = $publishedProjects->filter(function ($project, $key) {
                 return $project->filter(request()->query('search'));
             })->all();
@@ -34,13 +34,13 @@ class ProjectController extends ModuleController
         ]);
     }
 
-    public function view($slug)
-    {
-        $project = Project::forSlug($slug)->firstOrFail();
 
+    public function view($slug) {
+        $project = Project::forSlug($slug)->firstOrFail();
         return view('site.project', [
-            'item' => $project,
+            'item' => $project
         ]);
+
     }
 
     public function formData($request)
@@ -50,4 +50,5 @@ class ProjectController extends ModuleController
             'farmers' => app()->make(FarmerRepository::class)->listAll(),
         ];
     }
+    
 }
