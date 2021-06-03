@@ -14,7 +14,7 @@ class ProjectRequest extends Request
             'description',
             'active',
             'date',
-            'address'
+            'address',
         ];
     }
 
@@ -26,7 +26,7 @@ class ProjectRequest extends Request
             'description' => ['required', 'string'],
             'active' => ['required', 'boolean'],
             'date' => ['required', 'date'],
-            'address' => ['required', 'string']
+            'address' => ['required', 'string'],
         ];
     }
 }

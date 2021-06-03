@@ -15,7 +15,7 @@ class SuperAdminSeeder extends Seeder
     public function run()
     {
         User::create([
-            'name' => "Admin",
+            'name' => 'Admin',
             'email' => 'admin@admin.dev',
             'role' => 'SUPERADMIN',
             'published' => true,

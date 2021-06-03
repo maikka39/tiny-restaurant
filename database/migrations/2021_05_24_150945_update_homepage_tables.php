@@ -13,7 +13,7 @@ class UpdateHomepageTables extends Migration
      */
     public function up()
     {
-        Schema::table('homepages', function(Blueprint $table) {
+        Schema::table('homepages', function (Blueprint $table) {
             $table->renameColumn('banner', 'slogan');
             $table->string('button_text');
             $table->string('button_url');
@@ -27,7 +27,7 @@ class UpdateHomepageTables extends Migration
      */
     public function down()
     {
-        Schema::table('homepages', function(Blueprint $table) {
+        Schema::table('homepages', function (Blueprint $table) {
             $table->renameColumn('slogan', 'banner');
             $table->removeColumn('button_text');
             $table->removeColumn('button_url');

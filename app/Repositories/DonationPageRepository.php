@@ -3,7 +3,6 @@
 namespace App\Repositories;
 
 use A17\Twill\Repositories\Behaviors\HandleBlocks;
-use A17\Twill\Repositories\Behaviors\HandleSlugs;
 use A17\Twill\Repositories\Behaviors\HandleMedias;
 use A17\Twill\Repositories\Behaviors\HandleRepeaters;
 use A17\Twill\Repositories\Behaviors\HandleRevisions;
@@ -12,7 +11,10 @@ use App\Models\DonationPage;
 
 class DonationPageRepository extends ModuleRepository
 {
-    use HandleBlocks, HandleMedias, HandleRevisions, HandleRepeaters;
+    use HandleBlocks;
+    use HandleMedias;
+    use HandleRevisions;
+    use HandleRepeaters;
 
     public function __construct(DonationPage $model)
     {

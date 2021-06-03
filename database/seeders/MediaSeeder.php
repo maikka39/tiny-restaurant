@@ -4,9 +4,6 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
-use App\Models\DonationPage;
-use App\Models\DonationPageAmount;
-use Illuminate\Support\Facades\Schema;
 
 class MediaSeeder extends Seeder
 {
@@ -17,25 +14,25 @@ class MediaSeeder extends Seeder
 
         $id = DB::table($twillMediasTable)->max('id');
 
-        $id = ($id == null) ? 1 : $id + 1;
+        $id = (null == $id) ? 1 : $id + 1;
 
-        list($width, $height) = getimagesize("storage/app/public/uploads/seeder/".$filename);
+        list($width, $height) = getimagesize('storage/app/public/uploads/seeder/' . $filename);
         $smallest_wh = min($width, $height);
 
         DB::table($twillMediasTable)->insert([
             'id' => $id,
-            'uuid' => 'seeder/'.$filename,
+            'uuid' => 'seeder/' . $filename,
             'filename' => $filename,
             'alt_text' => $alt_text,
             'width' => $width,
             'height' => $height,
         ]);
 
-        if ($width / $height >= 16/9) {
-            $width16x9 = $height * (16/9);
+        if ($width / $height >= 16 / 9) {
+            $width16x9 = $height * (16 / 9);
             $height16x9 = $height;
         } else {
-            $height16x9 = $width * (9/16);
+            $height16x9 = $width * (9 / 16);
             $width16x9 = $width;
         }
 

@@ -4,8 +4,6 @@ namespace App\Http\Controllers\Admin;
 
 use A17\Twill\Http\Controllers\Admin\ModuleController;
 use App\Models\Farmer;
-use App\Models\Municipality;
-use App\Repositories\FarmerRepository;
 use App\Repositories\MunicipalityRepository;
 use Illuminate\Database\Eloquent\Builder;
 
@@ -22,7 +20,7 @@ class FarmerController extends ModuleController
         })->firstOrFail();
 
         return view('site.farmer', [
-            'item' => $farmer
+            'item' => $farmer,
         ]);
     }
 

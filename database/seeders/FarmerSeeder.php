@@ -5,7 +5,6 @@ namespace Database\Seeders;
 use App\Models\Farmer;
 use App\Models\Slugs\FarmerSlug;
 use Carbon\Carbon;
-use Illuminate\Database\Seeder;
 use Illuminate\Support\Str;
 
 class FarmerSeeder extends MediaSeeder
@@ -17,7 +16,7 @@ class FarmerSeeder extends MediaSeeder
      */
     public function run()
     {
-        $farmers = array([
+        $farmers = [[
                 'name' => 'Ted van de Vossenberg',
                 'description' => '<p>
                                     Wij zijn Ted en Nicoline Vaalburg en op ons bedrijf wordt er met passie knolselderij, aardappelen en pompoenen geteeld. De teelt bevindt zich in de Schermerpolder en omstreken. Het bedrijf zelf gevestigd in Zuidschermer. Zuidschermer ligt in de gemeente Alkmaar, midden in Noord-Holland en ligt ongeveer 4 meter onder zeeniveau.
@@ -28,40 +27,40 @@ class FarmerSeeder extends MediaSeeder
                                   </p>',
                 'summary' => 'Wij zijn Ted en Nicoline Vaalburg en op ons bedrijf wordt er met passie knolselderij, aardappelen en pompoenen geteeld. De teelt bevindt zich in de Schermerpolder en omstreken. Het bedrijf zelf gevestigd in Zuidschermer. Zuidschermer ligt in de gemeente Alkmaar, midden in Noord-Holland en ligt ongeveer 4 meter onder zeeniveau.',
                 'address' => 'Vollenweg 3, Venhorst',
-                'municipality' => 2
-            ],[
+                'municipality' => 2,
+            ], [
                 'name' => 'Hans van Lierop',
                 'description' => 'Dit is een standaard beschrijving die aangemaakt wordt door het CMS van het Tiny Restaurant!',
                 'summary' => 'Dit is een korte beschrijving van de pagina en de informatie van Hans van Lierop',
                 'address' => 'Derneffestraat 11b, Mariahout',
-                'municipality' => 1
+                'municipality' => 1,
             ],
-        );
+        ];
 
         foreach ($farmers as $farmer) {
             $model = Farmer::create([
-                'name' => $farmer["name"],
-                'description' => $farmer["description"],
-                'address' => $farmer["address"],
-                'municipality_id' => $farmer["municipality"],
+                'name' => $farmer['name'],
+                'description' => $farmer['description'],
+                'address' => $farmer['address'],
+                'municipality_id' => $farmer['municipality'],
                 'summary' => $farmer['summary'],
                 'published' => true,
-                'created_at' => Carbon::now()->subDays(random_int(50, 400))
+                'created_at' => Carbon::now()->subDays(random_int(50, 400)),
             ]);
 
             FarmerSlug::create([
-                'slug' => Str::slug($farmer["name"]),
+                'slug' => Str::slug($farmer['name']),
                 'locale' => 'en',
                 'active' => true,
-                'farmer_id' => $model->id
+                'farmer_id' => $model->id,
             ]);
 
             $this->seed_media(
                 "App\Models\Farmer",
                 $model->id,
-                "farmer_profile",
-                preg_replace('/[^a-z]/', "_", strtolower($model->name)).".jpg",
-                "Foto van ".$model->name,
+                'farmer_profile',
+                preg_replace('/[^a-z]/', '_', strtolower($model->name)) . '.jpg',
+                'Foto van ' . $model->name,
             );
         }
     }

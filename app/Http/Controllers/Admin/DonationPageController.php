@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Admin;
 
 use A17\Twill\Http\Controllers\Admin\ModuleController;
 use App\Models\DonationPage;
-use App\Repositories\ProjectRepository;
 
 class DonationPageController extends ModuleController
 {
@@ -22,6 +21,7 @@ class DonationPageController extends ModuleController
     public function admin()
     {
         $page = DonationPage::first();
+
         return view('admin.donationPages.form', $this->form($page->id));
     }
 }
