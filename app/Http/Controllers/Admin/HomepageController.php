@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Admin;
 
 use A17\Twill\Http\Controllers\Admin\ModuleController;
 use App\Models\Homepage;
-use App\Models\HomepageLinkItem;
 use App\Repositories\ProjectRepository;
 
 class HomepageController extends ModuleController
@@ -32,6 +31,7 @@ class HomepageController extends ModuleController
     public function admin()
     {
         $page = Homepage::first();
+
         return view('admin.homepages.form', $this->form($page->id));
     }
 }

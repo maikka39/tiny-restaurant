@@ -2,8 +2,8 @@
 
 namespace App\View\Components;
 
-use Illuminate\View\Component;
 use App\Models\Homepage;
+use Illuminate\View\Component;
 
 class Footer extends Component
 {
@@ -14,7 +14,7 @@ class Footer extends Component
      *
      * @return void
      */
-    public function __construct() 
+    public function __construct()
     {
         $this->links = Homepage::first()->homepage_link_items;
     }

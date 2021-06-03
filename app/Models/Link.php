@@ -11,7 +11,7 @@ class Link extends Model
 
     protected $fillable = ['name', 'url'];
 
-    public function homes() 
+    public function homes()
     {
         return $this->belongsToMany(Home::class);
     }

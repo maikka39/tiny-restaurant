@@ -9,7 +9,7 @@ class DonationPageAmount extends Model
 {
     use HasPosition;
 
-    public $table = "donation_page_amounts";
+    public $table = 'donation_page_amounts';
 
     protected $fillable = [
         'published',

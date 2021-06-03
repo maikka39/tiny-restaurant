@@ -9,7 +9,7 @@ class HomepageLinkItem extends Model
 {
     use HasPosition;
 
-    public $table = "homepage_link_item";
+    public $table = 'homepage_link_item';
 
     protected $fillable = [
         'published',

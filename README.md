@@ -41,6 +41,14 @@ php artisan route:cache
 php artisan serve
 ```
 
+### Setup tools
+
+Setup tools used for development
+
+```bash
+composer install --working-dir=tools/php-cs-fixer
+```
+
 ### Run tests
 
 To run unit-tests use the following command:
@@ -56,6 +64,14 @@ php artisan dusk
 ```
 
 _Note: Make sure your php server is running before running this command. You also need to have Google Chrome installed on your computer._
+
+### Linting
+
+To fix linting issues, use the following command:
+
+``` bash
+php tools/php-cs-fixer/vendor/bin/php-cs-fixer fix
+```
 
 ## Style guide Tiny Restaurant
 

@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Models\Page;
 use A17\Twill\Http\Controllers\Admin\ModuleController;
+use App\Models\Page;
 use Illuminate\Database\Eloquent\Builder;
 
 class PageController extends ModuleController
@@ -19,7 +19,7 @@ class PageController extends ModuleController
         })->firstOrFail();
 
         return view('site.pages.show', [
-            'item' => $page
+            'item' => $page,
         ]);
     }
 }

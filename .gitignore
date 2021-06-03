@@ -78,6 +78,8 @@ fabric.properties
 # .idea/misc.xml
 # *.ipr
 
+*.cache
+
 public/js
 public/css
 public/fonts

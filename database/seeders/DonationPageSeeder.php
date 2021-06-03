@@ -2,11 +2,8 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
 use App\Models\DonationPage;
 use App\Models\DonationPageAmount;
-use Illuminate\Support\Facades\Schema;
 
 class DonationPageSeeder extends MediaSeeder
 {
@@ -45,9 +42,9 @@ class DonationPageSeeder extends MediaSeeder
         $this->seed_media(
             "App\Models\DonationPage",
             1,
-            "hero",
-            "donate_cover.jpg",
-            "Donate cover image",
+            'hero',
+            'donate_cover.jpg',
+            'Donate cover image',
         );
     }
 }

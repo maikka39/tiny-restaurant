@@ -10,7 +10,7 @@ class MunicipalitySlug extends Model
         'slug',
         'locale',
         'active',
-        'municipality_id'
+        'municipality_id',
     ];
-    protected $table = "municipality_slugs";
+    protected $table = 'municipality_slugs';
 }

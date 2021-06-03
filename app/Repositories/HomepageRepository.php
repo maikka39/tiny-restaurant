@@ -3,16 +3,20 @@
 namespace App\Repositories;
 
 use A17\Twill\Repositories\Behaviors\HandleBlocks;
-use A17\Twill\Repositories\Behaviors\HandleSlugs;
 use A17\Twill\Repositories\Behaviors\HandleMedias;
 use A17\Twill\Repositories\Behaviors\HandleRepeaters;
 use A17\Twill\Repositories\Behaviors\HandleRevisions;
+use A17\Twill\Repositories\Behaviors\HandleSlugs;
 use A17\Twill\Repositories\ModuleRepository;
 use App\Models\Homepage;
 
 class HomepageRepository extends ModuleRepository
 {
-    use HandleBlocks, HandleSlugs, HandleMedias, HandleRevisions, HandleRepeaters;
+    use HandleBlocks;
+    use HandleSlugs;
+    use HandleMedias;
+    use HandleRevisions;
+    use HandleRepeaters;
 
     public function __construct(Homepage $model)
     {
@@ -21,7 +25,6 @@ class HomepageRepository extends ModuleRepository
 
     public function getFormFields($object)
     {
-
         $fields = parent::getFormFields($object);
 
         $fields = $this->getFormFieldsForRepeater($object, $fields, 'homepage_link_items', 'HomepageLinkItem');

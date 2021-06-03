@@ -1,16 +1,15 @@
 <?php
 
+use App\Http\Controllers\Admin\DonationPageController;
+use App\Http\Controllers\Admin\FarmerController;
+use App\Http\Controllers\Admin\HomepageController;
+use App\Http\Controllers\Admin\MunicipalityController;
 use App\Http\Controllers\Admin\NewsItemController;
+use App\Http\Controllers\Admin\PageController;
+use App\Http\Controllers\Admin\ProjectController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\PaymentController;
-use App\Http\Controllers\MailController;
-use App\Http\Controllers\Admin\FarmerController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Admin\MunicipalityController;
-use App\Http\Controllers\Admin\ProjectController;
-use App\Http\Controllers\Admin\PageController;
-use App\Http\Controllers\Admin\HomepageController;
-use App\Http\Controllers\Admin\DonationPageController;
 
 /*
 |--------------------------------------------------------------------------

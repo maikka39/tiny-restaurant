@@ -10,12 +10,12 @@ class ContactComposer
     /**
      * Bind data to the view.
      *
-     * @param  View  $view
      * @return void
      */
     public function compose(View $view)
     {
-        $view->with('projectList',
+        $view->with(
+            'projectList',
             Project::all()
                 ->where('published', true)
                 ->where('date', '>', now())
