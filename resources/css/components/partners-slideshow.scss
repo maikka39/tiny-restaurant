@@ -12,6 +12,10 @@
             padding: 0 4rem;
             box-shadow: none;
 
+            @include until($tablet) {
+                padding: 0 0;
+            }
+
             .card-content {
                 display: grid;
                 grid-template-columns: 3fr 2fr;
