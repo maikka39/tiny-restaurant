@@ -3,9 +3,22 @@
 namespace App\View\Components;
 
 use Illuminate\View\Component;
+use App\Models\Homepage;
 
-class footer extends Component
+class Footer extends Component
 {
+    public $links;
+
+    /**
+     * Create a new component instance.
+     *
+     * @return void
+     */
+    public function __construct() 
+    {
+        $this->links = Homepage::first()->homepage_link_items;
+    }
+
     /**
      * Get the view / contents that represent the component.
      *

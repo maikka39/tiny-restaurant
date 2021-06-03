@@ -3,9 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use A17\Twill\Http\Controllers\Admin\ModuleController;
-use App\Repositories\MunicipalityRepository;
-
-use Illuminate\Http\Request;
+use Illuminate\Database\Eloquent\Builder;
 use App\Models\Municipality;
 
 class MunicipalityController extends ModuleController
@@ -14,10 +12,21 @@ class MunicipalityController extends ModuleController
     protected $permalinkBase = 'gemeente';
 
     public function view ($slug) {
-        $municipality = Municipality::forSlug($slug)->firstOrFail();
-        
+        $municipality = Municipality::whereHas('slugs', function (Builder $query) use ($slug) {
+            $query->where('slug', $slug);
+        })->firstOrFail();
+
+        $projects = $municipality
+            ->projects()
+            ->where('published', true)
+            ->where('date', '>', now())
+            ->orderBy('date')
+            ->take(3)
+            ->get();
+
         return view('site.municipality', [
-            'municipality' => $municipality
+            'municipality' => $municipality,
+            'projects' => $projects
         ]);
     }
 }

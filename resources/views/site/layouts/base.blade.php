@@ -4,10 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    
     <link rel="icon" type="image/png" href="{{ asset('img/favicon.png') }}" />
-    
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <title>@isset($title){{ $title }} | @endisset{{ env('APP_NAME') }}</title>
 
     {{--  Import Google Fonts  --}}
@@ -22,9 +19,9 @@
 </head>
 <body>
     <x-navbar />
-    <div class="container--full">
-        @yield('content')
-    </div>
+
+    @yield('content')
+
     <x-footer />
 </body>
 </html>

@@ -15,7 +15,9 @@ class Homepage extends Model
     protected $fillable = [
         'published',
         'title',
-        'banner',
+        'slogan',
+        'button_text',
+        'button_url',
     ];
 
     public $slugAttributes = [
@@ -23,7 +25,7 @@ class Homepage extends Model
     ];
 
     public $mediasParams = [
-        'cover' => [
+        'hero' => [
             'desktop' => [
                 [
                     'name' => 'desktop',
@@ -60,6 +62,6 @@ class Homepage extends Model
 
     public function partner_items()
     {
-        return $this->hasMany(HomepagePartnerItem::class);
+        return $this->hasMany(HomepagePartnerItem::class)->where('deleted_at', NULL);
     }
 }

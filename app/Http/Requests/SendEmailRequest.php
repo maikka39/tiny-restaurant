@@ -24,9 +24,28 @@ class SendEmailRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name'=>'required|string',
+            'firstname'=>'required|string',
+            'lastname'=>'required|string',
             'email'=>'required|email',
-            'message'=>'required|string'
+            'message'=>'required|string',
+            'g-recaptcha-response' => 'required|captcha',
+        ];
+    }
+
+    /**
+     * Get the error messages for the defined validation rules.
+     *
+     * @return array
+     */
+    public function messages(): array
+    {
+        return [
+            'firstname.required' => 'Laat ons weten wie je bent!',
+            'lastname.required' => 'Laat ons weten wie je bent!',
+            'email.required' => 'Laat ons weten hoe we je kunnen bereiken!',
+            'message.required' => 'Je bericht is nog leeg!',
+            'g-recaptcha-response.required' => 'Laat ons weten dat je geen robot bent!',
+            'g-recaptcha-response.captcha' => 'Er is iets fout gegaan, probeer het opnieuw.',
         ];
     }
 }

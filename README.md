@@ -19,6 +19,9 @@ npm run dev
 # Build Twill files
 php artisan twill:build
 
+# Publish lang files (enter 'yes' when asked)
+php artisan lang:publish
+
 # Generate an app key
 php artisan key:generate
 

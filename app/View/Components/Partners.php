@@ -2,7 +2,7 @@
 
 namespace App\View\Components;
 
-use App\Repositories\HomepagePartnerItemRepository;
+use App\Models\Homepage;
 use Illuminate\View\Component;
 
 class Partners extends Component
@@ -16,7 +16,7 @@ class Partners extends Component
      */
     public function __construct()
     {
-        $this->partners = app(HomepagePartnerItemRepository::class)->where('deleted_at', NULL)->get();
+        $this->partners = Homepage::first()->partner_items;
     }
 
     /**

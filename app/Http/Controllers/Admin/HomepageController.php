@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use A17\Twill\Http\Controllers\Admin\ModuleController;
 use App\Models\Homepage;
+use App\Models\HomepageLinkItem;
 use App\Repositories\ProjectRepository;
 
 class HomepageController extends ModuleController
@@ -23,6 +24,7 @@ class HomepageController extends ModuleController
 
         return view('site.homepage', [
             'homepage' => $page,
+            'highlight' => $page->homepage_link_items->where('homepage_id', 1)->where('position', 1)->first(),
             'agendaItems' => $agendaItems,
         ]);
     }

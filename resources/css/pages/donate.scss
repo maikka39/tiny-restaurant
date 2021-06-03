@@ -1,0 +1,148 @@
+@import "../vars";
+@import "bulma/sass/utilities/mixins";
+
+.donate {
+    display: grid;
+    grid-template-columns: .9fr 1fr;
+    gap: 2rem;
+
+    min-height: 700px;
+    height: 80vh;
+    max-height: 750px;
+
+    @include until($desktop) {
+        grid-template-columns: 1fr;
+        height: auto;
+        max-height: unset;
+        min-height: unset;
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    .image-container {
+        clip-path: polygon(0% 0%, 100% 0%, 75% 100%, 0% 100%);
+        position: relative;
+
+        @include until($desktop) {
+            clip-path: none;
+            height: 200px;
+        }
+
+        .image {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+
+            @include until($desktop) {
+                position: static;
+                height: 100%;
+            }
+
+            img {
+                object-fit: cover;
+                height: 100%;
+                width: 100%;
+            }
+        }
+    }
+
+    .info-container {
+        padding: 6rem 4rem;
+
+        @include until($desktop) {
+            padding: 0rem 4rem;
+        }
+
+        h1 {
+            padding-bottom: 1.5rem;
+        }
+
+        h2 {
+            padding-top: 2.8rem;
+        }
+
+        .amounts {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            padding-top: .3rem;
+
+            @include until($tablet) {
+                grid-template-columns: 1fr;
+            }
+
+            .amount {
+                &.label {
+                    padding: 1rem 0rem;
+                    margin: 1rem;
+                    display: flex;
+                    align-items: center;
+                    position: relative;
+                    font-weight: inherit;
+
+                    &:before, &:after {
+                        border-radius: 50%;
+                        position: absolute;
+                        top: 50%;
+                        left: 0;
+                        transform: translate(-50%, -50%);
+                        background-color: none;
+                        content: '';
+                        display: inline-block;
+                        border: 2px solid;
+                    }
+
+                    &:before {
+                        width: 1.8rem;
+                        height: 1.8rem;
+                        border-color: $text;
+                    }
+
+                    &:hover:before {
+                        border-color: lighten($text, 40);
+                    }
+
+                    &:after {
+                        width: 1.3rem;
+                        height: 1.3rem;
+                        border-color: white;
+                    }
+
+
+                    span {
+                        padding-left: 2.2rem;
+                    }
+                }
+
+                &.radio:checked + .label:before {
+                    border-color: $primary;
+                }
+
+                &.radio:checked + .label:after {
+                    background-color: $primary;
+                }
+
+                &.radio {
+                    width: unset;
+                    height: unset;
+                    position: absolute;
+                    visibility: hidden;
+                }
+            }
+        }
+
+        .custom-amount {
+            padding: 0.3rem 0 1.5rem;
+
+            .icon {
+                font-weight: 400;
+                font-size: 1.5em;
+                height: 100%;
+                width: 1.67em;
+            }
+        }
+    }
+}

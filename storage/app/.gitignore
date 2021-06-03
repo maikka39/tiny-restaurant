@@ -1,3 +1,6 @@
 *
-!public/
 !.gitignore
+!public/
+!public/uploads/
+!public/uploads/seeder/
+!public/uploads/seeder/*
