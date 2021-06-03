@@ -5,7 +5,7 @@ namespace App\View\Components;
 use App\Models\Homepage;
 use Illuminate\View\Component;
 
-class Partners extends Component
+class PartnersSlideshow extends Component
 {
     public $partners;
 
@@ -26,6 +26,6 @@ class Partners extends Component
      */
     public function render()
     {
-        return view('components.partners');
+        return view('components.partners-slideshow');
     }
 }
