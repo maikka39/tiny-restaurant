@@ -41,6 +41,14 @@ php artisan route:cache
 php artisan serve
 ```
 
+### Setup tools
+
+Setup tools used for development
+
+```bash
+composer install --working-dir=tools/php-cs-fixer
+```
+
 ### Run tests
 
 To run unit-tests use the following command:
