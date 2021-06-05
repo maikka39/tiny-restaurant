@@ -7,7 +7,8 @@
         "watch-poll": "mix watch -- --watch-options-poll=1000",
         "hot": "mix watch --hot",
         "prod": "npm run production",
-        "production": "mix --production"
+        "production": "mix --production",
+        "lint": "stylelint ./resources/ --fix"
     },
     "devDependencies": {
         "@creativebulma/bulma-divider": "^1.1.0",
@@ -20,6 +21,8 @@
         "sass": "^1.32.8",
         "sass-loader": "^10.1.1",
         "stylelint": "^13.13.1",
+        "stylelint-config-recommended-scss": "^4.2.0",
+        "stylelint-scss": "^3.19.0",
         "tailwindcss": "^2.0.3"
     },
     "dependencies": {
