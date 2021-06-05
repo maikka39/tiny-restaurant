@@ -8,7 +8,8 @@
         "hot": "mix watch --hot",
         "prod": "npm run production",
         "production": "mix --production",
-        "lint": "stylelint ./resources/ --fix"
+        "lint": "stylelint ./resources/**/*.scss",
+        "lint-fix": "stylelint ./resources/**/*.scss --fix"
     },
     "devDependencies": {
         "@creativebulma/bulma-divider": "^1.1.0",

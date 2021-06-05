@@ -35,14 +35,14 @@
     }
 
     .divider {
-      background: rgba(0,0,0, 50%);
+      background: rgba(0, 0, 0, 50%);
       border: none;
       margin: 2rem 0;
     }
   }
 
   .hero-content > * {
-     flex-basis: 100%;
+    flex-basis: 100%;
   }
 }
 
@@ -57,6 +57,7 @@
     font-weight: 500;
     margin-bottom: 1rem;
   }
+
   .story-body * {
     text-align: center;
     font-size: 28px;
@@ -93,8 +94,8 @@
       height: 128px;
 
       &:hover {
-        -webkit-box-shadow: 0 0 5px 0 rgba(0,0,0,0.5);
-        box-shadow: 0 0 5px 0 rgba(0,0,0,0.5);
+        -webkit-box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.5);
+        box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.5);
       }
     }
 
@@ -129,24 +130,25 @@
   }
 
   .story {
-    margin: 0 .5rem .5rem;
+    margin: 0 0.5rem 0.5rem;
     text-align: center;
 
     .story-header {
       font-size: 28px;
       margin-bottom: 1rem;
     }
+
     .story-body * {
       font-size: 16px;
     }
   }
 
   .section-farmer-gallery {
-    padding: 1rem .5rem;
+    padding: 1rem 0.5rem;
 
     .gallery-header {
       font-size: 24px;
-      margin-bottom: .8rem;
+      margin-bottom: 0.8rem;
     }
 
     .gallery-text {
@@ -155,7 +157,7 @@
     }
 
     .gallery {
-      grid-gap: .5rem;
+      grid-gap: 0.5rem;
       grid-template-columns: repeat(2, auto);
       margin: 1rem 1.5rem 0 1.5rem;
 

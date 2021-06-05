@@ -24,8 +24,8 @@ $timeline-content-width: 50% !default;
       border: 1px solid $timeline-border-color;
       border-radius: 0;
       padding: 1.3rem 1.2rem;
+    }
   }
-}
 
   .timeline-item {
     display: flex;
@@ -55,7 +55,8 @@ $timeline-content-width: 50% !default;
       order: 2;
       position: relative;
 
-      &::before, &::after {
+      &::before,
+      &::after {
         content: '';
         position: absolute;
         border: 1px solid $timeline-border-color;
@@ -153,18 +154,19 @@ $timeline-content-width: 50% !default;
 }
 
 @media screen and (min-width: 1025px) and (max-width: 1611px) {
-    .timeline {
-      .timeline-item {
-        .timeline-image {
-          img {
-            width: 100%;
-          }
+  .timeline {
+    .timeline-item {
+      .timeline-image {
+        img {
+          width: 100%;
         }
-        .timeline-content {
-          .timeline-content-wrapper {
-            width: 100%
-          }
+      }
+
+      .timeline-content {
+        .timeline-content-wrapper {
+          width: 100%;
         }
       }
     }
+  }
 }
