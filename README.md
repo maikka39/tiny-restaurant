@@ -2,7 +2,8 @@
 
 ## Run locally
 
-Firstly, we have to configure the environment. To do this, create a duplicate of the `.env.example` file and rename it to `.env`. Then, open this file and change the variables to those suiting your environment.
+Firstly, we have to configure the environment. To do this, create a duplicate of the `.env.example` file and rename it
+to `.env`. Then, open this file and change the variables to those suiting your environment.
 
 Afterwards, run the following commands:
 
@@ -63,9 +64,14 @@ For running the Dusk tests, use this command:
 php artisan dusk
 ```
 
-_Note: Make sure your php server is running before running this command. You also need to have Google Chrome installed on your computer._
+_Note: Make sure your php server is running before running this command. You also need to have Google Chrome installed
+on your computer._
 
 ### Linting
+
+This project has linters for PHP and SCSS.
+
+#### PHP
 
 To fix linting issues, use the following command:
 
@@ -73,9 +79,18 @@ To fix linting issues, use the following command:
 php tools/php-cs-fixer/vendor/bin/php-cs-fixer fix
 ```
 
+#### Stylelint
+
+Be sure to install a [stylelint plugin](https://stylelint.io/user-guide/integrations/editor) for your IDE. Use the following command to lint specific files.
+
+``` bash
+stylelint {path} --fix
+```
+
 ## Style guide Tiny Restaurant
 
-All pages should follow the new [Design](https://www.figma.com/file/bNZsokOLB7Pk2AQjaNB3Hv/Tiny-Restaurant?node-id=207%3A275)
+All pages should follow the
+new [Design](https://www.figma.com/file/bNZsokOLB7Pk2AQjaNB3Hv/Tiny-Restaurant?node-id=207%3A275)
 
 Almost no custom CSS is needed, just use the [Bulma classes](https://bulma.io/documentation/)
 
