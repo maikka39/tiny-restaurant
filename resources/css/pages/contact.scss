@@ -1,0 +1,42 @@
+@import "../vars";
+@import "~bulma";
+
+.contact-text {
+  color: $primary;
+}
+
+.main-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@include desktop {
+  .block {
+    margin: 10px 50px;
+    display: flex; /* required */
+    flex-flow: row nowrap; /* required */
+  }
+
+  .block .background,
+  .block .foreground {
+    box-sizing: border-box; /* required */
+    width: 100%; /* required */
+    flex: none; /* required */
+  }
+
+  .block .background {
+    background: $primary-background;
+    border: solid 1px grey;
+    padding: 15px;
+    margin-top: 5%;
+    margin-bottom: -5%;
+  }
+
+  .block .foreground {
+    border: solid 1px grey;
+    background-color: white;
+    margin-left: -95%; /* required */
+    padding: 5% 5% 5% 5%;
+  }
+}

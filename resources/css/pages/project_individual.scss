@@ -1,0 +1,256 @@
+@import "../vars";
+@import "bulma/sass/utilities/mixins";
+
+.section-project-hero {
+  padding: 0;
+
+  .project-hero-image {
+    max-width: 50vw;
+  }
+
+  .project-hero-no-image {
+    background-color: $placeholder-background;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 75vh;
+
+    p {
+      font-weight: bold;
+      margin-top: 1rem;
+    }
+  }
+
+  .hero-content-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 4rem;
+
+    .project-name {
+      font-size: 56px;
+    }
+
+    .municipality-text {
+      font-size: 24px;
+    }
+
+    a {
+      margin-top: 3rem;
+      max-width: 25%;
+    }
+  }
+
+  .hero-content > * {
+    flex-basis: 100%;
+  }
+}
+
+.section-project-info {
+  background-color: $secondary-background;
+  padding: 4rem;
+
+  .project-info-title {
+    font-size: 48px;
+    margin-bottom: 4rem;
+  }
+
+  .info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: repeat(2, auto);
+    gap: 6rem 4.5rem;
+
+    .when,
+    .where,
+    .what {
+      h4 {
+        font-weight: bold;
+        font-size: 24px;
+      }
+
+      p {
+        font-size: 18px;
+        color: rgba(0, 0, 0, 0.8);
+      }
+    }
+
+    .map iframe {
+      width: 100%;
+      height: 100%;
+      min-height: 25vh;
+    }
+  }
+}
+
+.section-attendees {
+  padding: 4rem;
+
+  .attendee-title {
+    font-size: 48px;
+    margin-bottom: 4rem;
+  }
+
+  .no-attendees {
+    font-weight: bold;
+    font-size: 24px;
+    margin-bottom: 2rem;
+  }
+
+  .attendees {
+    display: grid;
+    gap: 1rem 3rem;
+    justify-content: center;
+    grid-template-columns: repeat(2, auto);
+
+    .attendee {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      justify-content: space-between;
+
+      .attendee-image,
+      .attendee-no-image {
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 100vh;
+        margin-bottom: 3rem;
+      }
+
+      .attendee-no-image {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $placeholder-background;
+      }
+
+      .attendee-title {
+        font-weight: bold;
+        font-size: 24px;
+        margin-bottom: 2rem;
+      }
+
+      .attendee-text {
+        font-size: 18px;
+        color: rgba(0, 0, 0, 0.8);
+        margin-bottom: 3rem;
+      }
+
+      .button {
+        width: 20%;
+      }
+    }
+  }
+}
+
+@include until($desktop) {
+  .section-project-hero {
+    .hero-content {
+      flex-direction: column;
+
+      .project-hero-image {
+        max-width: 100vw;
+      }
+
+      .hero-content-info {
+        padding: 1rem;
+
+        .project-name {
+          font-size: 40px;
+        }
+
+        .municipality-text {
+          font-size: 18px;
+        }
+
+        a {
+          max-width: 100%;
+        }
+      }
+    }
+  }
+
+  .section-project-info {
+    padding: 2rem;
+
+    .project-info-title {
+      font-size: 32px;
+      margin-bottom: 2rem;
+    }
+
+    .info-grid {
+      grid-template-columns: repeat(1, auto);
+      grid-template-rows: repeat(4, auto);
+      gap: 3rem 4.5rem;
+
+      .when,
+      .where,
+      .what {
+        h4 {
+          font-size: 18px;
+        }
+
+        p {
+          font-size: 16px;
+        }
+      }
+
+      .what {
+        grid-row: 4 / 4;
+      }
+
+      .map iframe {
+        grid-row: 3 / 3;
+      }
+    }
+  }
+
+  .section-attendees {
+    padding: 2rem;
+
+    .attendee-title {
+      font-size: 32px;
+      margin-bottom: 2rem;
+    }
+
+    .no-attendees {
+      font-size: 18px;
+    }
+
+    .attendees {
+      gap: 2rem 3rem;
+      justify-content: center;
+      grid-template-columns: repeat(1, auto);
+
+      .attendee {
+        .attendee-image,
+        .attendee-no-image {
+          margin-bottom: 2rem;
+        }
+
+        .attendee-title {
+          font-size: 18px;
+          margin-bottom: 1rem;
+        }
+
+        .attendee-text {
+          font-size: 16px;
+          margin-bottom: 2rem;
+        }
+
+        .button {
+          width: 50%;
+        }
+      }
+    }
+  }
+}
+
+@include until($tablet) {
+  .attendee-image,
+  .attendee-no-image {
+    margin: 0 auto 2rem;
+  }
+}

@@ -1,12 +1,24 @@
-window.addEventListener('DOMContentLoaded', () => {
-    const hamburger = document.getElementById('hamburgerbtn');
-    const mobileMenu = document.getElementById('mobileMenu');
+document.addEventListener('DOMContentLoaded', () => {
+    const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
 
-    if(hamburger == null || mobileMenu == null) {
-        return;
+    if ($navbarBurgers.length > 0) {
+        $navbarBurgers.forEach( el => {
+            el.addEventListener('click', () => {
+                const target = el.dataset.target;
+                const $target = document.getElementById(target);
+                el.classList.toggle('is-active');
+                $target.classList.toggle('is-active');
+            });
+        });
     }
 
-    hamburger.addEventListener('click', () => {
-        mobileMenu.classList.toggle('active');
-    });
+    const $navDropdowns = Array.prototype.slice.call(document.querySelectorAll('.navbar-item.has-dropdown'), 0);
+
+    if($navDropdowns.length > 0) {
+        $navDropdowns.forEach( el => {
+            el.addEventListener('click', () => {
+                el.children[1].classList.toggle('show-dropdown');
+            });
+        });
+    }
 });

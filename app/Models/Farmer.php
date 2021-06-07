@@ -3,29 +3,34 @@
 namespace App\Models;
 
 use A17\Twill\Models\Behaviors\HasBlocks;
-use A17\Twill\Models\Behaviors\HasSlug;
-use A17\Twill\Models\Behaviors\HasMedias;
 use A17\Twill\Models\Behaviors\HasFiles;
+use A17\Twill\Models\Behaviors\HasMedias;
 use A17\Twill\Models\Behaviors\HasRevisions;
+use A17\Twill\Models\Behaviors\HasSlug;
 use A17\Twill\Models\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class Farmer extends Model 
+class Farmer extends Model
 {
-    use HasBlocks, HasSlug, HasMedias, HasFiles, HasRevisions;
+    use HasBlocks;
+    use HasSlug;
+    use HasMedias;
+    use HasFiles;
+    use HasRevisions;
 
     protected $fillable = [
         'published',
         'name',
         'address',
         'description',
-        'municipality_id'
+        'municipality_id',
+        'summary',
     ];
 
     public $slugAttributes = [
         'name',
     ];
-    
+
     public $mediasParams = [
         'farmer_profile' => [
             'desktop' => [
@@ -62,9 +67,13 @@ class Farmer extends Model
         return $this->belongsTo(Municipality::class);
     }
 
-    public function projects() 
+    public function projects()
     {
         return $this->morphToMany(Project::class, 'involved', 'project_involved');
     }
 
+    public function getJoinedTime()
+    {
+        return $this->created_at->diff(now())->days;
+    }
 }

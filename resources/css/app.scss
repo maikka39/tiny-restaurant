@@ -7,26 +7,15 @@
 @import "~@fortawesome/fontawesome-free/scss/brands";
 @import "~@fortawesome/fontawesome-free/scss/regular";
 
-// Tailwind
-@import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
-
 // Theme
-@import 'vars';
-@import 'typography';
-@import 'layout';
+@import "vars";
+@import "global";
 
-// Components
-@import 'components/buttons';
-@import 'components/lists';
-@import 'components/box';
-@import 'components/forms';
-@import 'components/hero';
-@import 'components/footer';
-@import 'components/sidecard';
-@import 'components/logo';
-@import 'components/navbar';
+// Bulma
+@import "bulma/bulma";
+@import "~@creativebulma/bulma-divider";
 
-// Partials
-@import 'project';
+// Global Components
+@import "components/navbar";
+@import "components/footer";
+@import "components/errors";

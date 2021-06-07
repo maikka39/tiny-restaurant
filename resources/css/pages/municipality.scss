@@ -1,0 +1,177 @@
+@use "../vars" as *;
+@use "../components/carousel" as carousel;
+@use "~bulma/sass/utilities/mixins" as mixins;
+
+$page-margin: 4rem;
+
+.section-municipality-hero {
+  display: flex;
+  flex-direction: row;
+
+  .municipality-image {
+    flex-basis: 100%;
+    object-fit: cover;
+  }
+
+  .municipality-text {
+    flex-basis: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 $page-margin;
+
+    .municipality-title {
+      font-size: 48px;
+    }
+
+    .municipality-description {
+      font-size: 24px;
+    }
+  }
+}
+
+.section-farmers {
+  background-color: $primary-background;
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  padding-top: 5rem;
+
+  .info {
+    flex-basis: 100%;
+    margin: 0 $page-margin $page-margin;
+
+    h2 {
+      font-size: 48px;
+    }
+
+    p {
+      font-size: 36px;
+      color: rgba(0, 0, 0, 0.8);
+      margin: $page-margin 0;
+    }
+
+    .map {
+      flex-grow: 1;
+      height: 100%;
+      width: 100%;
+
+      iframe {
+        height: 65%;
+        width: 100%;
+      }
+    }
+  }
+
+  .farmers {
+    flex-basis: 100%;
+    display: flex;
+
+    .farmer-card {
+      height: 100%;
+
+      .farmer-image {
+        object-fit: cover;
+      }
+    }
+  }
+}
+
+.section-projects {
+  margin: 0 $page-margin;
+
+  .project-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    .project-image {
+      object-fit: cover;
+    }
+
+    .card-content {
+      display: flex;
+      flex-direction: column;
+
+      div.content {
+        flex-grow: 1;
+      }
+    }
+  }
+}
+
+$responsive-margin: $page_margin / 3;
+
+@include mixins.until(mixins.$desktop) {
+  .section-municipality-hero {
+    flex-direction: column;
+
+    .municipality-text {
+      margin: 0 $responsive-margin;
+
+      .municipality-title {
+        font-size: 28px;
+      }
+
+      .municipality-description {
+        font-size: 18px;
+      }
+    }
+  }
+
+  .section-farmers {
+    flex-direction: column;
+    padding-top: 2rem;
+    height: 100%;
+
+    .info {
+      margin: 0 $responsive-margin $responsive-margin;
+
+      h2 {
+        font-size: 28px;
+        margin-bottom: 0.5rem;
+      }
+
+      p {
+        font-size: 20px;
+        margin: $responsive-margin 0;
+      }
+    }
+  }
+
+  .section-projects {
+    margin: 0 $responsive-margin;
+  }
+}
+
+@include mixins.until(mixins.$fullhd) {
+  .section-farmers {
+    height: 80%;
+
+    .info {
+      margin: 0 $responsive-margin $responsive-margin;
+
+      h2 {
+        font-size: 28px;
+        margin-bottom: 0.5rem;
+      }
+
+      p {
+        font-size: 20px;
+        margin: $responsive-margin 0;
+      }
+    }
+  }
+}
+
+@include mixins.from(mixins.$desktop) {
+  .municipality-image {
+    max-width: 50vw;
+  }
+}
+
+@include mixins.from(mixins.$widescreen) {
+  .farmer-image {
+    max-height: 60vh;
+  }
+}

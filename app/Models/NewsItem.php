@@ -9,17 +9,24 @@ use A17\Twill\Models\Behaviors\HasRevisions;
 use A17\Twill\Models\Model;
 use A17\Twill\Services\FileLibrary\FileService;
 use Carbon\Carbon;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Support\Str;
 
-class NewsItem extends Model 
+class NewsItem extends Model
 {
-    use HasBlocks, HasMedias, HasRevisions, HasFiles;
+    use HasBlocks;
+    use HasMedias;
+    use HasRevisions;
+    use HasFiles;
+    use HasFactory;
 
     protected $fillable = [
         'published',
         'title',
         'description',
+        'summary',
     ];
-    
+
     public $mediasParams = [
         'cover' => [
             'flexible' => [
@@ -40,7 +47,7 @@ class NewsItem extends Model
     ];
 
     public $filesParams = [
-        'attachments'
+        'attachments',
     ];
 
     public function getUpdatedAtAttribute($value)
@@ -51,36 +58,45 @@ class NewsItem extends Model
     public function getDescriptionAttribute($value)
     {
         //check for admin overview page
-        if(url()->current() === config('app.url') . '/admin/newsItems') {
-            return mb_strimwidth($value, 0, 50, "...");
-        } else {
-            return $value;
+        if (url()->current() === config('app.url') . '/admin/newsItems') {
+            return mb_strimwidth($value, 0, 50, '...');
         }
+
+        return $value;
     }
 
     public function getTimeSincePosted()
     {
-        Carbon::setLocale('nl');
         return $this->created_at->longAbsoluteDiffForHumans(now(), 1);
     }
 
     public function getCreatedTimeForView(): string
     {
-        Carbon::setLocale('nl');
-        return $this->created_at->isoFormat('dddd D MMMM YYYY, H:mm') . ' uur';
+        return $this->created_at->isoFormat('D MMMM YYYY');
     }
 
     private $previewTypes = ['mp3', 'mp4', 'pdf'];
+
     public function getTwillFilesWithName(): array
     {
         $returnableObjects = [];
         foreach ($this->files as $file) {
-            $fileObject["url"] = FileService::getUrl($file->uuid);
-            $fileObject["filename"] = $file->filename;
+            $fileObject['url'] = FileService::getUrl($file->uuid);
+            $fileObject['filename'] = $file->filename;
             $fileType = explode('.', $file->filename);
-            $fileObject["hasPreview"] = in_array(end($fileType), $this->previewTypes);
+            $fileObject['hasPreview'] = in_array(end($fileType), $this->previewTypes);
             array_push($returnableObjects, $fileObject);
         }
+
         return $returnableObjects;
+    }
+
+    public function filter($search): bool
+    {
+        $search = Str::lower($search);
+
+        return
+            Str::contains(Str::lower($this->title), $search) ||
+            Str::contains(Str::lower($this->description), $search);
     }
 }

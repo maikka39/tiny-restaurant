@@ -1,7 +1,6 @@
 <?php
 
 return [
-
     /*
     |--------------------------------------------------------------------------
     | Application Name
@@ -80,7 +79,7 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'nl',
 
     /*
     |--------------------------------------------------------------------------
@@ -135,7 +134,6 @@ return [
     */
 
     'providers' => [
-
         /*
          * Laravel Framework Service Providers...
          */
@@ -165,6 +163,7 @@ return [
         /*
          * Package Service Providers...
          */
+        Anhskohbo\NoCaptcha\NoCaptchaServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -174,7 +173,7 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-
+        App\Providers\ViewServiceProvider::class,
     ],
 
     /*
@@ -189,7 +188,6 @@ return [
     */
 
     'aliases' => [
-
         'App' => Illuminate\Support\Facades\App::class,
         'Arr' => Illuminate\Support\Arr::class,
         'Artisan' => Illuminate\Support\Facades\Artisan::class,
@@ -212,6 +210,7 @@ return [
         'Log' => Illuminate\Support\Facades\Log::class,
         'Mail' => Illuminate\Support\Facades\Mail::class,
         'Notification' => Illuminate\Support\Facades\Notification::class,
+        'NoCaptcha' => Anhskohbo\NoCaptcha\Facades\NoCaptcha::class, // recaptcha package
         'Password' => Illuminate\Support\Facades\Password::class,
         'Queue' => Illuminate\Support\Facades\Queue::class,
         'Redirect' => Illuminate\Support\Facades\Redirect::class,
@@ -226,7 +225,5 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
-
     ],
-
 ];

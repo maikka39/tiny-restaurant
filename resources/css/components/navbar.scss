@@ -1,0 +1,42 @@
+.navbar {
+  box-shadow: 3px 3px 5px 2px #ccc;
+  padding: 0 2.5rem;
+
+  .navbar-item,
+  .navbar-link {
+    color: $primary;
+  }
+
+  .navbar-link::after {
+    border-color: $primary;
+  }
+
+  .navbar-brand img {
+    width: 100%;
+    object-fit: contain;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .navbar {
+    padding: 0;
+
+    .navbar-item {
+      &.has-dropdown {
+        .navbar-dropdown {
+          display: none;
+        }
+
+        &:hover {
+          .navbar-dropdown {
+            display: block !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+.show-dropdown {
+  display: block !important;
+}

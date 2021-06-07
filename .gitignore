@@ -78,7 +78,12 @@ fabric.properties
 # .idea/misc.xml
 # *.ipr
 
+*.cache
+
 public/js
 public/css
 public/fonts
+public/img
 public/assets/admin
+
+public/mix-manifest.json

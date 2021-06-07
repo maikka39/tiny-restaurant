@@ -8,7 +8,7 @@ return [
         'block-editor' => true,
         'buckets' => true,
         'users-image' => true,
-        'settings' => true,
+        'settings' => false, // We are using a custom setting controller now.
         'dashboard' => true,
         'search' => true,
         'users-description' => false,
@@ -27,7 +27,7 @@ return [
                 'search' => true,
                 'create' => true,
                 'count' => true,
-                'search_fields' => ['name', 'description', 'address']
+                'search_fields' => ['name', 'description', 'address'],
             ],
             'App\Models\Page' => [
                 'name' => 'pages',
@@ -37,8 +37,18 @@ return [
                 'search' => true,
                 'create' => true,
                 'count' => true,
-                'search_fields' => ['title', 'description']
+                'search_fields' => ['title', 'description'],
             ],
+            // 'App\Models\Homepage' => [
+            //     'name' => 'homepages',
+            //     'label' => 'Voorpagina\'s',
+            //     'label_singular' => 'Voorpagina',
+            //     'activity' => true,
+            //     'search' => true,
+            //     'create' => false,
+            //     'count' => true,
+            //     'search_fields' => ['title', 'description']
+            // ],
             'App\Models\Municipality' => [
                 'name' => 'municipalities',
                 'label' => 'Gemeentes',
@@ -47,7 +57,7 @@ return [
                 'search' => true,
                 'create' => true,
                 'count' => true,
-                'search_fields' => ['title', 'description']
+                'search_fields' => ['title', 'description'],
             ],
             'App\Models\NewsItem' => [
                 'name' => 'newsItems',
@@ -57,35 +67,42 @@ return [
                 'search' => true,
                 'create' => true,
                 'count' => true,
-                'search_fields' => ['title', 'description']
+                'search_fields' => ['title', 'description'],
             ],
-        ]
+        ],
     ],
     'locale' => 'nl',
     'fallback_locale' => 'en',
+    'available_user_locales' => [
+        'en',
+        'nl',
+    ],
     'block_editor' => [
         'block_preview_render_childs' => false, // indicates if childs should be rendered when using repeater in blocks
         'blocks' => [
             'social_media_links' => [
                 'title' => 'Social Media Links',
                 'icon' => 'text',
-                'component' => 'a17-block-social_media_links'
+                'component' => 'a17-block-social_media_links',
             ],
             'contact_link' => [
                 'title' => 'Contact Link',
                 'icon' => 'text',
-                'component' => 'a17-block-contact_link'
+                'component' => 'a17-block-contact_link',
             ],
-            'text_with_image' => 'a17-text-with-image',
-            'contact_form' => 'a17-block-contact_form',
-            'location_map' => 'a17-block-location_map',
+            'text_with_image' => ['component' => 'a17-text-with-image'],
+            'contact_form' => ['component' => 'a17-block-contact_form'],
+            'location_map' => ['component' => 'a17-block-location_map'],
         ],
         'repeaters' => [
             'social_media_links_item' => [
                 'title' => 'Social Media link',
                 'trigger' => 'Nieuwe link toevoegen',
-                'component' => 'a17-block-social_media_links_item'
-            ]
+                'component' => 'a17-block-social_media_links_item',
+            ],
+            'partner_items' => ['component' => 'a17-block-partner_items'],
+            'homepage_link_items' => ['component' => 'a17-block-homepage_link_items'],
+            'donation_amounts' => ['component' => 'a17-block-donation_amounts'],
         ],
         'crops' => [
             'image' => [
@@ -121,5 +138,5 @@ return [
                 ],
             ],
         ],
-    ]
+    ],
 ];

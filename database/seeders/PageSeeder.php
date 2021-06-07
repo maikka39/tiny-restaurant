@@ -17,39 +17,54 @@ class PageSeeder extends Seeder
      */
     public function run()
     {
-        $pages = array([
-          "title" => 'Contact',
-          "slug" => 'contact',
-          "description" => 'Dit is de beschrijving van de contactpagina!',
-          "blocks" => array([
-              "type" => 'contact_form',
-              "blockable_type" => 'App\\Models\\Page',
-              "position" => 1,
-              "content" => '{"title": "Contact", "description": "Neem direct contact met ons op via dit formulier!"}'
-          ])
-        ]);
+        $pages = [[
+            'title' => 'Privacy',
+            'slug' => 'privacy',
+            'description' => 'Lees hier onze Privacy Policy',
+            'published' => true,
+            'blocks' => [[
+              'type' => 'text',
+              'blockable_type' => 'App\\Models\\Page',
+              'position' => 1,
+              'content' => '{"html": "<p>Vul hier de privacy policy in.</p>"}',
+            ]],
+        ], [
+            'title' => 'Algemene voorwaarden',
+            'slug' => 'algemene-voorwaarden',
+            'description' => 'Lees hier onze Algemene Voorwaarden',
+            'published' => true,
+            'blocks' => [[
+              'type' => 'text',
+              'blockable_type' => 'App\\Models\\Page',
+              'position' => 1,
+              'content' => '{"html": "<p>Vul hier de algemene voorwaarden in.</p>"}',
+            ]],
+        ]];
 
         foreach ($pages as $page) {
             $model = Page::create([
-                'title' => $page["title"],
-                'description' => $page["description"]
+                'title' => $page['title'],
+                'description' => $page['description'],
+                'published' => $page['published'],
             ]);
 
             PageSlug::create([
-                'slug' => Str::slug($page["slug"]),
+                'slug' => Str::slug($page['slug']),
                 'locale' => 'en',
                 'active' => true,
-                'page_id' => $model->id
+                'page_id' => $model->id,
             ]);
 
-            foreach ($page["blocks"] as $blocks) {
-                Block::create([
-                    'type' => $blocks["type"],
-                    'blockable_type' =>  $blocks["blockable_type"],
-                    'position' => $blocks["position"],
-                    'content' => json_decode($blocks["content"]),
-                    'blockable_id' => $model->id
-                ]);
+            if (array_key_exists('blocks', $page)) {
+                foreach ($page['blocks'] as $blocks) {
+                    Block::create([
+                        'type' => $blocks['type'],
+                        'blockable_type' => $blocks['blockable_type'],
+                        'position' => $blocks['position'],
+                        'content' => json_decode($blocks['content']),
+                        'blockable_id' => $model->id,
+                    ]);
+                }
             }
         }
     }

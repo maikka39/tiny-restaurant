@@ -1,50 +1,50 @@
-<nav class="navbar navbar-expand-lg navbar-light">
-    <div class="w-container mx-auto collapse navbar-collapse" id="toggler">
-        <div class="navbar-flex">
-            <div class="navbar-flex-wrapper">
-                <div class="navbar-hidden">
-                    <div class="navbar-links">
-                        <a href="{{url('/home')}}" class="navbar-text" aria-current="page">Tiny Restaurant</a>
-                        <a href="{{url('/nieuws')}}" class="navbar-text">Nieuws</a>
-                        <a href="{{url('#')}}" class="navbar-text">Agenda</a>
-                        <div class="dropdown">
-                            <button class="drop-button navbar-text">Gemeentes</button>
-                            <div class="dropdown-content">
-                                @foreach($municipalities as $municipality)
-                                    <a href="{{ route('municipality.show', $municipality->title) }}">{{$municipality->title}}</a>
-                                @endforeach
-                            </div>
-                        </div>
-                        <a href="#" class="navbar-text">Contact</a>
-                    </div>
-                </div>
-            </div>
+<nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+        <a class="navbar-item" href="{{ route('homepages.show') }}">
+            <img src="{{ asset('img/logo.png') }}" alt="Tiny Restaurant Logo">
+        </a>
 
-            <a href="{{url('/')}}" class="sm:hidden navbar-text navbar-text-small" aria-current="page">Tiny Restaurant</a>
-
-            <button class="navbar-toggler toggler-example sm:invisible" id="hamburgerbtn">
-                <span class="dark-blue-text">
-                    <i class="fas fa-bars fa-1x"></i>
-                </span>
-            </button>
-        </div>
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="frontend-navbar">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
     </div>
 
-    <div class="sm:hidden" id="mobile-menu">
-        <div class="mobile-navbar">
-            <div class="mobile-navbar-flex" id="mobileMenu">
-                <a href="{{url('/')}}" class="navbar-text navbar-text-small" aria-current="page">Home</a>
-                <a href="{{url('/nieuws')}}" class="navbar-text navbar-text-small">Nieuws</a>
-                <a href="{{url('#')}}" class="navbar-text navbar-text-small">Agenda</a>
-                <div class="dropdown flex justify-center flex-col">
-                    <button class="dropdown-button navbar-text navbar-text-small w-auto">Gemeentes</button>
-                    <div class="dropdown-content">
+    <div id="frontend-navbar" class="navbar-menu">
+        <div class="navbar-end">
+            <div class="navbar-start">
+                <a class="navbar-item" href="{{ route('newsItems.show') }}">Nieuws</a>
+                <a class="navbar-item" href="{{ route('project.showAll') }}">Projecten</a>
+                <div class="navbar-item has-dropdown is-hoverable" data-target="dropdown-link">
+                    <a class="navbar-link">Gemeentes</a>
+                    <div class="navbar-dropdown">
                         @foreach($municipalities as $municipality)
-                            <a class="text-center" href="{{ route('municipality.show', $municipality->title) }}">{{$municipality->title}}</a>
+                            <a class="navbar-item" id="dropdown-link" href="{{ route('municipality.show', $municipality->title) }}">
+                                {{ $municipality->title }}
+                            </a>
                         @endforeach
                     </div>
                 </div>
-                <a href="#" class="navbar-text navbar-text-small">Contact</a>
+                <div class="navbar-item">
+                    <div class="field is-grouped">
+                        <p class="control">
+                            <a class="button" href="{{ url('doneer') }}">
+                                <span class="icon">
+                                    <i class="fas fa-hand-holding-heart"></i>
+                                </span>
+                                <span>
+                                    Doneer
+                                </span>
+                            </a>
+                        </p>
+                        <p class="control">
+                            <a class="button is-primary" href="{{ route('contact.show') }}">
+                                <span class="has-text-weight-semibold">Contact</span>
+                            </a>
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

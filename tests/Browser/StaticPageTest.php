@@ -16,6 +16,7 @@ class StaticPageTest extends DuskTestCase
         parent::setUp();
         $this->artisan('twill:update');
         $this->artisan('db:seed --class=SuperAdminSeeder');
+        $this->artisan('db:seed --class=HomepageSeeder');
     }
 
     /**
@@ -29,7 +30,7 @@ class StaticPageTest extends DuskTestCase
      *
      * @return void
      */
-    public function admin_can_create_static_page()
+    public function adminCanCreateStaticPage()
     {
         $user = User::find(1);
         $this->browse(function (Browser $browser) use ($user) {
@@ -61,7 +62,7 @@ class StaticPageTest extends DuskTestCase
             $browser
                 ->clickLink('Open in editor')
                 ->pause(250)
-                ->drag('[data-title="Contactformulier"]','.editorPreview__content')
+                ->drag('[data-title="Contactformulier"]', '.editorPreview__content')
                 ->pause(250)
                 ->press('Close')
                 ->click('.switcher__button')

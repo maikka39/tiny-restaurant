@@ -1,29 +1,34 @@
 <?php
 
 return [
-    'settings' => [
-        'title' => 'Instellingen',
-        'route' => 'admin.settings',
-        'params' => ['section' => 'homepage'],
-        'primary_navigation' => [
-            'homepage' => [
-                'title' => 'Hoofdpagina',
-                'route' => 'admin.settings',
-                'params' => ['section' => 'homepage']
-            ],
-        ]
+    // 'settings' => [
+    //     'title' => 'Instellingen',
+    //     'route' => 'admin.settings',
+    //     'params' => ['section' => 'homepage'],
+    //     'primary_navigation' => [
+    //         'homepage' => [
+    //             'title' => 'Hoofdpagina',
+    //             'route' => 'admin.settings',
+    //             'params' => ['section' => 'homepage']
+    //         ],
+    //     ]
+    // ],
+    'homepages' => [
+        'title' => 'Homepagina',
+        'route' => 'admin.homepage',
+        // 'module' => true
     ],
     'pages' => [
         'title' => 'Pagina\'s',
-        'module' => true
+        'module' => true,
     ],
     'municipalities' => [
         'title' => 'Gemeentes',
-        'module' => true
+        'module' => true,
     ],
     'farmers' => [
         'title' => 'Boeren',
-        'module' => true
+        'module' => true,
     ],
     'newsItems' => [
         'title' => 'Nieuwsberichten',
@@ -31,7 +36,10 @@ return [
     ],
     'projects' => [
         'title' => 'Projecten',
-        'module' => true
-    ]
+        'module' => true,
+    ],
+    'donationpages' => [
+        'title' => 'Doneren',
+        'route' => 'admin.donationPage',
+    ],
 ];
-
