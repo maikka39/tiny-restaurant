@@ -28,7 +28,7 @@
 
     .hero-news-title {
       font-size: 48px;
-      margin-bottom: .5rem;
+      margin-bottom: 0.5rem;
     }
 
     .hero-news-summary {
@@ -52,11 +52,12 @@
 }
 
 .section-news-attachments {
-   .attachments-title {
-     font-size: 36px;
-     text-align: center;
-     margin-bottom: 5rem;
-   }
+  .attachments-title {
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 5rem;
+  }
+
   .attachments {
     display: grid;
     gap: 1rem;
@@ -71,9 +72,10 @@
 
       img {
         object-fit: cover;
+
         &:hover {
-          -webkit-box-shadow: 0 0 5px 0 rgba(0,0,0,0.5);
-          box-shadow: 0 0 5px 0 rgba(0,0,0,0.5);
+          -webkit-box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.5);
+          box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.5);
         }
       }
 
@@ -104,13 +106,13 @@
 
     .images {
       grid-template-columns: repeat(1, auto);
-      gap: .5rem;
+      gap: 0.5rem;
     }
 
     .hero-text {
       .hero-news-title {
         font-size: 26px;
-        margin-bottom: .5rem;
+        margin-bottom: 0.5rem;
       }
 
       .hero-news-summary {
@@ -131,6 +133,7 @@
       font-size: 24px;
       margin-bottom: 2rem;
     }
+
     .attachments {
       grid-template-columns: repeat(1, auto);
 

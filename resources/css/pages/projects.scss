@@ -29,6 +29,7 @@ $hero-width: 70%;
 .section-timeline {
   padding: 0;
 }
+
 .project-footer {
   display: flex;
   flex-direction: row;
@@ -57,7 +58,7 @@ $hero-width: 70%;
     width: 90%;
 
     input::placeholder {
-      font-size: .85rem;
+      font-size: 0.85rem;
     }
   }
 }

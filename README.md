@@ -2,7 +2,8 @@
 
 ## Run locally
 
-Firstly, we have to configure the environment. To do this, create a duplicate of the `.env.example` file and rename it to `.env`. Then, open this file and change the variables to those suiting your environment.
+Firstly, we have to configure the environment. To do this, create a duplicate of the `.env.example` file and rename it to `.env`. Then, open this file and
+change the variables to those suiting your environment.
 
 Afterwards, run the following commands:
 
@@ -37,7 +38,7 @@ php artisan dusk:chrome-driver
 # Refresh route cache
 php artisan route:cache
 
-# Run the applicaten
+# Run the application
 php artisan serve
 ```
 
@@ -67,10 +68,22 @@ _Note: Make sure your php server is running before running this command. You als
 
 ### Linting
 
+This project has linters for PHP and SCSS.
+
+#### PHP
+
 To fix linting issues, use the following command:
 
 ``` bash
 php tools/php-cs-fixer/vendor/bin/php-cs-fixer fix
+```
+
+#### Stylelint
+
+Be sure to install a [stylelint plugin](https://stylelint.io/user-guide/integrations/editor) for your IDE. Use the following command to lint specific files.
+
+``` bash
+stylelint {path} --fix
 ```
 
 ## Style guide Tiny Restaurant

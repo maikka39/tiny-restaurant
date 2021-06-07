@@ -3,66 +3,64 @@
 @use "../components/carousel" as carousel;
 
 .partners-slideshow {
-    text-align: start;
+  text-align: start;
 
-    .carousel {
+  .carousel {
+    .card {
+      height: 100%;
+      padding: 0 4rem;
+      box-shadow: none;
 
-        .card {
-            height: 100%;
-            padding: 0 4rem;
-            box-shadow: none;
+      @include until($tablet) {
+        padding: 0 0;
+      }
 
-            @include until($tablet) {
-                padding: 0 0;
-            }
+      .card-content {
+        display: grid;
+        grid-template-columns: 3fr 2fr;
+        grid-template-rows: repeat(3, auto);
+        row-gap: 2rem;
+        column-gap: 5rem;
+        height: 100%;
 
-            .card-content {
-                display: grid;
-                grid-template-columns: 3fr 2fr;
-                grid-template-rows: repeat(3, auto);
-                row-gap: 2rem;
-                column-gap: 5rem;
-                height: 100%;
-
-
-                @include until($desktop) {
-                    grid-template-columns: 1fr;
-                    height: auto;
-                }
-
-                .info-container {
-                    .info {
-                        //align-self: center;
-                    }
-                }
-
-                .image {
-                    height: 100%;
-                    border-radius: 15px;
-                    border: 1.5px solid #000000;
-                    padding: 3rem;
-                    position: relative;
-                    grid-area: 1 / 2 / last-line / 2;
-
-                    @include until($desktop) {
-                        grid-area: auto;
-
-                        @include from($tablet) {
-                            height: 15rem;
-                        }
-                    }
-
-                    img {
-                        height: 75%;
-                        width: 75%;
-                        top: 50%;
-                        left: 50%;
-                        transform: translate(-50%, -50%);
-                        object-fit: contain;
-                        position: absolute;
-                    }
-                }
-            }
+        @include until($desktop) {
+          grid-template-columns: 1fr;
+          height: auto;
         }
+
+        .info-container {
+          .info {
+            //align-self: center;
+          }
+        }
+
+        .image {
+          height: 100%;
+          border-radius: 15px;
+          border: 1.5px solid #000;
+          padding: 3rem;
+          position: relative;
+          grid-area: 1 / 2 / last-line / 2;
+
+          @include until($desktop) {
+            grid-area: auto;
+
+            @include from($tablet) {
+              height: 15rem;
+            }
+          }
+
+          img {
+            height: 75%;
+            width: 75%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            object-fit: contain;
+            position: absolute;
+          }
+        }
+      }
     }
+  }
 }
