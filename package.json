@@ -9,7 +9,7 @@
         "prod": "npm run production",
         "production": "mix --production",
         "lint": "stylelint ./resources/**/*.scss",
-        "lint-fix": "stylelint ./resources/**/*.scss --fix"
+        "lint-fix": "stylelint ./resources/**/*.scss --fix",
     },
     "devDependencies": {
         "@creativebulma/bulma-divider": "^1.1.0",
