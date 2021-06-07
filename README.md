@@ -38,7 +38,7 @@ php artisan dusk:chrome-driver
 # Refresh route cache
 php artisan route:cache
 
-# Run the applicaten
+# Run the application
 php artisan serve
 ```
 
