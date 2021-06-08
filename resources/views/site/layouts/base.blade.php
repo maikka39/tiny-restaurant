@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    @php
+        $permalink = config('app.url') . rtrim("/" . ltrim(request()->path(), '/'), '/') . "/";
+        $pagename = $title ?? config('app.name');
+        $pagedescription = $description ?? "Welkom bij " . config('app.name');
+    @endphp
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -14,11 +20,40 @@
     <meta name="msapplication-TileColor" content="#00a300">
     <meta name="theme-color" content="#ffffff">
 
+    <link rel="canonical" href="{{ $permalink }}" />
+
+    <meta property="og:site_name" content="{{ config('app.name') }}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title"
+        content="{{ $pagename }}" />
+    <meta property="og:description"
+        content="{{ $pagedescription }}" />
+    <meta property="og:url" content="{{ $permalink }}" />
+    @isset($image)
+    <meta property="og:image" content="{{ $image }}" />
+    @endisset
+
+    <meta itemprop="name" content="{{ $pagename }}">
+    <meta itemprop="description" content="{{ $pagedescription }}">
+    @isset($image)
+    <meta itemprop="image" content="{{ $image }}"/>
+    @endisset
+
+    <meta name="twitter:card" content="summary_large_image" />
+    @isset($image)
+    <meta name="twitter:image" content="{{ $image }}" />
+    <meta name="twitter:image:alt" content="{{ $image_alt ?? "Cover image" }}" />
+    @endisset
+    <meta name="twitter:title" content="{{ $pagename }}" />
+    <meta name="twitter:description"
+        content="{{ $pagedescription }}" />
+    <meta name="twitter:url" content="{{ $permalink }}" />
+
+
     @stack('meta')
 
-    <link rel="canonical" href="{{ config('app.url') . rtrim("/" . ltrim(request()->path(), '/'), '/') . "/"}}" />
 
-    <title>@isset($title){{ $title }} | @endisset{{ env('APP_NAME') }}</title>
+    <title>@isset($title){{ $title }} | @endisset{{ config('app.name') }}</title>
 
     {{--  Import Google Fonts  --}}
     <link rel="preconnect" href="https://fonts.gstatic.com">
