@@ -3,8 +3,8 @@
 <head>
     @php
         $permalink = config('app.url') . rtrim("/" . ltrim(request()->path(), '/'), '/') . "/";
-        $pagename = $title ? strip_tags($title) : config('app.name');
-        $pagedescription = $description ? strip_tags($description) : "Welkom bij " . config('app.name');
+        $pagename = isset($title) ? strip_tags($title) : config('app.name');
+        $pagedescription = isset($description) ? strip_tags($description) : "Welkom bij " . config('app.name');
     @endphp
 
     <meta charset="UTF-8">
