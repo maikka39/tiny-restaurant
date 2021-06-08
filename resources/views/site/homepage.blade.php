@@ -42,7 +42,7 @@
                         <div class="container is-flex-tablet is-justify-content-center is-flex-wrap-wrap">
                             <div class="is-flex is-align-items-center is-justify-content-center is-flex-wrap-wrap mb-5 grow">
                                 <figure class="image is-64x64 mr-2">
-                                        <img type="image/png" src="{{ asset('img/link_icons/'.$highlight->logo_url)}}" />
+                                        <img type="image/png" src="{{ asset('img/link_icons/'.$highlight->logo_url)}}" alt="Logo van {{$highlight->name}}" />
                                 </figure>
                                 <h1 class="has-text-black has-text-centered is-size-2">{{$highlight->name}}</h1>
                             </div>
@@ -74,7 +74,7 @@
                                         <div class="is-flex is-justify-content-center">
                                             <div class="is-flex is-flex-direction-column is-justify-content-center is-align-items-center grow">
                                                 <figure class="image is-64x64">
-                                                    <img type="image/png" src="{{ asset('img/link_icons/'.$link->logo_url) }}" />
+                                                    <img type="image/png" src="{{ asset('img/link_icons/'.$link->logo_url) }}" alt="Logo van {{$highlight->name}}" />
                                                 </figure>
                                                 <p class="has-text-weight-medium has-text-centered">{{$link->name}}</p>
                                             </div>
