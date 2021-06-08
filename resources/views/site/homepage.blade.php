@@ -1,8 +1,7 @@
 @extends("site.layouts.base", [
     "title" => $homepage->title,
     "description" => $homepage->slogan,
-    "image" => $homepage->image('hero', 'desktop'),
-    "image_alt" => $homepage->imageAltText('hero'),
+    "image" => $homepage->imageAsArray('hero', 'desktop'),
 ])
 
 @push('styles')

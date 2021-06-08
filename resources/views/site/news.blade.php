@@ -1,5 +1,7 @@
-@extends('site.layouts.base', [
-    "title" => "Nieuwsberichten"
+@extends("site.layouts.base", [
+    "title" => "Nieuwsberichten",
+    "description" => "Bekijk het laatste nieuws van het Tiny Restaurant en check wat er momenteel gaande is.",
+    "image" => NULL,
 ])
 
 @push('styles')

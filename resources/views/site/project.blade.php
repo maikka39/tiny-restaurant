@@ -1,4 +1,8 @@
-@extends('site.layouts.base')
+@extends("site.layouts.base", [
+    "title" => $item->name,
+    "description" => $item->description,
+    "image" => $item->imageAsArray('project_image', 'desktop'),
+])
 
 @push('styles')
     <link rel="stylesheet" href="{{ asset('css/project_individual.css') }}">
