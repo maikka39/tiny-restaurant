@@ -3,8 +3,8 @@
 <head>
     @php
         $permalink = config('app.url') . rtrim("/" . ltrim(request()->path(), '/'), '/') . "/";
-        $pagename = $title ?? config('app.name');
-        $pagedescription = $description ?? "Welkom bij " . config('app.name');
+        $pagename = $title ? strip_tags($title) : config('app.name');
+        $pagedescription = $description ? strip_tags($description) : "Welkom bij " . config('app.name');
     @endphp
 
     <meta charset="UTF-8">
@@ -30,19 +30,21 @@
         content="{{ $pagedescription }}" />
     <meta property="og:url" content="{{ $permalink }}" />
     @isset($image)
-    <meta property="og:image" content="{{ $image }}" />
+    <meta property="og:image" content="{{ $image["src"] }}" />
+    <meta property="og:image:width" content="{{ $image["width"] }}" />
+    <meta property="og:image:height" content="{{ $image["height"] }}" />
     @endisset
 
     <meta itemprop="name" content="{{ $pagename }}">
     <meta itemprop="description" content="{{ $pagedescription }}">
     @isset($image)
-    <meta itemprop="image" content="{{ $image }}"/>
+    <meta itemprop="image" content="{{ $image["src"] }}"/>
     @endisset
 
     <meta name="twitter:card" content="summary_large_image" />
     @isset($image)
-    <meta name="twitter:image" content="{{ $image }}" />
-    <meta name="twitter:image:alt" content="{{ $image_alt ?? "Cover image" }}" />
+    <meta name="twitter:image" content="{{ $image["src"] }}" />
+    <meta name="twitter:image:alt" content="{{ $image["alt"] ?? "Cover image" }}" />
     @endisset
     <meta name="twitter:title" content="{{ $pagename }}" />
     <meta name="twitter:description"
