@@ -46,16 +46,16 @@
                                 </figure>
                                 <h1 class="has-text-black has-text-centered is-size-2">{{$highlight->name}}</h1>
                             </div>
-                    </a>
-                            <div class="container">
-                                <div class="content">
-                                    <p class="has-text-centered">{{ $highlight->pitch }}</p>
-                                    <a href="{{$highlight->url}}" target="_blank">
-                                        <p class="has-text-centered has-text-weight-semibold">Bekijk deze pagina</p>
-                                    </a>
-                                </div>
-                            </div>
                         </div>
+                    </a>
+                    <div class="container">
+                        <div class="content">
+                            <p class="has-text-centered">{{ $highlight->pitch }}</p>
+                            <a href="{{$highlight->url}}" target="_blank">
+                                <p class="has-text-centered has-text-weight-semibold">Bekijk deze pagina</p>
+                            </a>
+                        </div>
+                    </div>
                 </div>
                 <div class="column is-1"></div>
                 
