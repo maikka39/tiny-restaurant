@@ -41,5 +41,6 @@
             </div>
             <p class="pt-4 has-text-centered">KvK: 69331359, NL97 RABO 0321670485</p>
             <p class="pt-6 has-text-centered">&copy; TinyRestaurant. 2021. We houden van onze boeren!</p>
+        </div>
     </div>
 </footer>
