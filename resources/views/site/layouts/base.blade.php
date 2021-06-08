@@ -8,6 +8,8 @@
 
     @stack('meta')
 
+    <link rel="canonical" href="{{ config('app.url') . rtrim("/" . ltrim(request()->path(), '/'), '/') . "/"}}" />
+
     <title>@isset($title){{ $title }} | @endisset{{ env('APP_NAME') }}</title>
 
     {{--  Import Google Fonts  --}}
