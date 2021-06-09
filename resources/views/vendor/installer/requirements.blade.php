@@ -18,7 +18,7 @@
                 @if($type == 'php')
                     <strong>
                         <small>
-                            (version {{ $phpSupportInfo['minimum'] }} required)
+                            (versie {{ $phpSupportInfo['minimum'] }} vereist)
                         </small>
                     </strong>
                     <span class="float-right">
