@@ -1,6 +1,15 @@
 # Tiny Restaurant
 
-## Run locally
+## Automatic installation
+
+1. Clone this repo and upload the files to your host.
+2. Navigate to `example.com/install.php` where `example.com` is your domain name.
+3. Click on 'Start' to enter the installation wizard - this can take a while
+4. Follow the steps on screen
+
+**IMPORTANT**: after installation, delete the `public/install.php` file!
+
+## Manual installation
 
 Firstly, we have to configure the environment. To do this, create a duplicate of the `.env.example` file and rename it to `.env`. Then, open this file and
 change the variables to those suiting your environment.
