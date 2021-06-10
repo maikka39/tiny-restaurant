@@ -10,6 +10,7 @@ use A17\Twill\Models\Model;
 use A17\Twill\Services\FileLibrary\FileService;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Str;
 
 class NewsItem extends Model
@@ -19,6 +20,7 @@ class NewsItem extends Model
     use HasRevisions;
     use HasFiles;
     use HasFactory;
+    use Notifiable;
 
     protected $fillable = [
         'published',
