@@ -58,6 +58,10 @@ class Homepage extends Model
         ],
     ];
 
+    public $filesParams = [
+        'attachments',
+    ];
+
     public function homepage_link_items()
     {
         return $this->hasMany(HomepageLinkItem::class)->where('deleted_at', null);

@@ -16,7 +16,9 @@
     @formField('medias', [
         'type' => 'image',
         'name' => 'hero',
-        'label' => 'Afbeelding'
+        'label' => 'Afbeeldingen',
+        'max' => 5,
+        'with_multiple' => true
     ])
 
     @formField('input', [

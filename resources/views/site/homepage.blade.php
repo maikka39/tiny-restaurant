@@ -9,10 +9,6 @@
 @section('content')
     <!-- Hero -->
     <section class="hero is-fullheight-with-navbar">
-        @php
-            $image = $homepage->image('hero', 'flexible');
-            $alt = $homepage->imageAltText('hero');
-        @endphp
 
         <div class="hero-body">
             <span class="watermark">ON TOUR</span>
@@ -24,9 +20,11 @@
                 </div>
             
                 <div class="right">
-                    <figure class="image to-background">
-                        <img class="hero-image" src="{{ $image }}" alt="{{ $alt }}" draggable="false" />
-                    </figure>
+                    @foreach($homepage->imagesAsArrays('hero', 'flexible') as $image)
+                        <figure class="image to-background">
+                            <img class="hero-image" src="{{ $image['src'] }}" alt="{{ $image['alt'] }}" draggable="false" />
+                        </figure>
+                    @endforeach
                 </div>
             </div>
             <a class="scroll-down-indicator" id="scroll-down-indicator" href="#scroll-down-indicator"></a>
