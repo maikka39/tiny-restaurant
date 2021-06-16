@@ -7,7 +7,7 @@
             <div class="logo">
                 <a class="image-container" href="{{ route('homepages.show') }}">
                     <figure class="image">
-                        <img src="{{ asset('img/logo.png') }}"/>
+                        <img alt="Terug naar hoofdpagina" src="{{ asset('img/logo.png') }}"/>
                     </figure>
                 </a>
             </div>
