@@ -27,7 +27,7 @@
                 @endforeach
             </div>
 
-            <div class="columns no-text-wrap">
+            <address class="columns no-text-wrap">
                 <div class="column">
                     <p class="has-text-weight-bold">Stichting MIEP</p>
                     <p>Nassaustraat, 4</p>
@@ -38,7 +38,7 @@
                     <p>06 - 20 46 65 55 (Krista Werker)</p>
                     <p>06 - 24 62 96 76 (Jorick Cardon)</p>
                 </div>
-            </div>
+            </address>
             <p class="pt-4 has-text-centered">KvK: 69331359, NL97 RABO 0321670485</p>
             <p class="pt-6 has-text-centered">&copy; TinyRestaurant. 2021. We houden van onze boeren!</p>
     </div>
