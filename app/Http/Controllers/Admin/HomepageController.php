@@ -23,6 +23,7 @@ class HomepageController extends ModuleController
 
         return view('site.homepage', [
             'homepage' => $page,
+            'video_src' => getSrcAttribute($page->video_url),
             'highlight' => $page->homepage_link_items->where('homepage_id', 1)->where('position', 1)->first(),
             'agendaItems' => $agendaItems,
         ]);
@@ -33,5 +34,10 @@ class HomepageController extends ModuleController
         $page = Homepage::first();
 
         return view('admin.homepages.form', $this->form($page->id));
+    }
+
+    public function getSrcAttribute($string) {
+        parse_str(parse_url($string)['query'], $output);
+        return 'https://www.youtube.com/embed/' . $output['v'];
     }
 }

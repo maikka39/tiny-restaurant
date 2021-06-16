@@ -5,8 +5,18 @@
 @push('styles')
     <link rel="stylesheet" href="{{ asset('css/home.css') }}">
 @endpush
+@push('scripts')
+    <script type="text/javascript" src="{{asset('js/home.js')}}"></script>
+@endpush
 
 @section('content')
+    <div id="video-modal" class="modal">
+        <div class="modal-background"></div>
+        <div class="modal-content">
+            <iframe width="420" height="315" src="{{$homepage->video_url}}"></iframe>
+        </div> 
+        <button class="modal-close is-large" aria-label="close"></button>
+    </div>
     <!-- Hero -->
     <section class="hero is-fullheight-with-navbar">
 
@@ -17,6 +27,7 @@
                     <h1 class="title is-size-1 has-text-weight-bold">{{ $homepage->title }}</h1>
                     <p class="subtitle is-size-3">{{ $homepage->slogan }}</p>
                     <a class="button is-primary" href="{{ $homepage->button_url }}">{{ $homepage->button_text }}</a>
+                    <a id="video-modal-button" class="button is-primary" href=""> Video </a>
                 </div>
             
                 <div class="right">

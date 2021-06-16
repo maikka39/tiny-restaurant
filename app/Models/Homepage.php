@@ -19,6 +19,7 @@ class Homepage extends Model
         'published',
         'title',
         'slogan',
+        'video_url',
         'button_text',
         'button_url',
     ];
