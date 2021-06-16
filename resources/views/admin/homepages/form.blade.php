@@ -31,7 +31,7 @@
     @formField('input', [
         'name' => 'button_url',
         'label' => 'Knop-url',
-        'defaullt' => '/projecten',
+        'default' => '/projecten',
         'placeholder' => '/projecten',
         'note' => 'Mag een interne of externe URL zijn'
     ])
