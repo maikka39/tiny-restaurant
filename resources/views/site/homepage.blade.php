@@ -29,7 +29,7 @@
                     <h1 class="title is-size-1 has-text-weight-bold">{{ $homepage->title }}</h1>
                     <p class="subtitle is-size-3">{{ $homepage->slogan }}</p>
                     <a class="button is-primary" href="{{ $homepage->button_url }}">{{ $homepage->button_text }}</a>
-                    <a id="video-modal-open" class="button is-primary"> Video </a>
+                    <a id="video-modal-open" class="button is-primary"><i class="far fa-play-circle"></i></a>
                 </div>
             
                 <div class="right">
