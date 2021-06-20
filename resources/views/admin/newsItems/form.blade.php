@@ -49,6 +49,4 @@
         'max' => 4,
         'buttonOnTop' => true,
     ])
-
-    @formField('block_editor')
 @stop

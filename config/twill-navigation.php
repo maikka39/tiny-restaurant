@@ -1,22 +1,21 @@
 <?php
 
 return [
-    // 'settings' => [
-    //     'title' => 'Instellingen',
-    //     'route' => 'admin.settings',
-    //     'params' => ['section' => 'homepage'],
-    //     'primary_navigation' => [
-    //         'homepage' => [
-    //             'title' => 'Hoofdpagina',
-    //             'route' => 'admin.settings',
-    //             'params' => ['section' => 'homepage']
-    //         ],
-    //     ]
-    // ],
+     'settings' => [
+         'title' => 'Instellingen',
+         'route' => 'admin.settings',
+         'params' => ['section' => 'facebook'],
+         'primary_navigation' => [
+             'homepage' => [
+                 'title' => 'Facebook',
+                 'route' => 'admin.settings',
+                 'params' => ['section' => 'facebook']
+             ],
+         ]
+     ],
     'homepages' => [
         'title' => 'Homepagina',
         'route' => 'admin.homepage',
-        // 'module' => true
     ],
     'pages' => [
         'title' => 'Pagina\'s',

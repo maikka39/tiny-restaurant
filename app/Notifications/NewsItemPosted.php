@@ -2,6 +2,8 @@
 
 namespace App\Notifications;
 
+use A17\Twill\Models\Setting;
+use A17\Twill\Repositories\SettingRepository;
 use App\Models\NewsItem;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
@@ -59,11 +61,15 @@ class NewsItemPosted extends Notification
      *
      * @return string
      */
-//    public function routeNotificationForFacebookPoster(): array
-//    {
-//        return [
-//            'page_id' => 'customPageId',
-//            'access_token' => 'customAccessToken',
-//        ];
-//    }
+    public function routeNotificationForFacebookPoster(): array
+    {
+        $repository = app(SettingRepository::class);
+        $page_id = $repository->byKey('facebook_page_id');
+        $access_token = $repository->byKey('facebook_access_token');
+
+        return [
+            'page_id' => $page_id ?? config('services.facebook_poster.page_id'),
+            'access_token' => $access_token ?? config('services.facebook_poster.access_token'),
+        ];
+    }
 }

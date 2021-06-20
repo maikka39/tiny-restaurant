@@ -8,7 +8,7 @@ return [
         'block-editor' => true,
         'buckets' => true,
         'users-image' => true,
-        'settings' => false, // We are using a custom setting controller now.
+        'settings' => true,
         'dashboard' => true,
         'search' => true,
         'users-description' => false,
