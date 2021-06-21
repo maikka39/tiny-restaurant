@@ -28,6 +28,16 @@ window.onload = function () {
         } 
     })
 
+    let modal = document.querySelector('#video-modal')
+    if(modal) {
+        modal.addEventListener('click', () => {
+            modal.classList.remove('is-active')
+            document.body.style.overflow = "auto"; 
+            document.body.style.height = "auto";
+            video.src = video.src
+        })
+    }
+
     //IMG SLIDESHOW
 
     //Init
@@ -42,7 +52,9 @@ window.onload = function () {
     let prevSlide = null;
     let nextSlide = null;
     setNextSlide();
-    playSlideshow();
+    if(slides.length > 1) {
+        playSlideshow();
+    }
 
     function loadImage() {
         imagesLoaded += imagesloaded;
