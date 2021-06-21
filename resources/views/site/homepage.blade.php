@@ -33,11 +33,13 @@
                 </div>
             
                 <div class="right">
-                    @foreach($homepage->imagesAsArrays('hero', 'flexible') as $image)
-                        <figure class="image to-background">
+                    <figure class="image to-background">
+                    @foreach(array_reverse($homepage->imagesAsArrays('hero', 'flexible')) as $image)
+                        
                             <img class="hero-image" src="{{ $image['src'] }}" alt="{{ $image['alt'] }}" draggable="false" />
-                        </figure>
+                        
                     @endforeach
+                    </figure>
                 </div>
             </div>
             <a class="scroll-down-indicator" id="scroll-down-indicator" href="#scroll-down-indicator"></a>
