@@ -1,7 +1,7 @@
-<nav class="navbar" role="navigation" aria-label="main navigation">
+<nav class="navbar" aria-label="main navigation">
     <div class="navbar-brand">
-        <a class="navbar-item" href="{{ route('homepages.show') }}">
-            <img src="{{ asset('img/logo.png') }}" alt="Tiny Restaurant Logo">
+        <a class="navbar-item" href="{{ route('homepages.show') }}" aria-label="Terug naar hoofdpagina">
+            <img src="{{ asset('img/logo.png') }}" alt="">
         </a>
 
         <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="frontend-navbar">
@@ -30,7 +30,7 @@
                     <div class="field is-grouped">
                         <p class="control">
                             <a class="button" href="{{ url('doneer') }}">
-                                <span class="icon">
+                                <span class="icon" aria-hidden="true">
                                     <i class="fas fa-hand-holding-heart"></i>
                                 </span>
                                 <span>
