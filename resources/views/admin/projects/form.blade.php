@@ -45,7 +45,7 @@
 
     <br>
 
-    <a target="_blank" href="{{ url('admin/newsItems') }}"> 
+    <a target="_blank" href="{{ route('admin.newsItems.index') }}">
         <a17-button variant="validate">Vergeet niet om een nieuwsbericht te plaatsen!</a17-button>
     </a>
 
