@@ -89,16 +89,4 @@ class NewsItemController extends ModuleController
         return view('site.news-detail')
             ->with('news', $newsItem);
     }
-
-    public function update($id, $submoduleId = null)
-    {
-        $response = parent::update($id, $submoduleId);
-
-        $newsItem = NewsItem::find($id);
-        if($newsItem->published){ //TODO add better check
-            $newsItem->notify(new NewsItemPosted($newsItem));
-        }
-
-        return $response;
-    }
 }
