@@ -53,23 +53,6 @@ class NewsItemPosted extends Notification
      */
     public function toFacebookPoster($notifiable) {
         return (new FacebookPosterPost($this->newsItem->summary))
-            ->withLink('https://tiny-restaurant.test/nieuws/' . $this->newsItem->id);
-    }
-
-    /**
-     * TODO implement for custom page settings
-     *
-     * @return string
-     */
-    public function routeNotificationForFacebookPoster(): array
-    {
-        $repository = app(SettingRepository::class);
-        $page_id = $repository->byKey('facebook_page_id');
-        $access_token = $repository->byKey('facebook_access_token');
-
-        return [
-            'page_id' => $page_id ?? config('services.facebook_poster.page_id'),
-            'access_token' => $access_token ?? config('services.facebook_poster.access_token'),
-        ];
+            ->withLink(config('app.url') . '/nieuws/' . $this->newsItem->id);
     }
 }
