@@ -1,4 +1,75 @@
 <?php
+    // use the Composer classes
+    use Composer\Console\Application;
+    use Symfony\Component\Console\Input\ArrayInput;
+
+    function install($file) {
+        $argv = array();
+        include_once($file);
+    }
+
+    function composer_install() {
+        $installerFilename = "composer-installer.php";
+        $composer_installer_content  = file_get_contents('https://getcomposer.org/installer');
+        
+        $find = array('#!/usr/bin/env php', 'exit(');
+        $replace = array('', 'return(');
+        $new_composer_installer_content = str_replace($find,$replace, $composer_installer_content);
+    
+        file_put_contents($installerFilename, $new_composer_installer_content);
+        install($installerFilename);
+    
+        define('EXTRACT_DIRECTORY', "extractedComposer");
+    
+        if (file_exists(EXTRACT_DIRECTORY . '/vendor/autoload.php') == false) {
+            $composerPhar = new Phar("composer.phar");
+            // php.ini setting phar.readonly must be set to 0
+            $composerPhar->extractTo(EXTRACT_DIRECTORY);
+        }
+    
+        // this requires the phar to have been extracted successfully.
+        require_once(EXTRACT_DIRECTORY . '/vendor/autoload.php');
+    
+        // change out of the webroot so that the vendors file is not created in
+        // a place that will be visible to the intahwebz
+        chdir('../');
+    
+        // create the command
+        $input = new ArrayInput(array('command' => 'install'));
+    
+        // create the application and run it with the commands
+        $application = new Application();
+        $application->setAutoExit(false);
+        $application->run($input);
+
+        // delete crap
+        echo unlink('public/composer.phar');
+        echo unlink('public/composer-installer.php');
+        echo deleteDirectory('public/extractedComposer');
+    }
+
+    function deleteDirectory($dir) {
+        if (!file_exists($dir)) {
+            return true;
+        }
+    
+        if (!is_dir($dir)) {
+            return unlink($dir);
+        }
+    
+        foreach (scandir($dir) as $item) {
+            if ($item == '.' || $item == '..') {
+                continue;
+            }
+    
+            if (!deleteDirectory($dir . DIRECTORY_SEPARATOR . $item)) {
+                return false;
+            }
+        }
+    
+        return rmdir($dir);
+    }
+
     // find the project's root dir
     $root_dir = realpath(__DIR__ . '/..') . '/';
 
@@ -21,14 +92,14 @@
             file_get_contents($root_dir . '.env')
         ));
 
-        shell_exec('composer install');
+        composer_install();
         shell_exec('npm install');
         shell_exec('npm run prod');
         shell_exec('php artisan twill:build');
         shell_exec('php artisan lang:publish');
         shell_exec('php artisan storage:link');
 
-        // redirect to /install
+        // redirect to the installer
         header('Location: /install');
     }
 ?>
@@ -80,7 +151,8 @@
 <body>
     <div>
         <h1>Tiny Restaurant Installatiewizard</h1>
-        <p>Klik op Start om te beginnen. Let op: dit kan even duren.</p>
+        <p>Klik op Start om te beginnen.</p>
+        <p>Let op: dit kan even duren. Sluit de pagina niet.</p>
     </div>
 
     <form action="" method="post">
