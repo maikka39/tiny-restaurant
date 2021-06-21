@@ -151,6 +151,22 @@
         top: 0;
       }
 
+      .image img.next {
+        opacity: 1;
+        z-index: 1;
+      }
+
+      .image img.prev {
+        opacity: 1;
+        z-index: 2;
+      }
+
+      .image img.fade-out {
+        opacity: 0;
+        transition: visibility 0s 0.5s, opacity 0.5s linear;
+        visibility: hidden;
+      }
+
       @include until($desktop) {
         clip-path: unset;
         position: absolute;

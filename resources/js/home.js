@@ -27,6 +27,64 @@ window.onload = function () {
             video.src = video.src
         } 
     })
+
+    //IMG SLIDESHOW
+
+    //Init
+    let container = document.querySelector('[data-slideshow]');
+    let slides = container.querySelectorAll('img');
+    slides.forEach((slide, i) => {
+        slide.setAttribute('data-slide', i)
+    })
+    let imagesloaded = slides.length;
+    let currentIndex = slides.length - 1;
+    let slideshow = null;
+    let prevSlide = null;
+    let nextSlide = null;
+    setNextSlide();
+    playSlideshow();
+
+    function loadImage() {
+        imagesLoaded += imagesloaded;
+        if (imagesLoaded >= slides.length) {
+            
+        }
+    }
+
+    function playSlideshow() {
+        
+        slideshow = window.setInterval(() => {
+            performSlide()
+        }, 3500)
+    }
+
+    function performSlide() {
+        if (prevSlide != null) {
+            prevSlide.classList.remove('prev')
+            prevSlide.classList.remove('fade-out')
+        }
+
+
+        nextSlide.classList.remove('next')
+        prevSlide = nextSlide
+        prevSlide.classList.add('prev')
+        currentIndex += 1
+        
+        if (currentIndex >= slides.length) {
+            currentIndex = 0
+        }
+        setNextSlide()
+        prevSlide.classList.add('fade-out')
+    }
+
+    function setNextSlide() {
+        nextSlide = container.querySelector(`[data-slide="${currentIndex}"]`);
+        nextSlide.classList.add('next')
+    }
+
+
+
+    
 }
 
 

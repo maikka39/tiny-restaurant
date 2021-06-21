@@ -33,11 +33,9 @@
                 </div>
             
                 <div class="right">
-                    <figure class="image to-background">
+                    <figure class="image to-background" data-slideshow>
                     @foreach(array_reverse($homepage->imagesAsArrays('hero', 'flexible')) as $image)
-                        
-                            <img class="hero-image" src="{{ $image['src'] }}" alt="{{ $image['alt'] }}" draggable="false" />
-                        
+                        <img class="hero-image" src="{{ $image['src'] }}" alt="{{ $image['alt'] }}" draggable="false" />
                     @endforeach
                     </figure>
                 </div>
