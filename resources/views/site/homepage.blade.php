@@ -29,7 +29,7 @@
                     </figure>
                 </div>
             </div>
-            <a class="scroll-down-indicator" id="scroll-down-indicator" href="#scroll-down-indicator"></a>
+            <a class="scroll-down-indicator" id="scroll-down-indicator" href="#scroll-down-indicator" tabindex="-1" aria-hidden="true"></a>
         </div>
     </section>
     

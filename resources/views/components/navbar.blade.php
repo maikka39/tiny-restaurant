@@ -13,20 +13,22 @@
 
     <div id="frontend-navbar" class="navbar-menu">
         <div class="navbar-end">
-            <div class="navbar-start">
-                <a class="navbar-item" href="{{ route('newsItems.show') }}">Nieuws</a>
-                <a class="navbar-item" href="{{ route('project.showAll') }}">Projecten</a>
-                <div class="navbar-item has-dropdown is-hoverable" data-target="dropdown-link">
-                    <a class="navbar-link">Gemeentes</a>
-                    <div class="navbar-dropdown">
+            <ul class="navbar-start">
+                <li class="navbar-item"><a href="{{ route('newsItems.show') }}">Nieuws</a></li>
+                <li class="navbar-item"><a href="{{ route('project.showAll') }}">Projecten</a></li>
+                <li class="navbar-item has-dropdown is-hoverable" data-target="dropdown-link" aria-haspopup="true" aria-expanded="false">
+                    <a class="navbar-link" tabindex="0">Gemeentes</a>
+                    <ul class="navbar-dropdown">
                         @foreach($municipalities as $municipality)
-                            <a class="navbar-item" id="dropdown-link" href="{{ route('municipality.show', $municipality->title) }}">
-                                {{ $municipality->title }}
-                            </a>
+                            <li>
+                                <a class="navbar-item" id="dropdown-link" href="{{ route('municipality.show', $municipality->title) }}">
+                                    {{ $municipality->title }}
+                                </a>
+                            </li>
                         @endforeach
-                    </div>
-                </div>
-                <div class="navbar-item">
+                    </ul>
+                </li>
+                <li class="navbar-item">
                     <div class="field is-grouped">
                         <p class="control">
                             <a class="button" href="{{ url('doneer') }}">
@@ -44,8 +46,8 @@
                             </a>
                         </p>
                     </div>
-                </div>
-            </div>
+                </li>
+            </ul>
         </div>
     </div>
 </nav>

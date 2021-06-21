@@ -21,7 +21,7 @@
                 @foreach ($links as $link)
                     <a class=" pl-3 pr-3" style="display: inline-flex; align-self: center; justify-self: center;" href="{{ $link->url }}" target="#">
                         <figure class="image is-32x32">
-                            <img style="filter: grayscale(100%);" alt="Logo van {{ $link->name }}" src="{{ asset('img/link_icons/' .$link->logo_url) }}" />
+                            <img style="filter: grayscale(100%);" alt="Ga naar {{ $link->name }}" src="{{ asset('img/link_icons/' .$link->logo_url) }}" />
                         </figure>
                     </a>
                 @endforeach
