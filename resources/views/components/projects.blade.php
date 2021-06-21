@@ -7,19 +7,20 @@
 <div class="columns">
     @forelse ($projects as $project)
         @php 
-            $image = $project->image('project_image', 'flexible') ?? null; 
-            $alt = $project->imageAltText('project_image') ?? null;
+            $image = $project->imagesAsArrays('project_image', 'flexible')[0] ?? null;
         @endphp
 
         <div class="column">
             <div class="card project-card">
-                @if ($image)
-                    <div class="card-image">
-                        <figure class="image is-3by2">
-                            <img class="project-image" src="{{ $image }}" alt="{{ $alt }}">
-                        </figure>
-                    </div>
-                @endif
+                <div class="card-image">
+                    <figure class="image is-3by2">
+                        @if ($image)
+                            <img class="project-image" src="{{ $image['src'] }}" alt="{{ $image['alt'] }}">
+                        @else
+                            <img class="project-image" src="{{ asset('img/news-placeholder.png') }}" alt="project-placeholder image">
+                        @endif
+                    </figure>
+                </div>
                 
                 <div class="card-content">
                     <p class="title is-4">{{ $project->name }}</p>
