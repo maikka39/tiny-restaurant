@@ -18,9 +18,9 @@
             </div>
             @php($image = $item->imageAsArray('project_image', 'flexible'))
             @if($image)
-                <img class="project-hero-image" src="{{ $image['src'] }}" alt="{{ $image['alt']}}">
+                <img class="project-hero-image" src="">
             @else
-                <div class="project-hero-no-image">
+                <div class="project-hero-no-image" aria-hidden="true">
                     <i class="fas fa-book fa-10x"></i>
                     <p>Dit project heeft geen afbeelding</p>
                 </div>
@@ -46,7 +46,7 @@
                 <h4>Wat we gaan doen?</h4>
                 <p>{!! $item->description !!}</p>
             </div>
-            <div class="map">
+            <div class="map" aria-hidden="true">
                 <iframe src="https://maps.google.com/maps?q={{ $item->address }}&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
             </div>
         </div>
@@ -57,7 +57,7 @@
             @foreach($item->municipalities as $municipality)
                 <div class="attendee">
                     @php($image = $municipality->imageAsArray('municipality_picture', 'flexible'))
-                    <img class="attendee-image" src="{{ $image ? $image['src'] : asset('img/house-placeholder.png') }}" alt="{{ $image ? $image['alt'] : 'municipality placeholder' }}">
+                    <img class="attendee-image" src="{{ $image ? $image['src'] : asset('img/house-placeholder.png') }}" alt="">
                     <h2 class="attendee-title">Gemeente {{ $municipality->title }}</h2>
                     <p class="attendee-text">{{ $municipality->description }}</p>
                     <a class="button is-primary" href="{{ route('municipality.show', $municipality->slug) }}">Lees meer</a>
@@ -67,9 +67,9 @@
                 <div class="attendee">
                     @php($image = $farmer->imageAsArray('farmer_profile', 'flexible'))
                     @if($image)
-                        <img class="attendee-image" src="{{ $image['src'] }}" alt="{{ $image['alt'] }}">
+                        <img class="attendee-image" src="{{ $image['src'] }}" alt="">
                     @else
-                        <div class="attendee-no-image">
+                        <div class="attendee-no-image" aria-hidden="true">
                             <i class="fas fa-tractor fa-6x"></i>
                         </div>
                     @endif
