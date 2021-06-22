@@ -54,7 +54,7 @@
 @section('sideFieldsets')
     <a17-fieldset title="Facebook" id="options">
         @formField('checkbox', [
-            'label' => 'Dit bericht op facebook plaatsen',
+            'label' => 'Dit bericht op Facebook plaatsen',
             'name' => 'post_to_facebook'
         ])
     </a17-fieldset>
