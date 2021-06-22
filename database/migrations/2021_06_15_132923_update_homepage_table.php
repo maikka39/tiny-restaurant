@@ -25,6 +25,5 @@ class UpdateHomepageTable extends Migration
      */
     public function down()
     {
-        //
     }
 }
