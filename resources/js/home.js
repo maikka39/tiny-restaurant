@@ -93,11 +93,4 @@ window.onload = function () {
         nextSlide = container.querySelector(`[data-slide="${currentIndex}"]`);
         nextSlide.classList.add('next')
     }
-
-
-
-    
-}
-
-
-    
+}   
