@@ -7,9 +7,11 @@ use A17\Twill\Models\Behaviors\HasFiles;
 use A17\Twill\Models\Behaviors\HasMedias;
 use A17\Twill\Models\Behaviors\HasRevisions;
 use A17\Twill\Models\Model;
+use A17\Twill\Repositories\SettingRepository;
 use A17\Twill\Services\FileLibrary\FileService;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Str;
 
 class NewsItem extends Model
@@ -19,6 +21,7 @@ class NewsItem extends Model
     use HasRevisions;
     use HasFiles;
     use HasFactory;
+    use Notifiable;
 
     protected $fillable = [
         'published',
@@ -100,5 +103,17 @@ class NewsItem extends Model
         return
             Str::contains(Str::lower($this->title), $search) ||
             Str::contains(Str::lower($this->description), $search);
+    }
+
+    public function routeNotificationForFacebookPoster($notification): array
+    {
+        $repository = app(SettingRepository::class);
+        $page_id = $repository->byKey('facebook_page_id');
+        $access_token = $repository->byKey('facebook_access_token');
+
+        return [
+            'page_id' => $page_id ?? config('services.facebook_poster.page_id'),
+            'access_token' => $access_token ?? config('services.facebook_poster.access_token'),
+        ];
     }
 }

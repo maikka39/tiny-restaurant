@@ -16,6 +16,7 @@
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
         "laravel-lang/lang": "~8.0",
+        "laravel-notification-channels/facebook-poster": "^5.0",
         "laravel/framework": "^8.12",
         "laravel/tinker": "^2.5",
         "merujan99/laravel-video-embed": "dev-master",
