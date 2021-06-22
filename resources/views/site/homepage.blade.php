@@ -5,14 +5,22 @@
 @push('styles')
     <link rel="stylesheet" href="{{ asset('css/home.css') }}">
 @endpush
+@push('scripts')
+    <script type="text/javascript" src="{{asset('js/home.js')}}" defer></script>
+@endpush
 
 @section('content')
+    <div id="video-modal" class="modal">
+        <div class="modal-background"></div>
+        <div class="modal-content">
+            <div class="video-container">
+                {!! $video !!}
+            </div>
+        </div> 
+        <button id="video-modal-close" class="modal-close is-large" aria-label="close"></button>
+    </div>
     <!-- Hero -->
     <section class="hero is-fullheight-with-navbar">
-        @php
-            $image = $homepage->image('hero', 'flexible');
-            $alt = $homepage->imageAltText('hero');
-        @endphp
 
         <div class="hero-body">
             <span class="watermark" aria-hidden="true">ON TOUR</span>
@@ -21,11 +29,16 @@
                     <h1 class="title is-size-1 has-text-weight-bold">{{ $homepage->title }}</h1>
                     <p class="subtitle is-size-3">{{ $homepage->slogan }}</p>
                     <a class="button is-primary" href="{{ $homepage->button_url }}">{{ $homepage->button_text }}</a>
+                    @if($video != null) 
+                        <a id="video-modal-open" class="button is-primary"><i class="far fa-play-circle mr-1"></i>Bekijk de video!</a>
+                    @endif
                 </div>
 
-                <div class="right">
-                    <figure class="image to-background">
-                        <img class="hero-image" src="{{ $image }}" alt="" draggable="false"/>
+                <div class="right" aria-hidden="true">
+                    <figure class="image to-background" data-slideshow>
+                    @foreach(array_reverse($homepage->imagesAsArrays('hero', 'flexible')) as $image)
+                        <img class="hero-image" src="{{ $image['src'] }}" alt="" draggable="false" />
+                    @endforeach
                     </figure>
                 </div>
             </div>
