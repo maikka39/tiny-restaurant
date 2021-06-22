@@ -11,7 +11,7 @@
                         @if ($image)
                             <img class="news-image" src="{{ $image['src'] }}" alt="{{ $image['alt'] }}">
                         @else
-                            <img class="news-image" src="{{ asset('img/news-placeholder.png') }}" alt="news-placeholder image">
+                            <img class="news-image" src="{{ asset('img/news-placeholder.png') }}" alt="Geen foto">
                         @endif
                     </figure>
                 </div>
