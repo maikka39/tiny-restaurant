@@ -1,7 +1,7 @@
-<nav class="navbar" role="navigation" aria-label="main navigation">
+<nav class="navbar" aria-label="main navigation">
     <div class="navbar-brand">
-        <a class="navbar-item" href="{{ route('homepages.show') }}">
-            <img src="{{ asset('img/logo.png') }}" alt="Tiny Restaurant Logo">
+        <a class="navbar-item" href="{{ route('homepages.show') }}" aria-label="Terug naar hoofdpagina">
+            <img src="{{ asset('img/logo.png') }}" alt="">
         </a>
 
         <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="frontend-navbar">
@@ -13,24 +13,26 @@
 
     <div id="frontend-navbar" class="navbar-menu">
         <div class="navbar-end">
-            <div class="navbar-start">
-                <a class="navbar-item" href="{{ route('newsItems.show') }}">Nieuws</a>
-                <a class="navbar-item" href="{{ route('project.showAll') }}">Projecten</a>
-                <div class="navbar-item has-dropdown is-hoverable" data-target="dropdown-link">
-                    <div class="navbar-link">Gemeentes</div>
-                    <div class="navbar-dropdown">
+            <ul class="navbar-start">
+                <li class="navbar-item"><a href="{{ route('newsItems.show') }}">Nieuws</a></li>
+                <li class="navbar-item"><a href="{{ route('project.showAll') }}">Projecten</a></li>
+                <li class="navbar-item has-dropdown is-hoverable" data-target="dropdown-link" aria-haspopup="true" aria-expanded="false">
+                    <a class="navbar-link" tabindex="0">Gemeentes</a>
+                    <ul class="navbar-dropdown">
                         @foreach($municipalities as $municipality)
-                            <a class="navbar-item" id="dropdown-link" href="{{ route('municipality.show', $municipality->title) }}">
-                                {{ $municipality->title }}
-                            </a>
+                            <li>
+                                <a class="navbar-item" id="dropdown-link" href="{{ route('municipality.show', $municipality->title) }}">
+                                    {{ $municipality->title }}
+                                </a>
+                            </li>
                         @endforeach
-                    </div>
-                </div>
-                <div class="navbar-item">
+                    </ul>
+                </li>
+                <li class="navbar-item">
                     <div class="field is-grouped">
                         <p class="control">
                             <a class="button" href="{{ url('doneer') }}">
-                                <span class="icon">
+                                <span class="icon" aria-hidden="true">
                                     <i class="fas fa-hand-holding-heart"></i>
                                 </span>
                                 <span>
@@ -44,8 +46,8 @@
                             </a>
                         </p>
                     </div>
-                </div>
-            </div>
+                </li>
+            </ul>
         </div>
     </div>
 </nav>

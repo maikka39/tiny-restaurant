@@ -14,9 +14,9 @@
         <div class="is-flex hero-content">
             @php($image = $item->imageAsArray('farmer_profile', 'flexible'))
             @if($image)
-                <img class="farmer-hero-image" src="{{ $image['src'] }}" alt="{{ $image['alt']}}">
+                <img class="farmer-hero-image" src="{{ $image['src'] }}" alt="">
             @else
-                <div class="farmer-hero-no-image">
+                <div class="farmer-hero-no-image" aria-hidden="true">
                     <i class="fas fa-tractor fa-10x"></i>
                     <p>Deze boer heeft helaas geen profielfoto</p>
                 </div>
@@ -33,12 +33,12 @@
         <h3 class="story-header">Lees het hele verhaal van {{ $item->name }}</h3>
         <div class="story-body">{!! $item->description !!}</div>
     </section>
-    <section class="section section-farmer-gallery">
+    <section class="section section-farmer-gallery" aria-hidden="true">
         <h3 class="gallery-header">Fotogalerij</h3>
         <p class="gallery-text">Bekijk de foto's van {{ $item->name }}</p>
         <div class="gallery">
             @forelse($item->imagesAsArrays('farmer_profile', 'flexible') as $image)
-                <img src="{{ $image ? $image['src'] : asset('img/news-placeholder.png') }}" alt="{{ $image ? $image['alt'] : 'news placeholder' }}">
+                <img src="{{ $image ? $image['src'] : asset('img/news-placeholder.png') }}" alt="">
             @empty
                 <p>Er staan geen foto's in de galerij</p>
             @endforelse

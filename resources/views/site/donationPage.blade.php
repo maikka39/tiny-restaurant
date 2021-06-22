@@ -22,7 +22,7 @@
 
         <div class="image-container">
             <figure class="image to-background">
-                <img src="{{ $image }}" alt="{{ $alt }}" draggable="false" />
+                <img src="{{ $image }}" alt="" draggable="false" />
             </figure>
         </div>
 
@@ -38,7 +38,7 @@
                 <div class="amounts control">
                     @foreach($donationPage->donation_amounts->sortBy('position')->map(function ($obj) {return $obj->amount;}) as $amount)
                         <div>
-                            <input id="radio-amount-{{$amount}}" type="radio" name="amount" value="{{$amount}}" class="amount radio">
+                            <input id="radio-amount-{{$amount}}" type="radio" name="amount" value="{{$amount}}" class="amount radio" tabindex="0">
                             <label for="radio-amount-{{$amount}}" class="amount label">
                                 <span>Doneer &euro;{{ number_format($amount, 2) }}</span>
                             </label>
@@ -51,7 +51,7 @@
                         </label>
                     </div>
                 </div>
-                <h2 class="title is-size-4 has-text-weight-bold">Kies zelf een bedrag</h2>
+                <p class="title is-size-4 has-text-weight-bold">Kies zelf een bedrag</p>
                 <div class="custom-amount field">
                     <p class="control has-icons-left">
                         <input class="input" type="number" placeholder="Voer een bedrag in..." name="custom-amount" id="custom-amount-input">
