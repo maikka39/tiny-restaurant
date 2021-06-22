@@ -6,27 +6,28 @@
 
 <div class="columns">
     @forelse ($projects as $project)
-        @php 
-            $image = $project->image('project_image', 'flexible') ?? null; 
-            $alt = $project->imageAltText('project_image') ?? null;
+        @php
+            $image = $project->imagesAsArrays('project_image', 'flexible')[0] ?? null;
         @endphp
 
         <div class="column">
             <div class="card project-card">
-                @if ($image)
-                    <div class="card-image">
-                        <figure class="image is-3by2">
-                            <img class="project-image" src="{{ $image }}" alt="{{ $alt }}">
-                        </figure>
-                    </div>
-                @endif
-                
+                <div class="card-image">
+                    <figure class="image is-3by2">
+                        @if ($image)
+                            <img class="project-image" src="{{ $image['src'] }}" alt="{{ $image['alt'] }}">
+                        @else
+                            <img class="project-image" src="{{ asset('img/news-placeholder.png') }}" alt="Geen foto">
+                        @endif
+                    </figure>
+                </div>
+
                 <div class="card-content">
                     <p class="title is-4">{{ $project->name }}</p>
                     <p class="subtitle is-6">{{ $project->created_at->format('d-m-Y') }}</p>
-                    
+
                     <div class="content">{!! $project->description !!}</div>
-                    
+
                     <a href="{{ route('project.show', $project->slug) }}">Lees meer</a>
                 </div>
             </div>

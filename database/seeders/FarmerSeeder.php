@@ -46,6 +46,8 @@ class FarmerSeeder extends MediaSeeder
                 'summary' => $farmer['summary'],
                 'published' => true,
                 'created_at' => Carbon::now()->subDays(random_int(50, 400)),
+                'category' => 'boer',
+                'keywords' => 'boer ' . $farmer['municipality'] . ' ' . $farmer['name'],
             ]);
 
             FarmerSlug::create([

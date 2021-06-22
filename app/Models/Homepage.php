@@ -19,8 +19,11 @@ class Homepage extends Model
         'published',
         'title',
         'slogan',
+        'video_url',
         'button_text',
         'button_url',
+        'category',
+        'keywords',
     ];
 
     public $slugAttributes = [
@@ -56,6 +59,10 @@ class Homepage extends Model
                 ],
             ],
         ],
+    ];
+
+    public $filesParams = [
+        'attachments',
     ];
 
     public function homepage_link_items()

@@ -7,6 +7,7 @@ use App\Models\NewsItem;
 
 class NewsItemController extends ModuleController
 {
+    protected $disableEditor = true;
     protected $titleColumnKey = 'title';
     protected $moduleName = 'newsItems';
     protected $previewView = 'site.news';

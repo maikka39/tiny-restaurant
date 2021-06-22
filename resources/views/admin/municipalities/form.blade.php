@@ -10,4 +10,15 @@
         'name' => 'municipality_picture',
         'label' => 'Gemeente Afbeelding'
     ])
-@stop
+@endsection
+
+@section('sideFieldsets')
+    <a17-fieldset title="Zoekmachineoptimalisatie" id="options">
+        @formField('input', [
+            'label' => 'Trefwoorden',
+            'name' => 'keywords',
+            'note' => 'Scheid de verschillende trefwoorden met een spatie.',
+            'placeholder' => 'Scheid de verschillende trefwoorden met een spatie.',
+        ])
+    </a17-fieldset>
+@endsection
