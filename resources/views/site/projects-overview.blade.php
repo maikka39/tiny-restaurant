@@ -2,6 +2,7 @@
     "title" => "Projecten",
     "description" => "Bekijk de projecten waar wij ons op dit moment mee bezig houden!",
     "image" => NULL,
+    "pagekeywords" => "projecten activiteiten",
 ])
 
 @push('styles')

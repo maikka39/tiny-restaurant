@@ -1,4 +1,5 @@
 @extends("site.layouts.base", [
+    "page" => $item,
     "title" => $item->name,
     "description" => $item->description,
     "image" => $item->imageAsArray('project_image', 'desktop'),

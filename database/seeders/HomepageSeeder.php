@@ -22,6 +22,8 @@ class HomepageSeeder extends MediaSeeder
             'button_text' => 'Projecten',
             'button_url' => '/projecten',
             'published' => true,
+            'category' => 'general',
+            'keywords' => 'home thuis welkom',
         ]);
 
         HomepageLinkItem::create([

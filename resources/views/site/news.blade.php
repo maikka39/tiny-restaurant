@@ -2,6 +2,7 @@
     "title" => "Nieuwsberichten",
     "description" => "Bekijk het laatste nieuws van het Tiny Restaurant en check wat er momenteel gaande is.",
     "image" => NULL,
+    "pagekeywords" => "nieuws nieuwspagina updates berichten",
 ])
 
 @push('styles')

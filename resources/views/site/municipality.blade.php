@@ -1,4 +1,5 @@
 @extends("site.layouts.base", [
+    "page" => $municipality,
     "title" => $municipality->title,
     "description" => $municipality->description,
     "image" => $municipality->imageAsArray('municipality_picture', 'desktop'),

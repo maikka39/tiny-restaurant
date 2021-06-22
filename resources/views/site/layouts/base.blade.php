@@ -5,6 +5,7 @@
         $permalink = config('app.url') . rtrim("/" . ltrim(request()->path(), '/'), '/') . "/";
         $pagename = isset($title) ? strip_tags($title) : config('app.name');
         $pagedescription = isset($description) ? strip_tags($description) : "Welkom bij " . config('app.name');
+        $keywords = "tiny-restaurant tinyrestaurant boeren ontour on-tour" . rtrim(" " . ($pagekeywords ?? "")) . rtrim(" " . (isset($page) ? $page->keywords : ""));
     @endphp
 
     <meta charset="UTF-8">
@@ -24,7 +25,7 @@
 
     <meta name="author" content="{{ config('app.name') }}">
     <meta name="description" content="{{ $pagedescription }}" />
-    {{-- <meta name="keywords" content="" /> --}}
+    <meta name="keywords" content="{{ $keywords }}" />
     <meta name="robots" content="noodp" />
 
     <meta property="og:site_name" content="{{ config('app.name') }}" />
@@ -49,8 +50,12 @@
     <meta property="article:modified_time" content="{{ $pagemodifiedtime }}" />
     @endisset
 
-    {{-- <meta property="article:section" content="{{ . }}" /> --}}
-    {{-- <meta property="article:tag" content="{{ . }}" /> --}}
+    @isset($page)
+    @isset($page->category)
+    <meta property="article:section" content="{{ $page->category }}" />
+    @endisset
+    @endisset
+    <meta property="article:tag" content="{{ $keywords }}" />
 
     <meta itemprop="name" content="{{ $pagename }}">
     <meta itemprop="description" content="{{ $pagedescription }}">

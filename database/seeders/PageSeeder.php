@@ -28,6 +28,7 @@ class PageSeeder extends Seeder
               'position' => 1,
               'content' => '{"html": "<p>Vul hier de privacy policy in.</p>"}',
             ]],
+            'keywords' => 'privacy data',
         ], [
             'title' => 'Algemene voorwaarden',
             'slug' => 'algemene-voorwaarden',
@@ -39,6 +40,7 @@ class PageSeeder extends Seeder
               'position' => 1,
               'content' => '{"html": "<p>Vul hier de algemene voorwaarden in.</p>"}',
             ]],
+            'keywords' => 'voorwaarden algemeen',
         ]];
 
         foreach ($pages as $page) {
@@ -46,6 +48,7 @@ class PageSeeder extends Seeder
                 'title' => $page['title'],
                 'description' => $page['description'],
                 'published' => $page['published'],
+                'keywords' => 'pagina ' . $page['keywords'],
             ]);
 
             PageSlug::create([

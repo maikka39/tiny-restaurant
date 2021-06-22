@@ -1,4 +1,5 @@
 @extends('site.layouts.base', [
+    'page' => $news,
     'title' => $news->title,
     'pagetype' => 'article',
     'pagecreatedtime' => $news->created_at->format('c'),

@@ -1,6 +1,7 @@
 @extends("site.layouts.base", [
     "title" => "Contact",
     "description" => "Neem gerust contact met ons op!",
+    "pagekeywords" => "contact email telefoon adres contactformulier bellen bericht"
 ])
 
 @push('styles')
