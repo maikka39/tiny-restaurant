@@ -13,7 +13,7 @@ class AddSeoColumns extends Migration
      */
     public function up()
     {
-        foreach (["donation_pages", "farmers", "homepages", "municipalities", "news_items", "pages", "projects"] as $column) {
+        foreach (['donation_pages', 'farmers', 'homepages', 'municipalities', 'news_items', 'pages', 'projects'] as $column) {
             Schema::table($column, function (Blueprint $table) {
                 $table->text('category')->nullable();
                 $table->text('keywords')->nullable();
@@ -28,6 +28,5 @@ class AddSeoColumns extends Migration
      */
     public function down()
     {
-        //
     }
 }
