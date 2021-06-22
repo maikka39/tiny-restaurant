@@ -19,8 +19,9 @@
         "laravel-notification-channels/facebook-poster": "^5.0",
         "laravel/framework": "^8.12",
         "laravel/tinker": "^2.5",
-        "merujan99/laravel-video-embed": "dev-master",
-        "mollie/mollie-api-php": "^2.31"
+        "mollie/mollie-api-php": "^2.31",
+        "rachidlaasri/laravel-installer": "^4.1",
+        "merujan99/laravel-video-embed": "dev-master"
     },
     "require-dev": {
         "facade/ignition": "^2.5",
