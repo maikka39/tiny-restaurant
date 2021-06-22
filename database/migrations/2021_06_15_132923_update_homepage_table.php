@@ -14,7 +14,7 @@ class UpdateHomepageTable extends Migration
     public function up()
     {
         Schema::table('homepages', function (Blueprint $table) {
-            $table->string('video_url');
+            $table->string('video_url')->nullable();
         });
     }
 
