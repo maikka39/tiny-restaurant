@@ -97,13 +97,6 @@
     }
   }
 
-  .news-image,
-  .project-image,
-  .hero-image {
-    object-fit: cover;
-    object-position: center;
-  }
-
   .hero-body {
     padding: 0 0 0 3rem;
     position: relative;
@@ -195,6 +188,14 @@
     }
   }
 }
+
+.news-image,
+.project-image,
+.hero-image {
+  object-fit: cover;
+  object-position: center;
+}
+
 
 .news-item {
   display: flex;
