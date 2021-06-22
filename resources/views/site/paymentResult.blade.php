@@ -14,6 +14,7 @@
 @extends("site.layouts.base", [
     "title" => $status_title,
     "description" => $status_message,
+    "image" => $donationPage->imageAsArray('hero', 'desktop'),
 ])
 
 @push('styles')
