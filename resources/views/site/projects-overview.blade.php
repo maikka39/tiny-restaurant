@@ -1,5 +1,8 @@
-@extends('site.layouts.base', [
-    'title' => 'projecten'
+@extends("site.layouts.base", [
+    "title" => "Projecten",
+    "description" => "Bekijk de projecten waar wij ons op dit moment mee bezig houden!",
+    "image" => NULL,
+    "pagekeywords" => "projecten activiteiten",
 ])
 
 @push('styles')

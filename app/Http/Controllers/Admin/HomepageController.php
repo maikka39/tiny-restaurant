@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\Admin;
 
+use A17\Twill\Http\Controllers\Admin\ModuleController;
 use App\Models\Homepage;
 use App\Repositories\ProjectRepository;
-use A17\Twill\Http\Controllers\Admin\ModuleController;
 use Merujan99\LaravelVideoEmbed\Facades\LaravelVideoEmbed;
 
 class HomepageController extends ModuleController
@@ -25,7 +25,7 @@ class HomepageController extends ModuleController
         $url = $page->video_url;
         $video = null;
 
-        if($url != null) {
+        if (null != $url) {
             $whitelist = ['YouTube', 'Vimeo'];
             $video = LaravelVideoEmbed::parse($url, $whitelist);
         }

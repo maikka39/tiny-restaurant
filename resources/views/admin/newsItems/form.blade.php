@@ -51,4 +51,21 @@
     ])
 
     @formField('block_editor')
-@stop
+@endsection
+
+@section('sideFieldsets')
+    <a17-fieldset title="Zoekmachineoptimalisatie" id="options">
+        @formField('input', [
+            'label' => 'Categorie',
+            'name' => 'category',
+            'note' => 'Kies een algemene categorie.',
+            'placeholder' => 'Kies een algemene categorie.',
+        ])
+        @formField('input', [
+            'label' => 'Trefwoorden',
+            'name' => 'keywords',
+            'note' => 'Scheid de verschillende trefwoorden met een spatie.',
+            'placeholder' => 'Scheid de verschillende trefwoorden met een spatie.',
+        ])
+    </a17-fieldset>
+@endsection

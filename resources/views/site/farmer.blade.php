@@ -1,5 +1,8 @@
-@extends('site.layouts.base', [
-    'title' => $item->title
+@extends("site.layouts.base", [
+    'page' => $item,
+    "title" => $item->title,
+    "description" => $item->description,
+    "image" => $item->imageAsArray('farmer_profile', 'desktop'),
 ])
 
 @push('styles')

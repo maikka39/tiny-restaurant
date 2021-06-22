@@ -25,6 +25,8 @@ class Municipality extends Model
         'published',
         'title',
         'description',
+        'category',
+        'keywords',
     ];
 
     public $slugAttributes = [

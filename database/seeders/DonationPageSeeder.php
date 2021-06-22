@@ -19,6 +19,8 @@ class DonationPageSeeder extends MediaSeeder
             'title' => 'Steun het Tiny Restaurant',
             'description' => 'Steun samen met anderen het Tiny Restaurant, zodat deze non-profit de boerensamenleving kan blijven helpen.',
             'published' => true,
+            'category' => 'general',
+            'keywords' => 'doneren geld helpen geven',
         ]);
 
         DonationPageAmount::create([

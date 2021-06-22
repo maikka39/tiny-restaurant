@@ -18,9 +18,11 @@ class MunicipalitySeeder extends MediaSeeder
         $municipalities = [[
                 'title' => 'Laarbeek',
                 'description' => 'Dit is de pagina van gemeente Laarbeek, de groenste gemeente van Europa, en het thuisfront van het Tiny Restaurant!',
+                'keywords' => 'laarbeek groen thuisfront',
             ], [
                 'title' => 'Boekel',
                 'description' => 'Boekel had veel te lijden tijdens corona, maar onze boeren hebben het volgehouden!',
+                'keywords' => 'boekel',
             ],
         ];
 
@@ -29,6 +31,8 @@ class MunicipalitySeeder extends MediaSeeder
                 'title' => $municipality['title'],
                 'description' => $municipality['description'],
                 'published' => true,
+                'category' => 'gemeente',
+                'keywords' => 'gemeente ' . $municipality['keywords'],
             ]);
 
             MunicipalitySlug::create([

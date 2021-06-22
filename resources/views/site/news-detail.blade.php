@@ -1,5 +1,9 @@
 @extends('site.layouts.base', [
-    'title' => $news->title
+    'page' => $news,
+    'title' => $news->title,
+    'pagetype' => 'article',
+    'pagecreatedtime' => $news->created_at->format('c'),
+    'pagemodifiedtime' => Carbon\Carbon::parse($news->updated_at)->format('c'),
 ])
 
 @push('styles')

@@ -1,4 +1,12 @@
-@extends('site.layouts.base')
+@extends("site.layouts.base", [
+    "page" => $item,
+    "title" => $item->name,
+    "description" => $item->description,
+    "image" => $item->imageAsArray('project_image', 'desktop'),
+    "pagetype" => "article",
+    'pagecreatedtime' => $item->created_at->format('c'),
+    'pagemodifiedtime' => Carbon\Carbon::parse($item->updated_at)->format('c'),
+])
 
 @push('styles')
     <link rel="stylesheet" href="{{ asset('css/project_individual.css') }}">
