@@ -1,7 +1,6 @@
 <?php
 
 return [
-
     /*
      *
      * Shared translations.
@@ -22,9 +21,9 @@ return [
      */
     'welcome' => [
         'templateTitle' => 'Welkom',
-        'title'   => 'Tiny Restaurant',
+        'title' => 'Tiny Restaurant',
         'message' => 'Welkom ìn de installatiewizard van de website voor het Tiny Restaurant.',
-        'next'    => 'Controleer vereisten',
+        'next' => 'Controleer vereisten',
     ],
 
     /*
@@ -35,7 +34,7 @@ return [
     'requirements' => [
         'templateTitle' => 'Stap 1 | Serververeisten',
         'title' => 'Serververeisten',
-        'next'    => 'Controlleer rechten',
+        'next' => 'Controlleer rechten',
     ],
 
     /*
@@ -114,17 +113,17 @@ return [
 
                 'app_tabs' => [
                     'more_info' => 'More Info',
-                    
+
                     'broadcasting_title' => 'Broadcasting, Cache, Session, & Queue',
                     'broadcasting_label' => 'Broadcast Driver',
                     'broadcasting_placeholder' => '',
-                    
+
                     'cache_label' => 'Cache Driver',
                     'cache_placeholder' => '',
-                    
+
                     'session_label' => 'Session Driver',
                     'session_placeholder' => '',
-                    
+
                     'queue_label' => 'Queue Driver',
                     'queue_placeholder' => '',
 
@@ -219,7 +218,7 @@ return [
          *
          */
         'welcome' => [
-            'title'   => 'Welcome To The Updater',
+            'title' => 'Welcome To The Updater',
             'message' => 'Welcome to the update wizard.',
         ],
 
@@ -229,7 +228,7 @@ return [
          *
          */
         'overview' => [
-            'title'   => 'Overview',
+            'title' => 'Overview',
             'message' => 'There is 1 update.|There are :number updates.',
             'install_updates' => 'Install Updates',
         ],

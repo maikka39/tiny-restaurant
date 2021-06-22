@@ -3,40 +3,42 @@
     use Composer\Console\Application;
     use Symfony\Component\Console\Input\ArrayInput;
 
-    function install($file) {
-        $argv = array();
-        include_once($file);
+    function install($file)
+    {
+        $argv = [];
+        include_once $file;
     }
 
-    function composer_install() {
-        $installerFilename = "composer-installer.php";
-        $composer_installer_content  = file_get_contents('https://getcomposer.org/installer');
-        
-        $find = array('#!/usr/bin/env php', 'exit(');
-        $replace = array('', 'return(');
-        $new_composer_installer_content = str_replace($find,$replace, $composer_installer_content);
-    
+    function composer_install()
+    {
+        $installerFilename = 'composer-installer.php';
+        $composer_installer_content = file_get_contents('https://getcomposer.org/installer');
+
+        $find = ['#!/usr/bin/env php', 'exit('];
+        $replace = ['', 'return('];
+        $new_composer_installer_content = str_replace($find, $replace, $composer_installer_content);
+
         file_put_contents($installerFilename, $new_composer_installer_content);
         install($installerFilename);
-    
-        define('EXTRACT_DIRECTORY', "extractedComposer");
-    
-        if (file_exists(EXTRACT_DIRECTORY . '/vendor/autoload.php') == false) {
-            $composerPhar = new Phar("composer.phar");
+
+        define('EXTRACT_DIRECTORY', 'extractedComposer');
+
+        if (false == file_exists(EXTRACT_DIRECTORY . '/vendor/autoload.php')) {
+            $composerPhar = new Phar('composer.phar');
             // php.ini setting phar.readonly must be set to 0
             $composerPhar->extractTo(EXTRACT_DIRECTORY);
         }
-    
+
         // this requires the phar to have been extracted successfully.
-        require_once(EXTRACT_DIRECTORY . '/vendor/autoload.php');
-    
+        require_once EXTRACT_DIRECTORY . '/vendor/autoload.php';
+
         // change out of the webroot so that the vendors file is not created in
         // a place that will be visible to the intahwebz
         chdir('../');
-    
+
         // create the command
-        $input = new ArrayInput(array('command' => 'install'));
-    
+        $input = new ArrayInput(['command' => 'install']);
+
         // create the application and run it with the commands
         $application = new Application();
         $application->setAutoExit(false);
@@ -48,25 +50,26 @@
         echo deleteDirectory('public/extractedComposer');
     }
 
-    function deleteDirectory($dir) {
+    function deleteDirectory($dir)
+    {
         if (!file_exists($dir)) {
             return true;
         }
-    
+
         if (!is_dir($dir)) {
             return unlink($dir);
         }
-    
+
         foreach (scandir($dir) as $item) {
-            if ($item == '.' || $item == '..') {
+            if ('.' == $item || '..' == $item) {
                 continue;
             }
-    
+
             if (!deleteDirectory($dir . DIRECTORY_SEPARATOR . $item)) {
                 return false;
             }
         }
-    
+
         return rmdir($dir);
     }
 
@@ -78,7 +81,7 @@
         header('Location: /install');
     }
 
-    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    if ('POST' == $_SERVER['REQUEST_METHOD']) {
         // generate an encryption key
         $key = 'base64:' . base64_encode(random_bytes(32));
 
