@@ -8,14 +8,22 @@
 @push('styles')
     <link rel="stylesheet" href="{{ asset('css/home.css') }}">
 @endpush
+@push('scripts')
+    <script type="text/javascript" src="{{asset('js/home.js')}}" defer></script>
+@endpush
 
 @section('content')
+    <div id="video-modal" class="modal">
+        <div class="modal-background"></div>
+        <div class="modal-content">
+            <div class="video-container">
+                {!! $video !!}
+            </div>
+        </div>
+        <button id="video-modal-close" class="modal-close is-large" aria-label="close"></button>
+    </div>
     <!-- Hero -->
     <section class="hero is-fullheight-with-navbar">
-        @php
-            $image = $homepage->image('hero', 'flexible');
-            $alt = $homepage->imageAltText('hero');
-        @endphp
 
         <div class="hero-body">
             <span class="watermark">ON TOUR</span>
@@ -24,18 +32,23 @@
                     <h1 class="title is-size-1 has-text-weight-bold">{{ $homepage->title }}</h1>
                     <p class="subtitle is-size-3">{{ $homepage->slogan }}</p>
                     <a class="button is-primary" href="{{ $homepage->button_url }}">{{ $homepage->button_text }}</a>
+                    @if($video != null)
+                        <a id="video-modal-open" class="button is-primary"><i class="far fa-play-circle mr-1"></i>Bekijk de video!</a>
+                    @endif
                 </div>
-            
+
                 <div class="right">
-                    <figure class="image to-background">
-                        <img class="hero-image" src="{{ $image }}" alt="{{ $alt }}" draggable="false" />
+                    <figure class="image to-background" data-slideshow>
+                    @foreach(array_reverse($homepage->imagesAsArrays('hero', 'flexible')) as $image)
+                        <img class="hero-image" src="{{ $image['src'] }}" alt="{{ $image['alt'] }}" draggable="false" />
+                    @endforeach
                     </figure>
                 </div>
             </div>
             <a class="scroll-down-indicator" id="scroll-down-indicator" href="#scroll-down-indicator"></a>
         </div>
     </section>
-    
+
     <!-- Social media -->
     <section class="section primary">
         <div class="hero-body">
@@ -61,11 +74,10 @@
                     </div>
                 </div>
                 <div class="column is-1"></div>
-                
+
                 <div class="divider is-hidden-mobile is-vertical ml-0"></div>
                 <div class="divider is-hidden-tablet"></div>
 
-                
                 <div class="column is-flex is-align-items-center">
                     <div class="container">
                         <h1 class="title is-4 has-text-centered">Bekijk de andere pagina's van het Tiny Restaurant!</h1>
@@ -91,28 +103,28 @@
             </div>
         </div>
       </section>
-    
+
     <!-- Latest news -->
     <section class="section">
         <div class="container">
             <x-latest-news />
         </div>
     </section>
-    
+
     <!-- Projects -->
     <section class="section secondary">
         <div class="container">
             <x-projects />
         </div>
     </section>
-    
+
     <!-- Partner slideshow -->
     <section class="section has-text-centered">
         <div class="container">
             <x-partners-slideshow />
         </div>
     </section>
-    
+
     <!-- Partners -->
     <section class="section primary is-medium has-text-centered">
         <div class="container">
