@@ -1,5 +1,5 @@
 <h2 class="title is-size-1 has-text-weight-normal">Het laatste nieuws van het Tiny Restaurant</h2>
-            
+
 <div class="columns">
     @forelse ($news as $item)
         @php $image = $item->imagesAsArrays('cover', 'flexible')[0] ?? null; @endphp
@@ -15,8 +15,8 @@
                         @endif
                     </figure>
                 </div>
-                
-                
+
+
                 <div class="block news-item-content">
                     <h3 class="is-size-4 has-text-weight-bold">{{ $item->title }}</h3>
                     <p class="content">{{ $item->summary }}</p>

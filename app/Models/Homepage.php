@@ -22,6 +22,8 @@ class Homepage extends Model
         'video_url',
         'button_text',
         'button_url',
+        'category',
+        'keywords',
     ];
 
     public $slugAttributes = [

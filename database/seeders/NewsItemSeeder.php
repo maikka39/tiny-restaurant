@@ -17,10 +17,12 @@ class NewsItemSeeder extends MediaSeeder
             'title' => 'Er staan nu boeren op de pagina!',
             'description' => '<p>Bekijk nu de nieuwste boeren die partner zijn van het Tiny Restaurant!</p><p><a href="https://tiny-restaurant.test/boer/ton-van-de-vossenberg" rel="noopener noreferrer" target="_blank">Ton van de Vossenberg</a> en <a href="https://tiny-restaurant.test/boer/hans-van-lierop" rel="noopener noreferrer" target="_blank">Hans van Lierop</a></p>',
             'summary' => 'Bekijk nu de nieuwste boeren die partner zijn van het Tiny Restaurant!',
+            'keywords' => 'boeren nieuw partner',
         ], [
             'title' => 'Het eerste bericht!',
             'description' => '<p><strong>De nieuwe website staat online!</strong></p><p>Bekijk nu alle functionaliteiten op de website:</p><ul><li>Gemeentes</li><li>Boeren</li><li>Nieuwsberichten</li><li>Pagina\'s</li></ul>',
             'summary' => 'Onze nieuwe website staat online. Bekijk nu alle functionaliteiten!',
+            'keywords' => 'bericht',
         ]];
 
         foreach ($newsItems as $newsItem) {
@@ -29,6 +31,8 @@ class NewsItemSeeder extends MediaSeeder
                 'description' => $newsItem['description'],
                 'summary' => $newsItem['summary'],
                 'published' => true,
+                'category' => 'nieuws',
+                'keywords' => 'nieuws ' . $newsItem['keywords'],
             ]);
 
             $this->seed_media(
