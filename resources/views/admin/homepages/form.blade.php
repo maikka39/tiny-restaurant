@@ -16,7 +16,9 @@
     @formField('medias', [
         'type' => 'image',
         'name' => 'hero',
-        'label' => 'Afbeelding'
+        'label' => 'Afbeeldingen',
+        'max' => 5,
+        'with_multiple' => true
     ])
 
     @formField('input', [
@@ -31,9 +33,16 @@
     @formField('input', [
         'name' => 'button_url',
         'label' => 'Knop-url',
-        'defaullt' => '/projecten',
+        'default' => '/projecten',
         'placeholder' => '/projecten',
         'note' => 'Mag een interne of externe URL zijn'
+    ])
+
+    @formField('input', [
+        'name' => 'video_url',
+        'label' => 'Video Link',
+        'placeholder' => 'https://www.youtube.com/...',
+        'note' => 'URL naar een publieke video online (Ondersteund door: YouTube, Vimeo)'
     ])
 @stop
 

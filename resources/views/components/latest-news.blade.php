@@ -6,13 +6,16 @@
 
         <div class="column">
             <div class="news-item">
-                @if ($image)
-                    <div class="block">
-                        <figure class="image is-2by1">
+                <div class="block">
+                    <figure class="image is-2by1">
+                        @if ($image)
                             <img class="news-image" src="{{ $image['src'] }}" alt="{{ $image['alt'] }}">
-                        </figure>
-                    </div>
-                @endif
+                        @else
+                            <img class="news-image" src="{{ asset('img/news-placeholder.png') }}" alt="Geen foto">
+                        @endif
+                    </figure>
+                </div>
+                
                 
                 <div class="block news-item-content">
                     <h3 class="is-size-4 has-text-weight-bold">{{ $item->title }}</h3>
