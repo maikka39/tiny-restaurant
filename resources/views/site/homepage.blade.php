@@ -1,5 +1,8 @@
 @extends("site.layouts.base", [
-    "title" => $homepage->title
+    "page" => $homepage,
+    "title" => $homepage->title,
+    "description" => $homepage->slogan,
+    "image" => $homepage->imageAsArray('hero', 'desktop'),
 ])
 
 @push('styles')
@@ -16,7 +19,7 @@
             <div class="video-container">
                 {!! $video !!}
             </div>
-        </div> 
+        </div>
         <button id="video-modal-close" class="modal-close is-large" aria-label="close"></button>
     </div>
     <!-- Hero -->
@@ -29,11 +32,11 @@
                     <h1 class="title is-size-1 has-text-weight-bold">{{ $homepage->title }}</h1>
                     <p class="subtitle is-size-3">{{ $homepage->slogan }}</p>
                     <a class="button is-primary" href="{{ $homepage->button_url }}">{{ $homepage->button_text }}</a>
-                    @if($video != null) 
+                    @if($video != null)
                         <a id="video-modal-open" class="button is-primary"><i class="far fa-play-circle mr-1"></i>Bekijk de video!</a>
                     @endif
                 </div>
-            
+
                 <div class="right">
                     <figure class="image to-background" data-slideshow>
                     @foreach(array_reverse($homepage->imagesAsArrays('hero', 'flexible')) as $image)
@@ -45,7 +48,7 @@
             <a class="scroll-down-indicator" id="scroll-down-indicator" href="#scroll-down-indicator"></a>
         </div>
     </section>
-    
+
     <!-- Social media -->
     <section class="section primary">
         <div class="hero-body">
@@ -55,27 +58,26 @@
                         <div class="container is-flex-tablet is-justify-content-center is-flex-wrap-wrap">
                             <div class="is-flex is-align-items-center is-justify-content-center is-flex-wrap-wrap mb-5 grow">
                                 <figure class="image is-64x64 mr-2">
-                                        <img type="image/png" src="{{ asset('img/link_icons/'.$highlight->logo_url)}}" />
+                                        <img type="image/png" src="{{ asset('img/link_icons/'.$highlight->logo_url)}}" alt="Logo van {{$highlight->name}}" />
                                 </figure>
                                 <h1 class="has-text-black has-text-centered is-size-2">{{$highlight->name}}</h1>
                             </div>
-                    </a>
-                            <div class="container">
-                                <div class="content">
-                                    <p class="has-text-centered">{{ $highlight->pitch }}</p>
-                                    <a href="{{$highlight->url}}" target="_blank">
-                                        <p class="has-text-centered has-text-weight-semibold">Bekijk deze pagina</p>
-                                    </a>
-                                </div>
-                            </div>
                         </div>
+                    </a>
+                    <div class="container">
+                        <div class="content">
+                            <p class="has-text-centered">{{ $highlight->pitch }}</p>
+                            <a href="{{$highlight->url}}" target="_blank">
+                                <p class="has-text-centered has-text-weight-semibold">Bekijk deze pagina</p>
+                            </a>
+                        </div>
+                    </div>
                 </div>
                 <div class="column is-1"></div>
-                
+
                 <div class="divider is-hidden-mobile is-vertical ml-0"></div>
                 <div class="divider is-hidden-tablet"></div>
 
-                
                 <div class="column is-flex is-align-items-center">
                     <div class="container">
                         <h1 class="title is-4 has-text-centered">Bekijk de andere pagina's van het Tiny Restaurant!</h1>
@@ -87,7 +89,7 @@
                                         <div class="is-flex is-justify-content-center">
                                             <div class="is-flex is-flex-direction-column is-justify-content-center is-align-items-center grow">
                                                 <figure class="image is-64x64">
-                                                    <img type="image/png" src="{{ asset('img/link_icons/'.$link->logo_url) }}" />
+                                                    <img type="image/png" src="{{ asset('img/link_icons/'.$link->logo_url) }}" alt="Logo van {{$highlight->name}}" />
                                                 </figure>
                                                 <p class="has-text-weight-medium has-text-centered">{{$link->name}}</p>
                                             </div>
@@ -101,28 +103,28 @@
             </div>
         </div>
       </section>
-    
+
     <!-- Latest news -->
     <section class="section">
         <div class="container">
             <x-latest-news />
         </div>
     </section>
-    
+
     <!-- Projects -->
     <section class="section secondary">
         <div class="container">
             <x-projects />
         </div>
     </section>
-    
+
     <!-- Partner slideshow -->
     <section class="section has-text-centered">
         <div class="container">
             <x-partners-slideshow />
         </div>
     </section>
-    
+
     <!-- Partners -->
     <section class="section primary is-medium has-text-centered">
         <div class="container">

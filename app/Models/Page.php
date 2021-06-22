@@ -25,6 +25,8 @@ class Page extends Model implements Sortable
         'title',
         'description',
         'position',
+        'category',
+        'keywords',
     ];
 
     public $slugAttributes = [

@@ -23,6 +23,8 @@ class HomepageSeeder extends MediaSeeder
             'button_url' => '/projecten',
             'video_url' => 'https://www.youtube.com/watch?v=qAOaCeMvMjY',
             'published' => true,
+            'category' => 'general',
+            'keywords' => 'home thuis welkom',
         ]);
 
         HomepageLinkItem::create([

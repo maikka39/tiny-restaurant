@@ -1,5 +1,8 @@
 @extends("site.layouts.base", [
-    "title" => $donationPage->title
+    "page" => $donationPage,
+    "title" => $donationPage->title,
+    "description" => $donationPage->description,
+    "image" => $donationPage->imageAsArray('hero', 'desktop'),
 ])
 
 @push('styles')

@@ -44,7 +44,7 @@
         'placeholder' => 'https://www.youtube.com/...',
         'note' => 'URL naar een publieke video online (Ondersteund door: YouTube, Vimeo)'
     ])
-@stop
+@endsection
 
 @section('fieldsets')
     <a17-fieldset title="Links" id="links" :open="true">
@@ -53,5 +53,16 @@
 
     <a17-fieldset title="Partners" id="partners" :open="true">
         @formField('repeater', ['type' => 'partner_items'])
+    </a17-fieldset>
+@endsection
+
+@section('sideFieldsets')
+    <a17-fieldset title="Zoekmachineoptimalisatie" id="options">
+        @formField('input', [
+            'label' => 'Trefwoorden',
+            'name' => 'keywords',
+            'note' => 'Scheid de verschillende trefwoorden met een spatie.',
+            'placeholder' => 'Scheid de verschillende trefwoorden met een spatie.',
+        ])
     </a17-fieldset>
 @endsection

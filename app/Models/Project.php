@@ -23,6 +23,8 @@ class Project extends Model
         'active',
         'date',
         'address',
+        'category',
+        'keywords',
     ];
 
     public $slugAttributes = [

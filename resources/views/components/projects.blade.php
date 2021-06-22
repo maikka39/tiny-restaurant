@@ -6,7 +6,7 @@
 
 <div class="columns">
     @forelse ($projects as $project)
-        @php 
+        @php
             $image = $project->imagesAsArrays('project_image', 'flexible')[0] ?? null;
         @endphp
 
@@ -21,13 +21,13 @@
                         @endif
                     </figure>
                 </div>
-                
+
                 <div class="card-content">
                     <p class="title is-4">{{ $project->name }}</p>
                     <p class="subtitle is-6">{{ $project->created_at->format('d-m-Y') }}</p>
-                    
+
                     <div class="content">{!! $project->description !!}</div>
-                    
+
                     <a href="{{ route('project.show', $project->slug) }}">Lees meer</a>
                 </div>
             </div>
