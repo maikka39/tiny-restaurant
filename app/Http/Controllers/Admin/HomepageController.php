@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers\Admin;
 
-use A17\Twill\Http\Controllers\Admin\ModuleController;
 use App\Models\Homepage;
 use App\Repositories\ProjectRepository;
+use A17\Twill\Http\Controllers\Admin\ModuleController;
+use Merujan99\LaravelVideoEmbed\Facades\LaravelVideoEmbed;
 
 class HomepageController extends ModuleController
 {
@@ -21,9 +22,17 @@ class HomepageController extends ModuleController
             ->get()
             ->take(3);
 
+        $url = $page->video_url;
+        $video = null;
+
+        if($url != null) {
+            $whitelist = ['YouTube', 'Vimeo'];
+            $video = LaravelVideoEmbed::parse($url, $whitelist);
+        }
+
         return view('site.homepage', [
             'homepage' => $page,
-            'video_src' => $this->getSrcAttribute($page->video_url),
+            'video' => $video,
             'highlight' => $page->homepage_link_items->where('homepage_id', 1)->where('position', 1)->first(),
             'agendaItems' => $agendaItems,
         ]);
@@ -34,14 +43,5 @@ class HomepageController extends ModuleController
         $page = Homepage::first();
 
         return view('admin.homepages.form', $this->form($page->id));
-    }
-
-    public function getSrcAttribute($string) {
-        $url = parse_url($string);
-        $output = ['v' => ''];
-        if(array_key_exists('query', $url)) {
-            parse_str($url['query'], $output);
-        }
-        return 'https://www.youtube.com/embed/' . $output['v'];
     }
 }

@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="{{ asset('css/home.css') }}">
 @endpush
 @push('scripts')
-    <script type="text/javascript" src="{{asset('js/home.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/home.js')}}" defer></script>
 @endpush
 
 @section('content')
@@ -14,7 +14,7 @@
         <div class="modal-background"></div>
         <div class="modal-content">
             <div class="video-container">
-                <iframe allowfullscreen="1" width="100%" height="100%" id="homepage-video" src="{{$video_src}}"></iframe>
+                {!! $video !!}
             </div>
         </div> 
         <button id="video-modal-close" class="modal-close is-large" aria-label="close"></button>
@@ -29,7 +29,7 @@
                     <h1 class="title is-size-1 has-text-weight-bold">{{ $homepage->title }}</h1>
                     <p class="subtitle is-size-3">{{ $homepage->slogan }}</p>
                     <a class="button is-primary" href="{{ $homepage->button_url }}">{{ $homepage->button_text }}</a>
-                    @if($video_src != null) 
+                    @if($video != null) 
                         <a id="video-modal-open" class="button is-primary"><i class="far fa-play-circle mr-1"></i>Bekijk de video!</a>
                     @endif
                 </div>

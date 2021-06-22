@@ -1,41 +1,44 @@
 window.onload = function () {
-    let video = document.querySelector('#homepage-video')
+    let video = document.querySelector('.video-container > iframe')
 
-    document.querySelector('#video-modal-open').addEventListener('click', () => {
-        let modal = document.querySelector('#video-modal')
+    let openBtn = document.querySelector('#video-modal-open')
+    if(openBtn != null) {
+        openBtn.addEventListener('click', () => {
+            let modal = document.querySelector('#video-modal')
 
-        if (modal) {
-            if(modal.classList.contains('is-active')) {
+            if (modal) {
+                if(modal.classList.contains('is-active')) {
+                    modal.classList.remove('is-active')
+                    document.body.style.overflow = "auto"; 
+                    document.body.style.height = "auto";
+                    video.src = video.src
+                } else {
+                    modal.classList.add('is-active')
+                    document.body.style.overflow = "hidden";
+                    document.body.style.height = "100vh";
+                }    
+            } 
+        })
+
+        document.querySelector('#video-modal-close').addEventListener('click', () => {
+            let modal = document.querySelector('#video-modal')
+            if (modal) {
                 modal.classList.remove('is-active')
                 document.body.style.overflow = "auto"; 
                 document.body.style.height = "auto";
                 video.src = video.src
-            } else {
-                modal.classList.add('is-active')
-                document.body.style.overflow = "hidden";
-                document.body.style.height = "100vh";
-            }    
-        } 
-    })
-
-    document.querySelector('#video-modal-close').addEventListener('click', () => {
-        let modal = document.querySelector('#video-modal')
-        if (modal) {
-            modal.classList.remove('is-active')
-            document.body.style.overflow = "auto"; 
-            document.body.style.height = "auto";
-            video.src = video.src
-        } 
-    })
-
-    let modal = document.querySelector('#video-modal')
-    if(modal) {
-        modal.addEventListener('click', () => {
-            modal.classList.remove('is-active')
-            document.body.style.overflow = "auto"; 
-            document.body.style.height = "auto";
-            video.src = video.src
+            } 
         })
+
+        let modal = document.querySelector('#video-modal')
+        if(modal) {
+            modal.addEventListener('click', () => {
+                modal.classList.remove('is-active')
+                document.body.style.overflow = "auto"; 
+                document.body.style.height = "auto";
+                video.src = video.src
+            })
+        }
     }
 
     //IMG SLIDESHOW

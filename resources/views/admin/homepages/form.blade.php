@@ -42,7 +42,7 @@
         'name' => 'video_url',
         'label' => 'Video Link',
         'placeholder' => 'https://www.youtube.com/...',
-        'note' => 'URL naar een publieke video online (voorkeur: YouTube)'
+        'note' => 'URL naar een publieke video online (Ondersteund door: YouTube, Vimeo)'
     ])
 @stop
 
