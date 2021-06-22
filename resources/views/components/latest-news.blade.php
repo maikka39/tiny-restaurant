@@ -2,8 +2,7 @@
             
 <div class="columns">
     @forelse ($news as $item)
-        @php $image = $item->imagesAsArrays('cover', 'flexible')[0] ?? null; 
-        @endphp
+        @php $image = $item->imagesAsArrays('cover', 'flexible')[0] ?? null; @endphp
 
         <div class="column">
             <div class="news-item">
