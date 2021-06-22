@@ -4,8 +4,6 @@ namespace App\Http\Controllers\Admin;
 
 use A17\Twill\Http\Controllers\Admin\ModuleController;
 use App\Models\NewsItem;
-use App\Notifications\NewsItemPosted;
-use Illuminate\Notifications\Notification;
 
 class NewsItemController extends ModuleController
 {

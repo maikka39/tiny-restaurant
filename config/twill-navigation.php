@@ -9,9 +9,9 @@ return [
              'homepage' => [
                  'title' => 'Facebook',
                  'route' => 'admin.settings',
-                 'params' => ['section' => 'facebook']
+                 'params' => ['section' => 'facebook'],
              ],
-         ]
+         ],
      ],
     'homepages' => [
         'title' => 'Homepagina',

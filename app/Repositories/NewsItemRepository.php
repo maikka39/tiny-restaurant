@@ -25,11 +25,9 @@ class NewsItemRepository extends ModuleRepository
     public function afterSave($object, $fields)
     {
         parent::afterSave($object, $fields);
-        if(array_key_exists('post_to_facebook', $fields))
-        {
+        if (array_key_exists('post_to_facebook', $fields)) {
             $newsItem = NewsItem::find($object->id);
-            if($fields['post_to_facebook'])
-            {
+            if ($fields['post_to_facebook']) {
                 $newsItem->notify(new NewsItemPosted($newsItem));
             }
         }
