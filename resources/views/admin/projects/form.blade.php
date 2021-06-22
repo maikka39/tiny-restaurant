@@ -43,6 +43,12 @@
         'fieldNote' => 'Een afbeelding voor op de pagina van het project'
     ])
 
+    <br>
+
+    <a target="_blank" href="{{ route('admin.newsItems.index') }}">
+        <a17-button variant="validate">Vergeet niet om een nieuwsbericht te plaatsen!</a17-button>
+    </a>
+
     @formField('block_editor', [
         'blocks' => ['social_media_links', 'partners']
     ])
