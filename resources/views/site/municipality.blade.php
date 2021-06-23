@@ -1,5 +1,8 @@
 @extends("site.layouts.base", [
-    "title" => $municipality->title
+    "page" => $municipality,
+    "title" => $municipality->title,
+    "description" => $municipality->description,
+    "image" => $municipality->imageAsArray('municipality_picture', 'desktop'),
 ])
 
 @push('styles')
@@ -17,13 +20,13 @@
             <p class="municipality-description">{{ $municipality->description }}</p>
         </div>
         @php($image = $municipality->imageAsArray('municipality_picture', 'flexible'))
-        <img class="municipality-image" src="{{ $image ? $image['src'] : asset('img/house-placeholder.png') }}" alt="{{ $image ? $image['alt'] : 'municipality placeholder' }}">
+        <img class="municipality-image" src="{{ $image ? $image['src'] : asset('img/house-placeholder.png') }}" alt="">
     </section>
     <section class="section section-farmers">
         <div class="info">
             <h2>De boeren van {{ $municipality->title }}</h2>
             <p>Lees het verhaal van de boeren in gemeente {{ $municipality->title }}</p>
-            <div class="map">
+            <div class="map" aria-hidden="true">
                 <iframe src="https://maps.google.com/maps?q={{ $municipality->title }}&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
             </div>
         </div>
@@ -36,7 +39,7 @@
                             @if ($image)
                                 <div class="card-image">
                                     <figure class="image">
-                                        <img class="farmer-image" src="{{ $image['src'] }}" alt="{{ $image['alt'] }}">
+                                        <img class="farmer-image" src="{{ $image['src'] }}" alt="">
                                     </figure>
                                 </div>
                             @endif
@@ -56,7 +59,7 @@
             <button id="arrow-right" class="arrow arrow-right" aria-label="Volgende boer">
                 <i class="fa fa-chevron-right fa-4x"></i>
             </button>
-            <div id="dots" class="dots"></div>
+            <div id="dots" class="dots" aria-hidden="true"></div>
         </div>
     </section>
     <section class="section section-projects">
@@ -73,7 +76,7 @@
                             <div class="card-image">
                                 <figure class="image is-3by2">
                                     @php($image = $project->imageAsArray('project_image', 'flexible'))
-                                    <img class="project-image" src="{{ $image ? $image['src'] : asset('img/news-placeholder.png') }}" alt="{{ $image ? $image['alt'] : 'news placeholder' }}">
+                                    <img class="project-image" src="{{ $image ? $image['src'] : asset('img/news-placeholder.png') }}" alt="">
                                 </figure>
                             </div>
 

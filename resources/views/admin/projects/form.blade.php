@@ -43,7 +43,30 @@
         'fieldNote' => 'Een afbeelding voor op de pagina van het project'
     ])
 
+    <br>
+
+    <a target="_blank" href="{{ route('admin.newsItems.index') }}">
+        <a17-button variant="validate">Vergeet niet om een nieuwsbericht te plaatsen!</a17-button>
+    </a>
+
     @formField('block_editor', [
         'blocks' => ['social_media_links', 'partners']
     ])
-@stop
+@endsection
+
+@section('sideFieldsets')
+    <a17-fieldset title="Zoekmachineoptimalisatie" id="options">
+        @formField('input', [
+            'label' => 'Categorie',
+            'name' => 'category',
+            'note' => 'Kies een algemene categorie.',
+            'placeholder' => 'Kies een algemene categorie.',
+        ])
+        @formField('input', [
+            'label' => 'Trefwoorden',
+            'name' => 'keywords',
+            'note' => 'Scheid de verschillende trefwoorden met een spatie.',
+            'placeholder' => 'Scheid de verschillende trefwoorden met een spatie.',
+        ])
+    </a17-fieldset>
+@endsection

@@ -21,7 +21,10 @@ class HomepageSeeder extends MediaSeeder
             'slogan' => 'Welkom op onze website!',
             'button_text' => 'Projecten',
             'button_url' => '/projecten',
+            'video_url' => 'https://www.youtube.com/watch?v=qAOaCeMvMjY',
             'published' => true,
+            'category' => 'general',
+            'keywords' => 'home thuis welkom',
         ]);
 
         HomepageLinkItem::create([

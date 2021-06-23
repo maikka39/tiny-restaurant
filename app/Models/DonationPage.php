@@ -18,6 +18,8 @@ class DonationPage extends Model
         'title',
         'description',
         'mollie_api_key',
+        'category',
+        'keywords',
     ];
 
     public $slugAttributes = [

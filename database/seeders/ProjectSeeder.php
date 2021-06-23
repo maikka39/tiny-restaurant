@@ -25,6 +25,7 @@ class ProjectSeeder extends MediaSeeder
                 'date' => Carbon::now()->addDays(random_int(1, 31)),
                 'address' => '1111AA',
                 'municipality_id' => '1',
+                'keywords' => 'laarbeek proeverij eten drinken',
             ], [
                 'published' => '1',
                 'name' => 'Op bezoek bij de boer',
@@ -33,6 +34,7 @@ class ProjectSeeder extends MediaSeeder
                 'date' => Carbon::now()->addDays(random_int(1, 31)),
                 'address' => '1111AA',
                 'municipality_id' => '1',
+                'keywords' => 'boer bezoek interview ondernemen',
             ], [
                 'published' => '1',
                 'name' => 'Voedsel educatie',
@@ -41,6 +43,7 @@ class ProjectSeeder extends MediaSeeder
                 'date' => Carbon::now()->addDays(random_int(1, 31)),
                 'address' => '1111AA',
                 'municipality_id' => '1',
+                'keywords' => 'educatie voedsel basisschool',
             ], [
                 'published' => '1',
                 'name' => 'Waardevol ondernemen',
@@ -49,6 +52,7 @@ class ProjectSeeder extends MediaSeeder
                 'date' => Carbon::now()->addDays(random_int(1, 31)),
                 'address' => '1111AA',
                 'municipality_id' => '1',
+                'keywords' => 'ondernemen waardevik',
             ], [
                 'published' => '1',
                 'name' => 'Onze nieuwe partner',
@@ -57,6 +61,7 @@ class ProjectSeeder extends MediaSeeder
                 'date' => Carbon::now()->subDays(random_int(1, 10)),
                 'address' => '1111AA',
                 'municipality_id' => '1',
+                'keywords' => 'partner nieuw laarbeek',
             ], [
                 'published' => '1',
                 'name' => 'Proeverij Boekel',
@@ -65,6 +70,7 @@ class ProjectSeeder extends MediaSeeder
                 'date' => Carbon::now()->subDays(random_int(1, 10)),
                 'address' => '1111AA',
                 'municipality_id' => '2',
+                'keywords' => 'boekel proeverij eten drinken',
             ],
         ];
 
@@ -76,6 +82,7 @@ class ProjectSeeder extends MediaSeeder
                 'description' => $project['description'],
                 'date' => $project['date'],
                 'address' => $project['address'],
+                'keywords' => 'project ' . $project['keywords'],
             ]);
 
             $municipality = Municipality::find($project['municipality_id']);

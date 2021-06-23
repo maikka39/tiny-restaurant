@@ -1,5 +1,6 @@
 @extends('site.layouts.base', [
     'title' => $item->title,
+    'image' => $item->hasImage('featured', 'desktop') ? $item->imageAsArray('featured', 'desktop') : NULL,
 ])
 
 @push('styles')
